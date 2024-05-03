@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 *,
 *::before,
@@ -10,11 +11,18 @@
     text-decoration: none;
     list-style: none;
 }
-
+/*rgb(85, 26, 139)*/
 :root{
     --clr-li-purple: rgb(244, 239, 250);
     --clr-da-purple: rgb(47, 24, 75);
     --clr-blue: rgb(0, 178, 255);
+    --clr-green-check: rgb(0, 215, 9);
+    --clr-p-purple: rgb(129, 87, 184);
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;    
 }
 
 body{
@@ -29,7 +37,7 @@ header{
     align-items: center;
     flex-wrap: wrap;
     background-color: var(--clr-li-purple);
-    padding: 10px;
+    padding: 15px;
 }
 
 #logo, #perfil{
@@ -79,4 +87,116 @@ header{
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
+}
+
+/*MAIN CONTENT*/
+main{
+    height: 100vh;
+
+    margin: 25px 0;
+}
+
+section{
+    background-color: var(--clr-li-purple);
+
+    border: 2px solid var(--clr-da-purple);
+    border-radius: 20px;
+}
+
+svg{
+    width: 50px;
+    height: 50px;
+}
+
+#forum-title{
+    font-family: "Kaushan Script";
+    font-size: 50px;
+    font-weight: 400;
+
+    color: var(--clr-da-purple);
+}
+
+.check-icon{
+    padding: 10px;
+
+    background-color: var(--clr-green-check);
+
+    border-radius: 50%;
+}
+
+.tag{
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid black;
+}
+
+.tag:last-child{
+    border-bottom: none;
+}
+
+.tag-title{
+    width: 60px;
+
+    margin: 0 50px;
+
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+
+    color: var(--clr-da-purple);
+}
+
+.tag-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 25px;
+    padding: 25px;
+
+    border-right: 1px solid black;
+}
+
+.tag-content{
+    display: flex;
+    align-items: center;
+
+    margin-right: 100px;
+    padding: 25px;
+}
+
+.tag-content-paragraph{
+    color: var(--clr-p-purple);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tag-info{
+    display: flex;
+    flex-direction: column;
+
+    margin: 25px;
+    padding: 25px;
+}
+
+.reply-count, .view-count{
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.reply-count{
+    color: var(--clr-blue);
+}
+
+.view-count{
+    color: var(--clr-da-purple);
+}
+
+.replies, .viewers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
 }
