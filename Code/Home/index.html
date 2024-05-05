@@ -14,31 +14,31 @@
     <div class="logo">
       <a href="#"><img src="img/logo.png" alt="Logo da Empresa"></a>
       <a href="#">
-        <p>Artsy Pages</p>
+        <p>ArtsyPages</p>
       </a>
     </div>
 
     <!--Menu Central-->
     <div class="container">
-      <nav class="menu-underline">
+      <nav class="menu1">
         <ul>
-          <li class="espaco"><a href="#" class="line"><img class="tamanho" src="img/faq.png">FAQ</a></li>
-          <li class="espaco"><a href="#" class="line"><img class="tamanho" src="img/explorar.png">Explorar</a></li>
-          <li class="espaco"><a href="#" class="line"><img class="tamanho" src="img/forum.png">Fórum</a></li>
+          <li><a href="#" class="line">Faq</a></li>
+          <li><a href="#" class="line">Explorar</a></li>
+          <li><a href="#" class="line">Fórum</a></li>
         </ul>
       </nav>
     </div>
 
     <!--Menu Direito-->
     <div class="container">
-      <div class="menu-underline">
+      <div class="menu2">
         <ul>
-          <li><a href="#" class="line"><img class="tamanho" src="img/enter.png">Login</a></li>
-          <li><a href="#" class="line"><img class="tamanho" src="img/create.png">Criar Portifólio</a></li>
+          <li><a href="#" class="line">Login</a></li>
+          <li><a href="#" class="line">Criar</a></li>
         </ul>
       </div>
       <div class="Person">
-        <a href="#"><img src="img/user.png" alt="Perfil do usuário"></a>
+        <a href="#"><img src="img/icon-perfil.png" alt="Perfil do usuário"></a>
       </div>
     </div>
   </header>
@@ -46,16 +46,17 @@
 
   <main>
     <!--Primeira section-->
-    <section>
-      <div class="container2">
-        <div class="text-main">
-          <h1>Artsy <span>Pages</span></h1>
-          <button class="botao-hover">Get Started</button>
-          <button class="botao-hover">Explorar</button>
+    <section class="hero">
+      <div class="text-area">
+        <h1>Artsy</h1>
+        <span class="span1">Pages</span>
+        <div class="buttons">
+          <button class="button">Get Started</button>
+          <button class="button">Explorar</button>
         </div>
-        <div class="image-main">
-          <img src="img/image-main1.png" alt="imagem do main">
-        </div>
+      </div>
+      <div class="image-area">
+        <img src="img/image-main1.png" alt="Artist at Easel">
       </div>
     </section>
 
@@ -66,24 +67,24 @@
       </div>
       <div class="icons-container">
         <div class="icon-circle">
-          <img src="img/iconcomunique.png" alt="Ícone 1">
+          <img src="img/comunidade.svg" alt="Ícone 1">
         </div>
         <div class="icon-circle">
-          <img src="img/iconcrie.png" alt="Ícone 2">
+          <img src="img/pincel.svg" alt="Ícone 2">
         </div>
         <div class="icon-circle">
-          <img src="img/compass.png" alt="Ícone 3">
+          <img src="img/bussula.svg" alt="Ícone 3">
         </div>
       </div>
       <div class="text-container">
-        <p class="flutuante">O fórum é um espaço interativo onde os usuários podem se conectar, compartilhar ideias e discutir temas
+        <p>O fórum é um espaço interativo onde os usuários podem se conectar, compartilhar ideias e discutir temas
           relacionados a carreiras, projetos e desenvolvimento profissional. Participe de discussões, peça conselhos e
           troque conhecimentos com uma comunidade de profissionais e entusiastas de diversas áreas.</p>
-        <p class="flutuante">A aba Criar é uma ferramenta intuitiva que permite aos usuários montar e personalizar seus próprios
+        <p>A aba Criar é uma ferramenta intuitiva que permite aos usuários montar e personalizar seus próprios
           portfólios. Com recursos fáceis de usar, você pode adicionar projetos, imagens e textos, organizando tudo de
           maneira que melhor represente suas habilidades e conquistas. Ideal para quem deseja destacar seu trabalho e
           atrair oportunidades.</p>
-        <p class="flutuante">Nesta seção, os usuários podem navegar por uma vasta coleção de portfólios criativos. É o lugar perfeito para
+        <p>Nesta seção, os usuários podem navegar por uma vasta coleção de portfólios criativos. É o lugar perfeito para
           buscar inspiração, descobrir novos talentos ou simplesmente admirar uma variedade de trabalhos artísticos e
           profissionais. Explore categorias diversificadas e encontre portfólios que se alinham com seus interesses ou
           necessidades específicas.</p>
@@ -92,8 +93,11 @@
 
     <!--Terceira Section-->
     <section class="terceira-section">
-      <p class="destaque-texto">Para <span>Você</span></p>
-      <img class="imagem-central flutuante" src="img/main2.png" alt="Descrição da imagem">
+      <div class="text-container2">
+        <p class="destaque-texto">para</p>
+        <span class="span2">Você</span>
+      </div>
+      <img class="imagem-central" src="img/main2.png" alt="Descrição da imagem">
     </section>
 
     <!--Carrosel-->
@@ -123,21 +127,27 @@
     <!--FAQ-->
     <section class="faq-section">
       <div class="faq-header">
-        <h1>FAQ</h1>
+          <h1>FAQ</h1>
       </div>
       <div class="faq-content">
-        <h2>Como posso enviar meu portfólio para o site?</h2>
-        <p>Para enviar seu portfólio, primeiramente crie uma conta e faça login. Depois, acesse a seção "Meu Portfólio" e clique em "Adicionar Novo". Lá você pode fazer upload de imagens do seu trabalho, adicionar descrições e especificar categorias que melhor representam suas habilidades e projetos.</p>
-        
-        <h2>Existe um limite para quantos trabalhos posso incluir em meu portfólio?</h2>
-        <p>Não há um limite estrito para a quantidade de trabalhos que você pode incluir, mas recomendamos selecionar entre 10 a 15 dos seus melhores projetos. Isso garante que seu portfólio seja conciso e mostre a qualidade e a amplitude do seu trabalho de forma eficaz.</p>
-        
-        <h2>Quais são as dicas para criar um portfólio atraente?</h2>
-        <p>Para criar um portfólio atraente, concentre-se em exibir uma variedade de trabalhos que destacam suas habilidades únicas. Inclua um breve resumo sobre você e seu background profissional, descrições claras para cada projeto, e, se possível, depoimentos de clientes ou colaboradores. Lembre-se de manter o design do seu portfólio simples e intuitivo para navegar.</p>
+          <h2>Como posso enviar meu portfólio para o site?</h2>
+          <p>Para enviar seu portfólio, primeiramente crie uma conta e faça login. Depois, acesse a seção "Meu Portfólio"
+              e clique em "Adicionar Novo". Lá você pode fazer upload de imagens do seu trabalho, adicionar descrições e
+              especificar categorias que melhor representam suas habilidades e projetos.</p>
+  
+          <h2>Existe um limite para quantos trabalhos posso incluir em meu portfólio?</h2>
+          <p>Não há um limite estrito para a quantidade de trabalhos que você pode incluir, mas recomendamos selecionar
+              entre 10 a 15 dos seus melhores projetos. Isso garante que seu portfólio seja conciso e mostre a qualidade e a
+              amplitude do seu trabalho de forma eficaz.</p>
+  
+          <h2>Quais são as dicas para criar um portfólio atraente?</h2>
+          <p>Para criar um portfólio atraente, concentre-se em exibir uma variedade de trabalhos que destacam suas
+              habilidades únicas. Inclua um breve resumo sobre você e seu background profissional, descrições claras para
+              cada projeto, e, se possível, depoimentos de clientes ou colaboradores. Lembre-se de manter o design do seu
+              portfólio simples e intuitivo para navegar.</p>
       </div>
-    </section>    
+  </section>
   </main>
 </body>
 <script src="script.js"></script>
-
 </html>

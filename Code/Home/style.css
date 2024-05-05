@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Koulen&display=swap');
 
 * {
     padding: 0;
@@ -27,235 +27,147 @@ header {
 }
 
 .logo img {
-    width: 50px;
+    margin: 20px 0 0 0;
+    width: 80px;
 }
 
 .logo p {
+    font-family: "Koulen", sans-serif;
+    margin: 20px 0 0 0;
+    font-weight: bold;
+    text-transform: uppercase;
     color: #000;
     font-family: sans-serif;
     font-size: 1.6rem;
 }
 
 .container {
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Person img {
+    margin: 20px 30px 0 0;
+    width: 60px;
+}
+
+/*menu*/
+.menu1 ul {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu1 ul li {
+    margin: 0 50px 0 50px;
+    list-style: none;
+}
+
+.menu1 ul li a {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.menu1 ul li a:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.menu2 ul {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu2 ul li {
+    margin: 0 40px 0 20px;
+    list-style: none;
+}
+
+.menu2 ul li a {
+    font-family: "Koulen", sans-serif;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.menu2 ul li a:hover {
+    font-weight: 800;
+    color: #000;
+}
+
+/*primiera section*/
+.hero {
+    margin: 150px 0 0 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #F4F4F9;
+}
+
+.text-area h1 {
+    font-size: 250px;
+    color: #2f184b;
+    font-family: 'Kaushan Script', sans-serif;
+}
+
+.span1{
+    margin: -120px 0 0 80px;
+    font-size: 250px;
+    color: #2f184b;
+    font-family: 'Kaushan Script', sans-serif;
+    display: block;
+}
+
+.buttons{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.tamanho {
-    margin-right: 10px;
-    width: 15px;
-}
-
-.espaco {
-    margin-left: 30px;
-}
-
-.Person img {
-    margin-right: 30px;
-    width: 40px;
-}
-
-/*menu*/
-.menu-underline {
-    box-shadow: 1px 0px 1.2px 0px #e3e3e3;
-    border-radius: 3px;
-    padding: 5px;
-}
-
-.menu-underline ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.menu-underline li {
-    padding: 0.8em 1.5em;
-}
-
-.menu-underline a {
-    text-decoration: none;
-    position: relative;
-    color: #000;
-    font-size: 1.2em;
-    padding: 10px 0;
-    transition: 0.3s;
-}
-
-.menu-underline a:hover {
-    color: #5c338d;
-}
-
-.menu-underline .line::after {
-    content: "";
-    border-bottom: solid 2px #5c338d;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.25s;
-}
-
-.menu-underline .line:hover::after {
-    border-bottom: solid 2px #5c338d;
-    transform-origin: left;
-    transform: scaleX(1);
-}
-
-@-webkit-keyframes line {
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
-@keyframes line {
-
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-
-}
-
-@media only screen and (max-width:768px) {
-
-    .menu-underline li {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-}
-
-/*primiera section*/
-
-.botao-hover {
-    color: #ffffff;
-    width: 150px;
-    height: 50px;
-    border: 2px solid #000;
-    border-radius: 50px;
-    font-family: 'Lato', sans-serif;
-    font-size: 17px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    margin: 20px;
-    outline: none;
-    text-align: center;
-    z-index: 2;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    background-color: #2f184b;
-
-}
-
-.botao-hover::after {
-
-    position: absolute;
-    content: " ";
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease;
-
-}
-
-.botao-hover:hover {
-
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
-        -4px -4px 6px 0 rgba(116, 125, 136, .2),
-        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
-        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-    color: #000;
-
-}
-
-.botao-hover:hover::after {
-    transform: scale(2) rotate(180deg);
-    background: #ffffff;
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
-        -4px -4px 6px 0 rgba(116, 125, 136, .2),
-        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
-        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-}
-
-.botao-hover:active::after {
-    background: #000000;
-}
-
-h1.display-1 {
-    font-size: 3.5rem;
-    color: #333;
-}
-
-.container2 {
-    margin-left: 20%;
-    margin-top: 100px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.text-main{
-    font-family: "Kaushan Script", sans-serif;
-    font-size: 7rem;
-    color: #2f184b;
-}
-
-span{
-    margin-left: 80px;
-    display: block;
-}
-
-.image-main img {
-    width: 80%;
-}
-
-.btn-main {
-    cursor: pointer;
-    padding: 20px 40px;
-    font-size: 1.2rem;
-    color: #ffffff;
-    background-color: #5c338d;
-    border-radius: 40px;
+.button {
+    background-color: #532b88;
+    color: white;
     border: none;
+    padding: 10px 20px;
+    margin: 70px 0 0 100px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
 }
+
+.button:hover {
+    background-color: #6e3bcc;
+}
+
+.image-area img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* Segunda section */
 
 .wavy-section {
     position: relative;
     text-align: center;
-}
-
-.wave-container {
-    margin-top: 15%;
-    position: relative;
-    width: 100%;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.wave-container {
+    margin: 20% 0 0 5%;
+    position: relative;
+    width: 88%;
+    z-index: 1;
 }
 
 .wave-container::after {
@@ -264,7 +176,7 @@ span{
     left: 0;
     right: 0;
     bottom: 0;
-    height: 200px;
+    height: 400px;
     background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     z-index: 2;
 }
@@ -277,7 +189,7 @@ span{
 
 .icons-container {
     position: absolute;
-    bottom: 150px;
+    bottom: 80px;
     left: 0;
     right: 0;
     display: flex;
@@ -287,78 +199,95 @@ span{
 }
 
 .icon-circle {
-    width: 300px;
-    height: 300px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
-    border: 15px solid white;
+    border: 5px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .icon-circle img {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
 }
 
 .text-container {
     position: absolute;
     width: 100%;
     top: 100%;
+    left: 0;
     display: flex;
+    flex-direction: row;
+    align-items: start;
     justify-content: space-around;
     z-index: 2;
 }
 
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.flutuante {
-    animation: float 3s ease-in-out infinite;
-}
-
 .text-container p {
-    color: #ffffff;
-    font-family: sans-serif;
-    background-color: transparent;
-    margin: 10px 20px;
-    display: inline-block;
-    width: auto;
+    font-family: "Koulen", sans-serif;
+    color: #532b88;
+    font-size: 1.5rem;
+    margin: 0 20px;
+    display: block;
+    width: 500px;
     padding: 10px;
     border-radius: 10px;
     text-align: justify;
     line-height: 1.6;
-    border: 5px solid #8d52d6;
-    background-color: #2f184b;
-    height: 200px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
 }
 
+.text-container p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    z-index: 1;
+}
 
 /*Terceira section*/
 
 .terceira-section {
-    margin-top: 15%;
+    margin: 30%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-container2 {
+    display: block;
 }
 
 .terceira-section p {
     font-family: "Kaushan Script", sans-serif;
-    text-align: center;
-    font-size: 10em;
+    font-size: 250px;
     color: #2f184b;
+    margin: 0;
+    padding-bottom: 0.2em;
 }
 
+.span2 {
+    margin: -180px 0 0 80px;
+    font-family: "Kaushan Script", sans-serif;
+    font-size: 250px;
+    color: #2f184b;
+    display: block;
+}
+
+.imagem-central {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: 40%;
+}
 
 /*Carrosel*/
 
@@ -377,8 +306,7 @@ span{
     width: 100%;
 }
 
-.prev,
-.next {
+.prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -397,8 +325,7 @@ span{
     border-radius: 3px 0 0 3px;
 }
 
-.prev:hover,
-.next:hover {
+.prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -444,8 +371,7 @@ span{
     transition: background-color 0.6s ease;
 }
 
-.ativo,
-.dot:hover {
+.ativo, .dot:hover {
     background-color: #242424;
 }
 
@@ -496,36 +422,48 @@ span{
 /*FAQ*/
 
 .faq-section {
-    font-family: 'Arial', sans-serif;
+    font-family: "Koulen", sans-serif;
     background-color: #ffffff;
-    width: 80%;
-    margin: 15% auto 0 auto;
+    width: 90%;
+    margin: 10%;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 600px;
+}
+
+.faq-header {
+    flex: 1;
+    margin-right: 100px;
+    margin-left: 200px;
 }
 
 .faq-header h1 {
     color: #2f184b;
-    font-size: 10em;
+    font-size: 300px;
+    margin: 0;
+}
+
+.faq-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
 }
 
 .faq-content h2 {
-    color: #333;
-    font-size: 1.5em;
-    margin-top: 20px;
+    color: #2f184b;
+    font-size: 2em;
+    margin: 20px 0 10px;
 }
 
 .faq-content p {
-    margin-top: 40px;
+    color: #a884d5;
     max-width: 700px;
-    white-space: normal;
-    overflow-wrap: break-word;
-    text-overflow: ellipsis;
-    color: #666;
     line-height: 1.6;
     text-align: justify;
     margin-bottom: 20px;
+    font-size: 1.2rem;
 }
