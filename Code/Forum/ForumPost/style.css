@@ -1,0 +1,216 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+/* Header inicio */
+
+
+/* Header fim */
+
+
+body {
+    height: 100vh;
+    
+    background-image: url(../imgs/background.png);
+    background-size: 80vw;
+    background-repeat: repeat;
+    background-position: 95px;
+}
+
+.background_container {
+
+    background-color: rgba(255, 255, 255, 0.75);
+
+    height: 100vh;
+    width: 100%;
+}
+
+
+/* Main inicio */
+
+main{
+    width: 90vw;
+    margin: 15vh auto 0;
+    
+}
+
+.post_title {
+    max-width: 100%;
+
+    color: rgb(47,24,75);
+
+    font-family: "Koulen", sans-serif;
+}
+
+.question_tag, .question_title{
+    display: inline;
+}
+
+.question_tag {
+    width: 20%;
+
+    margin-right: 1vw;
+
+    font-size: 4vw;
+}
+
+.question_title {
+    max-width: 80%;
+    font-size: 3vw;
+}
+
+
+.post, .answer {
+    background-color: rgb(244,239,249);
+
+    border:rgb(56,34,82) solid;
+
+    overflow: hidden;
+}
+
+.post {
+    margin-top: 1vh;
+
+    border-top: 6%;
+    
+    border-left: 3%;
+    
+    border-right: 3%;
+
+    border-bottom: 6%;
+
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.answer {
+
+    border-top: 2%;
+    border-top-color: rgba(56,34,82,0.2);
+    
+    border-left: 3%;
+    
+    border-right: 3%;
+    
+    border-bottom: 4%;
+}
+
+.answer:last-of-type {
+    margin-bottom: 15px;
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.post div, .answer div{
+    display: inline-block;
+}
+
+.post_data, .answer_data {
+    float: left;
+
+    width: 30%;
+
+}
+
+.post_owner, .answer_owner {
+    display: block;
+
+    margin: 5% auto;
+    border-radius: 100%;
+
+    max-width: 55%;
+    max-height: 40vh;
+}
+
+.post_replies, .post_views {
+    display: inline;
+
+    width: 100%;
+
+    margin-top: 1%;
+
+    text-align: center;
+
+    font-size: 2.5vw;
+    font-weight: 700;
+    font-family: "Koulen", sans-serif;
+}
+
+.post_replies span, .post_views span{
+    margin-left: 1.5vw;
+}
+
+.post_replies{
+    color: rgb(0,178,255);
+}
+
+.post_views{
+    color: rgb(43,22,70);
+}
+
+
+.post_text, .answer_text {
+    width: 45%;
+    margin-left: 2,5vw;
+    margin-right: 2,5vw;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+
+    color: rgb(86,47,138);
+
+    font-weight: 600;
+}
+
+.post_rating, .answer_rating {
+    width: 20%;
+
+    float: right;
+}
+
+.post_rating div span, .answer_rating div span {
+    font-family: "Koulen", sans-serif;
+
+    font-size: 2.25vw;
+    font-weight: 500;
+
+    margin-left: 1.5vw;
+}
+
+.post_likes, .post_dislikes, .answer_likes, .answer_dislikes {
+    overflow: hidden;
+
+    width: 100%;
+    
+    text-align: center;
+    
+    line-height: 100%;
+
+}
+
+.post_likes button, .post_dislikes button, .answer_likes button, .answer_dislikes button {
+    padding: 0 0;
+
+    border: 0;
+
+    background:none;
+
+    font-size: 4.25vw;
+    font-weight: 900;
+
+    color: inherit;
+}
+
+.post_likes, .answer_likes {
+    margin-top: 30%;
+    
+    color: rgb(77,202,112);
+}
+
+.post_dislikes, .answer_dislikes {
+    margin-top: 8%;
+
+    color: rgb(242,77,29);
+}
