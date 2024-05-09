@@ -1,4 +1,59 @@
-* {
+/* Header */
+/* Código da Header */
+
+body{
+    margin: 0 0 0 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #F4EFFA;
+}
+
+.logo {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    margin: 20px 0 0 0;
+    width: 80px;
+}
+
+.logo a{
+    text-decoration: none;
+    font-family: "Koulen", sans-serif;
+}
+
+.logo p {
+    font-family: "Koulen", sans-serif;  
+    margin: 18px 75px 0 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #3A1D5D;
+    font-size: 1.6rem;
+    height: 100%;
+    }
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Person img {
+    margin: 20px 30px 0 0;
+    width: 60px;
+}
+
+
+/* Page */
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -15,8 +70,9 @@
     z-index: -1;
     display: block;
     width: 100%;
+    height: 50%;
     position: absolute;
-    margin-top: -85px;
+    margin-top: 200px;
     overflow:visible;
     border: 0 0 500px;
     border-color: white;
@@ -29,12 +85,13 @@
     background-color: aliceblue;
     display: block;
     position: fixed;
-    top: 6%;
+    top: 25%;
     left: 7%;
     width: 15%;
     border-radius: 50px;
+    border: 2px rgb(172, 147, 219);
     border-style: solid;
-    border: 20px black;
+    
     
 }
 
@@ -49,5 +106,34 @@ figcaption {
     font-weight: 900;
     font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 25px;
-    
+}
+
+.bio {
+    font-size: x-small;
+    text-align: center;
+
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Social media button */
+.SocButton {
+    background-color: rgb(222, 247, 255);
+    border: 2px rgb(210, 210, 210);
+    border-style: dashed;
+    border-radius: 15px;
+    display: block;
+    text-align: center;
+    margin: 0 10% 0;
+    padding-top: 5%;
+}
+.SocButton>img {
+    display: inline-block;
+    width: 35px;
+}
+.SocButton>p {
+    color: black;
+    display: inline-block;
+    font-family: monospace;
+    font-weight: 900;
 }
