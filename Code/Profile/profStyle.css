@@ -51,6 +51,53 @@ header {
     width: 60px;
 }
 
+.menu1 ul {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu1 ul li {
+    margin: 0 50px 0 50px;
+    list-style: none;
+}
+
+.menu1 ul li a {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.menu1 ul li a:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.menu2 ul {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu2 ul li {
+    margin: 0 40px 0 20px;
+    list-style: none;
+}
+
+.menu2 ul li a {
+    font-family: "Koulen", sans-serif;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.menu2 ul li a:hover {
+    font-weight: 800;
+    color: #000;
+}
+
 
 /* Page */
 *{
@@ -74,10 +121,19 @@ header {
     position: absolute;
     margin-top: 200px;
     overflow:visible;
-    border: 0 0 500px;
-    border-color: white;
-    border-width: 500px;
+    object-fit: cover;
 }
+
+@media only screen and (max-width: 1270px){
+    #Banner {
+        position: absolute;
+        display: block;
+        width: 300%;
+        height: 50%;
+        margin-top: 200px;
+    }
+}
+
 
 
 /* Miniprofile */
@@ -96,9 +152,11 @@ header {
 }
 
 .ProfilePicture {
-    width: 100%;
+    max-width: 100%;
+    height: auto !important;
     padding: 12%;
-    border-radius: 50%;
+    border-radius: 500000px;
+    
 }
 
 figcaption {
@@ -130,10 +188,26 @@ figcaption {
 .SocButton>img {
     display: inline-block;
     width: 35px;
+    font-style: none;
+    text-decoration: none;
 }
 .SocButton>p {
     color: black;
     display: inline-block;
     font-family: monospace;
     font-weight: 900;
+}
+
+/* Portfolios */
+
+.portfolios {
+    /* position: absolute; */
+    /* left: 30%; */
+    margin-top: 300px;
+
+}
+
+.portfolios img {
+    width: 100%;
+    height: 320px;
 }
