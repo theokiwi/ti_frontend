@@ -4,94 +4,73 @@
 
 /* Header inicio */
 
-header {
+/*HEADER CONTENT*/
+header{
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    max-width: 100%;
-
-    background-color: rgb(244,239,249);
-}
-
-.logo {
-    margin-left: 2vw;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(244, 239, 250);
+    padding: 15px;
 }
 
-.logo img {
-    margin: 1vh 0 0 0;
-    width: 7vw;
+#logo, #perfil{
+    width: 50px;
+    height: 50px; 
 }
 
-.logo p {
-    font-family: "Koulen", sans-serif;
-    margin: 1vh 0 0 0;
-    font-weight: bold;
+    /*HEADER-TITLE*/
+#title{
     text-transform: uppercase;
-    color: #000;
-    font-family: sans-serif;
-    font-size: 1.6rem;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.Person img {
-    margin: 1vh 1.5vw 0 0;
-    width: 4vw;
-}
-
-/*menu*/
-.menu1 ul {
-    margin: 1vh 0 0 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.menu1 ul li {
-    margin: 0 2vw 0 2vh;
-    list-style: none;
-}
-
-.menu1 ul li a {
-    font-size: 1.5rem;
-    color: #000;
-}
-
-.menu1 ul li a:hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #000;
-}
-
-.menu2 ul {
-    margin: 1vh 0 0 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.menu2 ul li {
-    margin: 0 2vw 0 1vh;
-    list-style: none;
-}
-
-.menu2 ul li a {
     font-family: "Koulen", sans-serif;
-    font-size: 1.5rem;
-    color: #000;
+    font-weight: 400;
 }
 
-.menu2 ul li a:hover {
-    font-weight: 800;
-    color: #000;
+#header-title{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    
+}
+
+    /*HEADER-MAIN-NAVBAR*/
+.header-main-navbar-link{
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: black;        
+
+    text-decoration: none;
+}
+
+#header-main-navbar-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    list-style: none;
+}
+
+    /*HEADER-LOGREG-NAVBAR*/
+.header-logreg-navbar-link{
+    font-family: "Koulen", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+
+    text-decoration: none;
+}
+
+#header-logreg-navbar-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    list-style: none;
 }
 
 
@@ -103,7 +82,7 @@ header {
 body {
     height: 100vh;
 
-    background-image: url(../imgs/background.png);
+    background-image: url(../images/background.png);
     background-size: 80vw;
     background-repeat: repeat;
     background-position: 95px;
@@ -129,22 +108,25 @@ main {
 
 }
 
-.page_title {
+div.page_title {
     font-family: "Kaushan Script";
 
-    display: inline;
+    display: block;
 
     width: 100%;
+
+    margin-bottom: 1.5vh;
 }
 
 .page_title a {
-    display: inline;
+    display: inline-block;
 
     margin-left: 5%;
 
     font-size: 150%;
 
     text-decoration: none;
+    
     color: #000;
 
     background-color: rgb(183, 183, 183);
@@ -166,9 +148,12 @@ main {
     background: none;
     background-color: rgba(255, 0, 0, 0);
 
-    display: inline;
+    display: inline-block;
 
-    margin: 0 15%;
+    margin: 0 20%;
+
+    
+    text-align: center;
 }
 
 label {
@@ -179,10 +164,7 @@ label {
     font-size: 4.25vh;
 }
 
-main form {
-    margin: 2.5vh auto 0;
 
-}
 
 .post_texts {
     margin-left: 6%;
@@ -218,6 +200,8 @@ input, textarea {
 
     border: 6px solid;
     border-radius: 4px;
+
+    font-family: "Koulen", sans-serif;
 }
 
 .submit button:hover {
@@ -228,3 +212,8 @@ input, textarea {
 
 
 /* Main fim */
+
+
+footer{
+    height: 0.5vh;
+}

@@ -60,39 +60,45 @@ function save_question() {
     // Ler dados do navegador ou os padrões
     let Dados = read_forumdata();
 
-    // Obter informações novas
-    //let strNome = document.getElementsByClassName('Person').source;
     let strTitulo = $("#post_title").val();
     let strPergunta = $("#post_description").val();
     let strTag = $("#tag").val();
 
-    let ID = Dados.forum.length + 1;
+    // Obter informações novas
+    if (strTitulo == "" || strPergunta == "" || strTag == "") {
+        alert("Erro de envio: Preencha todos os campos de informação.");
+    }
+    else {
+        //let strNome = document.getElementsByClassName('Person').source;
 
-    // Incluir informações novas
-    let novaPergunta = {
-        "post": {
-            "usuario": "Usuario",
-            "tag": strTag, titulo: strTitulo,
-            "pergunta": strPergunta,
-            "forumID": ID,
-            "respostas": 0, views: 0, likes: 0, dislikes: 0,
-        },
-        "respostas": []
-    };
-    Dados.forum.push(novaPergunta);
+        let ID = Dados.forum.length + 1;
 
-    // Salvar os dados no localStorage
-    localStorage.setItem('db', JSON.stringify(Dados));
-//console.log(JSON.stringify(Dados));
+        // Incluir informações novas
+        let novaPergunta = {
+            "post": {
+                "usuario": "Usuario",
+                "tag": strTag, titulo: strTitulo,
+                "pergunta": strPergunta,
+                "forumID": ID,
+                "respostas": 0, views: 0, likes: 0, dislikes: 0,
+            },
+            "respostas": []
+        };
+        Dados.forum.push(novaPergunta);
 
-    alert("Sua pergunta foi salva");
+        // Salvar os dados no localStorage
+        localStorage.setItem('db', JSON.stringify(Dados));
+        //console.log(JSON.stringify(Dados));
 
-    window.location.href = "../ForumMain/Forum.html";
+        alert("Sua pergunta foi salva");
+
+        window.location.href = "../ForumMain/Forum.html";
+    }
 }
 
 
 // Botão
 $(document).ready(function () {
-//localStorage.clear();
+    //localStorage.clear();
     $('.submit_button').click(save_question);
 });
