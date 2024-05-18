@@ -82,7 +82,7 @@ header{
 body {
     height: 100vh;
 
-    background-image: url(../imgs/background.png);
+    background-image: url(../images/background.png);
     background-size: 80vw;
     background-repeat: repeat;
     background-position: 95px;
