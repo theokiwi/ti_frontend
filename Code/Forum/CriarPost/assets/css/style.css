@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* Header inicio */
+
+/*HEADER CONTENT*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(244, 239, 250);
+    padding: 15px;
+}
+
+#logo, #perfil{
+    width: 50px;
+    height: 50px; 
+}
+
+    /*HEADER-TITLE*/
+#title{
+    text-transform: uppercase;
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+}
+
+#header-title{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    
+}
+
+    /*HEADER-MAIN-NAVBAR*/
+.header-main-navbar-link{
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: black;        
+
+    text-decoration: none;
+}
+
+#header-main-navbar-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    list-style: none;
+}
+
+    /*HEADER-LOGREG-NAVBAR*/
+.header-logreg-navbar-link{
+    font-family: "Koulen", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+
+    text-decoration: none;
+}
+
+#header-logreg-navbar-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    list-style: none;
+}
+
+
+/* Header fim */
+
+
+
+
+body {
+    height: 100vh;
+
+    background-image: url(../imgs/background.png);
+    background-size: 80vw;
+    background-repeat: repeat;
+    background-position: 95px;
+}
+
+/* Main inicio */
+
+
+main {
+    width: 80vw;
+    overflow: hidden;
+
+    margin: 15vh auto 0;
+
+    padding-bottom: 5vh;
+    padding-top: 1.5vh;
+
+    background-color: rgb(244,239,249);
+
+    border: 2px solid;
+    border-color: rgb(83, 6, 113);
+    border-radius: 35px;
+
+}
+
+div.page_title {
+    font-family: "Kaushan Script";
+
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 1.5vh;
+}
+
+.page_title a {
+    display: inline-block;
+
+    margin-left: 5%;
+
+    font-size: 150%;
+
+    text-decoration: none;
+    
+    color: #000;
+
+    background-color: rgb(183, 183, 183);
+    
+    padding-top: 0.25%;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-bottom: 0.25%;
+
+    border-radius: 100%;
+}
+
+.page_title a:hover {
+    color: white;
+    background-color: purple;
+}
+
+.page_title h1 {
+    background: none;
+    background-color: rgba(255, 0, 0, 0);
+
+    display: inline-block;
+
+    margin: 0 20%;
+
+    
+    text-align: center;
+}
+
+label {
+    display: block;
+
+    font-family: "Kaushan Script";
+
+    font-size: 4.25vh;
+}
+
+
+
+.post_texts {
+    margin-left: 6%;
+    margin-bottom: 2.5%;
+}
+
+input, textarea {
+    width: 90%;
+
+    display: block;
+}
+
+.tag_selection, .submit {
+    display: inline;
+}
+
+.tag_selection {
+    margin-left: 6%;
+}
+
+.tag_list {
+    margin-left: 1%;
+}
+
+.submit {
+    margin-left: 50%;
+}
+
+.submit button {
+    color: purple;
+    background-color: white;
+    border-color: purple;
+
+    border: 6px solid;
+    border-radius: 4px;
+
+    font-family: "Koulen", sans-serif;
+}
+
+.submit button:hover {
+    color: white;
+    background-color: purple;
+    border-color: black;
+}
+
+
+/* Main fim */
+
+
+footer{
+    height: 0.5vh;
+}
