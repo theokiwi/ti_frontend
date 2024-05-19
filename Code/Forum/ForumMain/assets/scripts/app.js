@@ -2,7 +2,7 @@
 
 
 function read_forumdata() {
-    let strDados = localStorage.getItem('db');
+    let strDados = localStorage.getItem('ArtsyForum');
     let Dados = {};
 
     if (strDados) {

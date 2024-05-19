@@ -2,7 +2,7 @@
 
 
 function read_forumdata() {
-    let strDados = localStorage.getItem('db');
+    let strDados = localStorage.getItem('ArtsyForum');
     let objDados = {};
 
     if (strDados) {
@@ -87,7 +87,7 @@ function save_question() {
         Dados.forum.push(novaPergunta);
 
         // Salvar os dados no localStorage
-        localStorage.setItem('db', JSON.stringify(Dados));
+        localStorage.setItem('ArtsyForum', JSON.stringify(Dados));
         //console.log(JSON.stringify(Dados));
 
         alert("Sua pergunta foi salva");
