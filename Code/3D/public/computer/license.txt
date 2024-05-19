@@ -1,0 +1,11 @@
+Model Information:
+* title:	Commodore 64 || Computer
+* source:	https://sketchfab.com/3d-models/commodore-64-computer-3da4b1bade284fdb94d34573e9ff7002
+* author:	dark_igorek (https://sketchfab.com/dark_igorek)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Commodore 64 || Computer" (https://sketchfab.com/3d-models/commodore-64-computer-3da4b1bade284fdb94d34573e9ff7002) by dark_igorek (https://sketchfab.com/dark_igorek) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
