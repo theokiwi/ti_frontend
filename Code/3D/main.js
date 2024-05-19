@@ -25,7 +25,7 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 document.body.appendChild(renderer.domElement);
 
 //CAMERA
-const camera = new THREE.PerspectiveCamera(45, ASPECT_RATIO, 1 , 1000);
+const camera = new THREE.PerspectiveCamera(FOV, ASPECT_RATIO, 1 , 1000);
 camera.position.set(0, 5, 10);
 camera.lookAt(0,0,0);
 
