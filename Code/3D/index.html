@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Visualizer</title>
+    <title>3D Upload</title>
     <script type="importmap">
       {
         "imports": {
@@ -12,8 +12,14 @@
         }
       }
     </script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<h1>3D Upload</h1>
+	<p>Teste para upload de modelos 3D nos portfólios, no momento, ainda sem solução para receber os arquivos do usuário e usá-los, porém aqui está um teste.</p>
+	<input id="files" type="file" webkitdirectory directory multiple/>
+	<canvas id="main-canvas"></canvas>
+
     <script type="module" src="main.js"></script>
 </body>
 </html>
