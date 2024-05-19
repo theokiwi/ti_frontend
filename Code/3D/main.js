@@ -37,6 +37,11 @@ spotLight.position.set(0, 25, 0);
 scene.add(spotLight);
 
 //LOADER
+/*
+    Para carregar novos modelos 3D, importe a pasta do modelo dentro da public/
+    assim como o exemplo "computer". Mude, o caminho do .setPath("public/...");
+    e no loader.load("arquivo .glft ou .glb", ()=>{}).
+*/
 const loader = new GLTFLoader().setPath("public/computer/");
 loader.load("scene.gltf", (glft)=>{
     const mesh = glft.scene;
@@ -54,7 +59,6 @@ controls.update();
 //ANIMATE
 function animate() {
     requestAnimationFrame(animate);
-    mesh.rotateX(0.01);
     renderer.render(scene, camera);
 }
 animate();
