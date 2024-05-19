@@ -1,6 +1,7 @@
 h1, p{
     text-align: center;
     font-family: sans-serif;
+    margin-bottom: 20px;
 }
 
 canvas{
@@ -11,7 +12,7 @@ canvas{
     margin-top: 10px;
 }
 
-input{
+input, button{
     display: block;
     margin: 0 auto;
 }

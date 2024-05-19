@@ -49,11 +49,12 @@ const controls = new ArcballControls(camera, renderer.domElement, scene);
 controls.addEventListener("change", ()=>{
     renderer.render(scene, camera);
 })
-
 controls.update();
 
+//ANIMATE
 function animate() {
     requestAnimationFrame(animate);
+    mesh.rotateX(0.01);
     renderer.render(scene, camera);
 }
 animate();
