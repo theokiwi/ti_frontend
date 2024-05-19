@@ -32,7 +32,7 @@ camera.position.set(0, 5, 10);
 camera.lookAt(0, 0, 0);
 
 //SPOTLIGHT
-const spotLight = new THREE.SpotLight(C_WHITE, 3000, 100, 0.22, 1);
+const spotLight = new THREE.SpotLight(C_WHITE, 3000, 100, .2, 1);
 spotLight.position.set(0, 25, 0);
 scene.add(spotLight);
 
