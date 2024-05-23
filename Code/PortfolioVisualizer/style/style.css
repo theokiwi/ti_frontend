@@ -187,3 +187,9 @@ aside{
     width: 40px;
     height: 40px;
 }
+.liked{
+    color: blue;
+}
+.disliked{
+    color: red;
+}
