@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="editportfolio.css">
     <script src="https://kit.fontawesome.com/d5e3a05139.js" crossorigin="anonymous"></script>
+    <script src="accordionmenu.js"></script>
     <title>Editar Portfolio</title>
 </head>
 <body>
@@ -34,43 +35,43 @@
           <div class="container">
             <ul class="accordion-menu">
               <li class = "menu">
-                <div class="dropdown">
+                <div onclick ="hideMenuItems()" class="dropdown">
                   <i class="fa-solid icon-start fa-font"></i>
                   <p>Texto</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="submenuItems">
-  
+                  teste numero 1               
                 </div>
               </li>
               <li class = "menu">
-                <div class="dropdown">
+                <div onclick ="hideMenuItems()" class="dropdown">
                   <i class="fa-solid icon-start fa-palette"></i>
                   <p>Cor</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="submenuItems">
-                  
+                  teste numero 2
                 </div>
               </li>
               <li class = "menu">
-                <div class="dropdown">
+                <div onclick ="hideMenuItems()" class="dropdown">
                   <i class="fa-solid icon-start fa-up-down-left-right"></i>
                   <p>Pos</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="submenuItems">
-                  
+                  teste numero 3
                 </div>
               </li>
               <li class = "menu">
-                <div class="dropdown">
+                <div onclick ="hideMenuItems()" class="dropdown">
                   <i class="fa-solid icon-start fa-cloud-arrow-up"></i>
                   <p>Inserir</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="submenuItems">
-                  
+                <div class = "submenuItems">
+                  teste numero 4
                 </div>
               </li>
             </ul>
@@ -78,7 +79,7 @@
           </section>
           <section class = "template-section">
             <div class="template-start-area">
-              <iframe class = "iframe-template" id = "output" src="" frameborder="0"></iframe>
+              <iframe class = "iframe-template" id = "output" src="templateStorage/templateteste1/teste.html" frameborder="0"></iframe>
             </div>
           </section>
       </div>
