@@ -206,8 +206,97 @@ header {
 .dropdown .fa-chevron-down {
     left: 8em;
     bottom: 25%;
+    color: #61319B;
 }
 
+/* Codigo da Opcao de Mudar Texto */
+
+#textareapickerdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#textareapicker{
+    background-color: rgb(200, 177, 228);
+    width: 80%;
+    height: 4rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;    
+}
+
+/* Codigo da Opcao Color Picker */
+
+
+#colorpickerdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#colorpicker {
+    border:1;
+    width: 10rem;
+    height: 10rem;
+    padding:0;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+  input[type="color"]:first-child {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 50%;
+    background: none;
+    margin-bottom: 20px;
+  }
+  
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  input[type="color"]::-webkit-color-swatch {
+    border: none;border-radius:50%;
+  }
+  
+  input[type="color"]:nth-child(2) {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 50%;
+    background: #f0bc12;
+    outline: none;
+  }
+  
+  input[type="color" i] {
+    border-radius: 50%;
+    border: none;
+    height: 80px;
+    width: 80px;
+    display: block;
+  }
+
+/* Codigo da Opcao Posicao Picker */
+
+#pospickerdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100%;
+    padding: 4%;
+}
+
+.pospicker{
+    height: 2rem;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    background-color: rgb(200, 177, 228);
+    font-size: 20px;
+}
 /* Código da Edição de Template */
 
 .template-start-area{

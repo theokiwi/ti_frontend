@@ -36,12 +36,22 @@
             <ul class="accordion-menu">
               <li class = "menu">
                 <div onclick ="hideMenuItems()" class="dropdown">
+                  <i class="icon-start fa-solid fa-image"></i>      
+                  <p>Portfolio</p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="submenuItems">
+                  teste numero 1
+                </div>
+              </li>
+              <li class = "menu">
+                <div onclick ="hideMenuItems()" class="dropdown">
                   <i class="fa-solid icon-start fa-font"></i>
                   <p>Texto</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="submenuItems">
-                  teste numero 1               
+                <div id = "textareapickerdiv" class="submenuItems">
+                  <textarea name="" id="textareapicker"></textarea>              
                 </div>
               </li>
               <li class = "menu">
@@ -50,8 +60,8 @@
                   <p>Cor</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="submenuItems">
-                  teste numero 2
+                <div id = "colorpickerdiv" class="submenuItems">
+                  <input id = "colorpicker" type="color" id="favcolor" value="#FFFFFF">
                 </div>
               </li>
               <li class = "menu">
@@ -60,8 +70,11 @@
                   <p>Pos</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="submenuItems">
-                  teste numero 3
+                <div id = "pospickerdiv" class="submenuItems">
+                  <p>X</p>
+                  <input id = "pospickerX" class = "pospicker" type="number">
+                  <p>Y</p>
+                  <input id = "pospickerY" class = "pospicker" type="number">
                 </div>
               </li>
               <li class = "menu">
@@ -71,7 +84,7 @@
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class = "submenuItems">
-                  teste numero 4
+                  teste numero 5
                 </div>
               </li>
             </ul>

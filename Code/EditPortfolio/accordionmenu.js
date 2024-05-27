@@ -1,5 +1,4 @@
 function hideMenuItems() {
-    // Get all submenu items
     var submenuItems = document.querySelectorAll('.submenuItems');
 
     submenuItems.forEach(function(submenuItem) {
@@ -8,7 +7,7 @@ function hideMenuItems() {
 
         }
         else if(submenuItem.style.display == 'none'){
-            submenuItem.style.display = 'block';
+            submenuItem.style.display = 'flex';
         };
     });
 }
