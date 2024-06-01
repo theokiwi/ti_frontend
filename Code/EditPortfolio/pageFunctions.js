@@ -56,7 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 {className: "background-color-change", style: "backgroundColor", value: "blue" },
                 {className: "text-size-change", style: "fontSize", value: "100px" },
                 {className: "text-font-change", style: "fontFamily", value: "Arial" },
+                {className: "text-decoration-change", style: "textDecoration", value: "underline" },
                 {className: "text-weight-change", style: "fontWeight", value: "bold"},
+                {className: "opacity-change", style: "opacity", value: "0.5"},
+                {className: "border-change", style: "border", value: "1px solid black"},
+                {className: "padding-change", style: "padding", value: "20px"},
+
+
+
+
  
             ]
             

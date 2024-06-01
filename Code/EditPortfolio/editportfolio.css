@@ -325,18 +325,17 @@ input[type="color" i] {
     margin-top: 4%;
     margin-bottom: 4%;
     background-color: rgb(200, 177, 228);
-    font-size: 20px;
+    font-size: 160%;
     border-radius: 4%;
     border: 1px;
 }
 
 
-#paddingAreaPicker{
-    margin-left: auto;
-    margin-right: auto;
-    height: 1rem;
+#decorPicker{
+    margin: 0 auto;
+    height: 1.5rem;
     background-color: rgb(200, 177, 228);
-    font-size: 20px;
+    font-size: 160%;
     border-radius: 4%;
     border: 1px;
 }
