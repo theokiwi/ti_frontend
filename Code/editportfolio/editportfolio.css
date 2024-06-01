@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 *,
 *::before,
@@ -174,14 +174,15 @@ header {
     flex-wrap: wrap;
     background-color: rgb(244, 239, 250);
     margin: 0 0 0 0;
-    width: 40vh;
-    height: 120vh;
+    width: 30vh;
+    height: 100vh;
 }
 
 .dropdown {
     border-bottom: solid #61319B;
     font-size: 2.5rem;
-    font-family: "Koulen", sans-serif;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bolder;
     position: relative;
     width: 100%;
 }
@@ -198,7 +199,7 @@ header {
 .dropdown i {
     justify-content: flex-start;
     position: absolute;
-    margin-top: 4%;
+    margin-top: 2%;
 }
 
 .icon-start {
@@ -206,7 +207,7 @@ header {
 }
 
 .dropdown .fa-chevron-down {
-    left: 8em;
+    left: 9em;
     bottom: 25%;
     color: #61319B;
 }
@@ -236,7 +237,7 @@ header {
     text-align: center;
     display: block;
     margin-top: 8%;
-    margin-bottom: 4%;
+    margin-bottom: 3%;
 }
 
 #textareapicker {
@@ -251,6 +252,73 @@ header {
     margin-left: 4%;
 }
 
+#textsizepickerdiv{
+    text-align: center;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.textsizepicker{
+    margin-left: auto;
+    margin-right: auto;
+    height: 2rem;
+    background-color: rgb(200, 177, 228);
+    font-size: 160%;
+    border-radius: 4%;
+    border: 1px;
+}
+
+#textfontpickerdiv{
+    text-align: center;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#fontpicker{
+    margin-left: auto;
+    margin-right: auto;
+    height: 2rem;
+    background-color: rgb(200, 177, 228);
+    font-size: 160%;
+    border-radius: 4%;
+    border: 1px;
+}
+
+#textdecorationpickerdiv{
+    text-align: center;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#decorationPicker{
+    margin-left: auto;
+    margin-right: auto;
+    height: 2rem;
+    background-color: rgb(200, 177, 228);
+    font-size: 160%;
+    border-radius: 4%;
+    border: 1px;
+}
+
+#textweightpickerdiv{
+    text-align: center;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#weightPicker{
+    margin-left: auto;
+    margin-right: auto;
+    height: 2rem;
+    background-color: rgb(200, 177, 228);
+    font-size: 160%;
+    border-radius: 4%;
+    border: 1px;
+}
 /* Codigo da Opcao Color Picker */
 
 
