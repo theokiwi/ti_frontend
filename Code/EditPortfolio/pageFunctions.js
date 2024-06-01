@@ -62,10 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 {className: "border-change", style: "border", value: "1px solid black"},
                 {className: "padding-change", style: "padding", value: "20px"},
 
-
-
-
- 
             ]
             
             styles.forEach(function(item){
@@ -75,21 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(`Applied ${item.style}: ${item.value}`);
 
             });
-            // if(clickedElement.classList.contains("text-color-change")){
-            //     event.target.style.color = "blue";
-            // }
-            // if(clickedElement.classList.contains("background-color-change")){
-            //     event.target.style.backgroundColor = "blue";
-            // }
-            // event.target.style.
-    
-            // const color = JSON.parse(localStorage.getItem('colorpicker'));
-            // console.log(color);
-            // if (color) {
-            //     event.target.style.backgroundColor = blue;
-            // } else {
-            //     console.log('No color found in localStorage');
-            // }
         }
     }
    
