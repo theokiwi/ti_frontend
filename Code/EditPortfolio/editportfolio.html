@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="editportfolio.css">
     <script src="https://kit.fontawesome.com/d5e3a05139.js" crossorigin="anonymous"></script>
-    <script src="accordionmenu.js"></script>
-    <script src="pagefunctions.js"></script>
+    <script src="pageFunctions.js"></script>
     <title>Editar Portfolio</title>
 </head>
 <body>
@@ -77,14 +76,18 @@
               <li class = "menu">
                 <div onclick ="hideMenuItems()" class="dropdown">
                   <i class="fa-solid icon-start fa-up-down-left-right"></i>
-                  <p>Pos</p>
+                  <p>Decor</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div id = "pospickerdiv" class="submenuItems">
-                  <p>X</p>
-                  <input name = "pospickerX" id = "pospickerX" class = "pospicker" type="number">
-                  <p>Y</p>
-                  <input name = "pospickerY" id = "pospickerY" class = "pospicker" type="number">
+                <div id = "decorpickerdiv" class="submenuItems">
+                  <label class="picker">Opacidade</label>
+                  <input name = "opacitypicker" type="range" min="0" max="1" step="0.1" value="1" id="opacityRange">
+                  <br>     
+                  <label class="picker">Tamanho Borda</label>
+                  <input name = "bordersize" type="range" min="0" max="1" step="0.1" value="1" id="opacityRange"> 
+                  <br>
+                  <label class="picker">Padding</label>
+                  <textarea type = "text" name="paddingPick" id="paddingAreaPicker"></textarea>  
                 </div>
               </li>
               <li class = "menu">
