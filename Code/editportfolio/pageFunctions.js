@@ -110,6 +110,10 @@ function hideMenuItems() {
     });
 }
 
+function openHelp(){
+    window.open('help.html');
+}
+
 /*
 COMENTARIOS:
 O plano é injetar codigo nas divs selecionadas dentro do Iframe
