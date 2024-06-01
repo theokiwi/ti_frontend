@@ -148,13 +148,14 @@ header {
 
 /* Código do Flex */
 
-.flex-box{
+.flex-box {
     display: flex;
 }
 
-.template-section{
+.template-section {
     display: flex;
 }
+
 .bar {
     background-color: #F4EFFA;
     height: 100%;
@@ -174,7 +175,7 @@ header {
     background-color: rgb(244, 239, 250);
     margin: 0 0 0 0;
     width: 40vh;
-    height: 100vh;
+    height: 120vh;
 }
 
 .dropdown {
@@ -185,12 +186,13 @@ header {
     width: 100%;
 }
 
-.dropdown:hover{
+.dropdown:hover {
     background-color: rgb(200, 177, 228);
 }
+
 .dropdown p {
     margin-left: 8rem;
-    
+
 }
 
 .dropdown i {
@@ -209,41 +211,68 @@ header {
     color: #61319B;
 }
 
-/* Codigo da Opcao de Mudar Texto */
-
-#textareapickerdiv{
-    display: flex;
+/* Codigo da Opcao de Selecionar Portfolio */
+#portpickerdiv {
+    display: block;
+    margin-top: 8%;
     justify-content: center;
     align-items: center;
-    margin-top: 4%;
+    text-align: center;
+
+}
+
+#portpicker {
+    background-color: rgb(200, 177, 228);
+    width: 80%;
+    height: 3.0rem;
+    font-size: 1.1rem;
+    border-radius: 4%;
+    border: 1px;
+}
+
+/* Codigo da Opcao de Mudar Texto */
+
+#textareapickerdiv {
+    text-align: center;
+    display: block;
+    margin-top: 8%;
     margin-bottom: 4%;
 }
 
-#textareapicker{
+#textareapicker {
     background-color: rgb(200, 177, 228);
     width: 80%;
     height: 4rem;
     padding: 0.5rem;
-    font-size: 1.1rem;    
+    font-size: 1.1rem;
+    border-radius: 4%;
+    border: 1px;
+    resize: vertical;
+    margin-left: 4%;
 }
 
 /* Codigo da Opcao Color Picker */
 
 
-#colorpickerdiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#colorpickerdiv {
+    align-content: center;
+    display: block;
+    margin-top: 8%;
+    margin-bottom: 4%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 #colorpicker {
-    border:1;
+    border: 1;
     width: 10rem;
     height: 10rem;
-    padding:0;
-    margin-top: 4%;
     margin-bottom: 4%;
-  }
-  input[type="color"]:first-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="color"]:first-child {
     padding: 0;
     margin: 0;
     border: none;
@@ -251,17 +280,18 @@ header {
     border-radius: 50%;
     background: none;
     margin-bottom: 20px;
-  }
-  
-  input[type="color"]::-webkit-color-swatch-wrapper {
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
-  }
-  
-  input[type="color"]::-webkit-color-swatch {
-    border: none;border-radius:50%;
-  }
-  
-  input[type="color"]:nth-child(2) {
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+input[type="color"]:nth-child(2) {
     padding: 0;
     margin: 0;
     border: none;
@@ -269,19 +299,19 @@ header {
     border-radius: 50%;
     background: #f0bc12;
     outline: none;
-  }
-  
-  input[type="color" i] {
+}
+
+input[type="color" i] {
     border-radius: 50%;
     border: none;
     height: 80px;
     width: 80px;
     display: block;
-  }
+}
 
 /* Codigo da Opcao Posicao Picker */
 
-#pospickerdiv{
+#pospickerdiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,24 +320,53 @@ header {
     padding: 4%;
 }
 
-.pospicker{
+.pospicker {
     height: 2rem;
     margin-top: 4%;
     margin-bottom: 4%;
     background-color: rgb(200, 177, 228);
     font-size: 20px;
+    border-radius: 4%;
+    border: 1px;
+
 }
+
+.submitbuttondiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4%;
+}
+
+/* Codigo do botao de aplicar */
+.submitbutton {
+    height: 2rem;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    background-color: rgb(200, 177, 228);
+    font-size: 20px;
+    border-radius: 4%;
+    border: 1px;
+}
+
+button:hover {
+    background-color: #61319B;
+    cursor: pointer;
+    color: white;
+}
+
 /* Código da Edição de Template */
 
-.template-start-area{
+.template-start-area {
     position: absolute;
     width: 100%;
-    height: 100%;    
+    height: 100%;
 }
 
-.iframe-template{
+.iframe-template {
     position: absolute;
     width: 100%;
-    height: 100%;    
+    height: 100%;
     /* a cor eh so pra acompanhar nao se assuste */
 }
