@@ -180,7 +180,7 @@ header {
 
 .dropdown {
     border-bottom: solid #61319B;
-    font-size: 2.5rem;
+    font-size: 125%;
     font-family: "Noto Sans", sans-serif;
     font-weight: bolder;
     position: relative;
@@ -192,7 +192,7 @@ header {
 }
 
 .dropdown p {
-    margin-left: 8rem;
+    margin-left: 25%;
 
 }
 
@@ -279,9 +279,8 @@ header {
 #fontpicker{
     margin-left: auto;
     margin-right: auto;
-    height: 2rem;
     background-color: rgb(200, 177, 228);
-    font-size: 160%;
+    font-size: 130%;
     border-radius: 4%;
     border: 1px;
 }
@@ -296,9 +295,8 @@ header {
 #decorationPicker{
     margin-left: auto;
     margin-right: auto;
-    height: 2rem;
     background-color: rgb(200, 177, 228);
-    font-size: 160%;
+    font-size: 130%;
     border-radius: 4%;
     border: 1px;
 }
@@ -313,9 +311,8 @@ header {
 #weightPicker{
     margin-left: auto;
     margin-right: auto;
-    height: 2rem;
     background-color: rgb(200, 177, 228);
-    font-size: 160%;
+    font-size: 130%;
     border-radius: 4%;
     border: 1px;
 }
@@ -389,7 +386,6 @@ input[type="color" i] {
 .picker {
     margin-left: auto;
     margin-right: auto;
-    height: 2rem;
     margin-top: 4%;
     margin-bottom: 4%;
     background-color: rgb(200, 177, 228);
@@ -401,9 +397,9 @@ input[type="color" i] {
 
 #decorPicker{
     margin: 0 auto;
-    height: 1.5rem;
+    height: 2.5vw;
     background-color: rgb(200, 177, 228);
-    font-size: 160%;
+    font-size: 120%;
     border-radius: 4%;
     border: 1px;
 }
@@ -420,7 +416,7 @@ input[type="color" i] {
     margin-top: 4%;
     margin-bottom: 4%;
     background-color: rgb(200, 177, 228);
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 8%;
     border: 1px;
     width: 50%;
