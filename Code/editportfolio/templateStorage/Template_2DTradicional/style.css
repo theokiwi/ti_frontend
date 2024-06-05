@@ -210,6 +210,11 @@ body {
     box-shadow: 3px 3px 6px -1px black;
 }
 
+.redessociais li p {
+    display: inline;
+    margin-left: 1vw;
+}
+
 .redessociais .fa-instagram {
     background: var(--instagram);
     background-clip: text;
