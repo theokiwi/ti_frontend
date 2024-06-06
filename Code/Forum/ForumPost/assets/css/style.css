@@ -240,10 +240,10 @@ div.answer:last-of-type {
 
 .post_text, .answer_text {
     width: 45%;
-    margin-left: 2,5vw;
-    margin-right: 2,5vw;
+    margin-left: 2,25vw;
+    margin-right: 2,25vw;
     margin-top: 4vh;
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
 
     color: rgb(86,47,138);
 
