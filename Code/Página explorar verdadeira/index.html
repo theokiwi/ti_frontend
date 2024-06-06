@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explorar</title>
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <header>
@@ -47,6 +48,9 @@
             <h1>Explorar</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quos reiciendis consequatur pariatur. Alias atque facere, rerum minima voluptatum amet dolorum, corporis voluptatem ab quo aspernatur eum nihil neque ipsum!</p>
           </div>
+          <div class="icone_ordenar">
+            <button id="btnordenar">ordenar</button>
+          </div>
         </section>
         <section class="secao2">
           <div>
@@ -66,7 +70,16 @@
             <img class="imagem5" src="img/img5.png" alt="">
           </div>
         </section>
-      </main>
+        <!--Aparece quando clicamos no botão de ordenação-->
+        <div class="layout_ordenar" id="layout_ordenado">
+          <img class="layout_img1" src="img/img1.png" id="portfolio1" alt="" >
+          <img class="layout_img2" src="img/img2.png" id="portfolio2" alt="" >
+          <img class="layout_img3" src="img/img3.png" id="portfolio3" alt="" >
+          <img class="layout_img4" src="img/img4.png" id="portfolio4" alt="" >
+          <img class="layout_img5" src="img/img5.png" id="portfolio5" alt="" >
+        </div>
     
+      </main>
+      <script src="app.js"></script>
 </body>
 </html>
