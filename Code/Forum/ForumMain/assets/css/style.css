@@ -11,13 +11,16 @@
     text-decoration: none;
     list-style: none;
 }
-/*rgb(85, 26, 139)*/
+
 :root{
-    --clr-li-purple: rgb(244, 239, 250);
-    --clr-da-purple: rgb(47, 24, 75);
-    --clr-blue: rgb(0, 178, 255);
-    --clr-green-check: rgb(0, 215, 9);
-    --clr-p-purple: rgb(129, 87, 184);
+    --light-purple: rgb(244, 239, 250);
+    --vibrant-purple: rgb(129, 87, 184);
+    
+    --green-icon: rgb(0, 215, 9);
+    --oragen-icon: orange;
+
+    --dark-purple: rgb(47, 24, 75);
+    --light-blue: rgb(0, 178, 255);
 }
 
 .container{
@@ -41,7 +44,7 @@ header{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background-color: var(--clr-li-purple);
+    background-color: var(--light-purple);
     padding: 15px;
 }
 
@@ -103,9 +106,9 @@ main{
 }
 
 section{
-    background-color: var(--clr-li-purple);
+    background-color: var(--light-purple);
 
-    border: 2px solid var(--clr-da-purple);
+    border: 2px solid var(--dark-purple);
     border-radius: 20px;
 }
 
@@ -114,12 +117,12 @@ svg{
     height: 50px;
 }
 
-#forum-title{
+#forum_title{
     font-family: "Kaushan Script";
     font-size: 50px;
     font-weight: 400;
 
-    color: var(--clr-da-purple);
+    color: var(--dark-purple);
 
     display: inline;
 }
@@ -143,26 +146,34 @@ svg{
     color: white;
 }
 
-.check-icon{
-    padding: 10px;
+.check_icon{
+    font-size: 4vw;
 
-    background-color: var(--clr-green-check);
+    padding: 8px;
 
-    border-radius: 50%;
+    color: var(--green-icon);
 }
 
-.tag{
+.clock_icon {
+    font-size: 4vw;
+
+    padding: 8px;
+
+    color: var(--oragen-icon);
+}
+
+.post{
     display: flex;
     flex-direction: row;
 
     border-bottom: 1px solid black;
 }
 
-.tag:last-child{
+.post:last-child{
     border-bottom: none;
 }
 
-.tag-title{
+.tag_title{
     width: 60px;
 
     margin: 0 50px;
@@ -171,10 +182,10 @@ svg{
     font-weight: 500;
     font-size: 30px;
 
-    color: var(--clr-da-purple);
+    color: var(--dark-purple);
 }
 
-.tag-header{
+.post_header{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -185,7 +196,7 @@ svg{
     border-right: 1px solid black;
 }
 
-.tag-content{
+.post_content{
     display: flex;
     align-items: center;
 
@@ -193,13 +204,18 @@ svg{
     padding: 25px;
 }
 
-.tag-content-paragraph{
-    color: var(--clr-p-purple);
+.post_title{
+    color: var(--vibrant-purple);
     font-size: 3.5vh;
-    font-weight: 500;
+    font-weight: 575;
 }
 
-.tag-info{
+.post_title:hover{
+    color: rgb(217, 34, 233);
+    font-weight: 600;
+}
+
+.post_info{
     display: flex;
     flex-direction: column;
 
@@ -207,18 +223,29 @@ svg{
     padding: 25px;
 }
 
-.reply-count, .view-count{
+
+.reply_count, .view_count{
     font-family: "Koulen", sans-serif;
     font-weight: 400;
     font-size: 30px;
 }
 
-.reply-count{
-    color: var(--clr-blue);
+.reply_icon{
+    font-size: 3vw;
+    color: var(--light-blue);
 }
 
-.view-count{
-    color: var(--clr-da-purple);
+.reply_count{
+    color: var(--light-blue);
+}
+
+.view_icon{
+    font-size: 3vw;
+    color: var(--dark-purple);
+}
+
+.view_count{
+    color: var(--dark-purple);
 }
 
 .replies, .viewers{
