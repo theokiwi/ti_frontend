@@ -2,7 +2,7 @@
 
 
 function read_forumdata() {
-    let strDados = localStorage.getItem('ArtsyForum');
+    let strDados = localStorage.getItem('ArtsyForumPosts');
     let objDados = {};
 
     if (strDados) {
@@ -20,7 +20,12 @@ function read_forumdata() {
                         "tag": "Tag 1", "titulo": "Primeiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "1Adipisci aspernatur cumque blanditiis?",
                     },
-                    "respostas": []
+                    "respostas": [
+                        {
+                            "usuario": "Mauricio de Sousa",
+                            "likes": "01", dislikes: "00",
+                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                        }]
                 },
                 {
                     "post": {
@@ -29,7 +34,12 @@ function read_forumdata() {
                         "tag": "Tag 2", "titulo": "Segundo Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "2Adipisci aspernatur cumque blanditiis?"
                     },
-                    "respostas": []
+                    "respostas": [
+                        {
+                            "usuario": "Mauricio de Sousa",
+                            "likes": "01", dislikes: "00",
+                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                        }]
                 },
                 {
                     "post": {
@@ -38,7 +48,12 @@ function read_forumdata() {
                         "tag": "Tag 3", "titulo": "Terceiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "3Adipisci aspernatur cumque blanditiis?"
                     },
-                    "respostas": []
+                    "respostas": [
+                        {
+                            "usuario": "Mauricio de Sousa",
+                            "likes": "01", dislikes: "00",
+                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                        }]
                 },
                 {
                     "post": {
@@ -47,7 +62,12 @@ function read_forumdata() {
                         "tag": "Tag 4", "titulo": "Quarto Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "4Adipisci aspernatur cumque blanditiis?"
                     },
-                    "respostas": []
+                    "respostas": [
+                        {
+                            "usuario": "Mauricio de Sousa",
+                            "likes": "01", dislikes: "00",
+                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                        }]
                 }
             ]
         }
@@ -77,10 +97,10 @@ function save_question() {
         let novaPergunta = {
             "post": {
                 "usuario": "Usuario",
-                "tag": strTag, titulo: strTitulo,
+                "tag": strTag, "titulo": strTitulo,
                 "pergunta": strPergunta,
                 "forumID": ID,
-                "respostas": 0, views: 0, likes: 0, dislikes: 0,
+                "respostas": 0, "views": 0, "likes": 0, "dislikes": 0,
             },
             "respostas": []
         };
