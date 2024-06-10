@@ -158,4 +158,50 @@ header {
     padding-top: 10%;
     position: absolute;
     background-image: url(./img/—Pngtree—purple\ memphis\ geometric\ shape_6864376.png);
+        background-size: 80vw;
+        background-repeat: repeat;
+        background-position: 95px;
 }
+.icone_ordenar{
+    margin-left: 90%;
+}
+.layout_ordenar{
+    display: none;
+    background-image: url(./img/—Pngtree—purple\ memphis\ geometric\ shape_6864376.png);
+        background-size: 80vw;
+        background-repeat: repeat;
+        background-position: 95px; 
+}
+.layout_img1{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+}
+.layout_img2{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+}
+.layout_img3{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+    margin-bottom: 100px;
+}
+.layout_img4{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+}
+.layout_img5{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+    opacity: 0px;
+}
+
