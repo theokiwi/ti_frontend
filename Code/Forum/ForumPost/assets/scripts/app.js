@@ -15,17 +15,20 @@ function read_forumdata() {
                         "respostas": 1, "views": 3, "likes": 7, "dislikes": 1,
                         "tag": "Tag 1", "titulo": "Primeiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "1Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
                             "likes": "01", "dislikes": "00",
-                            "resposta": "Lorem ai1 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "resposta": "Lorem ai1 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         },
                         {
                             "usuario": "Mauricio de Sousa",
                             "likes": "02", "dislikes": "00",
-                            "resposta": "Lorem ai2 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "resposta": "Lorem ai2 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 },
                 {
@@ -33,13 +36,15 @@ function read_forumdata() {
                         "usuario": "Pablo Picasso", "forumID": 2,
                         "respostas": 2, "views": 4, "likes": 2, "dislikes": 2,
                         "tag": "Tag 2", "titulo": "Segundo Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "2Adipisci aspernatur cumque blanditiis?"
+                        "pergunta": "2Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": true
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
                             "likes": "01", "dislikes": "00",
-                            "resposta": "Lorem ei ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "resposta": "Lorem ei ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 },
                 {
@@ -47,13 +52,15 @@ function read_forumdata() {
                         "usuario": "Pablo Picasso", "forumID": 3,
                         "respostas": 3, "views": 5, "likes": 6, "dislikes": 1,
                         "tag": "Tag 3", "titulo": "Terceiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "3Adipisci aspernatur cumque blanditiis?"
+                        "pergunta": "3Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": true
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
                             "likes": "01", "dislikes": "00",
-                            "resposta": "Lorem ii ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "resposta": "Lorem ii ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 },
                 {
@@ -61,29 +68,35 @@ function read_forumdata() {
                         "usuario": "Pablo Picasso", "forumID": 4,
                         "respostas": 4, "views": 6, "likes": 3, "dislikes": 2,
                         "tag": "Tag 4", "titulo": "Quarto Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "4Adipisci aspernatur cumque blanditiis?"
+                        "pergunta": "4Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
                             "likes": "01", "dislikes": "00",
-                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 }
             ]
         }
     }
 
+    //console.log(JSON.stringify(Dados));
     return Dados;
 }
 
 function insert_forum() {
 
-    let Dados = read_forumdata();
 
-    let getquestionID = new URLSearchParams(location.search);
+    let Dados = read_forumdata();
+    let url = new URL(window.location.href);
+
+    let getquestionID = new URLSearchParams(url.search);
     let questionID = getquestionID.get('forumID');
-    questionID = 1;
+    if (questionID == 0) { questionID = 1;}
+    //questionID = 1;
 
 
     $(".post_answers").append(' <div class="post"> \
@@ -122,7 +135,7 @@ function insert_forum() {
     $(".post_likes_number").text(Dados.forum[questionID - 1].post.likes);
     $(".post_dislikes_number").text(Dados.forum[questionID - 1].post.dislikes);
     $(".post_text").text(Dados.forum[questionID - 1].post.pergunta);
-    //    $(".post_owner").attr("src", Dados.forum[questionID - 1].post.foto);
+    $(".post_owner").attr("src", "assets/images/".concat(Dados.forum[questionID - 1].post.foto));
 
 
     for (x = 0; x < Dados.forum[questionID - 1].respostas.length; x++) {
@@ -145,7 +158,7 @@ function insert_forum() {
         $(".answer_likes_number").eq(x).text(Dados.forum[questionID - 1].respostas[x].likes);
         $(".answer_dislikes_number").eq(x).text(Dados.forum[questionID - 1].respostas[x].dislikes);
         $(".answer_text").eq(x).text(Dados.forum[questionID - 1].respostas[x].resposta);
-        // $(".answer_owner").eq(x).attr("src", Dados.forum[questionID - 1].respostas[x].foto);
+        $(".answer_owner").eq(x).attr("src", "assets/images/".concat(Dados.forum[questionID - 1].respostas[x].foto));
     }
 
 }
@@ -153,10 +166,12 @@ function insert_forum() {
 function update_forum() {
 
     let Dados = read_forumdata();
+    let url = new URL(window.location.href);
 
-    let getquestionID = new URLSearchParams(location.search);
+    let getquestionID = new URLSearchParams(url.search);
     let questionID = getquestionID.get('forumID');
-    questionID = 1;
+    if (questionID == 0) { questionID = 1;}
+    //questionID = 1;
 
     let tamanho = Dados.forum[questionID - 1].respostas.length;
 
@@ -177,15 +192,18 @@ function update_forum() {
     $(".answer_likes_number").eq(tamanho - 1).text(Dados.forum[questionID - 1].respostas[tamanho - 1].likes);
     $(".answer_dislikes_number").eq(tamanho - 1).text(Dados.forum[questionID - 1].respostas[tamanho - 1].dislikes);
     $(".answer_text").eq(tamanho - 1).text(Dados.forum[questionID - 1].respostas[tamanho - 1].resposta);
-    // $(".answer_owner").eq(tamanho).attr("src", Dados.forum[questionID - 1].respostas[tamanho].foto);
+    $(".answer_owner").eq(tamanho - 1).attr("src", "assets/images/".concat(Dados.forum[questionID - 1].respostas[tamanho - 1].foto));
 }
 
 function save_answer() {
     let Dados = read_forumdata();
+    let url = new URL(window.location.href);
 
-    let getquestionID = new URLSearchParams(location.search);
+    let getquestionID = new URLSearchParams(url.search);
     let questionID = getquestionID.get('forumID');
-    questionID = 1;
+    if (questionID == 0 || questionID == null) { questionID = 1;}
+    console.log(JSON.stringify(questionID));
+    //questionID = 1;
 
     let strResposta = $("#new_answer").val();
 
@@ -197,7 +215,8 @@ function save_answer() {
         let novaResposta = {
             "usuario": "Usuario",
             "likes": 0, "dislikes": 0,
-            "resposta": strResposta
+            "resposta": strResposta,
+            "foto": "perfil.png"
         };
         Dados.forum[questionID - 1].respostas.push(novaResposta);
 

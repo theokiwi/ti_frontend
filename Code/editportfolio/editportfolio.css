@@ -180,7 +180,7 @@ header {
 
 .dropdown {
     border-bottom: solid #61319B;
-    font-size: 125%;
+    font-size: 200%;
     font-family: "Noto Sans", sans-serif;
     font-weight: bolder;
     position: relative;
@@ -207,7 +207,7 @@ header {
 }
 
 .dropdown .fa-chevron-down {
-    left: 9em;
+    left: 87%;
     bottom: 25%;
     color: #61319B;
 }
@@ -226,7 +226,7 @@ header {
     background-color: rgb(200, 177, 228);
     width: 40%;
     height: 3.0rem;
-    font-size: 1.1rem;
+    font-size: 50%;
     border-radius: 4%;
     border: 1px;
 }
@@ -296,7 +296,7 @@ header {
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(200, 177, 228);
-    font-size: 130%;
+    font-size: 120%;
     border-radius: 4%;
     border: 1px;
 }

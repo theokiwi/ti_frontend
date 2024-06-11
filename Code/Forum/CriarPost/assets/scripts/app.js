@@ -9,8 +9,7 @@ function read_forumdata() {
         objDados = JSON.parse(strDados);
     }
     else {
-        objDados = {
-
+        Dados = {
 
             "forum": [
                 {
@@ -19,12 +18,20 @@ function read_forumdata() {
                         "respostas": 1, "views": 3, "likes": 7, "dislikes": 1,
                         "tag": "Tag 1", "titulo": "Primeiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "1Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", dislikes: "00",
-                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "likes": "01", "dislikes": "00",
+                            "resposta": "Lorem ai1 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
+                        },
+                        {
+                            "usuario": "Mauricio de Sousa",
+                            "likes": "02", "dislikes": "00",
+                            "resposta": "Lorem ai2 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 },
                 {
@@ -32,13 +39,15 @@ function read_forumdata() {
                         "usuario": "Pablo Picasso", "forumID": 2,
                         "respostas": 2, "views": 4, "likes": 2, "dislikes": 2,
                         "tag": "Tag 2", "titulo": "Segundo Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "2Adipisci aspernatur cumque blanditiis?"
+                        "pergunta": "2Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": true
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", dislikes: "00",
-                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "likes": "01", "dislikes": "00",
+                            "resposta": "Lorem ei ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 },
                 {
@@ -46,13 +55,15 @@ function read_forumdata() {
                         "usuario": "Pablo Picasso", "forumID": 3,
                         "respostas": 3, "views": 5, "likes": 6, "dislikes": 1,
                         "tag": "Tag 3", "titulo": "Terceiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "3Adipisci aspernatur cumque blanditiis?"
+                        "pergunta": "3Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": true
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", dislikes: "00",
-                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "likes": "01", "dislikes": "00",
+                            "resposta": "Lorem ii ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 },
                 {
@@ -60,13 +71,15 @@ function read_forumdata() {
                         "usuario": "Pablo Picasso", "forumID": 4,
                         "respostas": 4, "views": 6, "likes": 3, "dislikes": 2,
                         "tag": "Tag 4", "titulo": "Quarto Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "4Adipisci aspernatur cumque blanditiis?"
+                        "pergunta": "4Adipisci aspernatur cumque blanditiis?",
+                        "foto": "perfil.png", "status": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", dislikes: "00",
-                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint perferendis commodi aspernatur repudiandae suscipit quis incidunt. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut."
+                            "likes": "01", "dislikes": "00",
+                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
+                            "foto": "perfil.png"
                         }]
                 }
             ]
@@ -101,6 +114,7 @@ function save_question() {
                 "pergunta": strPergunta,
                 "forumID": ID,
                 "respostas": 0, "views": 0, "likes": 0, "dislikes": 0,
+                "foto": "perfil.png", "status": false
             },
             "respostas": []
         };
