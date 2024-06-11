@@ -1,96 +1,227 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, inicial-scale=1, shrink-to-fit-no">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link href="profStyle.css" rel="stylesheet">
-        <title>User Profile</title>
-    </head>
-    <body>
-      <header class="Headertop">
-    <!--Logo e Nome da Empresa-->
-    <div class="logo">
-        <a href="#"><img src="/Home/img/logo.png" alt="Logo da Empresa"></a>
-        <a href="#">
-          <p>ArtsyPages</p>
-        </a>
-      </div>
-  
-      <!--Menu Central-->
-      <div class="container">
-        <nav class="menu1">
-          <ul>
-            <li><a href="#" class="line">Faq</a></li>
-            <li><a href="#" class="line">Explorar</a></li>
-            <li><a href="#" class="line">Fórum</a></li>
-          </ul>
-        </nav>
-      </div>
-  
-      <!--Menu Direito-->
-      <div class="container">
-        <div class="menu2">
-          <ul>
-            <li><a href="#" class="line">Login</a></li>
-            <li><a href="#" class="line">Criar</a></li>
-          </ul>
-        </div>
-        <div class="Person">
-          <a href="#"><img src="/Home/img/icon-perfil.png" alt="Perfil do usuário"></a>
-        </div>
-      </div>
-      </header>
-        <img src="img/Banner.png" alt="Banner" id="Banner" onclick="handleBrowseClick('input-banner-hidden');">
-        <input style="display:none" type="file" accept="image/*" onchange="loadFile(event, 'Banner')" id="input-banner-hidden">
-        
-      <section id="miniprofile">
-        <figure onclick="handleBrowseClick('input-image-hidden');">
-          <img src="img/BlankPFP.webp" alt="Profile Picture" class="ProfilePicture" id="output" width="500" height="500">
-          <figcaption>Calamitas</figcaption>
-        </figure>
-        <input style="display:none" type="file" accept="image/*" onchange="loadFile(event, 'output')" id="input-image-hidden">
-        <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolore reprehenderit ipsum in nam officia deserunt alias, veniam saepe quas tenetur cumque ullam aperiam placeat possimus. Ratione fugiat est placeat.</p>
-        
-        <a href=""><section class="SocButton">
-          <img src="img/Insta.png" alt="instagram icon">
-          <p>INSTAGRAM</p>
-        </section></a>
-        <br>
-        <a href=""><section class="SocButton">
-          <img src="img/Linkedin.png" alt="Linkedin icon">
-          <p>LINKEDIN</p>
-        </section></a>
-        <br>
-        <a href=""><section class="SocButton">
-          <img src="img/Youtube.png" alt="youtube icon">
-          <p>YOUTUBE</p>
-        </section></a>
-        <br>
-      </section>
 
-      <section class="portfolios">
-        <div class="container-fluid">
-          <br>
-          <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-              <img src="img/PorfEx1.png" alt="Portfolio 1">
-              <br><br>
-              <img src="img/PortfEx2.png" alt="Portfolio 2">
-            </div>
-            <div class="col-md-4">
-              <img src="img/PortfEx3.png" alt="Portfolio 3">
-            </div>
-            <div class="col-md-1"></div>
-          </div>
-          <br><br>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ProfileStyle.css">
+</head>
 
-      </section>
-      
-      <script src="profScript.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
-    </body>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="" width="60px" height="60px">
+                <p class="LogoName">ARTSYPAGES</p>
+            </div>
+            <nav>
+                <ul id="menuItems">
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">Explorar</a></li>
+                    <li><a href="#">Fórum</a></li>
+                    <li><a href="#">Criar</a></li>
+                    <li><a href="/Profile/profile.html">Login</a></li>
+                </ul>
+            </nav>
+            <img src="imgs/icon-perfil.png" alt="" width="30px">
+            <img src="imgs/menuHam.png" alt="" width="50px" class="menu-icon" onclick="menu()">
+        </div>
+        <div class="banner">
+            <input type="file" id="inputImage" style="display:none;">
+            <img src="imgs/Banner.png" alt="Imagem" id="imagem" style="cursor:pointer;">
+        </div>
+    </div>
+    <div class="perfil">
+        <div class="editavel">
+            <div class="header-perfil" onclick="handleBrowseClick('input-image-hidden');">
+                <img src="imgs/BlankPFP.webp" alt="Profile Picture" class="ProfilePicture" id="output">
+                <h3 id="profileName">Legolas</h3>
+                <input style="display:none" type="file" accept="image/*" id="input-image-hidden">
+            </div>
+            <div class="texto">
+                <h4 class="bio" id="profileBio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolore reprehenderit ipsum in nam officia deserunt alias, veniam saepe quas tenetur cumque ullam aperiam placeat possimus. Ratione fugiat est placeat.</h4>
+            </div>
+            <button id="saveChangesBtn" style="display:none;">Save Changes</button>
+            <div class="div-social">
+        
+            <div class="linksSocial">
+                <a href="">
+                    <div class="btnSocial">
+                        <img src="imgs/Insta.png" alt="instagram icon" width="50px">
+                        <p>INSTAGRAM</p>
+                    </div>
+                </a>
+            </div>
+            <div class="linksSocial">
+                <a href="">
+                    <div class="btnSocial">
+                        <img src="imgs/Linkedin.png" alt="Linkedin icon" width="50px">
+                        <p>LINKEDIN</p>
+                    </div>
+                </a>
+            </div>
+            <div class="linksSocial">
+                <a href="">
+                    <div class="btnSocial">
+                        <img src="imgs/Youtube.png" alt="youtube icon" width="50px">
+                        <p>YOUTUBE</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       var menuItems = document.getElementById("menuItems");
+menuItems.style.maxHeight = "0px";
+function menu() {
+    if (menuItems.style.maxHeight == "0px") {
+        menuItems.style.maxHeight = "200px";
+    } else {
+        menuItems.style.maxHeight = "0px";
+    }
+}
+
+// Função para abrir a janela de seleção de arquivo quando a imagem do banner é clicada
+document.getElementById('imagem').addEventListener('click', function () {
+    document.getElementById('inputImage').click();
+});
+
+// Função para exibir a nova imagem selecionada do banner e salvá-la no localStorage
+document.getElementById('inputImage').addEventListener('change', function () {
+    const file = this.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const imgData = e.target.result;
+        document.getElementById('imagem').src = imgData;
+        localStorage.setItem('bannerImage', imgData); // Salva a imagem do banner no localStorage
+    }
+
+    reader.readAsDataURL(file);
+});
+
+// Função para abrir a janela de seleção de arquivo quando a imagem do perfil é clicada
+document.getElementById('output').addEventListener('click', function (event) {
+    document.getElementById('input-image-hidden').click();
+    event.stopPropagation();
+});
+
+// Função para exibir a nova imagem selecionada do perfil e salvá-la no localStorage
+document.getElementById('input-image-hidden').addEventListener('change', function () {
+    const file = this.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const imgData = e.target.result;
+        document.getElementById('output').src = imgData;
+        localStorage.setItem('profileImage', imgData); // Salva a imagem do perfil no localStorage
+    }
+
+    reader.readAsDataURL(file);
+});
+
+// Função para carregar a imagem do banner e do perfil do localStorage ao carregar a página
+window.onload = function () {
+    const savedBannerImage = localStorage.getItem('bannerImage');
+    if (savedBannerImage) {
+        document.getElementById('imagem').src = savedBannerImage;
+    }
+
+    const savedProfileImage = localStorage.getItem('profileImage');
+    if (savedProfileImage) {
+        document.getElementById('output').src = savedProfileImage;
+    }
+
+    const savedProfileName = localStorage.getItem('profileName');
+    if (savedProfileName) {
+        document.getElementById('profileName').textContent = savedProfileName;
+    }
+
+    const savedProfileBio = localStorage.getItem('profileBio');
+    if (savedProfileBio) {
+        document.getElementById('profileBio').textContent = savedProfileBio;
+    }
+}
+
+// Função para permitir a edição do nome e da bio
+document.getElementById('profileName').addEventListener('click', function (event) {
+    const nameElement = document.getElementById('profileName');
+    const currentName = nameElement.textContent;
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.value = currentName;
+    nameInput.id = 'nameInput';
+    nameElement.replaceWith(nameInput);
+    document.getElementById('saveChangesBtn').style.display = 'block';
+    event.stopPropagation();
+});
+
+document.getElementById('profileBio').addEventListener('click', function (event) {
+    const bioElement = document.getElementById('profileBio');
+    const currentBio = bioElement.textContent;
+    const bioInput = document.createElement('textarea');
+    bioInput.value = currentBio;
+    bioInput.id = 'bioInput';
+    bioElement.replaceWith(bioInput);
+    document.getElementById('saveChangesBtn').style.display = 'block';
+    event.stopPropagation();
+});
+
+document.getElementById('saveChangesBtn').addEventListener('click', function () {
+    const nameInput = document.getElementById('nameInput');
+    const bioInput = document.getElementById('bioInput');
+
+    if (nameInput) {
+        const newName = nameInput.value;
+        const nameElement = document.createElement('h3');
+        nameElement.id = 'profileName';
+        nameElement.textContent = newName;
+        nameInput.replaceWith(nameElement);
+        localStorage.setItem('profileName', newName);
+    }
+
+    if (bioInput) {
+        const newBio = bioInput.value;
+        const bioElement = document.createElement('h4');
+        bioElement.className = 'bio';
+        bioElement.id = 'profileBio';
+        bioElement.textContent = newBio;
+        bioInput.replaceWith(bioElement);
+        localStorage.setItem('profileBio', newBio);
+    }
+
+    document.getElementById('saveChangesBtn').style.display = 'none';
+
+    // Re-attach the event listeners to the new elements
+    document.getElementById('profileName').addEventListener('click', function (event) {
+        const nameElement = document.getElementById('profileName');
+        const currentName = nameElement.textContent;
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.value = currentName;
+        nameInput.id = 'nameInput';
+        nameElement.replaceWith(nameInput);
+        document.getElementById('saveChangesBtn').style.display = 'block';
+        event.stopPropagation();
+    });
+
+    document.getElementById('profileBio').addEventListener('click', function (event) {
+        const bioElement = document.getElementById('profileBio');
+        const currentBio = bioElement.textContent;
+        const bioInput = document.createElement('textarea');
+        bioInput.value = currentBio;
+        bioInput.id = 'bioInput';
+        bioElement.replaceWith(bioInput);
+        document.getElementById('saveChangesBtn').style.display = 'block';
+        event.stopPropagation();
+    });
+});
+    </script>
+    <script src="profScript.js"></script>
+
+</body>
+
 </html>
