@@ -1,0 +1,104 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+
+/*MAIN CONTENT*/
+main{
+    display: flex;
+}
+
+    /*PORTFOLIO CONTENT*/
+#portfolio{
+    width: 80%;
+}
+
+#portfolio-img{
+    width: 100%;
+    height: 100%;
+}
+
+
+    /*ASIDE CONTENT*/
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    padding: 30px;
+}
+
+
+#user-info{
+    width: 20%;
+}
+
+#user-profile-picture{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#user-follow-button{
+    color: white;
+    text-transform: uppercase;
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+
+    width: 100%;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: var(--clr-follow-purple);
+}
+
+#user-paragraph{
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    text-align: center;
+}
+
+#user-info-navbar-content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.user-icons{
+    width: 35px;
+    height: 35px;
+}
+
+.user-info-navbar-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    color: white;
+    text-transform: uppercase;
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+
+    border-radius: 5px;
+
+    background-color: var(--clr-rli-purple);
+    padding: 0px 15px;
+}
+
+#tech-stack > svg{
+    width: 40px;
+    height: 40px;
+}
+.liked{
+    color: blue;
+}
+.disliked{
+    color: red;
+}

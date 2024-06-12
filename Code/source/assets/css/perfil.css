@@ -1,0 +1,275 @@
+
+.ProfilePicture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+.texto {
+    width: 100%; /* Para que o texto ocupe toda a largura disponível */
+}
+
+.bio {
+    width: 100%; /* Para que o texto ocupe toda a largura disponível */
+    display: block;
+    word-wrap: break-word;
+}
+
+#bioInput {
+    width: 100%;
+    height: auto;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    box-sizing: border-box;
+    min-height: 100px; /* Altura mínima para o textarea */
+}
+  
+#imagem {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+.repositorios{
+    background: white;
+    display: flex;
+    align-self:auto;
+    margin-top: 20rem;    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+   z-index: -1;
+     
+     
+}  
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    max-width: 5rem;
+}
+.logo p{
+    margin-left: 0;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
+p{
+    color: #555;
+}
+.LogoName{
+    font-family: "Koulen", sans-serif;  
+    /* margin: 18px 75px 0 0; */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #3A1D5D;
+    font-size: 1.2rem;
+    height: 100%;
+}
+.container{
+    max-width: 100%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background:white;
+}
+.menu-icon{
+    width: 50px;
+    margin-left: 20px;
+    display: none;
+}
+.header-perfil img{
+    max-width: 9.375rem;    
+    border-radius: 10rem;    
+    margin-top: 1rem;
+    
+    padding-left: auto;
+    padding-right: auto;
+}
+.bio img{
+    padding-top: 2px;
+}
+.perfil h4{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+figcaption {
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+}
+
+
+
+.perfil{
+    display: flex;
+    flex-wrap: wrap;
+    display: block;
+    position: absolute;
+    max-height: 100%;
+    background: aliceblue;
+    border-radius: 6rem;
+    left: 1;
+    width: 12rem;
+    margin-top: 4rem;
+    margin-left: 3rem;    
+    padding-left: 0.938rem;
+    padding-right: 0.625rem;
+    padding-bottom: 3.5rem;
+    max-width: 15rem; 
+}
+
+.perfil div{
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-perfil{
+    display: block;
+    text-align: center;
+}
+.header-perfil h4{
+    width: 10rem;
+    text-align: center;
+}
+.btnSocial{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+    width: 11rem;
+}
+
+.btnSocial img{
+    width: 30px;
+}
+.btnSocial p{
+    margin: auto;
+    font-weight:900;
+}
+
+
+
+@media only screen and (max-width: 800px){
+    /*------menu-hamburguer--------*/
+    nav ul{
+        margin-top: 20px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;        
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;        
+    }
+    nav ul li a{
+        color: white;
+    }
+    .menu-icon{        
+        display: block;
+        cursor: pointer;
+    }
+    /*------fim-menu-hamburguer--------*/    
+    .logo p{
+        display: none;
+    }    
+    .perfil{
+        margin-top: 20rem;       
+        display: block;
+        width: 98%;
+        max-width: 100%;
+        margin-left: 1%;       
+        border-radius: 50px; 
+        padding-left: auto;
+        padding-right: auto;       
+        background: #999;      
+    }    
+    .perfil h3{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 40px ;
+    } 
+      
+    .div-social{
+        display: flex;
+        flex-wrap: nowrap;        
+        max-width: 100px;
+             
+        
+    }
+    .linksSocial {
+        width: 50px;        
+    }
+    .linksSocial P{
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width: 450px){
+    .navbar{
+        width: 100%;
+        max-width: 100%;          
+    }
+    *{
+        overflow-x: hidden;
+    }
+    .perfil{
+        margin-top: 13rem;       
+        display: block;
+        width: 98%;        
+        max-width: 100%;              
+        border-radius: 50px; 
+        padding-left: auto;
+        padding-right: auto;       
+        background: #999; 
+        z-index: 1;   
+    }
+    
+    
+    
+}
