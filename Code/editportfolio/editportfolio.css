@@ -4,15 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-}
 
 :root {
     --clr-li-purple: rgb(244, 239, 250);
@@ -24,6 +15,186 @@
     --clr-rli-purple: rgb(200, 177, 228);
 }
 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+
+    border-bottom: 1px rgb(58, 29, 93) solid;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    max-width: 5rem;
+}
+
+.logo p {
+    margin-left: 0;
+}
+
+.logo p {
+    color: rgb(85, 85, 85);
+}
+
+.LogoName {
+    font-family: "Koulen", sans-serif;
+    /* margin: 18px 75px 0 0; */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(58, 29, 93);
+    font-size: 1.2rem;
+    height: 100%;
+}
+
+header div.containerHeader {
+    max-width: 100%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: white;
+}
+
+.menu_icon {
+    width: 50px;
+    margin-left: 20px;
+    display: none;
+}
+
+.header-perfil img {
+    max-width: 9.375rem;
+    border-radius: 10rem;
+    margin-top: 1rem;
+
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.perfil h4 {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#menuItems {
+    display: block;
+
+    margin-top: 2.5vh;
+}
+
+#menuItems li a {
+    text-decoration: none;
+    color: rgb(47, 24, 75);
+}
+
+@media only screen and (max-width: 800px) {
+
+    /*------menu-hamburguer--------*/
+    nav ul {
+        position: absolute;
+        top: 10.75vh;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: display 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        color: white;
+    }
+
+    .menu_icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    #menuItems {
+        display: none;
+
+        margin-top: 0vh;
+    }
+
+    #menuItems li a{
+        color: rgb(244, 239, 250);
+    }
+
+    /*------fim-menu-hamburguer--------*/
+    .logo p {
+        display: none;
+    }
+
+    
+
+}
+
+
+@media only screen and (max-width: 450px) {
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header {
+        overflow-x: hidden;
+    }
+
+    .perfil {
+        margin-top: 13rem;
+        display: block;
+        width: 98%;
+        max-width: 100%;
+        border-radius: 50px;
+        padding-left: auto;
+        padding-right: auto;
+        background: rgb(153, 153, 153);
+        z-index: 10;
+    }
+    
+}
+
+
+
+
 .container {
     width: 90%;
     margin: 0 auto;
@@ -34,117 +205,6 @@ body {
     height: 100%;
 }
 
-/*HEADER CONTENT*/
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: var(--clr-li-purple);
-    padding: 15px;
-}
-
-#logo,
-#perfil {
-    width: 50px;
-    height: 50px;
-}
-
-/*HEADER-TITLE*/
-#title {
-    text-transform: uppercase;
-    font-family: "Koulen", sans-serif;
-    font-weight: 400;
-}
-
-#header-title {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-/*HEADER-MAIN-NAVBAR*/
-.header-main-navbar-link {
-    font-family: "Lato", sans-serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: black;
-}
-
-#header-main-navbar-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-
-/*HEADER-LOGREG-NAVBAR*/
-.header-logreg-navbar-link {
-    font-family: "Koulen", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-#header-logreg-navbar-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-/*menu*/
-.menu1 ul {
-    margin: 20px 0 0 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.menu1 ul li {
-    margin: 0 50px 0 50px;
-    list-style: none;
-}
-
-.menu1 ul li a {
-    font-family: "Lato", sans-serif;
-    font-size: 1.5rem;
-    color: #000;
-    text-decoration: none;
-
-}
-
-.menu1 ul li a:hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #61319B;
-}
-
-.menu2 ul {
-    margin: 20px 0 0 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.menu2 ul li {
-    margin: 0 40px 0 20px;
-    list-style: none;
-}
-
-.menu2 ul li a {
-    text-decoration: none;
-    font-family: "Koulen", sans-serif;
-    font-size: 1.5rem;
-    color: #000;
-}
-
-.menu2 ul li a:hover {
-    font-weight: 800;
-    color: #61319B;
-}
 
 /* Código do Flex */
 
@@ -174,13 +234,13 @@ header {
     flex-wrap: wrap;
     background-color: rgb(244, 239, 250);
     margin: 0 0 0 0;
-    width: 33vh;
+    width: 44vh;
     height: 100vh;
 }
 
 .dropdown {
     border-bottom: solid #61319B;
-    font-size: 200%;
+    font-size: 140%;
     font-family: "Noto Sans", sans-serif;
     font-weight: bolder;
     position: relative;
@@ -207,7 +267,7 @@ header {
 }
 
 .dropdown .fa-chevron-down {
-    left: 87%;
+    left: 9em;
     bottom: 25%;
     color: #61319B;
 }
@@ -226,7 +286,7 @@ header {
     background-color: rgb(200, 177, 228);
     width: 40%;
     height: 3.0rem;
-    font-size: 50%;
+    font-size: 1.1rem;
     border-radius: 4%;
     border: 1px;
 }
@@ -296,7 +356,7 @@ header {
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(200, 177, 228);
-    font-size: 120%;
+    font-size: 130%;
     border-radius: 4%;
     border: 1px;
 }
