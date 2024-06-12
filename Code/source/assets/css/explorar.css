@@ -1,0 +1,167 @@
+/*menu*/
+.menu1 ul {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu1 ul li {
+    margin: 0 50px 0 50px;
+    list-style: none;
+}
+
+.menu1 ul li a {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.menu1 ul li a:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.menu2 ul {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu2 ul li {
+    margin: 0 40px 0 20px;
+    list-style: none;
+}
+
+.menu2 ul li a {
+    font-family: "Koulen", sans-serif;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.menu2 ul li a:hover {
+    font-weight: 800;
+    color: #000;
+}
+/*Seção 1*/
+.thumbnail{
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+    border-radius: 82px;
+}
+.container2{
+    position: relative;
+}
+.container2 h1 {
+    position: absolute;
+    color: white;
+    width: 70%;
+    height: 50%;
+    top: 2%;
+    font-family: Kaushan Script;
+    margin-left: 15%;
+    font-size: 200px;
+    text-align: center;
+}
+.container2 p{
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    top: 50%;
+    margin-left: 15%;
+    color: white;
+    font-family: Koulen;
+    font-size: 30px;
+    text-align: center;
+}
+/*Secao2*/
+
+.imagem1{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 50px;
+}
+.imagem2{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 50px;
+}
+.imagem3{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+.imagem4{
+    width: 545px;
+    height: 300px;
+    border-radius: 45px;
+    margin-left: 20%;
+}
+.imagem5{
+    width: 545px;
+    height: 300px;
+    border-radius: 45px;
+    margin-left: 40%;
+    opacity: 0px;
+}
+.secao2{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1651px;
+    margin: 0 auto;
+    padding-top: 10%;
+    position: absolute;
+    background-image: url(./img/—Pngtree—purple\ memphis\ geometric\ shape_6864376.png);
+        background-size: 80vw;
+        background-repeat: repeat;
+        background-position: 95px;
+}
+.icone_ordenar{
+    margin-left: 90%;
+}
+.layout_ordenar{
+    display: none;
+    background-image: url(./img/—Pngtree—purple\ memphis\ geometric\ shape_6864376.png);
+        background-size: 80vw;
+        background-repeat: repeat;
+        background-position: 95px; 
+}
+.layout_img1{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+}
+.layout_img2{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+}
+.layout_img3{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+    margin-bottom: 100px;
+}
+.layout_img4{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+}
+.layout_img5{
+    width: 417px;
+    height: 200px;
+    border-radius: 45px;
+    margin-left: 40%;
+    opacity: 0px;
+}

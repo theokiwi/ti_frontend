@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Artsy Pages</title>
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/homepage.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px">
+                    <p class="LogoName">ARTSYPAGES</p>
+                </div>
+                <nav>
+                    <ul id="menuItems" height="200px">
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Explorar</a></li>
+                        <li><a href="#">Fórum</a></li>
+                        <li><a href="#">Criar</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </nav>
+                <img src="./assets/img/perfil.png" alt="Perfil" width="30px" class="perfil">
+                <img src="./assets/img/menuHam.png" alt="Menu" width="50px" class="menu_icon">
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <!--Primeira section-->
+        <section class="hero">
+            <div class="text-area">
+                <h1>Artsy</h1>
+                <span class="span1">Pages</span>
+                <div class="buttons">
+                    <button class="button">Get Started</button>
+                    <button class="button">Explorar</button>
+                </div>
+            </div>
+            <div class="image-area">
+                <img src="./assets/img/image-main1.png" alt="Artist at Easel">
+            </div>
+        </section>
+
+        <!--Segunda section-->
+        <section class="wavy-section">
+            <div class="wave-container">
+                <img src="./assets/img/fundo-main2.png" alt="Imagem de fundo Roxa">
+            </div>
+            <div class="icons-container">
+                <div class="icon-circle">
+                    <img src="./assets/img/comunidade.svg" alt="Ícone 1">
+                </div>
+                <div class="icon-circle">
+                    <img src="./assets/img/pincel.svg" alt="Ícone 2">
+                </div>
+                <div class="icon-circle">
+                    <img src="./assets/img/bussula.svg" alt="Ícone 3">
+                </div>
+            </div>
+            <div class="text-container">
+                <p>O fórum é um espaço interativo onde os usuários podem se conectar, compartilhar ideias e discutir
+                    temas
+                    relacionados a carreiras, projetos e desenvolvimento profissional. Participe de discussões, peça
+                    conselhos e
+                    troque conhecimentos com uma comunidade de profissionais e entusiastas de diversas áreas.</p>
+                <p>A aba Criar é uma ferramenta intuitiva que permite aos usuários montar e personalizar seus próprios
+                    portfólios. Com recursos fáceis de usar, você pode adicionar projetos, imagens e textos, organizando
+                    tudo de
+                    maneira que melhor represente suas habilidades e conquistas. Ideal para quem deseja destacar seu
+                    trabalho e
+                    atrair oportunidades.</p>
+                <p>Nesta seção, os usuários podem navegar por uma vasta coleção de portfólios criativos. É o lugar
+                    perfeito para
+                    buscar inspiração, descobrir novos talentos ou simplesmente admirar uma variedade de trabalhos
+                    artísticos e
+                    profissionais. Explore categorias diversificadas e encontre portfólios que se alinham com seus
+                    interesses ou
+                    necessidades específicas.</p>
+            </div>
+        </section>
+
+        <!--Terceira Section-->
+        <section class="terceira-section">
+            <div class="text-container2">
+                <p class="destaque-texto">para</p>
+                <span class="span2">Você</span>
+            </div>
+            <img class="imagem-central" src="./assets/img/main2.png" alt="Descrição da imagem">
+        </section>
+
+        <!--Carrosel-->
+        <div class="slideshow-container">
+            <div class="slideshow fade">
+                <div class="numeracao">1 / 3</div>
+                <img src="./assets/img/pexels-enginakyurt-15483709.jpg" alt="slide">
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">2 / 3</div>
+                <img src="./assets/img/pexels-lara-jameson-8828319.jpg" alt="Slide">
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">3 / 3</div>
+                <img src="./assets/img/pexels-tallitamaynara-16135475.jpg" alt="Slide">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+        <div class="paginacao">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!--FAQ-->
+        <section class="faq-section">
+            <div class="faq-header">
+                <h1>FAQ</h1>
+            </div>
+            <div class="faq-content">
+                <h2>Como posso enviar meu portfólio para o site?</h2>
+                <p>Para enviar seu portfólio, primeiramente crie uma conta e faça login. Depois, acesse a seção "Meu
+                    Portfólio"
+                    e clique em "Adicionar Novo". Lá você pode fazer upload de imagens do seu trabalho, adicionar
+                    descrições e
+                    especificar categorias que melhor representam suas habilidades e projetos.</p>
+
+                <h2>Existe um limite para quantos trabalhos posso incluir em meu portfólio?</h2>
+                <p>Não há um limite estrito para a quantidade de trabalhos que você pode incluir, mas recomendamos
+                    selecionar
+                    entre 10 a 15 dos seus melhores projetos. Isso garante que seu portfólio seja conciso e mostre a
+                    qualidade e a
+                    amplitude do seu trabalho de forma eficaz.</p>
+
+                <h2>Quais são as dicas para criar um portfólio atraente?</h2>
+                <p>Para criar um portfólio atraente, concentre-se em exibir uma variedade de trabalhos que destacam suas
+                    habilidades únicas. Inclua um breve resumo sobre você e seu background profissional, descrições
+                    claras para
+                    cada projeto, e, se possível, depoimentos de clientes ou colaboradores. Lembre-se de manter o design
+                    do seu
+                    portfólio simples e intuitivo para navegar.</p>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+
+</html>

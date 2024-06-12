@@ -4,7 +4,7 @@ input.addEventListener("change", (event) => {
     const video = input_target.files[0];
     if(video){
         const reader = new FileReader();
-        reader.addEventListener("load", (event) => {
+        reader.addEventListener("load", () => {
             let div = document.createElement("div");
             div.innerHTML = `
                 <video
