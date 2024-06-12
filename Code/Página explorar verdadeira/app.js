@@ -2,7 +2,7 @@
 //função le dados
 
 function read_portfoliodata() {
-    let strDados = localStorage.getItem('ArtsyLikes');
+    let strDados = localStorage.getItem('ArtsyPages');
     let Dados = {};
 
     if (strDados) {
@@ -23,7 +23,7 @@ function read_portfoliodata() {
     return Dados;
 }
 function salvaDados(dados) {
-    localStorage.setItem('ArtsyLikes', JSON.stringify(dados));
+    localStorage.setItem('ArtsyPages', JSON.stringify(dados));
 }
 //Isso é para o botão mudar o layout quando for clicado
 function muda_layout() {

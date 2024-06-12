@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', (submitEvent) => {
         submitEvent.preventDefault();
+        
         const formData = new FormData(form);
 
         const inputs = Object.fromEntries(formData);
@@ -42,24 +43,39 @@ document.addEventListener('DOMContentLoaded', function () {
             event.stopPropagation();
             console.log(event);
 
-            var clickedElement = event.target;  
+            var clickedElement = event.target;
+            var clickedId = clickedElement.id;
+            console.log("id do elemento que eu clickei " + clickedId);
+            var whoDidIt = localStorage.getItem("whoAmI");
             var classNames = clickedElement.classList;
 
             var styles = [
                 { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'] },
                 { className: 'background-color-change', style: 'backgroundColor', value: dataArray['colorpicker'] },
                 { className: 'opacity-change', style: 'opacity', value: dataArray['opacitypicker'] },
-                { className: 'padding-change', style: 'padding', value: dataArray['paddingPick'] + "px"},
+                { className: 'padding-change', style: 'padding', value: dataArray['paddingPick'] + "px" },
                 { className: 'text-decoration-change', style: 'textDecoration', value: dataArray['textdecorationpicker'] },
                 { className: 'text-font-change', style: 'fontFamily', value: dataArray['textfontpicker'] },
                 { className: 'text-size-change', style: 'fontSize', value: dataArray['textsizepicker'] },
                 { className: 'text-weight-change', style: 'fontWeight', value: dataArray['textweightpicker'] },
                 { className: 'text-content', value: dataArray['textcontentpick'] },
-                { className: 'border-change', style: 'border', value: dataArray['borderPick']},
+                { className: 'border-change', style: 'border', value: dataArray['borderPick'] },
             ];
 
-            styles.forEach(function(item){
-                if(classNames.contains(item.className)){
+            fetch("http://localhost:3000/elementsById", {
+                method: "POST",
+                body: JSON.stringify({
+                    whoAmI: whoDidIt,
+                    elementId: clickedId,
+                    elementInfo: styles
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+        
+            styles.forEach(function (item) {
+                if (classNames.contains(item.className)) {
                     if (item.className === "text-font-change") {
                         const selectedFont = item.value;
                         const link = frameContent.createElement('link');
@@ -67,10 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         link.rel = 'stylesheet';
                         frameContent.head.appendChild(link);
                     }
-                    if (item.className === "text-content"){
+                    if (item.className === "text-content") {
                         const textElements = frameContent.getElementsByClassName("text-content");
                         for (let i = 0; i < textElements.length; i++) {
-                            textElements[i].addEventListener('click', function() {
+                            textElements[i].addEventListener('click', function () {
                                 this.textContent = item.value;
                                 textElements[i].textContent = item.value;
                             });
@@ -97,6 +113,6 @@ function hideMenuItems() {
     });
 }
 
-function openHelp(){
+function openHelp() {
     window.open('help.html');
 }

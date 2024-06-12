@@ -142,23 +142,8 @@ main{
     border: 1px 0px 0px 0px;
     opacity: 0px;
 
-
 }
 
-.login4{
-    margin:20px  0 -10px 0;
-    border-radius: 15px;
-    border:2px solid gray;
-    width: 380px;
-    height: 61px;
-    top: 148px;
-    left: 298px;
-    gap: 0px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
-
-
-}
 
 .loginbuttom{
     margin: 40px 0 20px 0;
@@ -224,3 +209,18 @@ main{
     text-decoration: none; 
     
 }
+
+/* login e registrar funcionalidades */
+
+.input.input-error {
+    border: 1px solid red;
+  }
+  
+  .input.input-error:focus {
+    border: 1px solid red;
+  }
+
+  .error-message {
+    font-size: 0.85rem;
+    color: red;
+  }
