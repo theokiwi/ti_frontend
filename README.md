@@ -1,4 +1,4 @@
-#Como criar portfólios editáveis?
+Como criar portfólios editáveis?
 
 Esse documento contém orientações sobre as tags que devem ser usadas nos templates de CSS/HTML para o site ArtsyPages. Somente com o uso correto dessas classes os atributos se tornam editáveis. As orientações sobre o funcionamento do código estão comentadas no arquivo "pageFunctions.js"
 
