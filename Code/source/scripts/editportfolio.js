@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    if(!localStorage.getItem("whoAmI")){
+        alert("Você não está logado e será redirecionado para a página de login")
+    }
+    //Depois todo o resto da função dentro de um else, pra ele não rodar nada se a pessoa não estiver logada.
     let dataArray;
 
     const form = document.querySelector('#formEl');
@@ -65,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch("http://localhost:3000/elementsById", {
                 method: "POST",
                 body: JSON.stringify({
+                    // whichPortfolioAmI: 
                     whoAmI: whoDidIt,
                     elementId: clickedId,
                     elementInfo: styles
@@ -115,4 +120,14 @@ function hideMenuItems() {
 
 function openHelp() {
     window.open('help.html');
+}
+
+function changePortfolio(whichPort, ){
+    let result = confirm("Aperte OK para confirmar que deseja trocar de portfólio");
+    if(result === true){
+        //substituir o iframe
+    }
+    else{
+        //aplica outras edições mas não substitui o iframe
+    }
 }
