@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 if (usernameValue === user.username && passwordValue === user.password) {
                                     userExists = true;
                                     localStorage.setItem("whoAmI", usernameValue);
+                                    localStorage.setItem("userId", user.id)
                                     break;
                                 }
                             }
