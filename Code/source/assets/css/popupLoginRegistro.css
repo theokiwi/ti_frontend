@@ -1,0 +1,388 @@
+
+/* Login CSS */
+
+
+
+
+#buttonLogin{
+    font-family: "Lato", sans-serif;
+    font-size: 1.1rem;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+#buttonCriar{
+    font-family: "Lato", sans-serif;
+    font-size: 1.1rem;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+
+#buttonLogin:hover{
+    
+    color:#61319B;
+    font-size: 1.2rem;
+}
+
+#buttonCriar:hover{
+    
+    color:#61319B;
+    font-size: 1.2rem;
+}
+
+dialog::backdrop{
+    background-color:rgb( 0 0 0/ .3);
+}
+
+#poplogin{
+width: 80%;
+
+margin:auto;
+border: none;
+border-radius: 15px;
+overflow:hidden;
+
+}
+
+
+@keyframes abrir{
+    from{opacity: 0;
+    transform: translate3d(0, -20px,-5px);}
+
+    to{
+        opacity: 1; transform: translate3d(0,0,0);
+    }
+
+}
+
+#pop_login{ 
+animation: abrir 1s;}
+
+#pop_login{
+width: 100%;
+margin: auto;
+display: flex;
+flex-direction:row;
+justify-content:space-between;
+padding: 0;
+box-sizing: border-box;
+font-style: none;
+text-decoration: none;
+width: auto;
+border:5px solid rgb(158, 0, 221);
+border-radius: 15px;
+background-color: white;
+
+
+}
+.login{
+
+padding: 50px;
+border: none;
+font-family: sans-serif;
+text-align:left;
+width: 150px ;
+margin: 5rem 0rem 2rem 5rem;
+
+}
+
+#login{
+margin:20px 0 0 0;
+border-radius: 15px;
+border:2px solid gray;
+width: 385px;
+height: 61px;
+border: 1px 0px 0px 0px;
+opacity: 0px;
+padding: 10px;
+font-family: koulen;
+
+}
+
+#username{
+    margin:25px  0 -10px 0;
+    border-radius: 15px;
+    border:2px solid gray;
+    width: 385px;
+    height: 61px;
+    top: 148px;
+    left: 298px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    padding: 10px;
+    font-family: koulen;
+    }
+
+#password{
+margin:30px  0 -10px 0;
+border-radius: 15px;
+border:2px solid gray;
+width: 385px;
+height: 61px;
+top: 148px;
+left: 298px;
+gap: 0px;
+border: 1px 0px 0px 0px;
+padding: 10px;
+font-family: koulen;
+}
+
+.login-btn{
+margin: 40px 0 0 0;
+border-radius: 10px;
+background-color: #8F00FF;
+color:beige;
+font-family: koulen;
+font-size: 30px ;
+border: solid #8F00FF;
+width: 385px;
+height: 65px;
+top: 277px;
+left: 298px;
+border: 0px 0px 0px 0px;
+opacity: 0px;
+}
+
+.login-btn:hover{
+background-color:rgb(183, 79, 252);
+border:rgb(183, 79, 252) ;
+}
+
+.login-titulo{
+font-family: Koulen;
+font-size: 80px;
+font-weight: 400;
+line-height: 57.81px;
+text-align: left;
+width: 64px;
+height: 58px;
+top: 90px;
+left: 100px;
+gap: 0px;
+opacity: 0px;
+max-width: 64px;
+
+
+
+}
+
+/*IMAGEM LOGIN*/
+.img-login{
+width: 280px;
+height: 500px;
+top: 31px;
+left: 31px;
+border-radius: 32px 32px 32px 32px;
+opacity: 0px;
+margin: 27px 20px 18px 140px;
+
+
+}
+
+/* REGISTRE-SE*/
+.registro-login{
+font-family: koulen;
+margin:-48px 0 0 130px;
+display: grid;
+font-size: larger;
+}
+.registro-login > a{
+color:#000;
+text-decoration: none; 
+
+}
+
+
+/* BOTAO FECHAR */
+#btn-close{
+
+border: none;
+background-color:white;
+font-size: 30px;
+margin: 2rem 5rem 0rem 0rem;
+color: gray;
+}
+
+#btn-close:hover{
+color:rgb(126, 25, 194);
+
+}
+
+
+
+/*REGISTRO CSS*/
+
+
+#popRegistro{
+width: 80%;
+
+margin:auto;
+border: none;
+border-radius: 15px;
+overflow:hidden;
+
+}
+
+
+
+#pop_registro{ 
+animation: abrir 1s;}
+
+#pop_registro{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: none;
+    text-decoration: none;
+    width: auto;
+    border:5px solid rgb(158, 0, 221);
+    border-radius: 15px;
+    background-color: white;}
+
+
+.registro{
+padding: 50px;
+border: none;
+font-family: sans-serif;
+text-align:left;
+width: 150px ;
+margin: 2rem 0rem 2rem 5rem;
+
+
+
+}
+.registro-titulo{
+font-family: Koulen;
+font-size: 80px;
+font-weight: 400;
+line-height: 57.81px;
+text-align: left;
+width: 64px;
+height: 58px;
+top: 90px;
+left: 100px;
+gap: 0px;
+opacity: 0px;
+max-width: 64px;
+margin: 10px 0 0 0 ;
+
+
+
+
+}
+.email-registro{
+margin:0 0 0 0;
+border-radius: 15px;
+border:2px solid gray;
+width: 385px;
+height: 61px;
+border: 1px 0px 0px 0px;
+opacity: 0px;
+padding: 10px;
+font-family: koulen;
+}
+
+.senha-registro{
+margin:17px  0 -10px 0;
+border-radius: 15px;
+border:2px solid gray;
+width: 385px;
+height: 61px;
+top: 148px;
+left: 298px;
+gap: 0px;
+border: 1px 0px 0px 0px;
+padding: 10px;
+font-family: koulen;
+
+}
+
+.data-registro{
+margin:27px  0 -10px 0;
+border-radius: 15px;
+border:2px solid gray;
+width: 385px;
+height: 61px;
+top: 148px;
+left: 298px;
+gap: 0px;
+border: 1px 0px 0px 0px;
+padding: 10px;
+font-family: koulen;
+
+}
+.numero-registro{
+margin:27px  0 -10px 0;
+border-radius: 15px;
+border:2px solid gray;
+width: 385px;
+height: 61px;
+top: 148px;
+left: 298px;
+gap: 0px;
+border: 1px 0px 0px 0px;
+padding: 10px;
+font-family: koulen;
+
+}
+
+
+
+
+.registro-btn{
+
+margin: 37px 0 0 0;
+border-radius: 10px;
+background-color: #8F00FF;
+color:beige;
+font-family: koulen;
+font-size: 30px ;
+border: solid #8F00FF;
+width: 385px;
+height: 65px;
+top: 277px;
+left: 298px;
+border: 0px 0px 0px 0px;
+opacity: 0px;
+}
+
+.registro-btn:hover{
+background-color:rgb(183, 79, 252);
+border:rgb(183, 79, 252) ;
+}
+
+/*IMAGEM REGISTRO */ 
+.img4{
+width: 280px;
+height: 500px;
+top: 31px;
+left: 31px;
+border-radius: 32px 32px 32px 32px;
+opacity: 0px;
+margin: 27px 20px 18px 140px;
+}
+
+/* BOTAO FECHAR */
+#btn-close-registro{
+
+border: none;
+background-color:white;
+font-size: 30px;
+margin: 2rem 5rem 0rem 0rem;
+color: gray;
+}
+#btn-close-registro:hover{
+color:rgb(126, 25, 194);
+
+}
