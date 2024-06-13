@@ -9,15 +9,16 @@ main{
 }
 
     /*PORTFOLIO CONTENT*/
-#portfolio{
-    width: 80%;
-}
-
-#portfolio-img{
-    width: 100%;
-    height: 100%;
-}
-
+    #portfolio {
+        width: 100%;
+        height: 100vh; 
+    }
+    
+    #output {
+        width: 100%;
+        height: 100vh;
+    }
+    
 
     /*ASIDE CONTENT*/
 aside{
