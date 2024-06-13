@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
     <title>Artsy Pages</title>
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/homepage.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/popupLoginRegistro.css">
+    
 </head>
 
 <body>
@@ -25,8 +26,8 @@
                         <li><a href="#">Faq</a></li>
                         <li><a href="./explorar.html">Explorar</a></li>
                         <li><a href="./forum.html">Fórum</a></li>
-                        <li><a href="./editportfolio.html">Criar</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><button id="buttonLogin">Login</button></li>
+                        <li><button id="buttonCriar">Criar</button></li>
                     </ul>
                 </nav>
                 <img src="./assets/img/perfil.png" alt="Perfil" width="30px" class="perfil">
@@ -52,6 +53,92 @@
             </div>
         </section>
 
+        
+
+
+ <!-- Pop Up Login -->
+
+ <dialog id="poplogin">
+
+    
+    <main id="pop_login">
+    
+    
+        <!-- Imagem -->
+        <section>
+    
+            <img src="./assets/img/img-login.png" class="img-login">
+    
+        </section>
+        <!-- Login e Senha -->
+        <section>
+            <form id="loginForm">
+                <fieldset class="login">
+                    <legend class="login-titulo">LOGIN</legend>
+                    <input type="email" name="login" id="username" placeholder="Email" required> <br>
+    
+                    <input type="password" name="senha" id="password" placeholder="Senha" required><br>
+    
+                    <input type="submit" value="LOGIN" class="login-btn">
+    
+                </fieldset>
+                <!-- Registre -->
+                <div class="registro-login">
+                    <a href="#">Registre-se </a>
+                </div>
+    
+                
+            </form>
+    
+         
+        </section>
+        <section>      
+     <button id="btn-close">X</button>
+        </section>
+    
+       
+      
+    </main>
+    
+    
+      </dialog>
+    
+     <!-- Pop Up Registro-->
+    
+     <dialog id="popRegistro">
+    
+      <main id="pop_registro">
+        <!-- Imagem -->
+        <section>
+               <img src="./assets/img/img4.png" class="img4">
+        </section>
+    
+        <!-- Formulario Registro -->
+    
+        <section>
+            <form>
+                <fieldset class="registro">
+                    <legend class="registro-titulo">Register</legend>
+                    <input type="email" name="login" class="email-registro" placeholder="Email" required> <br>
+                    <input type="text" name="senha" class="senha-registro"  placeholder="Senha" required><br>
+                    <input type="date" name="data" class="data-registro " placeholder="Data de Nascimento"required><br>
+                    <input type="number" name="numero" class="numero-registro " placeholder="Numero de Telefone"required><br>
+                    <input type="submit" value="register" class="registro-btn">
+    
+                </fieldset>
+    
+    
+            </form>
+        </section>
+     
+        <!-- Botâo para fechar popup -->
+        <section>      
+          <button id="btn-close-registro">X</button>
+             </section>
+    </main>
+
+    
+     </dialog>
         <!--Segunda section-->
         <section class="wavy-section">
             <div class="wave-container">
@@ -154,6 +241,5 @@
         </section>
     </main>
 </body>
-<script src="script.js"></script>
-
+<script src="scripts/popupLoginRegistro.js"></script>
 </html>
