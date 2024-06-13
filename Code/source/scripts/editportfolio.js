@@ -1,5 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', function () {
-    if(!localStorage.getItem("whoAmI")){
+    if (!localStorage.getItem("whoAmI")) {
         alert("Você não está logado e será redirecionado para a página de login")
     }
     //Depois todo o resto da função dentro de um else, pra ele não rodar nada se a pessoa não estiver logada.
@@ -9,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', (submitEvent) => {
         submitEvent.preventDefault();
-        
+
+
         const formData = new FormData(form);
 
         const inputs = Object.fromEntries(formData);
@@ -20,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const jsonString = localStorage.getItem('formInputs');
         dataArray = JSON.parse(jsonString);
         console.log("coisa" + dataArray);
+
+
     });
 
     var frameObj = document.getElementById('output');
@@ -29,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     frameObj.onload = function () {
-        let frameContent = frameObj.contentWindow.document;
+        var frameContent = frameObj.contentWindow.document;
 
         const edits = frameContent.getElementsByClassName('edit');
         if (edits == null) {
@@ -48,10 +52,37 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(event);
 
             var clickedElement = event.target;
+            if (!clickedElement) {
+                console.log("Elemento clickado não encontrado");
+            }
+
             var clickedId = clickedElement.id;
-            console.log("id do elemento que eu clickei " + clickedId);
+            if (!clickedId) {
+                console.log("ElementoID clickado não encontrado");
+            }
+            console.log("id do elemento que eu clickei ");
+
             var whoDidIt = localStorage.getItem("whoAmI");
+            if (!whoDidIt) {
+                console.log("Usuario dono da ação não encontrado");
+            }
+
             var classNames = clickedElement.classList;
+            if (!classNames) {
+                console.log("Não foi possível extrair o nome das classes");
+            }
+
+            const jsonString = localStorage.getItem('formInputs');
+            dataArray = JSON.parse(jsonString);
+            whichPortfolio = dataArray.whichport;
+            localStorage.setItem("whichPortfolioAmI", whichPortfolio);
+            if (!whichPortfolio) {
+                console.log("Não foi possível identificar o portfólio");
+            }
+            else {
+                console.log(whichPortfolio);
+            }
+            changePortfolio(whichPortfolio);
 
             var styles = [
                 { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'] },
@@ -69,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch("http://localhost:3000/elementsById", {
                 method: "POST",
                 body: JSON.stringify({
-                    // whichPortfolioAmI: 
+                    elementClasses: Array.from(classNames),
+                    whichPortAmI: whichPortfolio,
                     whoAmI: whoDidIt,
                     elementId: clickedId,
                     elementInfo: styles
@@ -78,29 +110,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     "Content-type": "application/json; charset=UTF-8"
                 }
             })
-        
-            styles.forEach(function (item) {
-                if (classNames.contains(item.className)) {
-                    if (item.className === "text-font-change") {
-                        const selectedFont = item.value;
-                        const link = frameContent.createElement('link');
-                        link.href = `https://fonts.googleapis.com/css2?family=${selectedFont}&display=swap`;
-                        link.rel = 'stylesheet';
-                        frameContent.head.appendChild(link);
+
+            fetch('http://localhost:3000/elementsById')
+                .then(response => response.json())
+                .then(data => {
+                    for (let element of data) {
+                        alert("chamei update pageinfo");
+                        element.elementInfo.forEach(info => {
+                            if (element.elementClasses.includes(info.className)) {
+                                if (info.style === "fontFamily") {
+                                    const selectedFont = info.value;
+                                    const link = frameContent.createElement('link');
+                                    link.href = `https://fonts.googleapis.com/css2?family=${selectedFont}&display=swap`;
+                                    link.rel = 'stylesheet';
+                                    frameContent.head.appendChild(link);
+                                } else if (info.className === "text-content") {
+                                    const textElement = frameContent.getElementById(element.elementId);
+                                    textElement.textContent = info.value;
+                                    textElement.addEventListener('click', function () {
+                                        textElement.textContent = info.value;
+                                    });
+                                }
+                                clickedElement.style[info.style] = info.value;
+                                console.log(`Applied ${info.style}: ${info.value}`);
+                                alert("Acabei de aplicar, ver log");
+                            }
+                        });
                     }
-                    if (item.className === "text-content") {
-                        const textElements = frameContent.getElementsByClassName("text-content");
-                        for (let i = 0; i < textElements.length; i++) {
-                            textElements[i].addEventListener('click', function () {
-                                this.textContent = item.value;
-                                textElements[i].textContent = item.value;
-                            });
-                        }
-                    }
-                    clickedElement.style[item.style] = item.value;
-                }
-                console.log(`Applied ${item.style}: ${item.value}`);
-            });
+                })
+                .catch(error => console.log('Não foi possível puxar item do banco de dados', error));
+
         }
     };
 });
@@ -122,12 +161,37 @@ function openHelp() {
     window.open('help.html');
 }
 
-function changePortfolio(whichPort, ){
-    let result = confirm("Aperte OK para confirmar que deseja trocar de portfólio");
-    if(result === true){
-        //substituir o iframe
-    }
-    else{
-        //aplica outras edições mas não substitui o iframe
+function changePortfolio(whichPort) {
+    console.log("rodei o change portfolio");
+    if (localStorage.getItem("whichPortfolioAmI") !== whichPort) {
+        let result = confirm("Aperte OK para confirmar que deseja trocar de portfólio");
+        if (result === true) {
+            //substituir o iframe
+            switch (whichPort) {
+                case '3d':
+                    // document.getElementById('output').src = loc;
+                    alert("Portfólio ainda não disponível.");
+                    break;
+                case 'VideoEdit':
+                    // document.getElementById('output').src = loc;
+                    alert("Portfólio ainda não disponível.");
+                    break;
+                case '2dTrad':
+                    document.getElementById('output').src = "../assets/template/Template_2DTradicional/2DTradicional.html";
+                    break;
+                case '2dDigital':
+                    // document.getElementById('output').src = loc;
+                    alert("Portfólio ainda não disponível.");
+                    break;
+                case 'Photo':
+                    alert("Portfólio ainda não disponível. Recarregue a p");
+                    // document.getElementById('output').src = loc;
+                    break;
+            }
+        }
+        else {
+            console.log("Não foram aceitas as condições");
+        }
     }
 }
+
