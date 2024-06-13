@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     method: "POST",
                     body: JSON.stringify({
                         username: usernameValue,
-                        password: passwordValue
+                        password: passwordValue,
+                        postedporfolioid: none,
                     }),
                     headers: {
                         "Content-type": "application/json; charset=UTF-8"

@@ -142,6 +142,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     })
                     .catch(error => console.log('Não foi possível puxar item do banco de dados', error));
+
+                    fetch(  )
             }
         };
 
@@ -172,8 +174,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                     } else if (style.className === 'text-content') {
                                         element.textContent = style.value;
                                     }
-                                
-                    
                         }
                     });
                 });
