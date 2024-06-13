@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         frameObj.onload = function () {
-            var frameContent = frameObj.contentWindow.document;
+            var frameContent = frameObj.contentWindow.document; 
             applyStoredChanges(frameContent); // Aplicar mudanças ao carregar o iframe
 
             const edits = frameContent.getElementsByClassName('edit');
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 changePortfolio(whichPortfolio);
 
                 var styles = [
-                    { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'] },
+                    { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'],  },
                     { className: 'background-color-change', style: 'backgroundColor', value: dataArray['colorpicker'] },
                     { className: 'opacity-change', style: 'opacity', value: dataArray['opacitypicker'] },
                     { className: 'padding-change', style: 'padding', value: dataArray['paddingPick'] + "px" },
@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         function applyStoredChanges(frameContent) {
+            const latestClickedElement = localStorage.getItem("clickedElement");
             const storedInputs = localStorage.getItem('formInputs');
             if (storedInputs) {
                 const storedData = JSON.parse(storedInputs);
@@ -166,11 +167,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 Array.from(edits).forEach(element => {
                     styles.forEach(style => {
                         if (element.classList.contains(style.className)) {
-                            if (style.style) {
-                                element.style[style.style] = style.value;
-                            } else if (style.className === 'text-content') {
-                                element.textContent = style.value;
-                            }
+                                    if (style.style) {
+                                        element.style[style.style] = style.value;
+                                    } else if (style.className === 'text-content') {
+                                        element.textContent = style.value;
+                                    }
+                                
+                    
                         }
                     });
                 });
