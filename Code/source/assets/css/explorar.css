@@ -118,6 +118,7 @@
     margin: 0 auto;
     padding-top: 10%;
     position: absolute;
+    padding-left: 2%;
     background-image: url("../img/background.png");
         background-size: 80vw;
         background-repeat: repeat;
