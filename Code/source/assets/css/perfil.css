@@ -187,8 +187,11 @@ figcaption {
 
 
 
+
 @media only screen and (max-width: 800px){
     /*------menu-hamburguer--------*/
+    
+
     nav ul{
         margin-top: 20px;
         position: absolute;
@@ -197,20 +200,23 @@ figcaption {
         background: #333;
         width: 100%;
         overflow: hidden;
-        transition: max-height 0.5s;        
+        transition: max-height 0.5s;
+        z-index: 1;        
     }
     nav ul li{
         display: block;
         margin-right: 50px;
         margin-top: 10px;
-        margin-bottom: 10px;        
+        margin-bottom: 10px; 
+        z-index: 1;       
     }
     nav ul li a{
         color: white;
     }
-    .menu-icon{        
+    .menu-icon{             
         display: block;
         cursor: pointer;
+        
     }
     /*------fim-menu-hamburguer--------*/    
     .logo p{

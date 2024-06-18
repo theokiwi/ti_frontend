@@ -14,27 +14,31 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px">
-                    <p class="LogoName">ARTSYPAGES</p>
-                </div>
-                <nav>
-                    <ul id="menuItems" height="200px">
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="./explorar.html">Explorar</a></li>
-                        <li><a href="./forum.html">Fórum</a></li>
-                        <li><button id="buttonLogin">Login</button></li>
-                        <li><button id="buttonCriar">Criar</button></li>>
-                    </ul>
-                </nav>
-                <img src="./assets/img/perfil.png" alt="Perfil" width="30px" class="perfil">
-                <img src="./assets/img/menuHam.png" alt="Menu" width="50px" class="menu_icon">
+    <!--  -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="./assets/img/logo.png" alt="" width="60px" height="60px">
+                <p class="LogoName">ARTSYPAGES</p>
             </div>
+            <nav>
+                <ul id="menuItems">
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">Explorar</a></li>
+                    <li><a href="#">Fórum</a></li>
+                    <li><button id="buttonLogin">Login</button></li>
+                    <li><button id="buttonCriar">Criar</button></li>
+                </ul>
+            </nav>
+            <img src="./assets/img/perfil.png" alt="" width="30px">
+            <img src="./assets/img/menuHam.png" alt="" width="50px" class="menu-icon" onclick="menuHam()">
         </div>
-    </header>
+        <div class="banner">
+            <input type="file" id="inputImage" style="display:none;">
+            <img src="./assets/img/Banner.png" alt="Imagem" id="imagem" style="cursor:pointer;">
+        </div>
+    </div>
+    <!--  -->
 
 
 
@@ -171,12 +175,14 @@
         <script>
             var menuItems = document.getElementById("menuItems");
             menuItems.style.maxHeight = "0px";
-            function menu() {
+            function menuHam() {
+                // console.log("ok");
                 if (menuItems.style.maxHeight == "0px") {
-                    menuItems.style.maxHeight = "200px";
+                    menuItems.style.maxHeight = "200px";                 
                 } else {
-                    menuItems.style.maxHeight = "0px";
+                    menuItems.style.maxHeight = "0px";                    
                 }
+                
             }
 
             // Função para abrir a janela de seleção de arquivo quando a imagem do banner é clicada
