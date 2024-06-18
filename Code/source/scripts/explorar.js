@@ -26,12 +26,20 @@ function salvaDados(dados) {
     localStorage.setItem('ArtsyPages', JSON.stringify(dados));
 }
 //Isso é para o botão mudar o layout quando for clicado
+var isToggled = false;
 function muda_layout() {
    let section = document.querySelector("section[class='secao2']");
     let layout = document.querySelector(".layout_ordenar");
     //let button=document.getElementById('btnordenar');
-    section.style.display = "none";
-    layout.style.display = "grid";
+    isToggled = !isToggled;
+    this.classList.toggle('active');
+    if(isToggled==true){
+        section.style.display = "none";
+        layout.style.display = "grid";
+    }else{
+        section.style.display = "flex";
+        layout.style.display = "none";
+    }    
 }
 
 
