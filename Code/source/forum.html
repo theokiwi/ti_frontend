@@ -1,67 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fórum - ArtsyPages</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/media.css">
-    <link rel="stylesheet" href="assets/css/popupLoginRegistro.css">
+
+
+    <link rel="stylesheet" href="./assets/css/variaveis.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/homepage.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/forum.css">
+    <link rel="stylesheet" href="./assets/css/popupLoginRegistro.css">
+
+
     <script src="https://kit.fontawesome.com/863f442cd3.js" crossorigin="anonymous"></script>
-    <script src="../jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/app.js"></script>
-    
+
+
+    <script type="text/javascript" src="scripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="scripts/popupLoginRegistro.js"></script>
+    <script type="text/javascript" src="scripts/forum.js"></script>
+    <script type="text/javascript" src="scripts/menu.js"></script>
 
 </head>
+
 <body>
 
     <header>
-        <div id="header-title">
-            <img id="logo" src="assets/images/logo.png" alt="logo">
-            <h1 id="title">ArtsyPages</h1>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px">
+                    <p class="LogoName">ARTSYPAGES</p>
+                </div>
+                <nav>
+                    <ul id="menuItems" height="200px">
+                        <li><a href="./ajuda.html">Faq</a></li>
+                        <li><a href="./explorar.html">Explorar</a></li>
+                        <li><a href="./forum.html">Fórum</a></li>
+                        <li><button id="buttonLogin">Login</button></li>
+                        <li><button id="buttonCriar">Criar</button></li>
+                    </ul>
+                </nav>
+                <img src="./assets/img/perfil.png" alt="Perfil" width="30px" class="perfil">
+                <img src="./assets/img/menuHam.png" alt="Menu" width="50px" class="menu_icon">
+            </div>
         </div>
-        <nav id="header-main-navbar">
-            <ul id="header-main-navbar-content">
-                <li><a class="header-main-navbar-link" href="#">FAQ</a></li>
-                <li><a class="header-main-navbar-link" href="#">Explorar</a></li>
-                <li><a class="header-main-navbar-link" href="#">Fórum</a></li>
-            </ul>
-        </nav>
-        <nav id="header-logreg-navbar">
-            <ul id="header-logreg-navbar-content">
-                <li><button id="buttonLogin">Login</button></li>
-                <li><button id="buttonCriar">Criar</button></li>
-                <li><a class="header-logreg-navbar-link" href="#"><img id="perfil" src="assets/images/perfil.png" alt="perfil"></a></li>
-            </ul>
-        </nav>
     </header>
 
 
     <main class="container">
-        <div class="page-title">
-            <h2 id="forum-title">Fórum</h2>
+        <div class="page_title">
+            <h2 id="forum_title">Fórum</h2>
 
-            <a href="../CriarPost/criarpost.html"><i class="create_post fa-solid fa-plus"></i></a>
+            <a href="criarpost.html"><i class="create_post fa-solid fa-plus"></i></a>
         </div>
-        <section>
+        <section class="forum_posts">
 
 
         </section>
-
-       
-    
     </main>
-    <dialog id="poplogin">
 
-    
-        <main id="pop_login">
-        
-        
+    <!-- Pop Up Login -->
+
+    <dialog id="poplogin">
+        <div id="pop_login">
             <!-- Imagem -->
             <section>
-        
                 <img src="./assets/img/img-login.png" class="img-login">
-        
             </section>
             <!-- Login e Senha -->
             <section>
@@ -69,74 +77,56 @@
                     <fieldset class="login">
                         <legend class="login-titulo">LOGIN</legend>
                         <input type="email" name="login" id="username" placeholder="Email" required> <br>
-        
                         <input type="password" name="senha" id="password" placeholder="Senha" required><br>
-        
                         <input type="submit" value="LOGIN" class="login-btn">
-        
                     </fieldset>
                     <!-- Registre -->
                     <div class="registro-login">
                         <a href="#">Registre-se </a>
                     </div>
-        
-                    
-                </form>
-        
-             
-            </section>
-            <section>      
-         <button id="btn-close">X</button>
-            </section>
-        
-           
-          
-        </main>
-        
-        
-          </dialog>
-        
-         <!-- Pop Up Registro-->
-        
-         <dialog id="popRegistro">
-        
-          <main id="pop_registro">
-            <!-- Imagem -->
-            <section>
-                   <img src="./assets/img/img4.png" class="img4">
-            </section>
-        
-            <!-- Formulario Registro -->
-        
-            <section>
-                <form>
-                    <fieldset class="registro">
-                        <legend class="registro-titulo">Register</legend>
-                        <input type="email" name="login" class="email-registro" placeholder="Email" required> <br>
-                        <input type="text" name="senha" class="senha-registro"  placeholder="Senha" required><br>
-                        <input type="date" name="data" class="data-registro " placeholder="Data de Nascimento"required><br>
-                        <input type="number" name="numero" class="numero-registro " placeholder="Numero de Telefone"required><br>
-                        <input type="submit" value="register" class="registro-btn">
-        
-                    </fieldset>
-        
-        
                 </form>
             </section>
-         
-            <!-- Botâo para fechar popup -->
-            <section>      
-              <button id="btn-close-registro">X</button>
-                 </section>
-        </main>
-    
-        
-         </dialog>
+            <section>
+                <button id="btn-close">X</button>
+            </section>
+        </div>
+    </dialog>
+
+    <!-- Pop Up Registro-->
+
+    <dialog id="popRegistro">
+        <div id="popRegistro">
+            <main id="pop_registro">
+                <!-- Imagem -->
+                <section>
+                    <img src="./assets/img/img4.png" class="img4">
+                </section>
+                <!-- Formulario Registro -->
+                <section>
+                    <form>
+                        <fieldset class="registro">
+                            <legend class="registro-titulo">Register</legend>
+                            <input type="email" name="login" class="email-registro" placeholder="Email" required> <br>
+                            <input type="text" name="senha" class="senha-registro" placeholder="Senha" required><br>
+                            <input type="date" name="data" class="data-registro " placeholder="Data de Nascimento"
+                                required><br>
+                            <input type="number" name="numero" class="numero-registro " placeholder="Numero de Telefone"
+                                required><br>
+                            <input type="submit" value="register" class="registro-btn">
+                        </fieldset>
+                    </form>
+                </section>
+                <!-- Botâo para fechar popup -->
+                <section>
+                    <button id="btn-close-registro">X</button>
+                </section>
+        </div>
+    </dialog>
+
 
     <footer>
-        
+
     </footer>
 </body>
 
-<script src="assets/scripts/popupLoginRegistro.js"></script>
 </html>
