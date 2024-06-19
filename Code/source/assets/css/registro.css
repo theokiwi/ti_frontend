@@ -45,9 +45,11 @@ main{
     border: none;
     width: 385px;
     height: 65px;
+    transition: all 0.3s;
 }
 
 .registerbottom:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     background-color:rgb(183, 79, 252);
     border:rgb(183, 79, 252) ;
 }

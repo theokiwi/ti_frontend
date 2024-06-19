@@ -1,9 +1,9 @@
 header {
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
     box-sizing: border-box;
 
-    border-bottom: 1px rgb(58, 29, 93) solid;
+    border-bottom: 1px var(--clr-da-purple) solid;
 }
 
 .navbar {
@@ -50,7 +50,7 @@ header div.container {
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
-    background: white;
+    background: var(--clr-li-purple);
 }
 
 .menu_icon {
