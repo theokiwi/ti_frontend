@@ -1,7 +1,14 @@
+
+
+
+#menuItems li a{
+    text-decoration: none;
+}
+
 body {
     height: 100vh;
     
-    background-image: url(../images/background.png);
+    background-image: url(../img/background.png);
     background-size: 80vw;
     background-repeat: repeat;
     background-position: 95px;
@@ -159,6 +166,145 @@ div.answer:last-of-type {
 }
 
 
+
+/* Edit classes início */
+
+.edit_button {
+    margin-left: 12vw;
+    margin-bottom: 1vh;
+
+    padding: 0;
+    background: none;
+    border: 0;
+
+    opacity: 40%;
+}
+
+.edit_button:hover {
+    opacity: 100%;
+}
+
+.edit_button i {
+    font-size: 4vw;
+
+    color:rgb(58, 29, 93);
+}
+
+
+.edit_post_forms {
+    transition: display 1.0s;
+}
+
+.edit_post_forms {
+    width: 100%;
+}
+
+.edit_title label, .edit_post label, .edit_tag_selection label {
+    color: rgb(86,47,138);
+
+    font-weight: 600;
+}
+
+.edit_title label, .edit_post label {
+    display: block;
+
+    margin-left: 1vw;
+}
+
+.edit_title textarea, .edit_post textarea {
+    margin-bottom: 2vh;
+
+    border-radius: 5px;
+
+    width: 100%;
+}
+
+.edit_tag_selection, .edit_post_status {
+    display: inline;
+
+    margin-left: 1vw;
+}
+
+.edit_answer_forms {
+    transition: display 1.0s;
+    width: 100%;
+}
+
+.edit_answer_forms .edit_answer label {
+    display: block;
+
+    margin-left: 1vw;
+    margin-bottom: 0.25vh;
+
+    color: rgb(86,47,138);
+
+    font-weight: 600;
+}
+
+.edit_answer_forms .edit_answer textarea {
+    display: block;
+    width: 100%;
+
+    margin-bottom: 2.5vh;
+
+    border-radius: 5px;
+}
+
+
+.submit {
+    margin-left: 10vw;
+}
+
+.submit button {
+    color: purple;
+    background-color: white;
+
+    border: 5px groove purple;
+    border-radius: 6px;
+
+    font-weight: 800;
+}
+
+.submit button:hover {
+    color: white;
+    background-color: purple;
+    border-color: black;
+}
+
+
+.delete_post, .delete_answer {
+    margin-left: 2vw;
+
+    border-width: 5px;
+    border-style: groove;
+    border-radius: 10px;
+
+    font-size: 2vw;
+
+    color: purple;
+    background-color: white;
+    border-color: purple;
+}
+
+.delete_post {
+    margin-top: 4.5vh;
+}
+
+.delete_answer {
+    margin-top: 2.5vh;
+}
+
+.delete_post:hover, .delete_answer:hover {
+    color: white;
+    background-color: purple;
+    border-color: black;
+}
+
+/* Edit classes fim */
+
+
+
+
 .post_text, .answer_text {
     width: 45%;
     margin-left: 2,25vw;
@@ -166,6 +312,9 @@ div.answer:last-of-type {
     margin-top: 4vh;
     margin-bottom: 2vh;
 
+}
+
+.pergunta, .resposta {
     color: rgb(86,47,138);
 
     font-weight: 600;
@@ -223,7 +372,7 @@ div.answer:last-of-type {
 }
 
 
-
+/* Create answer início */
 
 .create_answer {
     margin: 2vh 0 4vh;
@@ -290,6 +439,8 @@ form.new_answer {
 
     border: 3px solid rgb(83, 6, 113);
     border-radius: 35px;
+    
+    transition: display 1.0s;
 }
 
 form.new_answer label {
@@ -309,7 +460,7 @@ form.new_answer textarea {
     font-size: 2.25vw;
 }
 
-#submit_answer {
+#submit_new_answer {
     display: block;
 
     margin: 0 auto;
@@ -324,7 +475,7 @@ form.new_answer textarea {
     font-family: "Koulen", sans-serif;
 }
 
-#submit_answer:hover {
+#submit_new_answer:hover {
     color: white;
     background-color: purple;
     border-color: black;
