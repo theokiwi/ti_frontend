@@ -8,9 +8,9 @@
 
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-
+    <link rel="stylesheet" href="./assets/css/media.css">
     <link rel="stylesheet" href="./assets/css/registro.css">
+
     <script defer src="../allJsAuth/register.js"></script>
 </head>
 
@@ -22,21 +22,19 @@
         <section>
             <form id="loginForm">
                 <fieldset class="register">
-                    <fieldset class="register">
-                        <legend class="registre1">Register</legend>
-                        <div class="input-group">
-                            <label for="username" class="label">Username</label>
-                            <input type="text" name="login" id="username" class="registro2">
-                            <span class="error-message"></span>
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <label for="password" class="label">Password</label>
-                            <input type="password" name="senha" id="password" class="registro3">
-                            <span class="error-message"></span>
-                            <input type="submit" value="REGISTER" class="registerbottom">
-                        </div>
-                    </fieldset>
+                    <legend class="registre1">Registre</legend>
+                    <div class="input-group">
+                        <label for="username" class="label">Nome de Usuário</label>
+                        <input type="text" name="login" id="username" class="inputs">
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="password" class="label">Senha</label>
+                        <input type="password" name="senha" id="password" class="inputs">
+                        <span class="error-message"></span>
+                        <button type="submit" class="registerbottom">Login</button>
+                    </div>
+                </fieldset>
             </form>
         </section>
     </main>
