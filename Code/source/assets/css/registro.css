@@ -26,11 +26,13 @@ main{
 }
 
 .inputs{
+    font-family: "Koulen";
     margin: 10px 0;
     border-radius: 15px;
     border: 2px solid gray;
     width: 380px;
     height: 60px;
+    padding: 10px;
 }
 
 .registerbottom{
