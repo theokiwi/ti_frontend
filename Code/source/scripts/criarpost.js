@@ -12,71 +12,71 @@ function read_forumdata() {
                 {
                     "post": {
                         "usuario": "Pablo Picasso", "forumID": 1,
-                        "respostas": 1, "views": 3, "likes": 7, "dislikes": 1,
+                        "respostas": 2, "views": 3, "likes": 7, "dislikes": 1,
                         "tag": "Tag 1", "titulo": "Primeiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "1Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": false
+                        "foto": "perfil.png", "status": false, "edit": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", "dislikes": "00",
+                            "likes": 1, "dislikes": 0,
                             "resposta": "Lorem ai1 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png"
+                            "foto": "perfil.png", "edit": false
                         },
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "02", "dislikes": "00",
+                            "likes": 2, "dislikes": 0,
                             "resposta": "Lorem ai2 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png"
+                            "foto": "perfil.png", "edit": false
                         }]
                 },
                 {
                     "post": {
                         "usuario": "Pablo Picasso", "forumID": 2,
-                        "respostas": 2, "views": 4, "likes": 2, "dislikes": 2,
+                        "respostas": 1, "views": 4, "likes": 2, "dislikes": 2,
                         "tag": "Tag 2", "titulo": "Segundo Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "2Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": true
+                        "foto": "perfil.png", "status": true, "edit": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", "dislikes": "00",
+                            "likes": 1, "dislikes": 0,
                             "resposta": "Lorem ei ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png"
+                            "foto": "perfil.png", "edit": false
                         }]
                 },
                 {
                     "post": {
                         "usuario": "Pablo Picasso", "forumID": 3,
-                        "respostas": 3, "views": 5, "likes": 6, "dislikes": 1,
+                        "respostas": 1, "views": 5, "likes": 6, "dislikes": 1,
                         "tag": "Tag 3", "titulo": "Terceiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "3Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": true
+                        "foto": "perfil.png", "status": true, "edit": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", "dislikes": "00",
+                            "likes": 1, "dislikes": 0,
                             "resposta": "Lorem ii ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png"
+                            "foto": "perfil.png", "edit": false
                         }]
                 },
                 {
                     "post": {
                         "usuario": "Pablo Picasso", "forumID": 4,
-                        "respostas": 4, "views": 6, "likes": 3, "dislikes": 2,
+                        "respostas": 1, "views": 6, "likes": 3, "dislikes": 2,
                         "tag": "Tag 4", "titulo": "Quarto Lorem ipsum, dolor sit amet consectetur adipisicing.",
                         "pergunta": "4Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": false
+                        "foto": "perfil.png", "status": false, "edit": false
                     },
                     "respostas": [
                         {
                             "usuario": "Mauricio de Sousa",
-                            "likes": "01", "dislikes": "00",
+                            "likes": 1, "dislikes": 0,
                             "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png"
+                            "foto": "perfil.png", "edit": false
                         }]
                 }
             ]
@@ -111,14 +111,14 @@ function save_question() {
                 "pergunta": strPergunta,
                 "forumID": ID,
                 "respostas": 0, "views": 0, "likes": 0, "dislikes": 0,
-                "foto": "perfil.png", "status": false
+                "foto": "perfil.png", "status": false, "edit": true
             },
             "respostas": []
         };
         Dados.forum.push(novaPergunta);
 
         // Salvar os dados no localStorage
-        localStorage.setItem('ArtsyForum', JSON.stringify(Dados));
+        localStorage.setItem('ArtsyForumPosts', JSON.stringify(Dados));
         //console.log(JSON.stringify(Dados));
 
         alert("Sua pergunta foi salva");

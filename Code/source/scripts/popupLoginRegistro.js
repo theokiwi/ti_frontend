@@ -1,10 +1,12 @@
+
+window.onload=(function(){
+
 let login= document.getElementById("buttonLogin")
 let poplogin= document.getElementById("poplogin")
 let btnClose= document.getElementById("btn-close")
 let registro= document.getElementById("buttonCriar")
 let popRegistro= document.getElementById("popRegistro")
 let btnCloseRegistro= document.getElementById("btn-close-registro")
- 
 
 
 
@@ -33,3 +35,5 @@ btnCloseRegistro.onclick=function(){
     popRegistro.close()
 }
 
+
+})

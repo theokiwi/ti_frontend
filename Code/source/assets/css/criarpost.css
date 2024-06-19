@@ -179,7 +179,7 @@ header div.container {
 body {
     height: 100vh;
 
-    background-image: url(../images/background.png);
+    background-image: url(../img/background.png);
     background-size: 80vw;
     background-repeat: repeat;
     background-position: 95px;
