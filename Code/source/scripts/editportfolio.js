@@ -92,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     body: JSON.stringify({
                         userId: currentUser,
                         elementClasses: Array.from(classNames),
-                        whichPortAmI: whichPortfolio,
                         whoAmI: whoDidIt,
                         elementId: clickedId,
                         elementInfo: styles

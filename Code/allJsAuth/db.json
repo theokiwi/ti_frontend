@@ -12,6 +12,66 @@
     }
   ],
   "elementsById": [
-    
+    {
+      "id": "2d06",
+      "userId": "dcf8",
+      "elementClasses": [
+        "edit",
+        "background-color-change"
+      ],
+      "whoAmI": "admin",
+      "elementId": "text2",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#e60000"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#e60000"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        }
+      ]
+    }
   ]
 }
