@@ -13,6 +13,18 @@ body {
     background-position: 95px;
 }
 
+#menuItems li button {
+    color: var(--clr-da-purple);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 800px) {
+    #menuItems li button {
+        color: var(--clr-li-purple);
+    }
+}
+
 /* Main início */
 main {
     height: 100vh;

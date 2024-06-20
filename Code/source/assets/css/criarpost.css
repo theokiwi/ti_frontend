@@ -3,128 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 /* Header início */
-header {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    border-bottom: 1px rgb(58, 29, 93) solid;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
-nav {
-    flex: 1;
-    text-align: right;
-}
-
-nav ul {
-    display: inline-block;
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    max-width: 5rem;
-}
-
-.logo p {
-    margin-left: 0;
-}
-
-.logo p {
-    color: rgb(85, 85, 85);
-}
-
-.LogoName {
-    font-family: "Koulen", sans-serif;
-    /* margin: 18px 75px 0 0; */
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #3A1D5D;
-    font-size: 1.2rem;
-    height: 100%;
-}
-
-header div.container {
-    max-width: 100%;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    background: white;
-}
-
-.menu_icon {
-    width: 50px;
-    margin-left: 20px;
-    display: none;
-}
-
-.header-perfil img {
-    max-width: 9.375rem;
-    border-radius: 10rem;
-    margin-top: 1rem;
-
-    padding-left: auto;
-    padding-right: auto;
-}
-
-.perfil h4 {
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-#menuItems {
-    display: block;
-
-    margin-top: 2vh;
-}
 
 #menuItems li a {
     text-decoration: none;
     color:rgb(47, 24, 75);
-
-    
 }
+
+#menuItems li button {
+    color: var(--clr-da-purple);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
 
 @media only screen and (max-width: 800px) {
 
     /*------menu-hamburguer--------*/
     nav ul {
-        position: absolute;
         top: 10.75vh;
-        left: 0;
-        background: #333;
-        width: 100%;
-        overflow: hidden;
-        transition: display 0.5s;
-    }
-
-    nav ul li {
-        display: block;
-        margin-right: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    nav ul li a {
-        color: white;
-    }
-
-    .menu_icon {
-        display: block;
-        cursor: pointer;
     }
 
     #menuItems {
@@ -137,38 +33,11 @@ header div.container {
         color:rgb(244, 239, 250);
     }
 
-    /*------fim-menu-hamburguer--------*/
-    .logo p {
-        display: none;
+    #menuItems li button {
+        color: var(--clr-li-purple);
     }
 
-    
-
-}
-
-
-@media only screen and (max-width: 450px) {
-    .navbar {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    header {
-        overflow-x: hidden;
-    }
-
-    .perfil {
-        margin-top: 13rem;
-        display: block;
-        width: 98%;
-        max-width: 100%;
-        border-radius: 50px;
-        padding-left: auto;
-        padding-right: auto;
-        background: rgb(153, 153, 153);
-        z-index: 10;
-    }
-    
+    /*------fim-menu-hamburguer--------*/  
 }
 
 /* Header Fim */
