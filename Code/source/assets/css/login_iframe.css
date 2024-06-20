@@ -1,0 +1,80 @@
+
+
+
+
+#buttonLogin_Iframe, #buttonCriar_Iframe {
+    color: var(--clr-da-purple);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 1.6vw;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    #buttonLogin_Iframe, #buttonCriar_Iframe {
+        color: var(--clr-li-purple);
+        font-size: 2.5vw;
+    }
+}
+
+#the_login_iframe {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 15vh;
+}
+
+#the_login_iframe button{
+    display: block;
+    z-index: 25;
+    
+    font-size: 3vw;
+
+    padding: 0.75vh 0.75vw;
+
+    margin-left: 48vw;
+
+    border-radius: 15px;
+    border-style: groove;
+    border-width: 5px;
+    border-color: var(--dark-purple);
+
+    cursor: pointer;
+
+    background-color: white;
+    color: purple;
+
+    box-shadow: 0px 2px 15px #35104d
+}
+
+#the_login_iframe button:hover {
+    background-color: purple;
+    color: white;
+}
+
+#the_login_iframe i {
+    cursor: pointer;
+}
+
+#the_login_iframe iframe {
+    display: block;
+    width: 85%;
+    height: 95%;
+    z-index: 26;
+
+    background-color: var(--light-purple);
+
+    border: groove 5px var(--dark-purple);
+    border-radius: 25px;
+
+    margin-top: 1vh;
+    margin-left: 7%;
+
+    box-shadow: 20px 20px 20px #35104d
+}
+
