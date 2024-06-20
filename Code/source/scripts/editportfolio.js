@@ -72,15 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const jsonString = localStorage.getItem('formInputs');
                 dataArray = JSON.parse(jsonString);
-                var whichPortfolio = dataArray.whichport;
-                localStorage.setItem("whichPortfolioAmI", whichPortfolio);
-                if (!whichPortfolio) {
-                    console.log("Não foi possível identificar o portfólio");
-                } else {
-                    console.log(whichPortfolio);
-                }
-
-                changePortfolio(whichPortfolio);
 
                 var styles = [
                     { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'],  },
@@ -198,42 +189,4 @@ function hideMenuItems() {
 
 function openHelp() {
     window.open('help.html');
-}
-
-function changePortfolio(whichPort) {
-    console.log("rodei o change portfolio");
-    if (localStorage.getItem("whichPortfolioAmI") !== whichPort) {
-        let result = confirm("Aperte OK para confirmar que deseja trocar de portfólio");
-        if (result === true) {
-            //substituir o iframe
-            switch (whichPort) {
-                case '3d':
-                    // document.getElementById('output').src = loc;
-                    alert("Portfólio ainda não disponível.");
-                    break;
-                case 'VideoEdit':
-                    // document.getElementById('output').src = loc;
-                    alert("Portfólio ainda não disponível.");
-                    break;
-                case '2dTrad':
-                    document.getElementById('output').src = "../assets/template/Template_2DTradicional/2DTradicional.html";
-                    break;
-                case '2dDigital':
-                    // document.getElementById('output').src = loc;
-                    alert("Portfólio ainda não disponível.");
-                    break;
-                case 'Photo':
-                    alert("Portfólio ainda não disponível. Recarregue a p");
-                    // document.getElementById('output').src = loc;
-                    break;
-            }
-        }
-        else {
-            console.log("Não foram aceitas as condições");
-        }
-    }
-}
-
-function loadChanges() {
-
 }
