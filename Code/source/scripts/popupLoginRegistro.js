@@ -16,6 +16,7 @@ let btnCloseRegistro= document.getElementById("btn-close-registro")
 
 login.onclick=function (){
     poplogin.showModal()
+
 }
 
 btnClose.onclick=function(){

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         frameObj.onload = function () {
-            var frameContent = frameObj.contentWindow.document;
+            var frameContent = frameObj.contentWindow.document; 
             applyStoredChanges(frameContent); // Aplicar mudanças ao carregar o iframe
 
             const edits = frameContent.getElementsByClassName('edit');
@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const jsonString = localStorage.getItem('formInputs');
                 dataArray = JSON.parse(jsonString);
+                var whichPortfolio = dataArray.whichport;
+                localStorage.setItem("whichPortfolioAmI", whichPortfolio);
                 if (!whichPortfolio) {
                     console.log("Não foi possível identificar o portfólio");
                 } else {
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 changePortfolio(whichPortfolio);
 
                 var styles = [
-                    { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'], },
+                    { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'],  },
                     { className: 'background-color-change', style: 'backgroundColor', value: dataArray['colorpicker'] },
                     { className: 'opacity-change', style: 'opacity', value: dataArray['opacitypicker'] },
                     { className: 'padding-change', style: 'padding', value: dataArray['paddingPick'] + "px" },
@@ -109,11 +111,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
+                alert("parei");
                 fetch('http://localhost:3000/elementsById')
                     .then(response => response.json())
                     .then(data => {
                         for (let element of data) {
                             if (element.userId === localStorage.getItem("userId")) {
+                                alert("chamei update pageinfo");
                                 element.elementInfo.forEach(info => {
                                     if (element.elementClasses.includes(info.className)) {
                                         if (info.style === "fontFamily") {
@@ -131,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         }
                                         clickedElement.style[info.style] = info.value;
                                         console.log(`Applied ${info.style}: ${info.value}`);
+                                        alert("Acabei de aplicar, ver log");
                                     }
                                 });
                             }
@@ -138,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .catch(error => console.log('Não foi possível puxar item do banco de dados', error));
 
-                fetch()
+                    fetch(  )
             }
         };
 
@@ -164,11 +169,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 Array.from(edits).forEach(element => {
                     styles.forEach(style => {
                         if (element.classList.contains(style.className)) {
-                            if (style.style) {
-                                element.style[style.style] = style.value;
-                            } else if (style.className === 'text-content') {
-                                element.textContent = style.value;
-                            }
+                                    if (style.style) {
+                                        element.style[style.style] = style.value;
+                                    } else if (style.className === 'text-content') {
+                                        element.textContent = style.value;
+                                    }
                         }
                     });
                 });
@@ -195,4 +200,40 @@ function openHelp() {
     window.open('help.html');
 }
 
+function changePortfolio(whichPort) {
+    console.log("rodei o change portfolio");
+    if (localStorage.getItem("whichPortfolioAmI") !== whichPort) {
+        let result = confirm("Aperte OK para confirmar que deseja trocar de portfólio");
+        if (result === true) {
+            //substituir o iframe
+            switch (whichPort) {
+                case '3d':
+                    // document.getElementById('output').src = loc;
+                    alert("Portfólio ainda não disponível.");
+                    break;
+                case 'VideoEdit':
+                    // document.getElementById('output').src = loc;
+                    alert("Portfólio ainda não disponível.");
+                    break;
+                case '2dTrad':
+                    document.getElementById('output').src = "../assets/template/Template_2DTradicional/2DTradicional.html";
+                    break;
+                case '2dDigital':
+                    // document.getElementById('output').src = loc;
+                    alert("Portfólio ainda não disponível.");
+                    break;
+                case 'Photo':
+                    alert("Portfólio ainda não disponível. Recarregue a p");
+                    // document.getElementById('output').src = loc;
+                    break;
+            }
+        }
+        else {
+            console.log("Não foram aceitas as condições");
+        }
+    }
+}
 
+function loadChanges() {
+
+}
