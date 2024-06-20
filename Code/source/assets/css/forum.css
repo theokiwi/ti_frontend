@@ -40,9 +40,15 @@ section {
     border-radius: 20px;
 }
 
+.page_title {
+    overflow: hidden;
+}
+
 #forum_title {
+    margin-bottom: 4px;
+
     font-family: "Kaushan Script";
-    font-size: 50px;
+    font-size: 5.75vw;
     font-weight: 400;
 
     color: var(--dark-purple);
@@ -53,9 +59,9 @@ section {
 .create_post {
     background-color: rgb(183, 183, 183);
     border-radius: 55%;
-    padding: 0.35%;
+    padding: 0.8%;
 
-    font-size: 5.5vh;
+    font-size: 4.5vw;
 
     float: right;
     margin-top: 1.75vh;
@@ -70,17 +76,17 @@ section {
 }
 
 .check_icon {
-    font-size: 4vw;
+    font-size: 5vw;
 
-    padding: 8px;
+    padding-left: 8px;
 
     color: var(--green-icon);
 }
 
 .clock_icon {
-    font-size: 4vw;
+    font-size: 5vw;
 
-    padding: 8px;
+    padding-left: 8px;
 
     color: var(--orange-icon);
 }
@@ -97,10 +103,10 @@ section {
 }
 
 .tag_title {
-    width: 6vw;
+    width: 7vw;
 
     margin-left: 2vw;
-    margin-right: 5vw;
+    margin-right: 3.5vw;
 
     font-family: "Koulen", sans-serif;
     font-weight: 500;
@@ -130,7 +136,7 @@ section {
 
 .post_title {
     color: var(--vibrant-purple);
-    font-size: 3.5vh;
+    font-size: 2.75vw;
     font-weight: 575;
 }
 
