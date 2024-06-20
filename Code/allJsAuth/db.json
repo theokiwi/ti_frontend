@@ -13,7 +13,129 @@
   ],
   "elementsById": [
     {
-      "id": "2d06",
+      "id": "b3de",
+      "userId": "dcf8",
+      "elementClasses": [
+        "edit",
+        "text-decoration-change"
+      ],
+      "whoAmI": "admin",
+      "elementId": "text5",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#8f0000"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#8f0000"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "8e9e",
+      "userId": "dcf8",
+      "elementClasses": [
+        "edit",
+        "text-color-change"
+      ],
+      "whoAmI": "admin",
+      "elementId": "text1",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ff0000"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ff0000"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "ed94",
       "userId": "dcf8",
       "elementClasses": [
         "edit",
@@ -25,12 +147,195 @@
         {
           "className": "text-color-change",
           "style": "color",
-          "value": "#e60000"
+          "value": "#0055ff"
         },
         {
           "className": "background-color-change",
           "style": "backgroundColor",
-          "value": "#e60000"
+          "value": "#0055ff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "3c93",
+      "userId": "dcf8",
+      "elementClasses": [
+        "edit",
+        "background-color-change"
+      ],
+      "whoAmI": "admin",
+      "elementId": "text2",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#0055ff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#0055ff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "5c26",
+      "userId": "dcf8",
+      "elementClasses": [
+        "edit",
+        "background-color-change"
+      ],
+      "whoAmI": "admin",
+      "elementId": "text2",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#0055ff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#0055ff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "63c1",
+      "userId": "dcf8",
+      "elementClasses": [
+        "edit",
+        "text-font-change"
+      ],
+      "whoAmI": "admin",
+      "elementId": "text4",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
         },
         {
           "className": "opacity-change",

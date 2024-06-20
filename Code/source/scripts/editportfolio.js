@@ -101,13 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
-                alert("parei");
                 fetch('http://localhost:3000/elementsById')
                     .then(response => response.json())
                     .then(data => {
                         for (let element of data) {
                             if (element.userId === localStorage.getItem("userId")) {
-                                alert("chamei update pageinfo");
                                 element.elementInfo.forEach(info => {
                                     if (element.elementClasses.includes(info.className)) {
                                         if (info.style === "fontFamily") {
@@ -125,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         }
                                         clickedElement.style[info.style] = info.value;
                                         console.log(`Applied ${info.style}: ${info.value}`);
-                                        alert("Acabei de aplicar, ver log");
                                     }
                                 });
                             }
@@ -133,42 +130,43 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .catch(error => console.log('Não foi possível puxar item do banco de dados', error));
 
-                    fetch(  )
             }
         };
 
         function applyStoredChanges(frameContent) {
-            const latestClickedElement = localStorage.getItem("clickedElement");
-            const storedInputs = localStorage.getItem('formInputs');
-            if (storedInputs) {
-                const storedData = JSON.parse(storedInputs);
-                const styles = [
-                    { className: 'text-color-change', style: 'color', value: storedData['colorpicker'] },
-                    { className: 'background-color-change', style: 'backgroundColor', value: storedData['colorpicker'] },
-                    { className: 'opacity-change', style: 'opacity', value: storedData['opacitypicker'] },
-                    { className: 'padding-change', style: 'padding', value: storedData['paddingPick'] + "px" },
-                    { className: 'text-decoration-change', style: 'textDecoration', value: storedData['textdecorationpicker'] },
-                    { className: 'text-font-change', style: 'fontFamily', value: storedData['textfontpicker'] },
-                    { className: 'text-size-change', style: 'fontSize', value: storedData['textsizepicker'] },
-                    { className: 'text-weight-change', style: 'fontWeight', value: storedData['textweightpicker'] },
-                    { className: 'text-content', value: storedData['textcontentpick'] },
-                    { className: 'border-change', style: 'border', value: storedData['borderPick'] },
-                ];
-
-                const edits = frameContent.getElementsByClassName('edit');
-                Array.from(edits).forEach(element => {
-                    styles.forEach(style => {
-                        if (element.classList.contains(style.className)) {
-                                    if (style.style) {
-                                        element.style[style.style] = style.value;
-                                    } else if (style.className === 'text-content') {
-                                        element.textContent = style.value;
+            fetch('http://localhost:3000/elementsById')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(element => {
+                        if (element.userId === localStorage.getItem("userId")) {
+                            element.elementInfo.forEach(info => {
+                                const targetElement = frameContent.getElementById(element.elementId);
+                                if (targetElement && targetElement.classList.contains(info.className)) {
+                                    if (info.className === "text-content") {
+                                        targetElement.textContent = info.value;
+                                    } else if (info.style === "fontFamily") {
+                                        const selectedFont = info.value;
+                                        const link = frameContent.createElement('link');
+                                        link.href = `https://fonts.googleapis.com/css2?family=${selectedFont}&display=swap`;
+                                        link.rel = 'stylesheet';
+                                        frameContent.head.appendChild(link);
+                                        targetElement.style.fontFamily = selectedFont;
+                                    } else {
+                                        targetElement.style[info.style] = info.value;
                                     }
+                                    console.log(`Applied ${info.style}: ${info.value}`);
+                                }
+                            });
                         }
                     });
-                });
-            }
+        
+                })
+                .catch(error => console.log('Não foi possível puxar item do banco de dados', error));
+
         }
+        
+        
+        
     }
 });
 
