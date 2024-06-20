@@ -1,0 +1,16 @@
+{
+    "documentContent": "content",
+    "fileName": "document",
+    "fileTypes": [
+        {
+            "description": "HTML Files",
+            "mimeType": "text/html",
+            "extension": ".html"
+        },
+        {
+            "description": "CSS Files",
+            "mimeType": "text/css",
+            "extension": ".css"
+        }
+    ]
+  }
