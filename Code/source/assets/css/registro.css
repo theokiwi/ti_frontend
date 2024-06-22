@@ -62,4 +62,8 @@ main{
     left: 31px;
     border-radius: 40px;    
 }
+/* */
 
+.login {
+    font-family: "Koulen";
+}
