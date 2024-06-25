@@ -9,6 +9,114 @@
       "id": "dcf8",
       "username": "admin",
       "password": "adminpassword"
+    },
+    {
+      "user_id": 1,
+      "username": "Usuario1",
+      "password": "First",
+      "foto": "perfil.png",
+      "banner": "Banner.png",
+      "bio": "O first.",
+      "redes_sociais": {
+        "instagram": "user1",
+        "linkedin": "user1",
+        "youtube": "user1"
+      },
+      "portfolios": [
+        {
+          "port_id": 1,
+          "likes": 4,
+          "dislikes": 1,
+          "image": "img1.png"
+        },
+        {
+          "port_id": 2,
+          "likes": 5,
+          "dislikes": 1,
+          "image": "img2.png"
+        }
+      ]
+    },
+    {
+      "user_id": 2,
+      "username": "Pablo Picasso",
+      "password": "Guerrilha",
+      "foto": "pessoa_P.jpg",
+      "banner": "Banner.png",
+      "bio": "Bom dia!",
+      "redes_sociais": {
+        "instagram": "elpicasso",
+        "linkedin": "pablo_picasso",
+        "youtube": "Picasso"
+      },
+      "portfolios": [
+        {
+          "port_id": 3,
+          "likes": 4,
+          "dislikes": 1,
+          "image": "img3.png"
+        },
+        {
+          "port_id": 4,
+          "likes": 2,
+          "dislikes": 1,
+          "image": "img4.png"
+        }
+      ]
+    },
+    {
+      "user_id": 3,
+      "username": "Mauricio de Sousa",
+      "password": "Limoeiro",
+      "foto": "pessoa_M.jpg",
+      "banner": "Banner.png",
+      "bio": "(Talvez) O autor da Turma da Mônica",
+      "redes_sociais": {
+        "instagram": "mauricio_de_sousa",
+        "linkedin": "mauricio_de_sousa",
+        "youtube": "TurmaDoMauricio"
+      },
+      "portfolios": [
+        {
+          "port_id": 5,
+          "likes": 1,
+          "dislikes": 1,
+          "image": "img5.png"
+        }
+      ]
+    },
+    {
+      "user_id": 4,
+      "username": "Calamitas",
+      "password": "Calamidade",
+      "foto": "pfpExpl.jpg",
+      "banner": "Banner.png",
+      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolore reprehenderit ipsum in nam officia deserunt alias, veniam saepe quas tenetur cumque ullam aperiam placeat possimus. Ratione fugiat est placeat.",
+      "redes_sociais": {
+        "instagram": "calamidade_",
+        "linkedin": "carlos",
+        "youtube": "calamitas&"
+      },
+      "portfolios": [
+        {
+          "port_id": 6,
+          "likes": 2,
+          "dislikes": 3,
+          "image": "PorfEx1.png"
+        },
+        {
+          "port_id": 7,
+          "likes": 1,
+          "dislikes": 1,
+          "image": "PorfEx2.png"
+        },
+        {
+          "port_id": 8,
+          "likes": 1,
+          "dislikes": 1,
+          "image": "PorfEx3.png"
+        }
+      ]
     }
   ],
   "elementsById": [
@@ -375,6 +483,188 @@
           "className": "border-change",
           "style": "border",
           "value": ""
+        }
+      ]
+    }
+  ],
+  "explorar": {
+    "portfolios": [
+      {
+        "port_id": 1,
+        "autor": "Usuario1",
+        "user_id": 1,
+        "likes": 4,
+        "dislikes": 1,
+        "image": "img1.png"
+      },
+      {
+        "port_id": 2,
+        "autor": "Usuario1",
+        "user_id": 1,
+        "likes": 5,
+        "dislikes": 1,
+        "image": "img2.png"
+      },
+      {
+        "port_id": 3,
+        "autor": "Pablo Picasso",
+        "user_id": 2,
+        "likes": 4,
+        "dislikes": 1,
+        "image": "img3.png"
+      },
+      {
+        "port_id": 4,
+        "autor": "Pablo Picasso",
+        "user_id": 2,
+        "likes": 2,
+        "dislikes": 1,
+        "image": "img4.png"
+      },
+      {
+        "port_id": 5,
+        "autor": "Mauricio de Sousa",
+        "user_id": 3,
+        "likes": 1,
+        "dislikes": 1,
+        "image": "img5.png"
+      },
+      {
+        "port_id": 6,
+        "autor": "Calamitas",
+        "user_id": 4,
+        "likes": 2,
+        "dislikes": 3,
+        "image": "PorfEx1.png"
+      },
+      {
+        "port_id": 7,
+        "autor": "Calamitas",
+        "user_id": 4,
+        "likes": 1,
+        "dislikes": 1,
+        "image": "PorfEx2.png"
+      },
+      {
+        "port_id": 8,
+        "autor": "Calamitas",
+        "user_id": 4,
+        "likes": 1,
+        "dislikes": 1,
+        "image": "PorfEx3.png"
+      }
+    ]
+  },
+  "forum": [
+    {
+      "post": {
+        "usuario": "Usuario1",
+        "forum_ID": 1,
+        "respostas": 2,
+        "views": 12,
+        "likes": 7,
+        "dislikes": 5,
+        "tag": "Serviços do Site",
+        "titulo": "Oficialmente o primeiro post desse forum.",
+        "pergunta": "Mas para que serve esse forum?",
+        "foto": "perfil.png",
+        "status": false,
+        "edit": false
+      },
+      "respostas": [
+        {
+          "usuario": "Mauricio de Sousa",
+          "likes": 1,
+          "dislikes": 0,
+          "resposta": "Esse forum serve para poder recorrer a comunidade no caso de qualquer dúvida.",
+          "foto": "pessoa_M.jpg",
+          "edit": false
+        },
+        {
+          "usuario": "Pablo Picasso",
+          "likes": 2,
+          "dislikes": 0,
+          "resposta": "Se quiser, tambem pode pedir recomendações para fazer seus portfólios.",
+          "foto": "pessoa_P.jpg",
+          "edit": false
+        }
+      ]
+    },
+    {
+      "post": {
+        "usuario": "Pablo Picasso",
+        "forum_ID": 2,
+        "respostas": 1,
+        "views": 4,
+        "likes": 2,
+        "dislikes": 2,
+        "tag": "Criação de Portfólio",
+        "titulo": "O que devo colocar em um portfolio pop?.",
+        "pergunta": "Estou buscando fazer um portfolio no estilo pop, mas não tenho certeza do que deve ser minha prioridade ao fazer ele.",
+        "foto": "pessoa_P.jpg",
+        "status": true,
+        "edit": false
+      },
+      "respostas": [
+        {
+          "usuario": "Mauricio de Sousa",
+          "likes": 1,
+          "dislikes": 0,
+          "resposta": "Não é minha especialidade, mas talvez demonstrar com suas obras seu conhecimento histórico a respeito do estilo possa ser um bom começo.",
+          "foto": "pessoa_M.jpg",
+          "edit": false
+        }
+      ]
+    },
+    {
+      "post": {
+        "usuario": "Usuario1",
+        "forum_ID": 3,
+        "respostas": 1,
+        "views": 7,
+        "likes": 6,
+        "dislikes": 1,
+        "tag": "Criação de Portfólio",
+        "titulo": "Busco recomendações de portfólios.",
+        "pergunta": "Estou precisando de uns portfólios para servir de inspiração para o meu. Qualquer recomendação que tiverem é bem aceita",
+        "foto": "perfil.png",
+        "status": true,
+        "edit": false
+      },
+      "respostas": [
+        {
+          "usuario": "Mauricio de Sousa",
+          "likes": 1,
+          "dislikes": 0,
+          "resposta": "É complexo prover uma recomendação quando elas são muito variadas, então ajudaria se pudesse especificar qual tipo de portfólio precisa. Se precisar de portfólios no estilo cubista, posso recomendar os de Pablo Picasso",
+          "foto": "pessoa_M.jpg",
+          "edit": false
+        }
+      ]
+    },
+    {
+      "post": {
+        "usuario": "Usuario1",
+        "forum_ID": 4,
+        "respostas": 1,
+        "views": 5,
+        "likes": 3,
+        "dislikes": 2,
+        "tag": "Criação de Portfólio",
+        "titulo": "Como funciona a edição de portfólios?.",
+        "pergunta": "Eu sei que tem um guia sobre isso, mas eu ainda continuei bem confuso. Se puderem ao menos explicar como funciona a edição de texto ficarei bastante grato.",
+        "foto": "perfil.png",
+        "status": false,
+        "edit": false
+      },
+      "respostas": [
+        {
+          "usuario": "Mauricio de Sousa",
+          "likes": 1,
+          "dislikes": 0,
+          "resposta": "Na edição de portfólio, você primeiro determina as mudanças que quer na barra lateral e aí clica em aplicar. Assim, tudo que você clicar no seu portfólio é aplicado as mudanças que você escolheu (se forem possíveis, é claro). Se precisar fazer outras mudanças, é só fazer elas na barra lateral e apertar aplicar novamente.",
+          "foto": "pessoa_M.jpg",
+          "edit": false
         }
       ]
     }
