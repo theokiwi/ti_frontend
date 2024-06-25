@@ -35,7 +35,7 @@ main{
     padding: 10px;
 }
 
-.registerbottom{
+.registerbutton{
     margin: 40px 0;
     border-radius: 10px;
     background-color: #8F00FF;
@@ -48,7 +48,7 @@ main{
     transition: all 0.3s;
 }
 
-.registerbottom:hover{
+.registerbutton:hover{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     background-color:rgb(183, 79, 252);
     border:rgb(183, 79, 252) ;

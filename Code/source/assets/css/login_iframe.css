@@ -5,8 +5,8 @@
 #buttonLogin_Iframe, #buttonCriar_Iframe {
     color: var(--clr-da-purple);
     font-family: 'Times New Roman', Times, serif;
-    font-weight: 600;
-    font-size: 1.6vw;
+    font-weight: 500;
+    font-size: 1.55vw;
 
     background: none;
     border: none;
@@ -77,7 +77,7 @@
     border-radius: 25px;
 
     margin-top: 1vh;
-    margin-left: 7%;
+    margin-left: 7.35%;
 
     box-shadow: 00px 00px 50px #35104d
 }

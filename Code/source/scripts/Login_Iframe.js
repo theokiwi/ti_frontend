@@ -23,4 +23,21 @@ $(document).ready(function () {
     $("#the_login_iframe button").click(function () {
         $("#the_login_iframe").css("display", "none");
     })
+
+
+    $('#login_iframe').on("load", function () {
+        $(this).contents().on('click', '.input-group input.loginbutton', function () {
+            if ($('#login_iframe').contents().find('#username').val() == "" || $('#login_iframe').contents().find('#password').val() == "") { }
+            else {
+                $("#the_login_iframe").css("display", "none");
+            }
+        });
+        $(this).contents().on('click', '.input-group button.registerbutton', function () {
+            if ($('#login_iframe').contents().find('#username').val() == "" || $('#login_iframe').contents().find('#password').val() == "") { }
+            else {
+                $("#the_login_iframe").css("display", "none");
+            }
+        });
+    })
+
 })

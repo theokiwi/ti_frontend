@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(field.value.trim() === ""){
             this.setStatus(
                 field,
-                `${field.previousElementSibling.innerText} não pode ficar em branco`,
+                `${field.nextElementSibling.innerText} não pode ficar em branco`,
                 "error"
             );
             return false;
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if(field.value.length < 8){
                     this.setStatus(
                         field,
-                        `${field.previousElementSibling.innerText} tem que ter pelo menos 8 caracteres`,
+                        `${field.nextElementSibling.innerText} tem que ter pelo menos 8 caracteres`,
                         "error"
                     );
                     return false; 
