@@ -156,16 +156,18 @@ input, textarea {
 }
 
 .submit {
-    margin-left: 50%;
+    margin-left: 65%;
 }
 
 .submit button {
+    padding: 0.25vw;
+
     color: purple;
     background-color: white;
     border-color: purple;
 
     border: 6px solid;
-    border-radius: 4px;
+    border-radius: 5px;
 
     font-family: "Koulen", sans-serif;
 }

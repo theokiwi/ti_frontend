@@ -1,90 +1,41 @@
-function read_forumdata() {
-    let strDados = localStorage.getItem('ArtsyForumPosts');
-    let objDados = {};
+
+function read_forumdata(callback) {
+
+    let strDados = localStorage.getItem('ArtsyForum');
+    var Dados = {};
+
+    var forum_JSON_setup = null;
 
     if (strDados) {
-        objDados = JSON.parse(strDados);
+        Dados = JSON.parse(strDados);
+        //console.log("1", Dados);
+        callback(Dados)
     }
     else {
-        objDados = {
+        forum_JSON_setup = {
+            'async': false,
+            "dataType": "json",
+            "url": "/forum",
+            "method": "GET",
+            "headers": {
+                "Accept": "*/*"
+            }
+        };
 
-            "forum": [
-                {
-                    "post": {
-                        "usuario": "Pablo Picasso", "forumID": 1,
-                        "respostas": 2, "views": 3, "likes": 7, "dislikes": 1,
-                        "tag": "Tag 1", "titulo": "Primeiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "1Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": false, "edit": false
-                    },
-                    "respostas": [
-                        {
-                            "usuario": "Mauricio de Sousa",
-                            "likes": 1, "dislikes": 0,
-                            "resposta": "Lorem ai1 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png", "edit": false
-                        },
-                        {
-                            "usuario": "Mauricio de Sousa",
-                            "likes": 2, "dislikes": 0,
-                            "resposta": "Lorem ai2 ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png", "edit": false
-                        }]
-                },
-                {
-                    "post": {
-                        "usuario": "Pablo Picasso", "forumID": 2,
-                        "respostas": 1, "views": 4, "likes": 2, "dislikes": 2,
-                        "tag": "Tag 2", "titulo": "Segundo Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "2Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": true, "edit": false
-                    },
-                    "respostas": [
-                        {
-                            "usuario": "Mauricio de Sousa",
-                            "likes": 1, "dislikes": 0,
-                            "resposta": "Lorem ei ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png", "edit": false
-                        }]
-                },
-                {
-                    "post": {
-                        "usuario": "Pablo Picasso", "forumID": 3,
-                        "respostas": 1, "views": 5, "likes": 6, "dislikes": 1,
-                        "tag": "Tag 3", "titulo": "Terceiro Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "3Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": true, "edit": false
-                    },
-                    "respostas": [
-                        {
-                            "usuario": "Mauricio de Sousa",
-                            "likes": 1, "dislikes": 0,
-                            "resposta": "Lorem ii ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png", "edit": false
-                        }]
-                },
-                {
-                    "post": {
-                        "usuario": "Pablo Picasso", "forumID": 4,
-                        "respostas": 1, "views": 6, "likes": 3, "dislikes": 2,
-                        "tag": "Tag 4", "titulo": "Quarto Lorem ipsum, dolor sit amet consectetur adipisicing.",
-                        "pergunta": "4Adipisci aspernatur cumque blanditiis?",
-                        "foto": "perfil.png", "status": false, "edit": false
-                    },
-                    "respostas": [
-                        {
-                            "usuario": "Mauricio de Sousa",
-                            "likes": 1, "dislikes": 0,
-                            "resposta": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad sed doloribus officiis sunt quae. Dignissimos earum libero id nobis nostrum minus, aperiam debitis voluptate pariatur minima accusantium sint enim saepe reiciendis incidunt modi consequatur ut.",
-                            "foto": "perfil.png", "edit": false
-                        }]
-                }
-            ]
-        }
+        $.ajax(forum_JSON_setup).done(function (forum_JSON) {
+            Dados = forum_JSON;
+            //console.log("2", Dados);
+            callback(Dados)
+        });
+
+        $.ajax(forum_JSON_setup).fail(function () {
+            $.getJSON("../allJsAuth/db.json", function (forum_JSON) {
+                Dados = forum_JSON.forum;
+                //console.log("3", Dados);
+                callback(Dados)
+            })
+        });
     }
-
-    //console.log(JSON.stringify(objDados));
-    return objDados;
 }
 
 function read_page_ID() { // Tem que aplicar isso no restante do codigo
@@ -100,13 +51,13 @@ function read_page_ID() { // Tem que aplicar isso no restante do codigo
 function insert_forum() {
 
 
-    let Dados = read_forumdata();
-    //console.log(JSON.stringify(Dados));
-    let questionID = read_page_ID();
+    read_forumdata(function (Dados) {
+        //console.log(JSON.stringify(Dados));
+        let questionID = read_page_ID();
 
 
-    if (Dados.forum[questionID - 1].post.edit == false) {
-        $(".post_answers").append(' <div class="post"> \
+        if (Dados[questionID - 1].post.edit == false) {
+            $(".post_answers").append(' <div class="post"> \
     <div class="post_data"> \
         <img src="./assets/img/perfil.png" alt="Autor" class="post_owner"> \
         <div class="post_replies"> \
@@ -133,9 +84,9 @@ function insert_forum() {
              <span class="post_dislikes_number">02</span> \
          </div> \
     </div> ');
-    }
-    else {
-        $(".post_answers").append(' <div class="post"> \
+        }
+        else {
+            $(".post_answers").append(' <div class="post"> \
     <div class="post_data"> \
         <img src="./assets/img/perfil.png" alt="Autor" class="post_owner"> \
         <div class="post_replies"> \
@@ -202,27 +153,27 @@ function insert_forum() {
             <span class="post_dislikes_number">02</span> \
         </div> \
     </div> ');
-    }
+        }
 
 
 
-    $(".question_tag").text(Dados.forum[questionID - 1].post.tag);
-    $(".question_title").text(Dados.forum[questionID - 1].post.titulo);
+        $(".question_tag").text(Dados[questionID - 1].post.tag);
+        $(".question_title").text(Dados[questionID - 1].post.titulo);
 
-    $(".post_replies_number").text(Dados.forum[questionID - 1].post.respostas);
-    $(".post_views_number").text(Dados.forum[questionID - 1].post.views);
+        $(".post_replies_number").text(Dados[questionID - 1].post.respostas);
+        $(".post_views_number").text(Dados[questionID - 1].post.views);
 
-    $(".post_likes_number").text(Dados.forum[questionID - 1].post.likes);
-    $(".post_dislikes_number").text(Dados.forum[questionID - 1].post.dislikes);
+        $(".post_likes_number").text(Dados[questionID - 1].post.likes);
+        $(".post_dislikes_number").text(Dados[questionID - 1].post.dislikes);
 
-    $(".pergunta").text(Dados.forum[questionID - 1].post.pergunta);
+        $(".pergunta").text(Dados[questionID - 1].post.pergunta);
 
-    $(".post_owner").attr("src", "./assets/img/".concat(Dados.forum[questionID - 1].post.foto));
+        $(".post_owner").attr("src", "./assets/img/".concat(Dados[questionID - 1].post.foto));
 
-    for (x = 0; x < Dados.forum[questionID - 1].respostas.length; x++) {
+        for (x = 0; x < Dados[questionID - 1].respostas.length; x++) {
 
-        if (Dados.forum[questionID - 1].respostas[x].edit == false) {
-            $(".post_answers").append('<div class="answer"> \
+            if (Dados[questionID - 1].respostas[x].edit == false) {
+                $(".post_answers").append('<div class="answer"> \
                 <div class="answer_data"> \
                     <img src="./assets/img/perfil.png" alt="Respondedor" class="answer_owner"> \
                     <button class="edit_answer edit_button" value="0" style="display: none;"> \
@@ -252,9 +203,9 @@ function insert_forum() {
                         <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
                         </i></button> <span class="answer_dislikes_number">0</span> </div>\
                 \ </div> ');
-        }
-        else {
-            $(".post_answers").append('<div class="answer"> \
+            }
+            else {
+                $(".post_answers").append('<div class="answer"> \
                 <div class="answer_data"> \
                     <img src="./assets/img/perfil.png" alt="Respondedor" class="answer_owner"> \
                     <button class="edit_answer edit_button"> \
@@ -284,30 +235,31 @@ function insert_forum() {
                         <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
                         </i></button> <span class="answer_dislikes_number">0</span> </div>\
                 \ </div> ');
+            }
+            $('.answer .answer_data button').eq(x).attr("value", x);
+            $('.answer .answer_text .edit_answer_forms .submit button').eq(x).attr("value", x);
+            $('.delete_answer').eq(x).attr("value", x);
         }
-        $('.answer .answer_data button').eq(x).attr("value", x);
-        $('.answer .answer_text .edit_answer_forms .submit button').eq(x).attr("value", x);
-        $('.delete_answer').eq(x).attr("value", x);
-    }
 
-    for (x = 0; x < Dados.forum[questionID - 1].respostas.length; x++) {
-        $(".answer_likes_number").eq(x).text(Dados.forum[questionID - 1].respostas[x].likes);
-        $(".answer_dislikes_number").eq(x).text(Dados.forum[questionID - 1].respostas[x].dislikes);
-        $(".resposta").eq(x).text(Dados.forum[questionID - 1].respostas[x].resposta);
-        $(".answer_owner").eq(x).attr("src", "./assets/img/".concat(Dados.forum[questionID - 1].respostas[x].foto));
-    }
+        for (x = 0; x < Dados[questionID - 1].respostas.length; x++) {
+            $(".answer_likes_number").eq(x).text(Dados[questionID - 1].respostas[x].likes);
+            $(".answer_dislikes_number").eq(x).text(Dados[questionID - 1].respostas[x].dislikes);
+            $(".resposta").eq(x).text(Dados[questionID - 1].respostas[x].resposta);
+            $(".answer_owner").eq(x).attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[x].foto));
+        }
 
+    });
 }
 
 
 function update_forum() {
 
-    let Dados = read_forumdata();
-    let questionID = read_page_ID();
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID();
 
-    let tamanho = Dados.forum[questionID - 1].respostas.length;
+        let tamanho = Dados[questionID - 1].respostas.length;
 
-    $(".post_answers").append('<div class="answer"> \
+        $(".post_answers").append('<div class="answer"> \
         <div class="answer_data"> \
             <img src="./assets/img/perfil.png" alt="Respondedor" class="answer_owner"> \
             <button class="edit_answer edit_button"> \
@@ -337,63 +289,65 @@ function update_forum() {
                 <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
                 </i></button> <span class="answer_dislikes_number">0</span> </div>\
         \ </div> ');
-    $('.answer .answer_data button').eq(tamanho - 1).attr("value", tamanho - 1);
-    $('.answer .answer_text .edit_answer_forms .submit button').eq(tamanho - 1).attr("value", tamanho - 1);
-    $('.delete_answer').eq(tamanho - 1).attr("value", tamanho - 1);
-    $('.edit_answer_forms').eq(tamanho - 1).css("display", "none");
+        $('.answer .answer_data button').eq(tamanho - 1).attr("value", tamanho - 1);
+        $('.answer .answer_text .edit_answer_forms .submit button').eq(tamanho - 1).attr("value", tamanho - 1);
+        $('.delete_answer').eq(tamanho - 1).attr("value", tamanho - 1);
+        $('.edit_answer_forms').eq(tamanho - 1).css("display", "none");
 
-    $(".answer_likes_number").eq(tamanho - 1).text(Dados.forum[questionID - 1].respostas[tamanho - 1].likes);
-    $(".answer_dislikes_number").eq(tamanho - 1).text(Dados.forum[questionID - 1].respostas[tamanho - 1].dislikes);
-    $(".resposta").eq(tamanho - 1).text(Dados.forum[questionID - 1].respostas[tamanho - 1].resposta);
-    $(".answer_owner").eq(tamanho - 1).attr("src", "./assets/img/".concat(Dados.forum[questionID - 1].respostas[tamanho - 1].foto));
+        $(".answer_likes_number").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].likes);
+        $(".answer_dislikes_number").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].dislikes);
+        $(".resposta").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].resposta);
+        $(".answer_owner").eq(tamanho - 1).attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[tamanho - 1].foto));
 
-    $(".post_replies_number").text(Dados.forum[questionID - 1].post.respostas);
+        $(".post_replies_number").text(Dados[questionID - 1].post.respostas);
+    });
 }
 
 
 function update_views() {
-    let Dados = read_forumdata();
-    let questionID = read_page_ID();
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID();
 
 
-    let views = Dados.forum[questionID - 1].post.views;
-    //console.log(JSON.stringify(views));
-    Dados.forum[questionID - 1].post.views = views + 1;
+        let views = Dados[questionID - 1].post.views;
+        Dados[questionID - 1].post.views = views + 1;
 
-    $(".post_views_number").text(Dados.forum[questionID - 1].post.views);
+        $(".post_views_number").text(Dados[questionID - 1].post.views);
 
-    save_data(Dados);
+        save_data(Dados);
+    });
 }
 
 
 function save_answer() {
-    let Dados = read_forumdata();
-    let questionID = read_page_ID();
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID();
 
-    let strResposta = $("#new_answer").val();
+        let strResposta = $("#new_answer").val();
 
-    if (strResposta == "") {
-        alert("Erro de envio: Preencha o campo de informação.");
-    }
-    else {
-        // Incluir informações novas
-        let novaResposta = {
-            "usuario": "Usuario",
-            "likes": 0, "dislikes": 0,
-            "resposta": strResposta,
-            "foto": "perfil.png", "edit": true
-        };
-        Dados.forum[questionID - 1].respostas.push(novaResposta);
+        if (strResposta == "") {
+            alert("Erro de envio: Preencha o campo de informação.");
+        }
+        else {
+            // Incluir informações novas
+            let novaResposta = {
+                "usuario": "Usuario",
+                "likes": 0, "dislikes": 0,
+                "resposta": strResposta,
+                "foto": "perfil.png", "edit": true
+            };
+            Dados[questionID - 1].respostas.push(novaResposta);
 
-        let perguntas = Dados.forum[questionID - 1].post.respostas;
-        Dados.forum[questionID - 1].post.respostas = perguntas + 1;
+            let perguntas = Dados[questionID - 1].post.respostas;
+            Dados[questionID - 1].post.respostas = perguntas + 1;
 
-        $('#display_form').prop('checked', false);
+            $('#display_form').prop('checked', false);
 
-        save_forum(Dados);
-    }
+            save_forum(Dados);
+        }
 
-    return (Dados);
+        return (Dados);
+    });
 }
 
 function save_forum(Dados) {
@@ -404,7 +358,7 @@ function save_forum(Dados) {
 
 function save_data(Dados) {
     // Salvar os dados no localStorage
-    localStorage.setItem('ArtsyForumPosts', JSON.stringify(Dados));
+    localStorage.setItem('ArtsyForum', JSON.stringify(Dados));
 }
 
 
@@ -425,52 +379,51 @@ function edit_post(Dados) {
     $('.edit_post_forms').css("display", "block");
 
     //console.log(JSON.stringify(Dados.forum[questionID - 1].post.titulo));
-    $('#edit_post_title').text(Dados.forum[questionID - 1].post.titulo);
-    $('#edit_post_text').text(Dados.forum[questionID - 1].post.pergunta)
+    $('#edit_post_title').text(Dados[questionID - 1].post.titulo);
+    $('#edit_post_text').text(Dados[questionID - 1].post.pergunta)
 }
 
 function save_edit_post() {
     // Ler dados do navegador ou os padrões
-    let Dados = read_forumdata();
-    let questionID = read_page_ID();
-    let boolStatus;
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID();
+        let boolStatus;
 
-    let strTitulo = $("#edit_post_title").val();
-    let strPergunta = $("#edit_post_text").val();
-    let strTag = $("#edit_tag").val();
-    if ($('#edit_status').val() == "true") {
-        boolStatus = true;
-    }
-    else if ($('#edit_status').val() == "false") {
-        boolStatus = false;
-    }
+        let strTitulo = $("#edit_post_title").val();
+        let strPergunta = $("#edit_post_text").val();
+        let strTag = $("#edit_tag").val();
+        if ($('#edit_status').val() == "true") {
+            boolStatus = true;
+        }
+        else if ($('#edit_status').val() == "false") {
+            boolStatus = false;
+        }
 
-    console.log(JSON.stringify(boolStatus));
-    console.log(typeof (boolStatus));
+        // Obter informações novas
+        if (strTitulo == "" || strPergunta == "" || strTag == "") {
+            alert("Erro de envio: Preencha todos os campos de informação.");
+        }
+        else {
+            Dados[questionID - 1].post.tag = strTag;
+            Dados[questionID - 1].post.titulo = strTitulo;
+            Dados[questionID - 1].post.pergunta = strPergunta;
+            Dados[questionID - 1].post.status = boolStatus;
 
-    // Obter informações novas
-    if (strTitulo == "" || strPergunta == "" || strTag == "") {
-        alert("Erro de envio: Preencha todos os campos de informação.");
-    }
-    else {
-        Dados.forum[questionID - 1].post.tag = strTag;
-        Dados.forum[questionID - 1].post.titulo = strTitulo;
-        Dados.forum[questionID - 1].post.pergunta = strPergunta;
-        Dados.forum[questionID - 1].post.status = boolStatus;
+            // Salvar os dados no localStorage
+            save_data(Dados);
+            //console.log(JSON.stringify(Dados));
 
-        // Salvar os dados no localStorage
-        save_data(Dados);
-        //console.log(JSON.stringify(Dados));
+            alert("Alterações salvas");
 
-        alert("Alterações salvas");
+            // Aplicar alterações
+            $(".question_tag").text(Dados[questionID - 1].post.tag);
+            $(".question_title").text(Dados[questionID - 1].post.titulo);
+            $(".pergunta").text(Dados[questionID - 1].post.pergunta);
+        }
 
-        // Aplicar alterações
-        $(".question_tag").text(Dados.forum[questionID - 1].post.tag);
-        $(".question_title").text(Dados.forum[questionID - 1].post.titulo);
-        $(".pergunta").text(Dados.forum[questionID - 1].post.pergunta);
-    }
+        hide_edit();
 
-    hide_edit();
+    });
 }
 
 function edit_answer(value, Dados) {
@@ -479,86 +432,90 @@ function edit_answer(value, Dados) {
     $('.resposta').eq(value).css("display", "none");
     $('.edit_answer_forms').eq(value).css("display", "block");
 
-    $('.edit_answer_text').eq(value).text(Dados.forum[questionID - 1].respostas[value].resposta);
+    $('.edit_answer_text').eq(value).text(Dados[questionID - 1].respostas[value].resposta);
 }
 
 function save_edit_answer(value) {
     // Ler dados do navegador ou os padrões
-    let Dados = read_forumdata();
-    let questionID = read_page_ID();
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID();
 
-    let strPergunta = $(".edit_answer_text").eq(value).val();
+        let strPergunta = $(".edit_answer_text").eq(value).val();
 
-    // Obter informações novas
-    if (strPergunta == "") {
-        alert("Erro de envio: Preencha o campo de informação.");
-    }
-    else {
-        Dados.forum[questionID - 1].respostas[value].resposta = strPergunta;
+        // Obter informações novas
+        if (strPergunta == "") {
+            alert("Erro de envio: Preencha o campo de informação.");
+        }
+        else {
+            Dados[questionID - 1].respostas[value].resposta = strPergunta;
 
-        // Salvar os dados no localStorage
-        save_data(Dados);
-        //console.log(JSON.stringify(Dados));
+            // Salvar os dados no localStorage
+            save_data(Dados);
+            //console.log(JSON.stringify(Dados));
 
-        alert("Alteração salva");
+            alert("Alteração salva");
 
-        // Aplicar alteração
-        $(".resposta").eq(value).text(Dados.forum[questionID - 1].respostas[value].resposta);
+            // Aplicar alteração
+            $(".resposta").eq(value).text(Dados[questionID - 1].respostas[value].resposta);
 
-        hide_edit();
-    }
+            hide_edit();
+        }
+
+    });
 }
 
 
 
 function delete_post() {
-    if (confirm("Deseja deletar a pergunta?")) {
-        let Dados = read_forumdata();
-        let questionID = read_page_ID();
-        //console.log(JSON.stringify(Dados.forum[questionID - 1]));
+    read_forumdata(function (Dados) {
+        if (confirm("Deseja deletar a pergunta?")) {
+            let questionID = read_page_ID();
+            //console.log(JSON.stringify(Dados[questionID - 1]));
 
-        Dados.forum.splice(questionID - 1, 1);
+            Dados.splice(questionID - 1, 1);
 
-        for (let x = questionID - 1; x < Dados.forum.length; x = x + 1) {
+            for (let x = questionID - 1; x < Dados.length; x = x + 1) {
 
-            Dados.forum[x].post.forumID = Dados.forum[x].post.forumID - 1;
+                Dados[x].post.forum_ID = Dados[x].post.forum_ID - 1;
+
+            }
+
+            save_data(Dados);
+            window.location.href = "../ForumMain/Forum.html";
+        }
+        else {
 
         }
-
-        save_data(Dados);
-        window.location.href = "../ForumMain/Forum.html";
-    }
-    else {
-
-    }
+    });
 }
 
 function delete_answer(value) {
-    if (confirm("Deseja deletar a resposta?")) {
-        let Dados = read_forumdata();
-        let questionID = read_page_ID();
-        //console.log(JSON.stringify(Dados.forum[questionID - 1]));
+    read_forumdata(function (Dados) {
+        if (confirm("Deseja deletar a resposta?")) {
+            let questionID = read_page_ID();
+            //console.log(JSON.stringify(Dados.forum[questionID - 1]));
 
-        Dados.forum[questionID - 1].respostas.splice(value, 1);
-        Dados.forum[questionID - 1].post.respostas = Dados.forum[questionID - 1].post.respostas - 1;
+            Dados[questionID - 1].respostas.splice(value, 1);
+            Dados[questionID - 1].post.respostas = Dados[questionID - 1].post.respostas - 1;
 
-        save_data(Dados);
+            save_data(Dados);
 
-        $('.answer').eq(value).remove();
-        $('.post_replies_number').text(Dados.forum[questionID - 1].post.respostas);
+            $('.answer').eq(value).remove();
+            $('.post_replies_number').text(Dados[questionID - 1].post.respostas);
 
-        //console.log(JSON.stringify(Dados.forum[questionID - 1].respostas.length));
-        
-        for (let x = value; x < Dados.forum[questionID - 1].respostas.length; x = x + 1) {
-            $('.edit_answer_forms .submit button').eq(x).attr("value", x);
-            $('.answer .answer_data button').eq(x).attr("value", x);
-            $('.delete_answer ').eq(x).attr("value", x);
+            //console.log(JSON.stringify(Dados[questionID - 1].respostas.length));
+
+            for (let x = value; x < Dados[questionID - 1].respostas.length; x = x + 1) {
+                $('.edit_answer_forms .submit button').eq(x).attr("value", x);
+                $('.answer .answer_data button').eq(x).attr("value", x);
+                $('.delete_answer ').eq(x).attr("value", x);
+            }
+
         }
-        
-    }
-    else {
+        else {
 
-    }
+        }
+    });
 }
 
 
@@ -573,13 +530,12 @@ $(document).ready(function () {
 
 
     $('#submit_new_answer').click(function () {
-        let DadosComparacao = read_forumdata();
-        let DadosObtidos = read_forumdata();
-
-        DadosObtidos = save_answer();
-        if (DadosObtidos != DadosComparacao) {
-            update_forum();
-        }
+        read_forumdata(function (DadosComparacao) {
+            let DadosObtidos = save_answer();
+            if (DadosObtidos != DadosComparacao) {
+                update_forum();
+            }
+        });
     });
 
 
@@ -587,8 +543,9 @@ $(document).ready(function () {
     $('.post_answers').on('click', '.answer .answer_data .edit_answer', function () {
         let pergunta = parseInt($(this).attr("value"), 10);
         if ($('.edit_answer_forms').eq(pergunta).css("display") == "none") {
-            let Dados = read_forumdata();
-            edit_answer(pergunta, Dados);
+            read_forumdata(function (Dados) {
+                edit_answer(pergunta, Dados);
+            });
         }
         else {
             hide_edit();
@@ -610,8 +567,9 @@ $(document).ready(function () {
 
     $('#edit_question').click(function () {
         if ($('.edit_post_forms').css("display") == "none") {
-            let Dados = read_forumdata();
-            edit_post(Dados);
+            read_forumdata(function (Dados) {
+                edit_post(Dados);
+            });
         }
         else {
             hide_edit();

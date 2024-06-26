@@ -78,7 +78,7 @@ section {
 .check_icon {
     font-size: 5vw;
 
-    padding-left: 8px;
+    padding-left: 4px;
 
     color: var(--green-icon);
 }
@@ -86,7 +86,7 @@ section {
 .clock_icon {
     font-size: 5vw;
 
-    padding-left: 8px;
+    padding-left: 4px;
 
     color: var(--orange-icon);
 }
@@ -103,14 +103,14 @@ section {
 }
 
 .tag_title {
-    width: 7vw;
+    width: 8vw;
 
-    margin-left: 2vw;
+    margin-left: 1.25vw;
     margin-right: 3.5vw;
 
-    font-family: "Koulen", sans-serif;
+    font-family: "Kaushan Script", sans-serif;
     font-weight: 500;
-    font-size: 2.75vw;
+    font-size: 2.25vw;
 
     color: var(--dark-purple);
 }
