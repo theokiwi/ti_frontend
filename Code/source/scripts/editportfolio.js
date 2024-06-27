@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('downloadBtn').addEventListener('click', async function() {
         try {
+            alert("ATENÇÃO -> Essa função só está disponível em navegadores CHROMIUM. Use de prefêrencia Google Chrome ou Microsoft Edge")
             const response = await fetch('http://localhost:3000/download');
             if (!response.ok) {
                 throw new Error('Erro ao carregar o arquivo JSON');

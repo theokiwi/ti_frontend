@@ -1,5 +1,5 @@
 body{
-    overflow: hidden;
+    overflow: auto;
 }
 
 .section-menu .container {
@@ -375,12 +375,15 @@ button:hover {
     position: absolute;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
+
 }
 
 .iframe-template {
     /* position: absolute; */
     width: 100%;
     height: 100%;
+    overflow-y: auto;
     /* a cor eh so pra acompanhar nao se assuste */
 }
 
