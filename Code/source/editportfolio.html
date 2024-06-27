@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="./assets/css/variaveis.css">
     <link rel="stylesheet" href="./assets/css/fonts.css">
-    <link rel="stylesheet" href="./assets/css/homepage.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/editportfolio.css">
@@ -27,28 +26,30 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="home.html">
-                    <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px">
-                    <p class="LogoName">ARTSYPAGES</p>
-                </a>
+    <header>
+        <div class="container">
+            <div class="navbar"> 
+                <div class="logo">
+                    <a href="home.html">
+                        <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px">
+                        <p class="LogoName">ARTSYPAGES</p>
+                    </a>
+                </div>
+                <nav>
+                    <ul id="menuItems" height="200px">
+                        <li><a href="./ajuda.html">Faq</a></li>
+                        <li><a href="./explorar.html">Explorar</a></li>
+                        <li><a href="./forum.html">Fórum</a></li>
+                        <li><a href="./editportfolio.html">Criar</a></li>
+                        <li><button id="buttonLogin_Iframe">Login</button></li>
+                        <li><button id="buttonCriar_Iframe">Registrar</button></li>
+                    </ul>
+                </nav>
+                <img src="./assets/img/perfil.png" alt="Perfil" width="30px" class="perfil">
+                <img src="./assets/img/menuHam.png" alt="Menu" width="50px" class="menu_icon">
             </div>
-            <nav>
-                <ul id="menuItems">
-                    <li><a href="./ajuda.html">Faq</a></li>
-                    <li><a href="./explorar.html">Explorar</a></li>
-                    <li><a href="./forum.html">Fórum</a></li>
-                    <li><a href="./editportfolio.html">Criar</a></li>
-                    <li><button id="buttonLogin_Iframe">Login</button></li>
-                    <li><button id="buttonCriar_Iframe">Registrar</button></li>
-                </ul>
-            </nav>
-            <img src="./assets/img/perfil.png" alt="" width="30px">
-            <img src="./assets/img/menuHam.png" alt="" width="50px" class="menu-icon" onclick="menuHam()">
         </div>
-    </div>
+    </header>
     <!--  -->
 
     <div id="the_login_iframe">
