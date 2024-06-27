@@ -118,10 +118,10 @@ function insert_forum() {
             <form class="edit_tag_selection"> \
                 <label for="edit_tag">Tag</label> \
                 <select class="tag_list" name="tag_list" id="edit_tag"> \
-                    <option value="Tag 1" selected>Tag 1</option> \
-                    <option value="Tag 2">Tag 2</option> \
-                    <option value="Tag 3">Tag 3</option> \
-                    <option value="Tag 4">Tag 4</option> \
+                    <option value="Criação de Portfólio" selected>Criação de Portfólio</option> \
+                    <option value="Serviços do Site">Serviços do Site</option> \
+                    <option value="Customização do Perfil">Customização do Perfil</option> \
+                    <option value="Outros">Outros</option> \
                 </select> \
             </form> \
             <form class="edit_post_status"> \
