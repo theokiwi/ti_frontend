@@ -44,13 +44,32 @@ function save_question() {
         let strTitulo = $("#post_title").val();
         let strPergunta = $("#post_description").val();
         let strTag = $("#tag").val();
+        
 
         // Obter informações novas
         if (strTitulo == "" || strPergunta == "" || strTag == "") {
             alert("Erro de envio: Preencha todos os campos de informação.");
         }
         else {
-            //let strNome = document.getElementsByClassName('Person').source;
+            let strFoto; let strUser;
+
+            // Obter nome do usuário
+            
+            let usuario = localStorage.getItem('whoAmI');
+            if (usuario)
+            { strUser = usuario; }
+            else
+            { strUser = "Usuario"; }
+            
+
+            // Obter foto do perfil
+            let foto = localStorage.getItem('profileImage');
+            if (foto)
+                { strFoto = foto;  }
+            else
+                { strFoto = "perfil.png"; }
+
+
 
             let ID = Dados.length + 1;
 
@@ -62,7 +81,7 @@ function save_question() {
                     "respostas": 0, "views": 0, "likes": 0, "dislikes": 0,
                     "tag": strTag, "titulo": strTitulo,
                     "pergunta": strPergunta,
-                    "foto": "perfil.png", "status": false, "edit": true
+                    "foto": foto, "status": false, "edit": true
                 },
                 "respostas": []
             };

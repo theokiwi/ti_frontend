@@ -53,9 +53,10 @@ main{
 
     margin-right: 1vw;
 
-    font-size: 4vw;
+    font-size: 2.75vw;
 
     font-style: italic;
+    text-decoration: underline;
 }
 
 .question_title {
@@ -63,7 +64,7 @@ main{
     font-size: 3vw;
 }
 
-.post_title i {
+.return_button i {
     float: right;
 
     font-size: 2.25vw;
@@ -83,7 +84,7 @@ main{
     border-radius: 100%;
 }
 
-.post_title i:hover {
+.return_button i:hover {
     color: white;
     background-color: purple;
 }
