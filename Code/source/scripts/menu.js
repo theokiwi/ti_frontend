@@ -31,8 +31,8 @@ function user_show() {
             strFoto == "pessoa_P.jpg" || strFoto == "pfpExpl.jpg") { $('.navbar .perfil').attr("src", "./assets/img/".concat(strFoto)); }
         else { $('.navbar .perfil').attr('src', strFoto); }
 
-        $('#menuItems li').eq(3).css("display", "none");
         $('#menuItems li').eq(4).css("display", "none");
+        $('#menuItems li').eq(5).css("display", "none");
         
         $('#menuItems').append('<li class="username"><a href="./perfil.html">Nome</a></li>')
         $('#menuItems li.username a').text(strUser)
