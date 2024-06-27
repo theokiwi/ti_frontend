@@ -176,7 +176,7 @@ function insert_forum() {
         for (x = 0; x < Dados[questionID - 1].respostas.length; x++) {
 
             if (Dados[questionID - 1].respostas[x].edit == false) {
-                $(".post_answers").append('<div class="answer"> \
+                $(".post_answers").append(`<div class="answer"> \
                 <div class="answer_data"> \
                     <img src="./assets/img/perfil.png" alt="Respondedor" class="answer_owner"> \
                     <button class="edit_answer edit_button" value="0" style="display: none;"> \
@@ -198,17 +198,17 @@ function insert_forum() {
                             </button> \
                     </div> \
                 </div> \
-                <div class="answer_rating"> \
+                <div class="answer_rating" data-id="${x}"> \
                     <div class="answer_likes"> \
                         <button><i class="answer_likes_icon fa-solid fa-angle-up"> \
                         </i></button> <span class="answer_likes_number">10</span> </div>\
                     <div class="answer_dislikes"> \
                         <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
                         </i></button> <span class="answer_dislikes_number">0</span> </div>\
-                \ </div> ');
+                \ </div> `);
             }
             else {
-                $(".post_answers").append('<div class="answer"> \
+                $(".post_answers").append(`<div class="answer"> \
                 <div class="answer_data"> \
                     <img src="./assets/img/perfil.png" alt="Respondedor" class="answer_owner"> \
                     <button class="edit_answer edit_button"> \
@@ -230,14 +230,14 @@ function insert_forum() {
                             </button> \
                     </div>    \
                 </div> \
-                <div class="answer_rating"> \
+                <div class="answer_rating" data-id="${x}"> \
                     <div class="answer_likes"> \
                         <button><i class="answer_likes_icon fa-solid fa-angle-up"> \
                         </i></button> <span class="answer_likes_number">10</span> </div>\
                     <div class="answer_dislikes"> \
                         <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
                         </i></button> <span class="answer_dislikes_number">0</span> </div>\
-                \ </div> ');
+                \ </div> `);
             }
             $('.answer .answer_data button').eq(x).attr("value", x);
             $('.answer .answer_text .edit_answer_forms .submit button').eq(x).attr("value", x);
@@ -287,7 +287,7 @@ function update_forum() {
                         </button> \
             </div>    \
         </div> \
-        <div class="answer_rating"> \
+        <div class="answer_rating" data-id="2"> \
             <div class="answer_likes"> \
                 <button><i class="answer_likes_icon fa-solid fa-angle-up"> \
                 </i></button> <span class="answer_likes_number">10</span> </div>\
@@ -549,6 +549,129 @@ function delete_answer(value) {
     });
 }
 
+// Funçao like e deslike
+
+function post_toggle_reaction(action) {
+    read_forumdata(function (Dados) {
+        let objData = Dados;
+        console.log({objData});
+        let likes = objData[0].post.likes;
+        let dislikes = objData[0].post.dislikes;
+        let $likeElement = $('.post_likes_number');
+        let $dislikeElement = $('.post_dislikes_number');
+
+        let alreadyPerformedLike = localStorage.getItem('postLiked') === 'true';
+        let alreadyPerformedDislike = localStorage.getItem('postDisliked') === 'true';
+
+        if (action === 'like') {
+            if (alreadyPerformedLike) {
+                console.log('Você já deu like nesta postagem.');
+                return;
+            }
+            if (alreadyPerformedDislike) {
+                console.log('Removendo dislike.');
+                dislikes--;
+                objData[0].post.dislikes = dislikes;
+                localStorage.removeItem('postDisliked');
+                localStorage.removeItem('postDislikeNumbers');
+                $dislikeElement.text(dislikes);
+            }
+            console.log('Você deu um like.');
+            likes++;
+            objData[0].post.likes = likes;
+            localStorage.setItem('postLiked', 'true');
+            localStorage.setItem('postLikeNumbers', likes);
+            $likeElement.text(likes);
+        } else {
+            if (alreadyPerformedDislike) {
+                console.log('Você já deu dislike nesta postagem.');
+                return;
+            }
+            if (alreadyPerformedLike) {
+                console.log('Removendo like.');
+                likes--;
+                objData[0].post.likes = likes;
+                localStorage.removeItem('postLiked');
+                localStorage.removeItem('postLikeNumbers');
+                $likeElement.text(likes);
+            }
+            console.log('Você deu um dislike.');
+            dislikes++;
+            objData[0].post.dislikes = dislikes;
+            localStorage.setItem('postDisliked', 'true');
+            localStorage.setItem('postDislikeNumbers', dislikes);
+            $dislikeElement.text(dislikes);
+        }
+
+        localStorage.setItem('ArtsyForum', JSON.stringify(objData));
+        console.log(`${action} adicionado.`);
+    })
+    
+}
+
+
+function updateRating(element, type) {
+    read_forumdata(function (Dados) {
+
+        let user = {
+            "name": "Test user",
+            "likes": 0,
+            "dislikes": 0,
+        };
+        let parentElement = $(element).closest('.answer_rating');
+        let id = parentElement.data('id');
+        let $likeElement = parentElement.find('.answer_likes_number');
+        let $dislikeElement = parentElement.find('.answer_dislikes_number');
+        
+        let objData = Dados;
+        let likes = objData[0].respostas[id].likes;
+        let dislikes = objData[0].respostas[id].dislikes;
+    
+        let alreadyPerformedLike = localStorage.getItem(`postRatingLikeNumbers_${id}`) !== null;
+        let alreadyPerformedDislike = localStorage.getItem(`postRatingDislikeNumbers_${id}`) !== null;
+    
+        if (type === 'like') {
+            if (alreadyPerformedLike) {
+                console.log('Você já deu like');
+                return;
+            }
+            if (alreadyPerformedDislike) {
+                console.log('Removendo dislike');
+                dislikes--;
+                $dislikeElement.text(dislikes);
+                localStorage.removeItem(`postRatingDislikeNumbers_${id}`);
+            }
+            console.log('Você deu um like');
+            likes++;
+            $likeElement.text(likes);
+            localStorage.setItem(`postRatingLikeNumbers_${id}`, 1);
+            user["likes"] = 1;
+            user["dislikes"] = 0;
+        } else {
+            if (alreadyPerformedDislike) {
+                console.log('Você já deu dislike');
+                return;
+            }
+            if (alreadyPerformedLike) {
+                console.log('Removendo like');
+                likes--;
+                $likeElement.text(likes);
+                localStorage.removeItem(`postRatingLikeNumbers_${id}`);
+            }
+            console.log('Você deu um dislike');
+            dislikes++;
+            $dislikeElement.text(dislikes);
+            localStorage.setItem(`postRatingDislikeNumbers_${id}`, 1);
+            user["likes"] = 0;
+            user["dislikes"] = 1;
+        }
+    
+        objData[0].respostas[id].likes = likes;
+        objData[0].respostas[id].dislikes = dislikes;
+        localStorage.setItem('ArtsyForum', JSON.stringify(objData));
+        localStorage.setItem(`user_${id}`, JSON.stringify(user));
+    })
+}
 
 $(document).ready(function () {
 
@@ -557,6 +680,23 @@ $(document).ready(function () {
     insert_forum();
     update_views();
     hide_edit();
+
+    $('.post_likes button').on('click', function() {
+        post_toggle_reaction('like');
+    });
+    
+    $('.post_dislikes button').on('click', function() {
+        post_toggle_reaction('dislike');
+    });
+
+    $(document).on('click', '.answer_likes button', function() {
+        updateRating(this, 'like');
+    });
+    
+    $(document).on('click', '.answer_dislikes button', function() {
+        updateRating(this, 'dislike');
+    });
+
 
 
 
