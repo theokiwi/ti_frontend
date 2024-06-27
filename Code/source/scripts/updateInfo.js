@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { className: 'text-weight-change', style: 'fontWeight', value: storedData['textweightpicker'] },
                 { className: 'text-content', value: storedData['textcontentpick'] },
                 { className: 'border-change', style: 'border', value: storedData['borderPick'] },
+                { className: 'img-edit', style: 'src', value: dataArray['imageurlpick']},
             ];
 
             const edits = frameContent.getElementsByClassName('edit');

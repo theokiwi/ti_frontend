@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function carregarComentarios() {
         comentariosList.innerHTML = '';
-        var comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+        var comentarios = JSON.parse(localStorage.getItem('comentarios'));
         comentarios.forEach(function(comentario) {
             var comentarioItem = document.createElement('div');
             comentarioItem.className = 'comentario-item';

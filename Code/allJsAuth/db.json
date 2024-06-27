@@ -85,7 +85,7 @@
   ],
   "elementsById": [
     {
-      "id": "24d4",
+      "id": "1857",
       "userId": "00a5",
       "elementClasses": [
         "edit",
@@ -138,7 +138,143 @@
         },
         {
           "className": "text-content",
-          "value": "Marcos Silva"
+          "value": "?????"
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "c86a",
+      "userId": "00a5",
+      "elementClasses": [
+        "edit",
+        "text-content",
+        "text-weight-change",
+        "border-change"
+      ],
+      "whoAmI": "teste",
+      "elementId": "texto1",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#000000"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#000000"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": "Jesus"
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "89fe",
+      "userId": "00a5",
+      "elementClasses": [
+        "edit",
+        "text-content",
+        "text-weight-change",
+        "border-change"
+      ],
+      "whoAmI": "teste",
+      "elementId": "texto1",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#000000"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#000000"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": "Nossa Senhora de Aparecida"
         },
         {
           "className": "border-change",
