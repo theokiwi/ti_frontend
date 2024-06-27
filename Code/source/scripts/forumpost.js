@@ -554,9 +554,12 @@ function delete_answer(value) {
 function post_toggle_reaction(action) {
     read_forumdata(function (Dados) {
         let objData = Dados;
+
+        let currentID  = read_page_ID() - 1;
+
         console.log({objData});
-        let likes = objData[0].post.likes;
-        let dislikes = objData[0].post.dislikes;
+        let likes = objData[currentID].post.likes;
+        let dislikes = objData[currentID].post.dislikes;
         let $likeElement = $('.post_likes_number');
         let $dislikeElement = $('.post_dislikes_number');
 
@@ -571,14 +574,14 @@ function post_toggle_reaction(action) {
             if (alreadyPerformedDislike) {
                 console.log('Removendo dislike.');
                 dislikes--;
-                objData[0].post.dislikes = dislikes;
+                objData[currentID].post.dislikes = dislikes;
                 localStorage.removeItem('postDisliked');
                 localStorage.removeItem('postDislikeNumbers');
                 $dislikeElement.text(dislikes);
             }
             console.log('Você deu um like.');
             likes++;
-            objData[0].post.likes = likes;
+            objData[currentID].post.likes = likes;
             localStorage.setItem('postLiked', 'true');
             localStorage.setItem('postLikeNumbers', likes);
             $likeElement.text(likes);
@@ -590,14 +593,14 @@ function post_toggle_reaction(action) {
             if (alreadyPerformedLike) {
                 console.log('Removendo like.');
                 likes--;
-                objData[0].post.likes = likes;
+                objData[currentID].post.likes = likes;
                 localStorage.removeItem('postLiked');
                 localStorage.removeItem('postLikeNumbers');
                 $likeElement.text(likes);
             }
             console.log('Você deu um dislike.');
             dislikes++;
-            objData[0].post.dislikes = dislikes;
+            objData[currentID].post.dislikes = dislikes;
             localStorage.setItem('postDisliked', 'true');
             localStorage.setItem('postDislikeNumbers', dislikes);
             $dislikeElement.text(dislikes);
@@ -613,6 +616,8 @@ function post_toggle_reaction(action) {
 function updateRating(element, type) {
     read_forumdata(function (Dados) {
 
+        let currentID  = read_page_ID() - 1;
+
         let user = {
             "name": "Test user",
             "likes": 0,
@@ -624,8 +629,8 @@ function updateRating(element, type) {
         let $dislikeElement = parentElement.find('.answer_dislikes_number');
         
         let objData = Dados;
-        let likes = objData[0].respostas[id].likes;
-        let dislikes = objData[0].respostas[id].dislikes;
+        let likes = objData[currentID].respostas[id].likes;
+        let dislikes = objData[currentID].respostas[id].dislikes;
     
         let alreadyPerformedLike = localStorage.getItem(`postRatingLikeNumbers_${id}`) !== null;
         let alreadyPerformedDislike = localStorage.getItem(`postRatingDislikeNumbers_${id}`) !== null;
@@ -666,8 +671,8 @@ function updateRating(element, type) {
             user["dislikes"] = 1;
         }
     
-        objData[0].respostas[id].likes = likes;
-        objData[0].respostas[id].dislikes = dislikes;
+        objData[currentID].respostas[id].likes = likes;
+        objData[currentID].respostas[id].dislikes = dislikes;
         localStorage.setItem('ArtsyForum', JSON.stringify(objData));
         localStorage.setItem(`user_${id}`, JSON.stringify(user));
     })
