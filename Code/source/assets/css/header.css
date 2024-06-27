@@ -27,7 +27,7 @@ nav ul li {
     margin-right: 20px;
 }
 
-.logo {
+.logo a, .logo{
     display: flex;
     align-items: center;
     max-width: 5rem;
