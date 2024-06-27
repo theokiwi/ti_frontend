@@ -165,6 +165,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }        
     }
+
+    document.getElementById('downloadBtn').addEventListener('click', async function() {
+        try {
+            const response = await fetch('http://localhost:3000/download');
+            if (!response.ok) {
+                throw new Error('Erro ao carregar o arquivo JSON');
+            }
+            const data = await response.json();
+    
+            const fileHandle = await window.showSaveFilePicker({
+                suggestedName: data.fileName,
+                types: data.fileTypes.map(type => ({
+                    description: type.description,
+                    accept: { [type.mimeType]: [type.extension] },
+                })),
+            });
+    
+            const writableStream = await fileHandle.createWritable();
+            
+            const fileContent = data.documentContent;
+            
+            await writableStream.write(fileContent);
+            
+            await writableStream.close();
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    });
+    
 });
 
 function hideMenuItems() {
@@ -182,33 +211,11 @@ function hideMenuItems() {
 
 
 function openHelp() {
-    window.open('help.html');
+    window.open('ajuda.html');
 }
 
-document.getElementById('downloadBtn').addEventListener('click', async function() {
-    try {
-        const response = await fetch('data.json');
-        if (!response.ok) {
-            throw new Error('Erro ao carregar o arquivo JSON');
-        }
-        const data = await response.json();
 
-        const fileHandle = await window.showSaveFilePicker({
-            suggestedName: data.fileName,
-            types: data.fileTypes.map(type => ({
-                description: type.description,
-                accept: { [type.mimeType]: [type.extension] },
-            })),
-        });
 
-        const writableStream = await fileHandle.createWritable();
-        
-        const fileContent = data.documentContent;
-        
-        await writableStream.write(fileContent);
-        
-        await writableStream.close();
-    } catch (error) {
-        console.error('Erro:', error);
-    }
-});
+
+
+

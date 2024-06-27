@@ -1,4 +1,20 @@
 {
+  "download": {
+    "documentContent": "content",
+    "fileName": "document",
+    "fileTypes": [
+        {
+            "description": "HTML Files",
+            "mimeType": "text/html",
+            "extension": ".html"
+        },
+        {
+            "description": "CSS Files",
+            "mimeType": "text/css",
+            "extension": ".css"
+        }
+    ]
+  },
   "users": [
     {
       "username": "teste",
@@ -35,7 +51,8 @@
           "dislikes": 1,
           "image": "img2.png"
         }
-      ]
+      ],
+      "id": "0c53"
     },
     {
       "user_id": 2,
@@ -62,7 +79,8 @@
           "dislikes": 1,
           "image": "img4.png"
         }
-      ]
+      ],
+      "id": "72b8"
     },
     {
       "user_id": 3,
@@ -83,7 +101,8 @@
           "dislikes": 1,
           "image": "img5.png"
         }
-      ]
+      ],
+      "id": "4cd5"
     },
     {
       "user_id": 4,
@@ -116,7 +135,8 @@
           "dislikes": 1,
           "image": "PorfEx3.png"
         }
-      ]
+      ],
+      "id": "07f1"
     }
   ],
   "elementsById": [
@@ -485,6 +505,67 @@
           "value": ""
         }
       ]
+    },
+    {
+      "id": "bcc4",
+      "userId": "dcf8",
+      "elementClasses": [
+        "edit",
+        "text-color-change"
+      ],
+      "whoAmI": "admin",
+      "elementId": "text1",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#a80000"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#a80000"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        }
+      ]
     }
   ],
   "explorar": {
@@ -588,7 +669,8 @@
           "foto": "pessoa_P.jpg",
           "edit": false
         }
-      ]
+      ],
+      "id": "c010"
     },
     {
       "post": {
@@ -614,7 +696,8 @@
           "foto": "pessoa_M.jpg",
           "edit": false
         }
-      ]
+      ],
+      "id": "1e23"
     },
     {
       "post": {
@@ -640,7 +723,8 @@
           "foto": "pessoa_M.jpg",
           "edit": false
         }
-      ]
+      ],
+      "id": "8bcd"
     },
     {
       "post": {
@@ -666,7 +750,8 @@
           "foto": "pessoa_M.jpg",
           "edit": false
         }
-      ]
+      ],
+      "id": "d472"
     }
   ]
 }
