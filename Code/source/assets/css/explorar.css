@@ -166,3 +166,10 @@
     margin-left: 40%;
     opacity: 0px;
 }
+.btnordenar{
+    padding: 10%;
+    border-radius: 45px;
+    background-color: white;
+    color: purple;
+    font-weight: 50%;
+}

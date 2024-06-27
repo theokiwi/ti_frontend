@@ -213,7 +213,7 @@ div.answer:last-of-type {
     width: 100%;
 }
 
-.edit_title label, .edit_post label, .edit_tag_selection label {
+.edit_title label, .edit_post label, .edit_tag_selection label, .edit_post_status label {
     color: rgb(86,47,138);
 
     font-weight: 600;
@@ -237,6 +237,10 @@ div.answer:last-of-type {
     display: inline;
 
     margin-left: 1vw;
+}
+
+.edit_post_status {
+    float: right;
 }
 
 .edit_answer_forms {

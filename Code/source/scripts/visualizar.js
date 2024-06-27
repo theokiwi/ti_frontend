@@ -100,4 +100,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
  
 });
+
+//Pop Comentarios
+document.addEventListener('DOMContentLoaded', function() {
+    var popupOverlay = document.getElementById("popupOverlay");
+    var openPopup = document.getElementById("openPopup");
+    var closePopup = document.getElementById("closePopup");
+    var enviarComentario = document.getElementById("enviarComentario");
+    var comentarioTextarea = document.getElementById("comentario");
+    var comentariosList = document.getElementById("comentariosList");
+
+    function abrirPopup() {
+        popupOverlay.classList.add("active");
+        carregarComentarios();
+    }
+
+    function fecharPopup() {
+        popupOverlay.classList.remove("active");
+    }
+
+    openPopup.onclick = abrirPopup;
+
+    closePopup.onclick = fecharPopup;
+
+    window.onclick = function(event) {
+        if (event.target == popupOverlay) {
+            fecharPopup();
+        }
+    }
+
+    function carregarComentarios() {
+        comentariosList.innerHTML = '';
+        var comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+        comentarios.forEach(function(comentario) {
+            var comentarioItem = document.createElement('div');
+            comentarioItem.className = 'comentario-item';
+            comentarioItem.textContent = comentario;
+            comentariosList.appendChild(comentarioItem);
+        });
+    }
+
+    enviarComentario.onclick = function() {
+        var comentario = comentarioTextarea.value;
+        if (comentario.trim() !== '') {
+            var comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+            comentarios.push(comentario);
+            localStorage.setItem('comentarios', JSON.stringify(comentarios));
+            carregarComentarios();
+            comentarioTextarea.value = '';
+        }
+    }
+
+    function resetarLocalStorage() {
+        localStorage.removeItem('comentarios');
+        carregarComentarios();
+    }
+
+    var tempoParaResetar = 60 * 60 * 1000; // 1 hora
+
+    setTimeout(resetarLocalStorage, tempoParaResetar);
+});
    
