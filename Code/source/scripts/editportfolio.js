@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
      if (!localStorage.getItem("whoAmI")) {
          alert("Você não está logado e será redirecionado para a página de login");
-         window.location.href = '/login'; // Redirecionar para a página de login
+         openLogin();
      } else {
         // O resto do código dentro do else, se a pessoa estiver logada.
         let dataArray;
@@ -209,11 +209,20 @@ function hideMenuItems() {
     });
 }
 
-
 function openHelp() {
     window.open('ajuda.html');
 }
 
+function openLogin(){
+    alert("Você não está logado e será redirecionado para a página de login");
+    if ($("#the_login_iframe").css("display") == "block") {
+       $("#the_login_iframe").css("display", "none");
+   }
+   else {
+       $("#login_iframe").attr("src", "login.html");
+       $("#the_login_iframe").css("display", "block");
+   }
+}
 
 
 

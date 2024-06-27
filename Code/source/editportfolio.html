@@ -11,52 +11,55 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/editportfolio.css">
+    <link rel="stylesheet" href="assets/css/login_iframe.css">
+
 
     <script src="https://kit.fontawesome.com/d5e3a05139.js" crossorigin="anonymous"></script>
     <script src="scripts/jquery-3.7.1.min.js"></script>
     <script src="scripts/editportfolio.js"></script>
     <script src="scripts/menu.js"></script>
 
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <script src="./scripts/Login_Iframe.js"></script>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     <title>Editar Portfolio</title>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px">
-                    <p class="LogoName">ARTSYPAGES</p>
-                </div>
-                <nav>
-                    <ul id="menuItems" height="200px">
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="./explorar.html">Explorar</a></li>
-                        <li><a href="./forum.html">Fórum</a></li>
-                        <li><a href="./editportfolio.html">Criar</a></li>
-                        <li><a href="#">Login</a></li>
-                    </ul>
-                </nav>
-                <img src="./assets/img/perfil.png" alt="Perfil" width="30px" class="perfil">
-                <img src="./assets/img/menuHam.png" alt="Menu" width="50px" class="menu_icon">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="./assets/img/logo.png" alt="" width="60px" height="60px">
+                <p class="LogoName">ARTSYPAGES</p>
             </div>
+            <nav>
+                <ul id="menuItems">
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">Explorar</a></li>
+                    <li><a href="#">Fórum</a></li>
+                    <li><button id="buttonLogin_Iframe">Login</button></li>
+                    <li><button id="buttonCriar_Iframe">Criar</button></li>
+                </ul>
+            </nav>
+            <img src="./assets/img/perfil.png" alt="" width="30px">
+            <img src="./assets/img/menuHam.png" alt="" width="50px" class="menu-icon" onclick="menuHam()">
         </div>
-    </header>
+    </div>
+    <!--  -->
+
+    <div id="the_login_iframe">
+        <button><i class="fa-solid fa-x"></i></button>
+        <iframe src="login.html" id="login_iframe"></iframe>
+    </div>
+
 
     <main>
         <div class="flex-box">
             <section class="section-menu">
                 <div class="container">
                     <ul class="accordion-menu">
-                        <li class="menu">
-                            <div onclick="hideMenuItems()" class="dropdown">
-                                <i class="icon-start fa-solid fa-image"></i>
-                                <p>Portfolio</p>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <form id="formEl">
-                        </li>
+                        <form id="formEl">
                         <li class="menu">
                             <div onclick="hideMenuItems()" class="dropdown">
                                 <i class="fa-solid icon-start fa-font"></i>
