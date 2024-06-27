@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-     if (!localStorage.getItem("whoAmI")) {
-         alert("Você não está logado e será redirecionado para a página de login");
-         openLogin();
-     } else {
+    if (!localStorage.getItem("whoAmI")) {
+        alert("Você não está logado e será redirecionado para a página de login");
+        openLogin();
+    } else {
+
+        var imageUrl;
+
         // O resto do código dentro do else, se a pessoa estiver logada.
         let dataArray;
 
@@ -30,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         frameObj.onload = function () {
-            var frameContent = frameObj.contentWindow.document; 
+            var frameContent = frameObj.contentWindow.document;
             applyStoredChanges(frameContent); // Aplicar mudanças ao carregar o iframe
 
             const edits = frameContent.getElementsByClassName('edit');
@@ -74,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 dataArray = JSON.parse(jsonString);
 
                 var styles = [
-                    { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'],  },
+                    { className: 'text-color-change', style: 'color', value: dataArray['colorpicker'], },
                     { className: 'background-color-change', style: 'backgroundColor', value: dataArray['colorpicker'] },
                     { className: 'opacity-change', style: 'opacity', value: dataArray['opacitypicker'] },
                     { className: 'padding-change', style: 'padding', value: dataArray['paddingPick'] + "px" },
@@ -84,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     { className: 'text-weight-change', style: 'fontWeight', value: dataArray['textweightpicker'] },
                     { className: 'text-content', value: dataArray['textcontentpick'] },
                     { className: 'border-change', style: 'border', value: dataArray['borderPick'] },
+                    { className: 'editable-image', url: imageUrl}
                 ];
 
                 var currentUser = localStorage.getItem("userId");
@@ -159,14 +163,14 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
                         }
                     });
-        
+
                 })
                 .catch(error => console.log('Não foi possível puxar item do banco de dados', error));
 
-        }        
+        }
     }
 
-    document.getElementById('downloadBtn').addEventListener('click', async function() {
+    document.getElementById('downloadBtn').addEventListener('click', async function () {
         try {
             alert("ATENÇÃO -> Essa função só está disponível em navegadores CHROMIUM. Use de prefêrencia Google Chrome ou Microsoft Edge")
             const response = await fetch('http://localhost:3000/download');
@@ -174,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Erro ao carregar o arquivo JSON');
             }
             const data = await response.json();
-    
+
             const fileHandle = await window.showSaveFilePicker({
                 suggestedName: data.fileName,
                 types: data.fileTypes.map(type => ({
@@ -182,19 +186,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     accept: { [type.mimeType]: [type.extension] },
                 })),
             });
-    
+
             const writableStream = await fileHandle.createWritable();
-            
+
             const fileContent = data.documentContent;
-            
+
             await writableStream.write(fileContent);
-            
+
             await writableStream.close();
         } catch (error) {
             console.error('Erro:', error);
         }
     });
-    
+
 });
 
 function hideMenuItems() {
@@ -210,19 +214,22 @@ function hideMenuItems() {
     });
 }
 
+function insertImage(){
+    console.log("me chamaram");
+}
 function openHelp() {
     window.open('ajuda.html');
 }
 
-function openLogin(){
+function openLogin() {
     alert("Você não está logado e será redirecionado para a página de login");
     if ($("#the_login_iframe").css("display") == "block") {
-       $("#the_login_iframe").css("display", "none");
-   }
-   else {
-       $("#login_iframe").attr("src", "login.html");
-       $("#the_login_iframe").css("display", "block");
-   }
+        $("#the_login_iframe").css("display", "none");
+    }
+    else {
+        $("#login_iframe").attr("src", "login.html");
+        $("#the_login_iframe").css("display", "block");
+    }
 }
 
 
