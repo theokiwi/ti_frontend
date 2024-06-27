@@ -6,7 +6,7 @@ function read_forumdata(callback) {
     var forum_JSON_setup = null;
 
     if (strDados) {
-        Dados = JSON.parse(strDados).forum;
+        Dados = JSON.parse(strDados);
         console.log("1", Dados);
         callback(Dados)
     }
