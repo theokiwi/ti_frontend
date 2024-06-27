@@ -24,15 +24,17 @@ body {
     background-color: #F4F4F9;
 }
 
-.text-area h1 {
-    font-size: 250px;
+.text-main h1 {
+    font-size: 17.5vw;
     color: #2f184b;
     font-family: 'Kaushan Script', sans-serif;
+
+    margin-bottom: 1vh;
 }
 
 .span1{
     margin: -120px 0 0 80px;
-    font-size: 250px;
+    font-size: 17.5vw;
     color: #2f184b;
     font-family: 'Kaushan Script', sans-serif;
     display: block;
@@ -44,20 +46,24 @@ body {
     justify-content: center;
 }
 
-.button {
+.buttons button {
     background-color: #532b88;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 2vh 1.5vw;
     margin: 70px 0 0 100px;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.25vw;
     transition: background-color 0.3s;
 }
 
-.button:hover {
+.buttons button:hover {
     background-color: #6e3bcc;
+}
+
+.buttons button a {
+    color: inherit;
 }
 
 .image-area img {
@@ -66,54 +72,12 @@ body {
     height: auto;
 }
 
-/*primiera section*/
-
 .container2 {
     margin: 150px 0 0 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
-
-.text-main{
-    font-family: "Kaushan Script", sans-serif;
-    font-size: 7rem;
-    color: #2f184b;
-}
-
-.span1{
-    margin: -120px 0 0 80px;
-    font-size: 250px;
-    color: #2f184b;
-    font-family: 'Kaushan Script', sans-serif;
-    display: block;
-}
-
-.image-main img {
-    width: 100%;
-}
-
-.buttons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button {
-    background-color: #532b88;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 70px 0 0 100px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #6e3bcc;
 }
 
 .image-main img {
@@ -196,12 +160,12 @@ body {
 }
 
 .text-container p {
-    font-family: "Koulen", sans-serif;
+    font-family: "Concert One", sans-serif;
     color: #532b88;
-    font-size: 1.5rem;
-    margin: 0 20px;
+    font-size: 1.5vw;
+    margin: 0 1vw;
     display: block;
-    width: 500px;
+    width: 50vw;
     padding: 10px;
     border-radius: 10px;
     text-align: justify;
