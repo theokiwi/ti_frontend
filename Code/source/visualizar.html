@@ -184,14 +184,20 @@
                             <span>Youtube</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="user-info-navbar-link" href="botao.html">
-                            <i class="bi bi-chat-right-text-fill"></i>
-                            <span>Comentarios</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
+
+            <button id="openPopup" class="btn user-info-navbar-link">Comentários</button>
+
+            <div class="popup-overlay" id="popupOverlay">
+                <div class="popup-content">
+                    <span class="close-btn" id="closePopup">&times;</span>
+                    <h2>Comentários</h2>
+                    <textarea name="comentario" id="comentario" cols="30" rows="5" placeholder="Escreva seu comentário..."></textarea>
+                    <button id="enviarComentario" class="btn">Enviar</button>
+                    <div id="comentariosList"></div>
+                </div>
+            </div>
 
             <div id="tech-stack">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
