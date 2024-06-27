@@ -1,4 +1,5 @@
 
+document.addEventListener('DOMContentLoaded', function () {
     //função le dados
     function read_portfoliodata() {
         let strDados = localStorage.getItem('ArtsyCurtida');
@@ -19,6 +20,7 @@
         console.log(JSON.stringify(Dados));
         return Dados;
     }
+    
     function valorInicial(){
         let Dados=read_portfoliodata();
         //let valor = (Dados.portfolios[1].likes); 
@@ -96,3 +98,6 @@
         $('#atualizaLike').click(atualizaLike);
     });
 
+ 
+});
+   

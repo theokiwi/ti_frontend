@@ -25,121 +25,12 @@
       "id": "dcf8",
       "username": "admin",
       "password": "adminpassword"
-    },
-    {
-      "user_id": 1,
-      "username": "Usuario1",
-      "password": "First",
-      "foto": "perfil.png",
-      "banner": "Banner.png",
-      "bio": "O first.",
-      "redes_sociais": {
-        "instagram": "user1",
-        "linkedin": "user1",
-        "youtube": "user1"
-      },
-      "portfolios": [
-        {
-          "port_id": 1,
-          "likes": 4,
-          "dislikes": 1,
-          "image": "img1.png"
-        },
-        {
-          "port_id": 2,
-          "likes": 5,
-          "dislikes": 1,
-          "image": "img2.png"
-        }
-      ],
-      "id": "0c53"
-    },
-    {
-      "user_id": 2,
-      "username": "Pablo Picasso",
-      "password": "Guerrilha",
-      "foto": "pessoa_P.jpg",
-      "banner": "Banner.png",
-      "bio": "Bom dia!",
-      "redes_sociais": {
-        "instagram": "elpicasso",
-        "linkedin": "pablo_picasso",
-        "youtube": "Picasso"
-      },
-      "portfolios": [
-        {
-          "port_id": 3,
-          "likes": 4,
-          "dislikes": 1,
-          "image": "img3.png"
-        },
-        {
-          "port_id": 4,
-          "likes": 2,
-          "dislikes": 1,
-          "image": "img4.png"
-        }
-      ],
-      "id": "72b8"
-    },
-    {
-      "user_id": 3,
-      "username": "Mauricio de Sousa",
-      "password": "Limoeiro",
-      "foto": "pessoa_M.jpg",
-      "banner": "Banner.png",
-      "bio": "(Talvez) O autor da Turma da Mônica",
-      "redes_sociais": {
-        "instagram": "mauricio_de_sousa",
-        "linkedin": "mauricio_de_sousa",
-        "youtube": "TurmaDoMauricio"
-      },
-      "portfolios": [
-        {
-          "port_id": 5,
-          "likes": 1,
-          "dislikes": 1,
-          "image": "img5.png"
-        }
-      ],
-      "id": "4cd5"
-    },
-    {
-      "user_id": 4,
-      "username": "Calamitas",
-      "password": "Calamidade",
-      "foto": "pfpExpl.jpg",
-      "banner": "Banner.png",
-      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolore reprehenderit ipsum in nam officia deserunt alias, veniam saepe quas tenetur cumque ullam aperiam placeat possimus. Ratione fugiat est placeat.",
-      "redes_sociais": {
-        "instagram": "calamidade_",
-        "linkedin": "carlos",
-        "youtube": "calamitas&"
-      },
-      "portfolios": [
-        {
-          "port_id": 6,
-          "likes": 2,
-          "dislikes": 3,
-          "image": "PorfEx1.png"
-        },
-        {
-          "port_id": 7,
-          "likes": 1,
-          "dislikes": 1,
-          "image": "PorfEx2.png"
-        },
-        {
-          "port_id": 8,
-          "likes": 1,
-          "dislikes": 1,
-          "image": "PorfEx3.png"
-        }
-      ],
-      "id": "07f1"
     }
   ],
   "elementsById": [
    
+  ],
+  "visualizePortfolio":[
+
   ]
 }
