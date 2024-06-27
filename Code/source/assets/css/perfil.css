@@ -140,7 +140,7 @@ figcaption {
 
 
 
-.perfil{
+div.perfil{
     display: flex;
     flex-wrap: wrap;
     display: block;
@@ -222,7 +222,7 @@ figcaption {
     .logo p{
         display: none;
     }    
-    .perfil{
+    div.perfil{
         margin-top: 20rem;       
         display: block;
         width: 98%;
@@ -264,7 +264,7 @@ figcaption {
     *{
         overflow-x: hidden;
     }
-    .perfil{
+    div.perfil{
         margin-top: 13rem;       
         display: block;
         width: 98%;        

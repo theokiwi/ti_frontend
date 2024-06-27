@@ -27,7 +27,7 @@ nav ul li {
     margin-right: 20px;
 }
 
-.logo {
+.logo a, .logo{
     display: flex;
     align-items: center;
     max-width: 5rem;
@@ -80,6 +80,21 @@ header div.container {
 
 #menuItems li a {
     color: var(--clr-da-purple);
+}
+
+.username {
+    color: var(--clr-da-purple);
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+li.username:hover {
+    color: red;
+}
+
+.username a {
+    color: inherit;
 }
 
 @media only screen and (max-width: 800px) {

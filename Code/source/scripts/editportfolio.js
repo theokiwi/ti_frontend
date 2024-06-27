@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
      if (!localStorage.getItem("whoAmI")) {
          alert("Você não está logado e será redirecionado para a página de login");
-         window.location.href = '/login'; // Redirecionar para a página de login
+         openLogin();
      } else {
         // O resto do código dentro do else, se a pessoa estiver logada.
         let dataArray;
@@ -165,6 +165,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }        
     }
+
+    document.getElementById('downloadBtn').addEventListener('click', async function() {
+        try {
+            const response = await fetch('http://localhost:3000/download');
+            if (!response.ok) {
+                throw new Error('Erro ao carregar o arquivo JSON');
+            }
+            const data = await response.json();
+    
+            const fileHandle = await window.showSaveFilePicker({
+                suggestedName: data.fileName,
+                types: data.fileTypes.map(type => ({
+                    description: type.description,
+                    accept: { [type.mimeType]: [type.extension] },
+                })),
+            });
+    
+            const writableStream = await fileHandle.createWritable();
+            
+            const fileContent = data.documentContent;
+            
+            await writableStream.write(fileContent);
+            
+            await writableStream.close();
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    });
+    
 });
 
 function hideMenuItems() {
@@ -180,35 +209,22 @@ function hideMenuItems() {
     });
 }
 
-
 function openHelp() {
-    window.open('help.html');
+    window.open('ajuda.html');
 }
 
-document.getElementById('downloadBtn').addEventListener('click', async function() {
-    try {
-        const response = await fetch('data.json');
-        if (!response.ok) {
-            throw new Error('Erro ao carregar o arquivo JSON');
-        }
-        const data = await response.json();
+function openLogin(){
+    alert("Você não está logado e será redirecionado para a página de login");
+    if ($("#the_login_iframe").css("display") == "block") {
+       $("#the_login_iframe").css("display", "none");
+   }
+   else {
+       $("#login_iframe").attr("src", "login.html");
+       $("#the_login_iframe").css("display", "block");
+   }
+}
 
-        const fileHandle = await window.showSaveFilePicker({
-            suggestedName: data.fileName,
-            types: data.fileTypes.map(type => ({
-                description: type.description,
-                accept: { [type.mimeType]: [type.extension] },
-            })),
-        });
 
-        const writableStream = await fileHandle.createWritable();
-        
-        const fileContent = data.documentContent;
-        
-        await writableStream.write(fileContent);
-        
-        await writableStream.close();
-    } catch (error) {
-        console.error('Erro:', error);
-    }
-});
+
+
+
