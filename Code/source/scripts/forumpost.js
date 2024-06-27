@@ -168,7 +168,10 @@ function insert_forum() {
 
         $(".pergunta").text(Dados[questionID - 1].post.pergunta);
 
-        $(".post_owner").attr("src", "./assets/img/".concat(Dados[questionID - 1].post.foto));
+        if (Dados[questionID - 1].post.foto == "perfil.png" || Dados[questionID - 1].post.foto == "pesoa_M.jpg" ||
+            Dados[questionID - 1].post.foto == "pessoa_P.jpg" || Dados[questionID - 1].post.foto == "pfpExpl.jpg") { $(".post_owner").attr("src", "./assets/img/".concat(Dados[questionID - 1].post.foto)); }
+        else { $(".post_owner").attr("src", Dados[questionID - 1].post.foto) }
+
 
         for (x = 0; x < Dados[questionID - 1].respostas.length; x++) {
 
@@ -245,7 +248,10 @@ function insert_forum() {
             $(".answer_likes_number").eq(x).text(Dados[questionID - 1].respostas[x].likes);
             $(".answer_dislikes_number").eq(x).text(Dados[questionID - 1].respostas[x].dislikes);
             $(".resposta").eq(x).text(Dados[questionID - 1].respostas[x].resposta);
-            $(".answer_owner").eq(x).attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[x].foto));
+
+            if (Dados[questionID - 1].respostas[x].foto == "perfil.png" || Dados[questionID - 1].respostas[x].foto == "pessoa_M.jpg" ||
+                Dados[questionID - 1].respostas[x].foto == "pessoa_P.jpg" || Dados[questionID - 1].respostas[x].foto == "pfpExpl.jpg") { $(".answer_owner").attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[x].foto)); }
+            else { $(".answer_owner").attr("src", Dados[questionID - 1].respostas[x].foto) }
         }
 
     });
@@ -329,12 +335,29 @@ function save_answer() {
             alert("Erro de envio: Preencha o campo de informação.");
         }
         else {
+            let strFoto = "perfil.png";
+            let strUser = "Usuario";
+
+            // Obter nome do usuário
+            let usuario = localStorage.getItem('whoAmI');
+            if (usuario)
+            { strUser = usuario; }
+            else
+            { strUser = "Usuario"; }
+            
+
+            // Obter foto do perfil
+            let foto = localStorage.getItem('profileImage');
+            if (foto) { strFoto = foto; }
+            else { strFoto = "perfil.png"; }
+
+
             // Incluir informações novas
             let novaResposta = {
-                "usuario": "Usuario",
+                "usuario": strUser,
                 "likes": 0, "dislikes": 0,
                 "resposta": strResposta,
-                "foto": "perfil.png", "edit": true
+                "foto": strFoto, "edit": true
             };
             Dados[questionID - 1].respostas.push(novaResposta);
 
