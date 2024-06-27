@@ -5,29 +5,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/variaveis.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="./assets/css/login_iframe.css">
+
+  <script src="https://kit.fontawesome.com/863f442cd3.js" crossorigin="anonymous"></script>
+
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="scripts/Login_Iframe.js"></script>
+  <script src="scripts/menu.js"></script>
+
   <title>Artsy Pages</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="navbar">
+  <header>
+    <div class="container">
+      <div class="navbar">
         <div class="logo">
-            <img src="assets/img/logo.png" alt="" width="60px" height="60px">
+          <a href="home.html">
+            <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px">
             <p class="LogoName">ARTSYPAGES</p>
+          </a>
         </div>
         <nav>
-            <ul id="menuItems">
-                <li><a href="#">Faq</a></li>
-                <li><a href="#">Explorar</a></li>
-                <li><a href="#">Fórum</a></li>
-                <li><a href="#">Criar</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
+          <ul id="menuItems" height="200px">
+            <li><a href="./ajuda.html">Faq</a></li>
+            <li><a href="./explorar.html">Explorar</a></li>
+            <li><a href="./forum.html">Fórum</a></li>
+            <li><a href="./editportfolio.html">Criar</a></li>
+            <li><button id="buttonLogin_Iframe">Login</button></li>
+            <li><button id="buttonCriar_Iframe">Registrar</button></li>
+          </ul>
         </nav>
-        <img src="assets/img/icon-perfil.png" alt="" width="30px">
-        <img src="assets/img/menuHam.png" alt="" width="50px" class="menu-icon" onclick="menu()">
+        <img src="./assets/img/perfil.png" alt="Perfil" width="30px" class="perfil">
+        <img src="./assets/img/menuHam.png" alt="Menu" width="50px" class="menu_icon">
+      </div>
     </div>
-</div>
+  </header>
+
 
   <main>
     <!--Primeira section-->
@@ -71,7 +88,8 @@
           portfólios. Com recursos fáceis de usar, você pode adicionar projetos, imagens e textos, organizando tudo de
           maneira que melhor represente suas habilidades e conquistas. Ideal para quem deseja destacar seu trabalho e
           atrair oportunidades.</p>
-        <p>Nesta seção, os usuários podem navegar por uma vasta coleção de portfólios criativos. É o lugar perfeito para
+        <p>Nesta seção, os usuários podem navegar por uma vasta coleção de portfólios criativos. É o lugar perfeito
+          para
           buscar inspiração, descobrir novos talentos ou simplesmente admirar uma variedade de trabalhos artísticos e
           profissionais. Explore categorias diversificadas e encontre portfólios que se alinham com seus interesses ou
           necessidades específicas.</p>
@@ -118,22 +136,24 @@
       </div>
       <div class="faq-content">
         <h2>Como posso enviar meu portfólio para o site?</h2>
-        <p>Para enviar seu portfólio, primeiramente crie uma conta e faça login. Depois, acesse a seção "Meu Portfólio"
-            e clique em "Adicionar Novo". Lá você pode fazer upload de imagens do seu trabalho, adicionar descrições e
-            especificar categorias que melhor representam suas habilidades e projetos.</p>
+        <p>Para enviar seu portfólio, primeiramente crie uma conta e faça login. Depois, acesse a seção "Meu
+          Portfólio"
+          e clique em "Adicionar Novo". Lá você pode fazer upload de imagens do seu trabalho, adicionar descrições e
+          especificar categorias que melhor representam suas habilidades e projetos.</p>
 
         <h2>Existe um limite para quantos trabalhos posso incluir em meu portfólio?</h2>
         <p>Não há um limite estrito para a quantidade de trabalhos que você pode incluir, mas recomendamos selecionar
-            entre 10 a 15 dos seus melhores projetos. Isso garante que seu portfólio seja conciso e mostre a qualidade e a
-            amplitude do seu trabalho de forma eficaz.</p>
+          entre 10 a 15 dos seus melhores projetos. Isso garante que seu portfólio seja conciso e mostre a qualidade e
+          a
+          amplitude do seu trabalho de forma eficaz.</p>
 
         <h2>Quais são as dicas para criar um portfólio atraente?</h2>
         <p>Para criar um portfólio atraente, concentre-se em exibir uma variedade de trabalhos que destacam suas
-            habilidades únicas. Inclua um breve resumo sobre você e seu background profissional, descrições claras para
-            cada projeto, e, se possível, depoimentos de clientes ou colaboradores. Lembre-se de manter o design do seu
-            portfólio simples e intuitivo para navegar.</p>
-    </div>
-    </section>    
+          habilidades únicas. Inclua um breve resumo sobre você e seu background profissional, descrições claras para
+          cada projeto, e, se possível, depoimentos de clientes ou colaboradores. Lembre-se de manter o design do seu
+          portfólio simples e intuitivo para navegar.</p>
+      </div>
+    </section>
   </main>
 </body>
 <script src="scripts/home.js"></script>
