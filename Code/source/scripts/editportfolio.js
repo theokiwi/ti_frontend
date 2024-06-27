@@ -2,10 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!localStorage.getItem("whoAmI")) {
         alert("Você não está logado e será redirecionado para a página de login");
         openLogin();
-    } else {
-
-        var imageUrl;
-
+    } else {     
         // O resto do código dentro do else, se a pessoa estiver logada.
         let dataArray;
 
@@ -87,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     { className: 'text-weight-change', style: 'fontWeight', value: dataArray['textweightpicker'] },
                     { className: 'text-content', value: dataArray['textcontentpick'] },
                     { className: 'border-change', style: 'border', value: dataArray['borderPick'] },
-                    { className: 'editable-image', url: imageUrl}
+                    { className: 'img-edit', style: 'src', value: dataArray['imageurlpick']},
                 ];
 
                 var currentUser = localStorage.getItem("userId");
@@ -124,6 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                             textElement.addEventListener('click', function () {
                                                 textElement.textContent = info.value;
                                             });
+                                        } else if(info.className === "img-edit"){
+                                            const imgElement = frameContent.getElementById(element.elementId);
+                                            imgElement.src = info.value;
                                         }
                                         clickedElement.style[info.style] = info.value;
                                         console.log(`Applied ${info.style}: ${info.value}`);
@@ -155,7 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                         link.rel = 'stylesheet';
                                         frameContent.head.appendChild(link);
                                         targetElement.style.fontFamily = selectedFont;
-                                    } else {
+                                    } 
+                                    else if(info.className === "img-edit"){
+                                        targetElement.src = info.value;
+                                    }else {
                                         targetElement.style[info.style] = info.value;
                                     }
                                     console.log(`Applied ${info.style}: ${info.value}`);
@@ -214,9 +217,6 @@ function hideMenuItems() {
     });
 }
 
-function insertImage(){
-    console.log("me chamaram");
-}
 function openHelp() {
     window.open('ajuda.html');
 }

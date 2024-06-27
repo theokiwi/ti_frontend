@@ -145,6 +145,17 @@ body{
     border: 1px;
 }
 
+#imgpicker{
+    background-color: rgb(200, 177, 228);
+    width: 80%;
+    height: 4rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    border-radius: 4%;
+    border: 1px;
+    resize: vertical;
+    margin-left: 4%;
+}
 /* Codigo da Opcao de Mudar Texto */
 
 #textareapickerdiv {
