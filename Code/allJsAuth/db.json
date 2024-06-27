@@ -491,19 +491,19 @@
     "portfolios": [
       {
         "port_id": 1,
-        "autor": "Usuario1",
+        "autor": "Calamitas",
         "user_id": 1,
         "likes": 4,
         "dislikes": 1,
-        "image": "img1.png"
+        "image": "./assets/img/img1.png"
       },
       {
         "port_id": 2,
-        "autor": "Usuario1",
+        "autor": "Calamitas",
         "user_id": 1,
         "likes": 5,
         "dislikes": 1,
-        "image": "img2.png"
+        "image": "./assets/img/img2.png"
       },
       {
         "port_id": 3,
@@ -511,7 +511,7 @@
         "user_id": 2,
         "likes": 4,
         "dislikes": 1,
-        "image": "img3.png"
+        "image": "./assets/img/img3.png"
       },
       {
         "port_id": 4,
@@ -519,7 +519,7 @@
         "user_id": 2,
         "likes": 2,
         "dislikes": 1,
-        "image": "img4.png"
+        "image": "./assets/img/img4.png"
       },
       {
         "port_id": 5,
@@ -527,32 +527,9 @@
         "user_id": 3,
         "likes": 1,
         "dislikes": 1,
-        "image": "img5.png"
-      },
-      {
-        "port_id": 6,
-        "autor": "Calamitas",
-        "user_id": 4,
-        "likes": 2,
-        "dislikes": 3,
-        "image": "PorfEx1.png"
-      },
-      {
-        "port_id": 7,
-        "autor": "Calamitas",
-        "user_id": 4,
-        "likes": 1,
-        "dislikes": 1,
-        "image": "PorfEx2.png"
-      },
-      {
-        "port_id": 8,
-        "autor": "Calamitas",
-        "user_id": 4,
-        "likes": 1,
-        "dislikes": 1,
-        "image": "PorfEx3.png"
+        "image": "./assets/img/img5.png"
       }
+      
     ]
   },
   "forum": [
