@@ -168,5 +168,8 @@
 }
 .btnordenar{
     padding: 10%;
-    border-radius: 25px;
+    border-radius: 45px;
+    background-color: white;
+    color: purple;
+    font-weight: 50%;
 }
