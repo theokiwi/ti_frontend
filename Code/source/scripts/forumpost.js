@@ -250,8 +250,8 @@ function insert_forum() {
             $(".resposta").eq(x).text(Dados[questionID - 1].respostas[x].resposta);
 
             if (Dados[questionID - 1].respostas[x].foto == "perfil.png" || Dados[questionID - 1].respostas[x].foto == "pessoa_M.jpg" ||
-                Dados[questionID - 1].respostas[x].foto == "pessoa_P.jpg" || Dados[questionID - 1].respostas[x].foto == "pfpExpl.jpg") { $(".answer_owner").attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[x].foto)); }
-            else { $(".answer_owner").attr("src", Dados[questionID - 1].respostas[x].foto) }
+                Dados[questionID - 1].respostas[x].foto == "pessoa_P.jpg" || Dados[questionID - 1].respostas[x].foto == "pfpExpl.jpg") { $(".answer_owner").eq(x).attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[x].foto)); }
+            else { $(".answer_owner").eq(x).attr("src", Dados[questionID - 1].respostas[x].foto) }
         }
 
     });
@@ -303,7 +303,17 @@ function update_forum() {
         $(".answer_likes_number").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].likes);
         $(".answer_dislikes_number").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].dislikes);
         $(".resposta").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].resposta);
+
+        // Obter foto do perfil
+        let foto = localStorage.getItem('profileImage');
+        if (foto) { strFoto = foto; }
+        else { strFoto = "perfil.png"; }
         $(".answer_owner").eq(tamanho - 1).attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[tamanho - 1].foto));
+
+        if (Dados[questionID - 1].respostas[tamanho - 1].foto == "perfil.png" || Dados[questionID - 1].respostas[tamanho - 1].foto == "pessoa_M.jpg" ||
+            Dados[questionID - 1].respostas[tamanho - 1].foto == "pessoa_P.jpg" || Dados[questionID - 1].respostas[tamanho - 1].foto == "pfpExpl.jpg") { $(".answer_owner").eq(tamanho - 1).attr("src", "./assets/img/".concat(Dados[questionID - 1].respostas[tamanho - 1].foto)); }
+        else { $(".answer_owner").eq(tamanho - 1).attr("src", Dados[questionID - 1].respostas[tamanho - 1].foto) }
+
 
         $(".post_replies_number").text(Dados[questionID - 1].post.respostas);
     });
@@ -340,11 +350,9 @@ function save_answer() {
 
             // Obter nome do usuário
             let usuario = localStorage.getItem('whoAmI');
-            if (usuario)
-            { strUser = usuario; }
-            else
-            { strUser = "Usuario"; }
-            
+            if (usuario) { strUser = usuario; }
+            else { strUser = "Usuario"; }
+
 
             // Obter foto do perfil
             let foto = localStorage.getItem('profileImage');
