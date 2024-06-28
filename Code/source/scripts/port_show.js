@@ -155,7 +155,24 @@ function insert_port() {
         });
     });
 }
-
+const valoriniciallikes="http://localhost:3000/explorar";
+function valorInicial(){
+    fetch(valoriniciallikes)
+    .then (res=>res.json())
+    .then(dados=>{
+        console.log(dados);
+        document.getElementById('plikes').innerText=dados[0].likes
+        document.getElementById('pdislikes').innerText=dados[0].dislikes
+    })
+}
+/*const updatelikes="http://localhost:3000/explorar";
+function update(){
+    fetch(updatelikes)
+    .then (res=>res.json())
+    .then(dados=>{
+        let valor=dados[0].likes
+    })
+}*/
 function save_explorar_data(Dados) {
     // Salvar os dados no localStorage
     localStorage.setItem('ArtsyExplorar', JSON.stringify(Dados));
@@ -164,8 +181,9 @@ function save_explorar_data(Dados) {
 $(document).ready(function () {
 
     //insert_port();
-
+    valorInicial();
     $('portfolio_showcase').on('click', '.row .card .row .col-md-3 .card-body .port_rating .port_likes label button', function () {
 
     })
+ 
 })
