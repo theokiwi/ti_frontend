@@ -173,10 +173,17 @@ body {
     max-width: 85%;
 
     margin-left: 8vw;
-
-    border-radius: 25px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
 
     background-color: var(--light-purple);
+
+    border-radius: 25px;
+    border-width: 7px;
+    border-color: var(--dark-purple);
+    border-style: groove;
+
+    box-shadow: 10px 10px 20px var(--dark-purple);
 }
 
 .card div div a img {
@@ -238,6 +245,10 @@ body {
 
 .dislikes_checkbox:checked + .port_dislikes button {
     color: var(--red-icon);
+}
+
+.likes_checkbox, .dislikes_checkbox {
+    display: none;
 }
 
 /* Cards fim */
