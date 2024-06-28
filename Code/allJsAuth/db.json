@@ -289,7 +289,9 @@
       ]
     }
   ],
-  "visualizePortfolio": [],
+  "visualizePortfolio": [
+
+  ],
   "forum": [
     {
       "post": {
@@ -403,5 +405,11 @@
         }
       ]
     }
-  ]
+  ],
+  "explorar": [{
+    "id": "1857",
+    "userId": "00a5",
+    "likes": 10,
+    "dislikes": 5
+  }]
 }
