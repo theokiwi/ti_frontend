@@ -14,7 +14,7 @@ function read_forumdata(callback) {
         forum_JSON_setup = {
             'async': false,
             "dataType": "json",
-            "url": "/forum",
+            "url": "http://localhost:3000/forum",
             "method": "GET",
             "headers": {
                 "Accept": "*/*"
