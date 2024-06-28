@@ -47,11 +47,10 @@
 
 body {
     height: 100vh;
-
-    background-image: url(../img/background.png);
-    background-size: 80vw;
-    background-repeat: repeat;
-    background-position: 95px;
+    background-image: url("../img/background.png");
+    background-size: 10%;
+    background-repeat: round;
+    
 }
 
 /* Main inicio */
@@ -75,7 +74,7 @@ main {
 }
 
 div.page_title {
-    font-family: "Concert One";
+    font-family: "Koulen";
 
     display: block;
 
@@ -88,7 +87,7 @@ div.page_title {
 .page_title a {
     display: inline-block;
 
-    margin-left: 5%;
+    
     font-size: 150%;
 
     text-decoration: none;
@@ -102,6 +101,7 @@ div.page_title {
     padding-left: 1%;
     padding-bottom: 0.5%;
     border-radius: 80%;
+
 }
 
 .page_title a:hover {
@@ -116,8 +116,7 @@ div.page_title {
     display: inline-block;
 
     margin: 0 20%;
-
-    
+    margin-bottom: 5px;
     text-align: center;
 }
 
@@ -128,9 +127,20 @@ label {
 
     font-size: 4.25vh;
 }
+#post_title{
+    background-color: rgb(200, 177, 228);
+    border-radius: 8px;
+    padding: 10px;
+
+}
+
+#post_description{
+    background-color: rgb(200, 177, 228);
+    border-radius: 8px;
+    padding: 10px;
 
 
-
+}
 .post_texts {
     margin-left: 6%;
     margin-bottom: 2.5%;
@@ -151,22 +161,24 @@ input, textarea {
 }
 
 .tag_list {
+    background-color: rgb(129, 87, 184);
+    color: white;
+    border-radius: 10px;
     margin-left: 1%;
+    padding: 5px;
 }
 
 .submit {
     margin-left: 65%;
+    
 }
 
 .submit button {
     padding: 0.25vw;
 
-    color: purple;
-    background-color: white;
-    border-color: purple;
-
-    border: 6px solid;
-    border-radius: 5px;
+    background-color: rgb(129, 87, 184);
+    color: white;
+    border-radius: 10px;
 
     font-family: "Koulen", sans-serif;
 }
