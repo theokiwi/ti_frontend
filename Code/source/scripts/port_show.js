@@ -14,7 +14,7 @@ function read_explorar_data(callback) {
         explorar_JSON_setup = {
             'async': false,
             "dataType": "json",
-            "url": "/explorar",
+            "url": "http://localhost:3000/explorar",
             "method": "GET",
             "headers": {
                 "Accept": "*/*"
@@ -53,7 +53,7 @@ function read_port_data(callback) {
         port_JSON_setup = {
             'async': false,
             "dataType": "json",
-            "url": "/elementsById",
+            "url": "http://localhost:3000/elementsById",
             "method": "GET",
             "headers": {
                 "Accept": "*/*"
@@ -84,11 +84,39 @@ function insert_port() {
             for (let x = 0; x < Dados_Port.length; x++) {
 
                 // Inserir port na página
-                $('.layout_ordenar').append('\
-                <a href="./visualizar.html"><img class="layout_img" src="./assets/img/img1.png" alt=""></a>');
+                $('.portfolio_showcase div').append('\
+                <div class="card mb-3">\
+                    <div class="row g-0">\
+                        <div class="col-md-9">\
+                            <a href="./visualizar.html"><img src="./assets/img/img1.png" class="img-fluid rounded-start"\
+                                    alt="..."></a>\
+                        </div>\
+                        <div class="col-md-3">\
+                            <div class="card-body">\
+                                <h2 class="user_name">Nome do usuário</h2>\
+                                <div class="port_rating">\
+                                    <div class="port_likes">\
+                                        <label class="reaction_icon">\
+                                            <input type="checkbox" class="likes_checkbox">\
+                                            <button><i class="fa-solid fa-thumbs-up"></i></button>\
+                                        </label>\
+                                        <span class="port_likes_number">0</span>\
+                                    </div>\
+                                    <div class="port_dislikes">\
+                                        <label class="reaction_icon">\
+                                            <input type="checkbox" class="dislikes_checkbox">\
+                                            <button><i class="fa-solid fa-thumbs-down"></i></button>\
+                                        </label>\
+                                        <span class="port_dislikes_number">0</span>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>');
 
                 // Mudar link para sua versão no visualizar
-                $('.layout_ordenar a').eq(x).attr('href', './visualizar.html?id='
+                $('.col-md-9 a').eq(x).attr('href', './visualizar.html?id='
                     .concat(Dados_Port[x].id).concat('?userId=').concat(Dados_Port[x].userId));
 
                 // Conferir se há ou não um respectivo par nos dados do Explorar
@@ -134,5 +162,10 @@ function save_explorar_data(Dados) {
 }
 
 $(document).ready(function () {
-    insert_port();
+
+    //insert_port();
+
+    $('portfolio_showcase').on('click', '.row .card .row .col-md-3 .card-body .port_rating .port_likes label button', function () {
+
+    })
 })

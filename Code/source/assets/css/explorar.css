@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 /*menu*/
 .menu1 ul {
     margin: 20px 0 0 0;
@@ -45,14 +49,16 @@
     font-weight: 800;
     color: #000;
 }
+
 /*Seção 1*/
-.thumbnail{
+.thumbnail {
     width: 80%;
     height: 50%;
     margin-left: 10%;
     border-radius: 82px;
 }
-.container2{
+
+.container2 {
     margin-top: 100px;
     position: relative;
     width: 100%;
@@ -60,10 +66,11 @@
 
 }
 
-.container2 img{
+.container2 img {
     height: 500px;
     border: black outset 5px;
 }
+
 .container2 h1 {
     position: absolute;
     color: white;
@@ -75,7 +82,8 @@
     font-size: 200px;
     text-align: center;
 }
-.container2 p{
+
+.container2 p {
     position: absolute;
     width: 70%;
     height: 50%;
@@ -86,9 +94,10 @@
     font-size: 30px;
     text-align: center;
 }
+
 /*Secao2*/
 
-.imagem1{
+.imagem1 {
     margin-top: 100px;
     width: 417px;
     height: 200px;
@@ -96,33 +105,37 @@
     margin-left: 50px;
 }
 
-.imagem2{
+.imagem2 {
     width: 417px;
     height: 200px;
     border-radius: 45px;
     margin-left: 50px;
 }
-.imagem3{
+
+.imagem3 {
     width: 417px;
     height: 200px;
     border-radius: 45px;
     margin-left: 50px;
     margin-bottom: 100px;
 }
-.imagem4{
+
+.imagem4 {
     width: 545px;
     height: 300px;
     border-radius: 45px;
     margin-left: 20%;
 }
-.imagem5{
+
+.imagem5 {
     width: 545px;
     height: 300px;
     border-radius: 45px;
     margin-left: 40%;
     opacity: 0px;
 }
-.secao2{
+
+.secao2 {
     display: flex;
     flex-wrap: wrap;
     max-width: 1651px;
@@ -133,60 +146,19 @@
     padding-left: 2%;
 }
 
-body{
+body {
     background-image: url("../img/background.png");
     background-size: 10%;
     background-repeat: round;
-         
+
 }
 
-.icone_ordenar{
+.icone_ordenar {
     margin-left: 90%;
 }
-.layout_ordenar{
-    display: none;
-}
-.layout_img1{
-    width: 417px;
-    height: 200px;
-    border-radius: 45px;
-    margin-left: 40%;
-    margin-bottom: 20px;
-}
-.layout_img2{
-    width: 417px;
-    height: 200px;
-    border-radius: 45px;
-    margin-left: 40%;
-    margin-bottom: 20px;
 
-}
-.layout_img3{
-    width: 417px;
-    height: 200px;
-    border-radius: 45px;
-    margin-left: 40%;
-    margin-bottom: 20px;
-}
-.layout_img4{
-    width: 417px;
-    height: 200px;
-    border-radius: 45px;
-    margin-left: 40%;
-    margin-bottom: 20px;
-
-}
-.layout_img5{
-    width: 417px;
-    height: 200px;
-    border-radius: 45px;
-    margin-left: 40%;
-    opacity: 0px;
-    margin-bottom: 20px;
-
-}
-.btnordenar{
-    position: absolute;
+.btnordenar {
+    position: relative;
     padding: 10px;
     border-radius: 45px;
     background-color: white;
@@ -194,3 +166,78 @@ body{
     font-weight: 50%;
     margin-top: 5px;
 }
+
+/* Cards início */
+
+.portfolio_showcase .row .card {
+    max-width: 85%;
+
+    margin-left: 8vw;
+
+    border-radius: 25px;
+
+    background-color: var(--light-purple);
+}
+
+.card div div a img {
+    width: 100%;
+}
+
+.user_name {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 600;
+
+    margin-bottom: 2vh;
+}
+
+.port_likes,
+.port_dislikes {
+    text-align: center;
+    margin: auto;
+
+    font-size: 2.75vw;
+}
+
+.port_likes button,
+.port_dislikes button {
+    background: radial-gradient(var(--dark-purple),purple, var(--dark-purple));
+    padding: 0.75vh 0.75vw;
+
+    border-radius: 50px;
+    border: none
+}
+
+.port_likes button i,
+.port_dislikes button i {
+    background-color: white;
+    padding: 2.5vh 1.75vw;
+
+    border-radius: 50px;
+    border-width: 3px;
+    border-color: var(--dark-purple);
+
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.767);
+}
+
+.port_likes {
+    margin-bottom: 5vh;
+}
+
+.port_likes button {
+    color: var(--dark-purple);
+}
+
+.port_dislikes button {
+    color: var(--dark-purple);
+}
+
+.likes_checkbox:checked + .port_likes button {
+    color: var(--green-icon);
+}
+
+.dislikes_checkbox:checked + .port_dislikes button {
+    color: var(--red-icon);
+}
+
+/* Cards fim */
