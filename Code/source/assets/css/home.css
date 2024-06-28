@@ -13,7 +13,6 @@ body {
 }
 
 
-
 /* Primeira section */
 .hero {
     margin: 150px 0 0 150px;
@@ -117,7 +116,7 @@ body {
 
 .wave-container img {
     border-radius: 80px;
-    width: 100%;
+    width: 99%;
     display: block;
 }
 
@@ -189,16 +188,28 @@ body {
 
 /*Terceira section*/
 
+.hasBackground{
+    background-image: url("../img/background.png");
+    background-size: 15%;
+    background-repeat: round;
+    border-radius: 10%;
+}
+
 .terceira-section {
     margin: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    text-shadow: 8px 4px 4px rgb(129, 87, 184);
+    
 }
 
 .text-container2 {
     display: block;
+    text-shadow: 8px 4px 4px rgb(129, 87, 184);
+
+    
 }
 
 .terceira-section p {
@@ -207,6 +218,9 @@ body {
     color: #2f184b;
     margin: 0;
     padding-bottom: 0.2em;
+    text-shadow: 8px 4px 4px rgb(129, 87, 184);
+
+    
 }
 
 .span2 {
@@ -215,6 +229,8 @@ body {
     font-size: 250px;
     color: #2f184b;
     display: block;
+    text-shadow: 8px 4px 4px rgb(129, 87, 184);
+
 }
 
 .imagem-central {
@@ -222,6 +238,9 @@ body {
     max-width: 100%;
     max-height: 100%;
     margin-left: 40%;
+    text-shadow: 8px 4px 4px rgb(129, 87, 184);
+
+    
 }
 
 
@@ -360,13 +379,13 @@ body {
 
 /*FAQ*/
 
+
 .faq-section {
     font-family: 'Arial', sans-serif;
     background-color: #ffffff;
     width: 80%;
-    margin: 15% auto 0 auto;
+    margin: 15% auto 5% auto;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -377,6 +396,7 @@ body {
 }
 
 .faq-header h1 {
+    text-shadow: 8px 4px 4px rgb(129, 87, 184);
     color: #2f184b;
     font-size: 10em;
 }
@@ -389,7 +409,7 @@ body {
 
 .faq-content p {
     margin-top: 40px;
-    max-width: 700px;
+    max-width: 800px;
     white-space: normal;
     overflow-wrap: break-word;
     text-overflow: ellipsis;
