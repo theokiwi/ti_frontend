@@ -7,10 +7,10 @@ body {
     width: 100%;
     height: 100%;
 
-    background-image: url(../img/background.png);
-    background-size: 80vw;
-    background-repeat: repeat;
-    background-position: 95px;
+    background-image: url("../img/background.png");
+    background-size: 10%;
+    background-repeat: round;
+    
 }
 
 #menuItems li button {
@@ -42,17 +42,17 @@ section {
 
 .page_title {
     overflow: hidden;
+    margin-bottom: 10px;
 }
 
 #forum_title {
     margin-bottom: 4px;
 
-    font-family: "Kaushan Script";
+    font-family: "Concert One";
     font-size: 5.75vw;
     font-weight: 400;
 
     color: var(--dark-purple);
-
     display: inline;
 }
 

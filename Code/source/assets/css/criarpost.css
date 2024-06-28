@@ -75,12 +75,13 @@ main {
 }
 
 div.page_title {
-    font-family: "Kaushan Script";
+    font-family: "Concert One";
 
     display: block;
 
     width: 100%;
-
+    margin: 0 auto;
+    text-align: center;
     margin-bottom: 1.5vh;
 }
 
@@ -88,21 +89,19 @@ div.page_title {
     display: inline-block;
 
     margin-left: 5%;
-
     font-size: 150%;
 
     text-decoration: none;
     
     color: #000;
 
-    background-color: rgb(183, 183, 183);
+    background-color: rgb(129, 87, 184);
     
     padding-top: 0.25%;
     padding-right: 1%;
     padding-left: 1%;
-    padding-bottom: 0.25%;
-
-    border-radius: 100%;
+    padding-bottom: 0.5%;
+    border-radius: 80%;
 }
 
 .page_title a:hover {
@@ -125,7 +124,7 @@ div.page_title {
 label {
     display: block;
 
-    font-family: "Kaushan Script";
+    font-family: "Concert One";
 
     font-size: 4.25vh;
 }

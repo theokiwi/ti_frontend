@@ -53,7 +53,16 @@
     border-radius: 82px;
 }
 .container2{
+    margin-top: 100px;
     position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+
+}
+
+.container2 img{
+    height: 500px;
+    border: black outset 5px;
 }
 .container2 h1 {
     position: absolute;
@@ -80,11 +89,13 @@
 /*Secao2*/
 
 .imagem1{
+    margin-top: 100px;
     width: 417px;
     height: 200px;
     border-radius: 45px;
     margin-left: 50px;
 }
+
 .imagem2{
     width: 417px;
     height: 200px;
@@ -116,48 +127,54 @@
     flex-wrap: wrap;
     max-width: 1651px;
     margin: 0 auto;
-    padding-top: 10%;
+    margin-left: 200px;
+    padding-top: 1%;
     position: absolute;
     padding-left: 2%;
-    background-image: url("../img/background.png");
-        background-size: 80vw;
-        background-repeat: repeat;
-        background-position: 95px;
 }
+
+body{
+    background-image: url("../img/background.png");
+    background-size: 10%;
+    background-repeat: round;
+         
+}
+
 .icone_ordenar{
     margin-left: 90%;
 }
 .layout_ordenar{
     display: none;
-    background-image: url("../img/background.png");
-        background-size: 80vw;
-        background-repeat: repeat;
-        background-position: 95px; 
 }
 .layout_img1{
     width: 417px;
     height: 200px;
     border-radius: 45px;
     margin-left: 40%;
+    margin-bottom: 20px;
 }
 .layout_img2{
     width: 417px;
     height: 200px;
     border-radius: 45px;
     margin-left: 40%;
+    margin-bottom: 20px;
+
 }
 .layout_img3{
     width: 417px;
     height: 200px;
     border-radius: 45px;
     margin-left: 40%;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 .layout_img4{
     width: 417px;
     height: 200px;
     border-radius: 45px;
     margin-left: 40%;
+    margin-bottom: 20px;
+
 }
 .layout_img5{
     width: 417px;
@@ -165,11 +182,15 @@
     border-radius: 45px;
     margin-left: 40%;
     opacity: 0px;
+    margin-bottom: 20px;
+
 }
 .btnordenar{
-    padding: 10%;
+    position: absolute;
+    padding: 10px;
     border-radius: 45px;
     background-color: white;
     color: purple;
     font-weight: 50%;
+    margin-top: 5px;
 }
