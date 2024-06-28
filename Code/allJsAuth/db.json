@@ -38,6 +38,20 @@
         "linkedin": "user1",
         "youtube": "user1"
       },
+      "portfolios": [
+        {
+          "port_id": 1,
+          "likes": 4,
+          "dislikes": 1,
+          "image": "img1.png"
+        },
+        {
+          "port_id": 2,
+          "likes": 5,
+          "dislikes": 1,
+          "image": "img2.png"
+        }
+      ],
       "id": "0c53"
     },
     {
@@ -52,6 +66,20 @@
         "linkedin": "pablo_picasso",
         "youtube": "Picasso"
       },
+      "portfolios": [
+        {
+          "port_id": 3,
+          "likes": 4,
+          "dislikes": 1,
+          "image": "img3.png"
+        },
+        {
+          "port_id": 4,
+          "likes": 2,
+          "dislikes": 1,
+          "image": "img4.png"
+        }
+      ],
       "id": "72b8"
     },
     {
@@ -66,6 +94,14 @@
         "linkedin": "mauricio_de_sousa",
         "youtube": "TurmaDoMauricio"
       },
+      "portfolios": [
+        {
+          "port_id": 5,
+          "likes": 1,
+          "dislikes": 1,
+          "image": "img5.png"
+        }
+      ],
       "id": "4cd5"
     },
     {
@@ -80,31 +116,50 @@
         "linkedin": "carlos",
         "youtube": "calamitas&"
       },
+      "portfolios": [
+        {
+          "port_id": 6,
+          "likes": 2,
+          "dislikes": 3,
+          "image": "PorfEx1.png"
+        },
+        {
+          "port_id": 7,
+          "likes": 1,
+          "dislikes": 1,
+          "image": "PorfEx2.png"
+        },
+        {
+          "port_id": 8,
+          "likes": 1,
+          "dislikes": 1,
+          "image": "PorfEx3.png"
+        }
+      ],
       "id": "07f1"
     }
   ],
   "elementsById": [
     {
-      "id": "1857",
+      "id": "3ad7",
       "userId": "00a5",
       "elementClasses": [
-        "edit",
-        "text-content",
-        "text-weight-change",
-        "border-change"
+        "art_destaque",
+        "img-edit",
+        "edit"
       ],
       "whoAmI": "teste",
-      "elementId": "texto1",
+      "elementId": "foto1",
       "elementInfo": [
         {
           "className": "text-color-change",
           "style": "color",
-          "value": "#000000"
+          "value": "#ffffff"
         },
         {
           "className": "background-color-change",
           "style": "backgroundColor",
-          "value": "#000000"
+          "value": "#ffffff"
         },
         {
           "className": "opacity-change",
@@ -138,7 +193,7 @@
         },
         {
           "className": "text-content",
-          "value": "?????"
+          "value": ""
         },
         {
           "className": "border-change",
@@ -148,31 +203,31 @@
         {
           "className": "img-edit",
           "style": "src",
-          "value": ""
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
         }
       ]
     },
     {
-      "id": "c86a",
+      "id": "1cd6",
       "userId": "00a5",
       "elementClasses": [
+        "foto_artista",
+        "img-edit",
         "edit",
-        "text-content",
-        "text-weight-change",
         "border-change"
       ],
       "whoAmI": "teste",
-      "elementId": "texto1",
+      "elementId": "foto2",
       "elementInfo": [
         {
           "className": "text-color-change",
           "style": "color",
-          "value": "#000000"
+          "value": "#ffffff"
         },
         {
           "className": "background-color-change",
           "style": "backgroundColor",
-          "value": "#000000"
+          "value": "#ffffff"
         },
         {
           "className": "opacity-change",
@@ -206,7 +261,7 @@
         },
         {
           "className": "text-content",
-          "value": "Jesus"
+          "value": ""
         },
         {
           "className": "border-change",
@@ -216,31 +271,30 @@
         {
           "className": "img-edit",
           "style": "src",
-          "value": ""
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
         }
       ]
     },
     {
-      "id": "89fe",
+      "id": "d0c6",
       "userId": "00a5",
       "elementClasses": [
-        "edit",
-        "text-content",
-        "text-weight-change",
-        "border-change"
+        "art_destaque",
+        "img-edit",
+        "edit"
       ],
       "whoAmI": "teste",
-      "elementId": "texto1",
+      "elementId": "foto3",
       "elementInfo": [
         {
           "className": "text-color-change",
           "style": "color",
-          "value": "#000000"
+          "value": "#ffffff"
         },
         {
           "className": "background-color-change",
           "style": "backgroundColor",
-          "value": "#000000"
+          "value": "#ffffff"
         },
         {
           "className": "opacity-change",
@@ -274,7 +328,7 @@
         },
         {
           "className": "text-content",
-          "value": "Nossa Senhora de Aparecida"
+          "value": ""
         },
         {
           "className": "border-change",
@@ -284,132 +338,611 @@
         {
           "className": "img-edit",
           "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "c0a8",
+      "userId": "00a5",
+      "elementClasses": [
+        "foto_artista",
+        "img-edit",
+        "edit",
+        "border-change"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto4",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
           "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "9360",
+      "userId": "00a5",
+      "elementClasses": [
+        "art_exibicao",
+        "img-edit",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto5",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "4393",
+      "userId": "00a5",
+      "elementClasses": [
+        "art_exibicao",
+        "img-edit",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto6",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "8078",
+      "userId": "00a5",
+      "elementClasses": [
+        "art_exibicao",
+        "img-edit",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto7",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "c6f6",
+      "userId": "00a5",
+      "elementClasses": [
+        "art",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto8",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "9991",
+      "userId": "00a5",
+      "elementClasses": [
+        "art",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto8",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "7af4",
+      "userId": "00a5",
+      "elementClasses": [
+        "art",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto8",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "e6c2",
+      "userId": "00a5",
+      "elementClasses": [
+        "art",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto9",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "0e36",
+      "userId": "00a5",
+      "elementClasses": [
+        "art",
+        "edit"
+      ],
+      "whoAmI": "teste",
+      "elementId": "foto9",
+      "elementInfo": [
+        {
+          "className": "text-color-change",
+          "style": "color",
+          "value": "#ffffff"
+        },
+        {
+          "className": "background-color-change",
+          "style": "backgroundColor",
+          "value": "#ffffff"
+        },
+        {
+          "className": "opacity-change",
+          "style": "opacity",
+          "value": "1"
+        },
+        {
+          "className": "padding-change",
+          "style": "padding",
+          "value": "px"
+        },
+        {
+          "className": "text-decoration-change",
+          "style": "textDecoration",
+          "value": "none"
+        },
+        {
+          "className": "text-font-change",
+          "style": "fontFamily",
+          "value": "Roboto"
+        },
+        {
+          "className": "text-size-change",
+          "style": "fontSize",
+          "value": "12px"
+        },
+        {
+          "className": "text-weight-change",
+          "style": "fontWeight",
+          "value": "normal"
+        },
+        {
+          "className": "text-content",
+          "value": ""
+        },
+        {
+          "className": "border-change",
+          "style": "border",
+          "value": ""
+        },
+        {
+          "className": "img-edit",
+          "style": "src",
+          "value": "https://static.escolakids.uol.com.br/2019/07/lontra.jpg"
         }
       ]
     }
   ],
   "visualizePortfolio": [
-
-  ],
-  "forum": [
-    {
-      "post": {
-        "usuario": "Usuario1",
-        "forum_ID": 1,
-        "respostas": 2,
-        "views": 12,
-        "likes": 7,
-        "dislikes": 5,
-        "tag": "Serviços do Site",
-        "titulo": "Oficialmente o primeiro post desse forum.",
-        "pergunta": "Mas para que serve esse forum?",
-        "foto": "perfil.png",
-        "status": false,
-        "edit": false
-      },
-      "respostas": [
-        {
-          "usuario": "Mauricio de Sousa",
-          "likes": 1,
-          "dislikes": 0,
-          "resposta": "Esse forum serve para poder recorrer a comunidade no caso de qualquer dúvida.",
-          "foto": "pessoa_M.jpg",
-          "edit": false
-        },
-        {
-          "usuario": "Pablo Picasso",
-          "likes": 2,
-          "dislikes": 0,
-          "resposta": "Se quiser, tambem pode pedir recomendações para fazer seus portfólios.",
-          "foto": "pessoa_P.jpg",
-          "edit": false
-        }
-      ]
-    },
-    {
-      "post": {
-        "usuario": "Pablo Picasso",
-        "forum_ID": 2,
-        "respostas": 1,
-        "views": 4,
-        "likes": 2,
-        "dislikes": 2,
-        "tag": "Criação de Portfólio",
-        "titulo": "O que devo colocar em um portfolio pop?.",
-        "pergunta": "Estou buscando fazer um portfolio no estilo pop, mas não tenho certeza do que deve ser minha prioridade ao fazer ele.",
-        "foto": "pessoa_P.jpg",
-        "status": true,
-        "edit": false
-      },
-      "respostas": [
-        {
-          "usuario": "Mauricio de Sousa",
-          "likes": 1,
-          "dislikes": 0,
-          "resposta": "Não é minha especialidade, mas talvez demonstrar com suas obras seu conhecimento histórico a respeito do estilo possa ser um bom começo.",
-          "foto": "pessoa_M.jpg",
-          "edit": false
-        }
-      ]
-    },
-    {
-      "post": {
-        "usuario": "Usuario1",
-        "forum_ID": 3,
-        "respostas": 1,
-        "views": 7,
-        "likes": 6,
-        "dislikes": 1,
-        "tag": "Criação de Portfólio",
-        "titulo": "Busco recomendações de portfólios.",
-        "pergunta": "Estou precisando de uns portfólios para servir de inspiração para o meu. Qualquer recomendação que tiverem é bem aceita",
-        "foto": "perfil.png",
-        "status": true,
-        "edit": false
-      },
-      "respostas": [
-        {
-          "usuario": "Mauricio de Sousa",
-          "likes": 1,
-          "dislikes": 0,
-          "resposta": "É complexo prover uma recomendação quando elas são muito variadas, então ajudaria se pudesse especificar qual tipo de portfólio precisa. Se precisar de portfólios no estilo cubista, posso recomendar os de Pablo Picasso",
-          "foto": "pessoa_M.jpg",
-          "edit": false
-        }
-      ]
-    },
-    {
-      "post": {
-        "usuario": "Usuario1",
-        "forum_ID": 4,
-        "respostas": 1,
-        "views": 5,
-        "likes": 3,
-        "dislikes": 2,
-        "tag": "Criação de Portfólio",
-        "titulo": "Como funciona a edição de portfólios?.",
-        "pergunta": "Eu sei que tem um guia sobre isso, mas eu ainda continuei bem confuso. Se puderem ao menos explicar como funciona a edição de texto ficarei bastante grato.",
-        "foto": "perfil.png",
-        "status": false,
-        "edit": false
-      },
-      "respostas": [
-        {
-          "usuario": "Mauricio de Sousa",
-          "likes": 1,
-          "dislikes": 0,
-          "resposta": "Na edição de portfólio, você primeiro determina as mudanças que quer na barra lateral e aí clica em aplicar. Assim, tudo que você clicar no seu portfólio é aplicado as mudanças que você escolheu (se forem possíveis, é claro). Se precisar fazer outras mudanças, é só fazer elas na barra lateral e apertar aplicar novamente.",
-          "foto": "pessoa_M.jpg",
-          "edit": false
-        }
-      ]
-    }
-  ],
-  "explorar": [{
-    "id": "1857",
-    "userId": "00a5",
-    "likes": 10,
-    "dislikes": 5
-  }]
+    
+  ]
 }
