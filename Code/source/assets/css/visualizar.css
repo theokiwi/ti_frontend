@@ -120,6 +120,7 @@ aside{
     transition: opacity 0.3s ease;
 }
 
+
 /* Estilo do conteúdo do pop-up */
 .popup-content {
     position: fixed;
