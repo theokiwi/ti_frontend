@@ -19,15 +19,31 @@
     {
       "username": "teste",
       "password": "password",
-      "id": "00a5"
+      "id": "00a5",
+      "foto": "perfil.png",
+      "banner": "Banner.png",
+      "bio": "Sou um usuário feito para testes por parte dos administradores.",
+      "redes_sociais": {
+        "instagram": "teste",
+        "linkedin": "teste",
+        "youtube": "teste"
+      }
     },
     {
       "id": "dcf8",
       "username": "admin",
-      "password": "adminpassword"
+      "password": "adminpassword",
+      "foto": "perfil.png",
+      "banner": "Banner.png",
+      "bio": "Eu quem controlo esse site.",
+      "redes_sociais": {
+        "instagram": "admin",
+        "linkedin": "admin",
+        "youtube": "admin"
+      }
     },
     {
-      "user_id": 1,
+      "id": "0c53",
       "username": "Usuario1",
       "password": "First",
       "foto": "perfil.png",
@@ -51,11 +67,10 @@
           "dislikes": 1,
           "image": "img2.png"
         }
-      ],
-      "id": "0c53"
+      ]
     },
     {
-      "user_id": 2,
+      "id": "72b8",
       "username": "Pablo Picasso",
       "password": "Guerrilha",
       "foto": "pessoa_P.jpg",
@@ -79,11 +94,10 @@
           "dislikes": 1,
           "image": "img4.png"
         }
-      ],
-      "id": "72b8"
+      ]
     },
     {
-      "user_id": 3,
+      "id": "4cd5",
       "username": "Mauricio de Sousa",
       "password": "Limoeiro",
       "foto": "pessoa_M.jpg",
@@ -101,11 +115,10 @@
           "dislikes": 1,
           "image": "img5.png"
         }
-      ],
-      "id": "4cd5"
+      ]
     },
     {
-      "user_id": 4,
+      "id": "07f1",
       "username": "Calamitas",
       "password": "Calamidade",
       "foto": "pfpExpl.jpg",
@@ -135,8 +148,7 @@
           "dislikes": 1,
           "image": "PorfEx3.png"
         }
-      ],
-      "id": "07f1"
+      ]
     }
   ],
   "elementsById": [
@@ -987,7 +999,7 @@
         "likes": 2,
         "dislikes": 2,
         "tag": "Criação de Portfólio",
-        "titulo": "O que devo colocar em um portfolio pop?.",
+        "titulo": "O que devo colocar em um portfolio pop?",
         "pergunta": "Estou buscando fazer um portfolio no estilo pop, mas não tenho certeza do que deve ser minha prioridade ao fazer ele.",
         "foto": "pessoa_P.jpg",
         "status": true,
@@ -1006,8 +1018,34 @@
     },
     {
       "post": {
-        "usuario": "Usuario1",
+        "usuario": "Pablo Picasso",
         "forum_ID": 3,
+        "respostas": 1,
+        "views": 8,
+        "likes": 5,
+        "dislikes": 1,
+        "tag": "Customização do Perfil",
+        "titulo": "Como altero o meu banner do perfil?",
+        "pergunta": "Quero alterar meu banner, mas não vejo um botão para fazer isso. Como eu mudo ele?",
+        "foto": "pessoa_P.jpg",
+        "status": true,
+        "edit": false
+      },
+      "respostas": [
+        {
+          "usuario": "Mauricio de Sousa",
+          "likes": 1,
+          "dislikes": 0,
+          "resposta": "Para mudar seu banner, não há um botão. Basta clicar nele. Isso vai abrir uma aba para você escolher uma imagem do seu computador.",
+          "foto": "pessoa_M.jpg",
+          "edit": false
+        }
+      ]
+    },
+    {
+      "post": {
+        "usuario": "Usuario1",
+        "forum_ID": 4,
         "respostas": 1,
         "views": 7,
         "likes": 6,
@@ -1016,7 +1054,7 @@
         "titulo": "Busco recomendações de portfólios.",
         "pergunta": "Estou precisando de uns portfólios para servir de inspiração para o meu. Qualquer recomendação que tiverem é bem aceita",
         "foto": "perfil.png",
-        "status": true,
+        "status": false,
         "edit": false
       },
       "respostas": [
@@ -1033,16 +1071,16 @@
     {
       "post": {
         "usuario": "Usuario1",
-        "forum_ID": 4,
+        "forum_ID": 5,
         "respostas": 1,
         "views": 5,
         "likes": 3,
         "dislikes": 2,
         "tag": "Criação de Portfólio",
-        "titulo": "Como funciona a edição de portfólios?.",
+        "titulo": "Como funciona a edição de portfólios?",
         "pergunta": "Eu sei que tem um guia sobre isso, mas eu ainda continuei bem confuso. Se puderem ao menos explicar como funciona a edição de texto ficarei bastante grato.",
         "foto": "perfil.png",
-        "status": false,
+        "status": true,
         "edit": false
       },
       "respostas": [
