@@ -160,11 +160,10 @@ function valorInicial() {
 function valorOrganizado(Dados) {
 
     for (let x = 0; x < Dados.length; x = x + 1) {
-
+        //fsdifhsdoiuhfoiudsh
         // Mudar link para sua versão no visualizar
         $('.col-md-9 a').eq(x).attr('href', './visualizar.html?id='
-            .concat(Dados[x].id).concat('?userId=').concat(Dados[x].userId));
-
+            .concat(Dados[x].id).concat('&userId=').concat(Dados[x].userId));
 
         // Mudar imagem para uma aleatória
         var number = 1 + Math.floor(Math.random() * 6);
