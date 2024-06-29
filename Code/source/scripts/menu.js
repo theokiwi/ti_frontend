@@ -33,7 +33,7 @@ function user_show() {
 
         $('#menuItems li').eq(4).css("display", "none");
         $('#menuItems li').eq(5).css("display", "none");
-        
+
         $('#menuItems').append('<li class="username"><a href="./perfil.html">Nome</a></li>')
         $('#menuItems li.username a').text(strUser)
     }
@@ -51,5 +51,29 @@ $(document).ready(function () {
     })
 
     $(window).on('mouseover', user_show());
+
+
+    // Detectar se esta logado ou não sempre que o iframe de login for fechado
+
+    // Selecionar o iframe
+    const targetNode = document.getElementById("the_login_iframe");
+
+    // O que observar no iframe
+    const config = { attributes: true };
+
+    // Função para ser chamada quando detectar mudanças
+    const callback = (mutationList, observer) => {
+
+        if ($('#the_login_iframe').css("display") == "none") {
+            user_show();
+        }
+
+    };
+
+    // Linkar o observador a função
+    const observer = new MutationObserver(callback);
+
+    // Para observar o iframe
+    observer.observe(targetNode, config);
 
 })

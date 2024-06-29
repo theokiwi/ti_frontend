@@ -1,27 +1,48 @@
 
+function hide_iframe() {
+    $("#the_login_iframe").css("display", "none");
+}
+
+function show_iframe() {
+    $("#the_login_iframe").css("display", "block");
+}
+
+
+
+function check_login_status() {
+    var login = localStorage.getItem('whoAmI')
+    console.log(login)
+
+    if (login) {
+        hide_iframe();
+    }
+}
+
+
+
 $(document).ready(function () {
     $("#buttonLogin_Iframe").click(function () {
         if ($("#the_login_iframe").css("display") == "block") {
-            $("#the_login_iframe").css("display", "none");
+            hide_iframe();
         }
         else {
             $("#login_iframe").attr("src", "login.html");
-            $("#the_login_iframe").css("display", "block");
+            show_iframe();
         }
     })
 
     $("#buttonCriar_Iframe").click(function () {
         if ($("#the_login_iframe").css("display") == "block") {
-            $("#the_login_iframe").css("display", "none");
+            hide_iframe();
         }
         else {
             $("#login_iframe").attr("src", "registro.html");
-            $("#the_login_iframe").css("display", "block");
+            show_iframe();
         }
     })
 
     $("#the_login_iframe button").click(function () {
-        $("#the_login_iframe").css("display", "none");
+        hide_iframe();
     })
 
 
@@ -29,13 +50,13 @@ $(document).ready(function () {
         $(this).contents().on('click', '.input-group input.loginbutton', function () {
             if ($('#login_iframe').contents().find('#username').val() == "" || $('#login_iframe').contents().find('#password').val() == "") { }
             else {
-                $("#the_login_iframe").css("display", "none");
+                setTimeout(function () { check_login_status() }, 150);
             }
         });
         $(this).contents().on('click', '.input-group button.registerbutton', function () {
             if ($('#login_iframe').contents().find('#username').val() == "" || $('#login_iframe').contents().find('#password').val() == "") { }
             else {
-                $("#the_login_iframe").css("display", "none");
+                setTimeout(function () { check_login_status() }, 150);
             }
         });
     })
