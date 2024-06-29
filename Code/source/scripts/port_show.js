@@ -128,7 +128,7 @@ function valorInicial() {
 
             // Mudar link para sua versão no visualizar
             $('.col-md-9 a').eq(x).attr('href', './visualizar.html?id='
-                .concat(Dados_Explore[x].id).concat('?userId=').concat(Dados_Explore[x].userId));
+                .concat(Dados_Explore[x].id).concat('&userId=').concat(Dados_Explore[x].userId));
 
 
             // Mudar imagem para uma aleatória
@@ -160,7 +160,7 @@ function valorInicial() {
 function valorOrganizado(Dados) {
 
     for (let x = 0; x < Dados.length; x = x + 1) {
-        //fsdifhsdoiuhfoiudsh
+
         // Mudar link para sua versão no visualizar
         $('.col-md-9 a').eq(x).attr('href', './visualizar.html?id='
             .concat(Dados[x].id).concat('&userId=').concat(Dados[x].userId));
