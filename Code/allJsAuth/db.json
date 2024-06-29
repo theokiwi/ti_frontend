@@ -148,7 +148,7 @@
         "img-edit",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Mateus",
       "elementId": "foto1",
       "elementInfo": [
         {
@@ -216,7 +216,7 @@
         "edit",
         "border-change"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Usuario1",
       "elementId": "foto2",
       "elementInfo": [
         {
@@ -276,14 +276,14 @@
       ]
     },
     {
-      "id": "d0c6",
+      "id": "d061",
       "userId": "00a5",
       "elementClasses": [
         "art_destaque",
         "img-edit",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Phoenix",
       "elementId": "foto3",
       "elementInfo": [
         {
@@ -351,7 +351,7 @@
         "edit",
         "border-change"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Mauricio",
       "elementId": "foto4",
       "elementInfo": [
         {
@@ -418,7 +418,7 @@
         "img-edit",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Ziraldo",
       "elementId": "foto5",
       "elementInfo": [
         {
@@ -485,7 +485,7 @@
         "img-edit",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Messi",
       "elementId": "foto6",
       "elementInfo": [
         {
@@ -552,7 +552,7 @@
         "img-edit",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Ronaldo",
       "elementId": "foto7",
       "elementInfo": [
         {
@@ -618,7 +618,7 @@
         "art",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Pelé",
       "elementId": "foto8",
       "elementInfo": [
         {
@@ -684,7 +684,7 @@
         "art",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Marquin",
       "elementId": "foto8",
       "elementInfo": [
         {
@@ -750,7 +750,7 @@
         "art",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Aninha",
       "elementId": "foto8",
       "elementInfo": [
         {
@@ -816,7 +816,7 @@
         "art",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Wanderlay",
       "elementId": "foto9",
       "elementInfo": [
         {
@@ -882,7 +882,7 @@
         "art",
         "edit"
       ],
-      "whoAmI": "teste",
+      "whoAmI": "Gabriel Cenoura",
       "elementId": "foto9",
       "elementInfo": [
         {
@@ -942,9 +942,7 @@
       ]
     }
   ],
-  "visualizePortfolio": [
-    
-  ],
+  "visualizePortfolio": [],
   "forum": [
     {
       "post": {
@@ -1059,17 +1057,34 @@
       ]
     }
   ],
-  "explorar": [{
-    "id": "1857",
-    "userId": "00a5",
-    "likes": 10,
-    "dislikes": 5
-  },
-  {
-    "id": "89fe",
-    "userId": "00a5",
-    "likes": 20,
-    "dislikes": 5
-  }
-]
+  "explorar": [
+    {
+      "id": "3ad7",
+      "userId": "00a5",
+      "username": "Mateus",
+      "likes": 10,
+      "dislikes": 15
+    },
+    {
+      "id": "0e36",
+      "userId": "00a5",
+      "username": "Gabriel Cenoura",
+      "likes": 20,
+      "dislikes": 5
+    },
+    {
+      "id": "1cd6",
+      "userId": "00a5",
+      "username": "Usuario1",
+      "likes": 12,
+      "dislikes": 6
+    },
+    {
+      "id": "d0c6",
+      "userId": "00a5",
+      "username": "Pablo Picasso",
+      "likes": 10,
+      "dislikes": 8
+    }
+  ]
 }

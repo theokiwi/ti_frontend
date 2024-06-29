@@ -105,7 +105,7 @@ function insert_port() {
                                     <div class="port_dislikes">\
                                         <label class="reaction_icon">\
                                             <input type="checkbox" class="dislikes_checkbox">\
-                                            <button><i class="fa-solid fa-thumbs-down"></i></button>\
+                                            <button value="0"><i class="fa-solid fa-thumbs-down"></i></button>\
                                         </label>\
                                         <span class="port_dislikes_number">0</span>\
                                     </div>\
@@ -114,8 +114,6 @@ function insert_port() {
                         </div>\
                     </div>\
                 </div>');
-
-            
         }
 
     });
@@ -124,7 +122,7 @@ function insert_port() {
 function valorInicial() {
     read_explorar_data(function (Dados_Explore) {
 
-        //console.log ("Expo init", Dados_Explore);
+        console.log("Expo init", Dados_Explore);
 
         for (let x = 0; x < Dados_Explore.length; x = x + 1) {
 
@@ -150,9 +148,47 @@ function valorInicial() {
             $('.port_likes_number').eq(x).text(Dados_Explore[x].likes)
             $('.port_dislikes_number').eq(x).text(Dados_Explore[x].dislikes)
 
+            // Aplicar valor no botão
+            $('.port_likes .reaction_icon button').eq(x).attr('value', x);
+            $('.port_dislikes .reaction_icon button').eq(x).attr('value', x);
+
         }
 
     });
+}
+
+function valorOrganizado(Dados) {
+
+    for (let x = 0; x < Dados.length; x = x + 1) {
+
+        // Mudar link para sua versão no visualizar
+        $('.col-md-9 a').eq(x).attr('href', './visualizar.html?id='
+            .concat(Dados[x].id).concat('?userId=').concat(Dados[x].userId));
+
+
+        // Mudar imagem para uma aleatória
+        var number = 1 + Math.floor(Math.random() * 6);
+        if (number == 1) { $('.col-md-9 a img').eq(x).attr('src', './assets/img/img1.png'); }
+        if (number == 2) { $('.col-md-9 a img').eq(x).attr('src', './assets/img/img2.png'); }
+        if (number == 3) { $('.col-md-9 a img').eq(x).attr('src', './assets/img/img5.png'); }
+        if (number == 4) { $('.col-md-9 a img').eq(x).attr('src', './assets/img/PortfolioPreview.png'); }
+        if (number == 5) { $('.col-md-9 a img').eq(x).attr('src', './assets/img/Port_Explo1.jpg'); }
+        if (number == 6) { $('.col-md-9 a img').eq(x).attr('src', './assets/img/Port_Explo2.jpg'); }
+
+
+        // Mudar nome do usuário
+        $('.user_name').eq(x).text(Dados[x].username);
+
+        // Adicionar valores de like e dislike
+        $('.port_likes_number').eq(x).text(Dados[x].likes)
+        $('.port_dislikes_number').eq(x).text(Dados[x].dislikes)
+
+        // Aplicar valor no botão
+        $('.port_likes .reaction_icon button').eq(x).attr('value', x);
+        $('.port_dislikes .reaction_icon button').eq(x).attr('value', x);
+
+    }
+
 }
 
 function insert_new_data() {
@@ -204,8 +240,178 @@ function insert_new_data() {
     });
 }
 
+function ordenar_por_like() {
+
+    // Dar toggle na checkbox
+    $('#ordenar_check').prop('checked', true);
+
+    // Mudar texto do botão
+    $('#btnordenar').text("Ordenar por data de criação");
+
+    read_explorar_data(function (Dados_Explore) {
+
+        // Criar cópia do JSON
+        let Dados_Copy = Dados_Explore;
+
+        // Por meio de while e for, repetir até organizar a cópia
+        let organizado = false;
+        while (organizado == false) {
+            organizado = true;
+            for (let x = 0; x < Dados_Copy.length - 1; x++) {
+                if (Dados_Copy[x].likes < Dados_Copy[x + 1].likes) {
+                    organizado = false;
+
+                    // Change likes
+                    var tempo_storage = Dados_Copy[x].likes;
+                    Dados_Copy[x].likes = Dados_Copy[x + 1].likes;
+                    Dados_Copy[x + 1].likes = tempo_storage;
+
+                    // Change dislikes
+                    tempo_storage = Dados_Copy[x].dislikes;
+                    Dados_Copy[x].dislikes = Dados_Copy[x + 1].dislikes;
+                    Dados_Copy[x + 1].dislikes = tempo_storage;
+
+                    // Change username
+                    tempo_storage = Dados_Copy[x].username;
+                    Dados_Copy[x].username = Dados_Copy[x + 1].username;
+                    Dados_Copy[x + 1].username = tempo_storage;
+
+                    // Change (port)id
+                    tempo_storage = Dados_Copy[x].id;
+                    Dados_Copy[x].id = Dados_Copy[x + 1].id;
+                    Dados_Copy[x + 1].id = tempo_storage;
+
+                    // Change userid
+                    tempo_storage = Dados_Copy[x].userId;
+                    Dados_Copy[x].userId = Dados_Copy[x + 1].userId;
+                    Dados_Copy[x + 1].userId = tempo_storage;
+                }
+            }
+        }
+
+        //if (Dados_Copy == Dados_Explore) {alert("Nós somos o Breaking Bad")}
+
+        // Aplicar o novo JSON
+        valorOrganizado(Dados_Copy);
+
+        // Vai haver conflito com a funcionalidade de like e dislike, arrumar isso
 
 
+    });
+}
+
+
+
+function desordenar_por_like() {
+
+    //alert("Eu sou o Jujutsu Kaisen");
+
+    // Untoggle na checkbox
+    $('#ordenar_check').prop('checked', false);
+
+    // Mudar texto do botão
+    $('#btnordenar').text("Ordenação por like");
+
+    // Aplicar o JSON / Local Storage
+    valorInicial();
+
+}
+
+
+function like_button(button_clicked) {
+    read_explorar_data(function (Dados_Explore) {
+
+
+        var current_like_value = Dados_Explore[button_clicked].likes;
+        var current_dislike_value = Dados_Explore[button_clicked].dislikes;
+
+        if ($('.likes_checkbox').eq(button_clicked).is(":checked")) {
+            $('.likes_checkbox').eq(button_clicked).prop('checked', false);
+
+            $('.port_likes_number').eq(button_clicked).text(current_like_value - 1)
+            current_like_value--;
+
+            $('.port_likes button').eq(button_clicked).css("color", "var(--dark-purple)");
+        }
+        else {
+            if ($('.dislikes_checkbox').eq(button_clicked).is(":checked")) {
+                $('.dislikes_checkbox').eq(button_clicked).prop('checked', false);
+
+                $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value - 1)
+                current_dislike_value--
+
+                $('.port_dislikes button').eq(button_clicked).css("color", "var(--dark-purple)");
+                $('.likes_checkbox').eq(button_clicked).prop('checked', true);
+
+                $('.port_likes_number').eq(button_clicked).text(current_like_value + 1)
+                current_like_value++
+
+                $('.port_likes button').eq(button_clicked).css("color", "var(--green-icon)");
+            }
+            else {
+                $('.likes_checkbox').eq(button_clicked).prop('checked', true);
+
+                $('.port_likes_number').eq(button_clicked).text(current_like_value + 1)
+                current_like_value++
+
+                $('.port_likes button').eq(button_clicked).css("color", "var(--green-icon)");
+            }
+        }
+
+        Dados_Explore[button_clicked].likes = current_like_value;
+        Dados_Explore[button_clicked].dislikes = current_dislike_value;
+
+        save_explorar_data(Dados_Explore);
+    });
+}
+
+
+function dislike_button(button_clicked) {
+    read_explorar_data(function (Dados_Explore) {
+
+        var current_like_value = Dados_Explore[button_clicked].likes;
+        var current_dislike_value = Dados_Explore[button_clicked].dislikes;
+
+        if ($('.dislikes_checkbox').eq(button_clicked).is(":checked")) {
+            $('.dislikes_checkbox').eq(button_clicked).prop('checked', false);
+
+            $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value - 1)
+            current_dislike_value--;
+
+            $('.port_dislikes button').eq(button_clicked).css("color", "var(--dark-purple)");
+        }
+        else {
+            if ($('.likes_checkbox').eq(button_clicked).is(":checked")) {
+                $('.likes_checkbox').eq(button_clicked).prop('checked', false);
+
+                $('.port_likes_number').eq(button_clicked).text(current_like_value - 1)
+                current_like_value--;
+
+                $('.port_likes button').eq(button_clicked).css("color", "var(--dark-purple)");
+                $('.dislikes_checkbox').eq(button_clicked).prop('checked', true);
+
+                $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value + 1)
+                current_dislike_value++;
+
+                $('.port_dislikes button').eq(button_clicked).css("color", "var(--red-icon)");
+            }
+            else {
+                $('.dislikes_checkbox').eq(button_clicked).prop('checked', true);
+
+                $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value + 1)
+                current_dislike_value++
+
+                $('.port_dislikes button').eq(button_clicked).css("color", "var(--red-icon)");
+            }
+        }
+
+        Dados_Explore[button_clicked].likes = current_like_value;
+        Dados_Explore[button_clicked].dislikes = current_dislike_value;
+
+        save_explorar_data(Dados_Explore);
+
+    });
+}
 
 function save_explorar_data(Dados) {
     // Salvar os dados no localStorage
@@ -214,7 +420,7 @@ function save_explorar_data(Dados) {
 
 $(document).ready(function () {
 
-    localStorage.clear()
+    //localStorage.clear()
 
 
 
@@ -226,24 +432,18 @@ $(document).ready(function () {
 
 
     // Like
-    $('portfolio_showcase').on('click', '.row .card .row .col-md-3 .card-body .port_rating .port_likes label button', function () {
-        
-        // If para caso já esteja pressionado essa
-          // Se sim
-            // Desmarca
-            // Atualiza número e ícone
-          // Se não
-            // Caso o outro esteja selecionado
-              // Se sim
-                // Desmarca o outro e atualiza seu numero e icone
-                // Marca esse e atualiza seu numero e icone
-              // Se não
-                // Selecionar a checkbox e marcar ela
-                // Atualizar o número e o ícone (cor)
+    $('.portfolio_showcase').on('click', '.row .card .row .col-md-3 .card-body .port_rating .port_likes label button', function () {
+
+        var button_clicked = $(this).attr("value");
+        like_button(button_clicked);
 
     });
     // Dislike
-    $('portfolio_showcase').on('click', '.row .card .row .col-md-3 .card-body .port_rating .port_likes label button', function () {
+    $('.portfolio_showcase').on('click', '.row .card .row .col-md-3 .card-body .port_rating .port_dislikes label button', function () {
+
+        var button_clicked = $(this).attr("value");
+
+        dislike_button(button_clicked);
 
     });
 
@@ -251,6 +451,12 @@ $(document).ready(function () {
 
 
     $('#btnordenar').click(function () {
+        if ($('#ordenar_check').is(":checked")) {
+            desordenar_por_like();
+        }
+        else {
+            ordenar_por_like();
+        }
 
     });
 

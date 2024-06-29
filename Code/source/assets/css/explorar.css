@@ -56,6 +56,8 @@ a {
     height: 50%;
     margin-left: 10%;
     border-radius: 82px;
+
+    box-shadow: 15px 15px 30px var(--dark-purple);
 }
 
 .container2 {
@@ -154,20 +156,40 @@ body {
 }
 
 .icone_ordenar {
-    margin-left: 90%;
+    float: right;
+
+    margin-right: 10vw;
 }
 
 .btnordenar {
-    position: relative;
-    padding: 10px;
-    border-radius: 45px;
     background-color: white;
     color: purple;
-    font-weight: 50%;
+
+    padding: 2vh 1.5vw;
+    
     margin-top: 5px;
+
+    border-radius: 45px;
+    border-width: 5px;
+    border-color: var(--dark-purple);
+    
+    font-weight: 700;
+    font-size: 1.25vw;
+
+    box-shadow: 7px 7px 10px var(--dark-purple);
+}
+
+.btnordenar:hover {
+    background-color: purple;
+    color: white;
+    border-color: #000;
 }
 
 /* Cards início */
+
+.portfolio_showcase {
+    margin-top: 17vh;
+}
 
 .portfolio_showcase .row .card {
     max-width: 85%;
@@ -193,7 +215,8 @@ body {
 .user_name {
     text-align: center;
     font-size: 2vw;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: "Concert One";
 
     margin-bottom: 2vh;
 }
@@ -204,6 +227,7 @@ body {
     margin: auto;
 
     font-size: 2.75vw;
+    font-family: "Concert One";
 }
 
 .port_likes button,
@@ -227,27 +251,31 @@ body {
     box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.767);
 }
 
+.port_likes button:hover,
+.port_dislikes button:hover {
+    background: radial-gradient(white,rgb(247, 103, 227), rgb(238, 124, 158), rgb(254, 26, 117));
+}
+
+.port_likes button i:hover,
+.port_dislikes button i:hover {
+    background: linear-gradient(to bottom, rgb(79, 13, 185), rgb(117, 43, 235), rgb(116, 26, 212), rgb(140, 47, 239));
+
+    box-shadow: 0px 0px 5px rgba(130, 38, 176, 0.89);
+}
+
 .port_likes {
     margin-bottom: 5vh;
 }
 
-.port_likes button {
+.port_likes label button {
     color: var(--dark-purple);
 }
 
-.port_dislikes button {
+.port_dislikes label button {
     color: var(--dark-purple);
 }
 
-.likes_checkbox:checked + .port_likes button {
-    color: var(--green-icon);
-}
-
-.dislikes_checkbox:checked + .port_dislikes button {
-    color: var(--red-icon);
-}
-
-.likes_checkbox, .dislikes_checkbox {
+.likes_checkbox, .dislikes_checkbox, #ordenar_check {
     display: none;
 }
 
