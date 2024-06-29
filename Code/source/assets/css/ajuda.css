@@ -4,59 +4,15 @@ body {
     height: 100%;
 }
 
-/*menu*/
-.menu1 ul {
-    margin: 20px 0 0 0;
-    display: flex;
-    flex-direction: row;
-}
 
-.menu1 ul li {
-    margin: 0 50px 0 50px;
-    list-style: none;
-}
-
-.menu1 ul li a {
-    font-family: "Lato", sans-serif;
-    font-size: 1.5rem;
-    color: #000;
-    text-decoration: none;
-
-}
-
-.menu1 ul li a:hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #61319B;
-}
-
-.menu2 ul {
-    margin: 20px 0 0 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.menu2 ul li {
-    margin: 0 40px 0 20px;
-    list-style: none;
-}
-
-.menu2 ul li a {
-    text-decoration: none;
-    font-family: "Koulen", sans-serif;
-    font-size: 1.5rem;
-    color: #000;
-}
-
-.menu2 ul li a:hover {
-    font-weight: 800;
-    color: #61319B;
-}
 
 /*Codigo do texto de tutorial*/
+
+main {
+    background-image: url("../img/background.png");
+    background-size: 20%;
+    background-repeat: round;
+}
 
 .title{
     color: #61319B;
@@ -68,13 +24,15 @@ body {
     margin-top: 2%;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 180%;
+    font-size: 3vw;
     background-color: var(--clr-li-purple);
     padding: 10%;
-    border-radius: 10%;
+
+    border-radius: 125px;
+    border: 5px var(--dark-purple) dotted;
 }
 
 ol li{
