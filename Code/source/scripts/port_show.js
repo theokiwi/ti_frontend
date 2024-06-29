@@ -23,7 +23,7 @@ function read_explorar_data(callback) {
 
         $.ajax(explorar_JSON_setup).done(function (explorar_JSON) {
             Dados = explorar_JSON;
-            console.log("2", Dados);
+            console.log("2", Dados, Dados.length);
             callback(Dados)
         });
 
@@ -127,8 +127,7 @@ function valorInicial() {
         for (let x = 0; x < Dados_Explore.length; x = x + 1) {
 
             // Mudar link para sua versão no visualizar
-            $('.col-md-9 a').eq(x).attr('href', './visualizar.html?id='
-                .concat(Dados_Explore[x].id).concat('&userId=').concat(Dados_Explore[x].userId));
+            $('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados_Explore[x].userId));
 
 
             // Mudar imagem para uma aleatória
@@ -162,8 +161,7 @@ function valorOrganizado(Dados) {
     for (let x = 0; x < Dados.length; x = x + 1) {
 
         // Mudar link para sua versão no visualizar
-        $('.col-md-9 a').eq(x).attr('href', './visualizar.html?id='
-            .concat(Dados[x].id).concat('&userId=').concat(Dados[x].userId));
+        $('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados[x].userId));
 
         // Mudar imagem para uma aleatória
         var number = 1 + Math.floor(Math.random() * 6);
@@ -200,24 +198,16 @@ function insert_new_data() {
             for (let x = 0; x < Dados_Port.length; x = x + 1) {
 
                 // Conferir se há ou não um respectivo par nos dados do Explorar
-                let user_found = false; let id_found = false; let y = 0;
-                // Esse é o sistema de busca e confirmação mais correto. Porém tá dando bug, então vai o mais simples
-                /* 
-                while ((!user_found || !id_found) && y < Dados_Explore.length) {
-                    user_found = false; id_found = false;
-                    if (Dados_Explore[y].id == Dados_Port[x].id) { id_found = true; }
+                let user_found = false; let y = 0;
+                while (!user_found && y < Dados_Explore.length) {
                     if (Dados_Explore[y].userId == Dados_Port[x].userId) { user_found = true; }
-                    y++;
-                }   */
-                while (!id_found && y < Dados_Explore.length) {
-                    if (Dados_Explore[y].id == Dados_Port[x].id) { id_found = true; }
                     y++;
                 }
 
                 // Se não houver, adicionar
-                if (y == Dados_Explore.length) {
+                if (y == Dados_Explore.length && user_found == false) {
+                    
                     let new_port = {
-                        "id": Dados_Port[x].id,
                         "userId": Dados_Port[x].userId,
                         "username": Dados_Port[x].whoAmI,
                         "likes": 0, "dislikes": 0
