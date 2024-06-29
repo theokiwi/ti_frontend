@@ -6,6 +6,19 @@ main{
     margin: 50px;
 }
 
+@keyframes abrir{
+    from{opacity: 0;
+    transform: translate3d(0, -20px,-5px);}
+
+    to{
+        opacity: 1; transform: translate3d(0,0,0);
+    }
+
+}
+
+main{ 
+animation: abrir 1s;}
+
 .input-group:nth-child(2){
     margin-top: 10px;
 }
