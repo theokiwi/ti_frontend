@@ -2,15 +2,18 @@ body{
     overflow: hidden;
     background-color: aliceblue;
     background-image: url("../img/background.png");
-    background-size: 10%;
+    background-size: 20%;
     background-repeat: round;
 }
+
 .ProfilePicture {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
+
+    margin-bottom: 0.25vh;
 }
 
 .header-perfil {
@@ -127,20 +130,6 @@ p{
     display: none;
 }
 
-div.perfil{
-    border: 5px outset violet;
-
-    z-index: 15;
-}
-
-.header-perfil img{
-    max-width: 9.375rem;    
-    border-radius: 10rem;    
-    margin-top: 1rem;   
-    padding-left: auto;
-    padding-right: auto;
-    
-}
 .bio img{
     padding-top: 2px;
 }
@@ -162,7 +151,7 @@ div.perfil{
     display: flex;
     flex-wrap: wrap;
     max-height: 100%;
-    background: rgb(200, 177, 228);
+    background: linear-gradient(to top, rgb(173, 147, 205), rgb(207, 185, 235), rgb(217, 195, 244));
     border-radius: 6rem;
     left: 1;
     width: 12rem;
@@ -172,6 +161,12 @@ div.perfil{
     padding-right: 0.625rem;
     padding-bottom: 3.5rem;
     max-width: 15rem; 
+
+    border: 5px outset violet;
+
+    box-shadow: 0px 0px 15px 10px var(--dark-purple);
+
+    z-index: 15;
 }
 
 .perfil div{
@@ -189,6 +184,7 @@ div.perfil{
     color: rgb(83, 43, 136);
     text-shadow: 1px 1px 2px rgb(129, 87, 184);
 
+    margin-top: 1vh;
 }
 
 #output{
@@ -242,7 +238,7 @@ input[type="file"] {
 .portfolios{
     margin: 0 auto;
     width: 45vw;
-    max-width: 600px;
+    max-width: 550px;
 
     margin-top: 18.5vh;
 
@@ -251,17 +247,20 @@ input[type="file"] {
 
 .card{
     padding-bottom: 1.5vh;
-    background-color: white;
+    background-color: var(--light-purple);
 
     margin-left: 5vw;
     margin-top: 0.5%;
     margin-bottom: 0.5%;
 
 
-    border: black solid 3px;
+    border: var(--dark-purple) 5px;
+    border-style: ridge;
     border-radius: 20px;
 
     font-size: 2vw;
+
+    box-shadow: 6px 6px 15px var(--dark-purple);
 }
 
 .card h5{
@@ -274,21 +273,17 @@ input[type="file"] {
 }
 
 .card a{
-    margin-left: 5px;
-    margin-top: 2%;
+    margin-left: 10%;
+    margin-top: 0.5vh;
     background-color: rgb(200, 177, 228);
     border-radius: 4px;
-    padding: 0.2%;
+    padding: 0.25vw;
     color:rgb(83, 43, 136);
     font-size: 19px;
 }
 
 .card a:hover{
-    margin-left: 5px;
-    margin-top: 2%;
     background-color: rgb(129, 87, 184);
-    border-radius: 4px;
-    padding: 0.2%;
     color: white;
 }
 
@@ -296,6 +291,8 @@ input[type="file"] {
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+
+    margin-bottom: 0.25vh;
 }
 
 
@@ -332,10 +329,7 @@ input[type="file"] {
     /*------fim-menu-hamburguer--------*/    
     .logo p{
         display: none;
-    }    
-    .perfil{
-        display: flex;
-    }
+    }  
     
     div.perfil{
         display: flex;
@@ -347,7 +341,7 @@ input[type="file"] {
         border-radius: 50px; 
         padding-left: auto;
         padding-right: auto;       
-        background: #999;      
+        background: #999; 
     }    
     .perfil h3{
         margin-left: auto;

@@ -43,7 +43,15 @@ function handleImageUpload(event) {
 }
 
 // Adiciona um ouvinte de evento para o input de upload de imagem
-/* // Está quebrado, e não sou capaz de dizer o que era para fazer
+/* // Está quebrado, e não sou capaz de dizer o que era para fazer para conseguir consertar
 const uploadInput = document.getElementById('upload-input');
 uploadInput.addEventListener('change', handleImageUpload);
 */
+
+$(document).ready(function () {
+
+    var userId = localStorage.getItem('userId');
+
+    $('.card-body a').attr('href', './visualizar.html?userId='.concat(userId));
+
+ })
