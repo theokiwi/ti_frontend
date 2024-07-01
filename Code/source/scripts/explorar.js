@@ -151,6 +151,13 @@ function valorInicial() {
             $('.port_likes .reaction_icon button').eq(x).attr('value', x);
             $('.port_dislikes .reaction_icon button').eq(x).attr('value', x);
 
+            // Registrar se o botão estiver clicado
+            if (Dados_Explore[x].liked == true) {
+                mark_like_button(x);
+            }
+            else if (Dados_Explore[x].disliked == true) {
+                mark_dislike_button(x)
+            }
         }
 
     });
@@ -206,11 +213,12 @@ function insert_new_data() {
 
                 // Se não houver, adicionar
                 if (y == Dados_Explore.length && user_found == false) {
-                    
+
                     let new_port = {
                         "userId": Dados_Port[x].userId,
                         "username": Dados_Port[x].whoAmI,
-                        "likes": 0, "dislikes": 0
+                        "likes": 0, "liked": false,
+                        "dislikes": 0, "disliked": false
                     }
 
                     Dados_Explore.push(new_port);
@@ -307,6 +315,19 @@ function desordenar_por_like() {
 }
 
 
+// Funcionalidades do botão de like
+function mark_like_button(button) {
+    $('.likes_checkbox').eq(button).prop('checked', true);
+
+    $('.port_likes button').eq(button).css("color", "var(--green-icon)");
+}
+
+function unmark_like_button(button) {
+    $('.likes_checkbox').eq(button).prop('checked', false);
+
+    $('.port_likes button').eq(button).css("color", "var(--dark-purple)");
+}
+
 function like_button(button_clicked) {
     read_explorar_data(function (Dados_Explore) {
 
@@ -315,35 +336,40 @@ function like_button(button_clicked) {
         var current_dislike_value = Dados_Explore[button_clicked].dislikes;
 
         if ($('.likes_checkbox').eq(button_clicked).is(":checked")) {
-            $('.likes_checkbox').eq(button_clicked).prop('checked', false);
 
-            $('.port_likes_number').eq(button_clicked).text(current_like_value - 1)
+            unmark_like_button(button_clicked)
+
+            $('.port_likes_number').eq(button_clicked).text(current_like_value - 1);
             current_like_value--;
 
-            $('.port_likes button').eq(button_clicked).css("color", "var(--dark-purple)");
+            Dados_Explore[button_clicked].liked = false;
         }
         else {
             if ($('.dislikes_checkbox').eq(button_clicked).is(":checked")) {
-                $('.dislikes_checkbox').eq(button_clicked).prop('checked', false);
+
+                unmark_dislike_button(button_clicked);
 
                 $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value - 1)
                 current_dislike_value--
 
-                $('.port_dislikes button').eq(button_clicked).css("color", "var(--dark-purple)");
-                $('.likes_checkbox').eq(button_clicked).prop('checked', true);
+                Dados_Explore[button_clicked].disliked = false;
+
+
+                mark_like_button(button_clicked);
 
                 $('.port_likes_number').eq(button_clicked).text(current_like_value + 1)
                 current_like_value++
 
-                $('.port_likes button').eq(button_clicked).css("color", "var(--green-icon)");
+                Dados_Explore[button_clicked].liked = true;
             }
             else {
-                $('.likes_checkbox').eq(button_clicked).prop('checked', true);
+
+                mark_like_button(button_clicked);
 
                 $('.port_likes_number').eq(button_clicked).text(current_like_value + 1)
                 current_like_value++
 
-                $('.port_likes button').eq(button_clicked).css("color", "var(--green-icon)");
+                Dados_Explore[button_clicked].liked = true;
             }
         }
 
@@ -354,6 +380,18 @@ function like_button(button_clicked) {
     });
 }
 
+// Funcionalidades do botão de dislike
+function mark_dislike_button(button) {
+    $('.dislikes_checkbox').eq(button).prop('checked', true);
+
+    $('.port_dislikes button').eq(button).css("color", "var(--red-icon)");
+}
+
+function unmark_dislike_button(button) {
+    $('.dislikes_checkbox').eq(button).prop('checked', false);
+
+    $('.port_dislikes button').eq(button).css("color", "var(--dark-purple)");
+}
 
 function dislike_button(button_clicked) {
     read_explorar_data(function (Dados_Explore) {
@@ -362,35 +400,41 @@ function dislike_button(button_clicked) {
         var current_dislike_value = Dados_Explore[button_clicked].dislikes;
 
         if ($('.dislikes_checkbox').eq(button_clicked).is(":checked")) {
-            $('.dislikes_checkbox').eq(button_clicked).prop('checked', false);
 
-            $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value - 1)
+            unmark_dislike_button(button_clicked);
+
+            $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value - 1);
             current_dislike_value--;
 
-            $('.port_dislikes button').eq(button_clicked).css("color", "var(--dark-purple)");
+            Dados_Explore[button_clicked].disliked = false;
         }
         else {
             if ($('.likes_checkbox').eq(button_clicked).is(":checked")) {
-                $('.likes_checkbox').eq(button_clicked).prop('checked', false);
 
-                $('.port_likes_number').eq(button_clicked).text(current_like_value - 1)
+                unmark_like_button(button_clicked);
+
+                $('.port_likes_number').eq(button_clicked).text(current_like_value - 1);
                 current_like_value--;
 
-                $('.port_likes button').eq(button_clicked).css("color", "var(--dark-purple)");
-                $('.dislikes_checkbox').eq(button_clicked).prop('checked', true);
+                Dados_Explore[button_clicked].liked = false;
 
-                $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value + 1)
+
+                mark_dislike_button(button_clicked);
+
+                $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value + 1);
                 current_dislike_value++;
 
-                $('.port_dislikes button').eq(button_clicked).css("color", "var(--red-icon)");
+                Dados_Explore[button_clicked].disliked = true;
+
             }
             else {
-                $('.dislikes_checkbox').eq(button_clicked).prop('checked', true);
 
-                $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value + 1)
+                mark_dislike_button(button_clicked);
+
+                $('.port_dislikes_number').eq(button_clicked).text(current_dislike_value + 1);
                 current_dislike_value++
 
-                $('.port_dislikes button').eq(button_clicked).css("color", "var(--red-icon)");
+                Dados_Explore[button_clicked].disliked = true;
             }
         }
 

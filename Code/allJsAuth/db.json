@@ -5558,7 +5558,9 @@
       "userId": "00a5",
       "username": "Theo",
       "likes": 30,
+      "liked": false,
       "dislikes": 5,
+      "disliked": false,
       "id": "f246"
     }
   ]
