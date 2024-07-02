@@ -1,9 +1,132 @@
-body{
+body {
     overflow: hidden;
     background-color: aliceblue;
     background-image: url("../img/background.png");
-    background-size: 20%;
+    background-size: 15%;
     background-repeat: round;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  Header início  */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    max-width: 5rem;
+}
+
+.logo p {
+    margin-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+p {
+    color: #555;
+}
+
+.LogoName {
+    font-family: "Koulen", sans-serif;
+    /* margin: 18px 75px 0 0; */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #3A1D5D;
+    font-size: 1.2rem;
+    height: 100%;
+}
+
+.fullcontainer {
+    max-width: 100%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: white;
+}
+
+.menu-icon {
+    width: 50px;
+    margin-left: 20px;
+    display: none;
+}
+
+/*  Header fim  */
+
+
+
+
+/*  Perfil início  */
+
+div.perfil {
+    display: flex;
+    flex-wrap: wrap;
+
+    max-height: 100%;
+    max-width: 15rem;
+    width: 12rem;
+
+    padding-left: 0.938rem;
+    padding-right: 0.625rem;
+    padding-bottom: 100%;
+    background: linear-gradient(to top, rgb(173, 147, 205), rgb(207, 185, 235), rgb(217, 195, 244));
+
+    border-radius: 6rem;
+    border: 5px outset violet;
+
+    margin-top: 4rem;
+    margin-left: 3rem;
+
+    box-shadow: 0px 0px 15px 10px var(--dark-purple);
+
+    z-index: 15;
+}
+
+.perfil div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    display: flex;
+    z-index: 15;
+}
+
+
+
+
+.header-perfil {
+    display: block;
+
+    text-align: center;
+    align-items: center;
+
+    cursor: pointer;
 }
 
 .ProfilePicture {
@@ -16,128 +139,57 @@ body{
     margin-bottom: 0.25vh;
 }
 
-.header-perfil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+#output {
+    border: 3px rgb(129, 87, 184) solid;
 }
+
+.header-perfil h3 {
+    font-family: "Koulen";
+    font-size: 150%;
+    color: rgb(83, 43, 136);
+    text-shadow: 1px 1px 2px rgb(129, 87, 184);
+
+    margin-top: 1vh;
+}
+
+
+
 
 
 
 .texto {
-    width: 100%; /* Para que o texto ocupe toda a largura disponível */
+    width: 100%;
+    /* Para que o texto ocupe toda a largura disponível */
 }
 
 .bio {
-    width: 100%; /* Para que o texto ocupe toda a largura disponível */
+    width: 100%;
+    /* Para que o texto ocupe toda a largura disponível */
     display: block;
     word-wrap: break-word;
+}
+
+#profileBio {
+    text-align: start;
+    font-family: "Lato";
+    font-weight: bolder;
+    font-size: 18px;
+    color: black;
+    text-shadow: 1px 1px 1px rgb(129, 87, 184);
 }
 
 #bioInput {
     width: 100%;
     height: auto;
-    resize: vertical; /* Permite redimensionar verticalmente */
+    resize: vertical;
+    /* Permite redimensionar verticalmente */
     box-sizing: border-box;
-    min-height: 100px; /* Altura mínima para o textarea */
-}
-  
-#the_banner {
-    position: fixed;
-    top: 13.7vh;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    object-fit: cover; 
-    z-index: 2; 
+    min-height: 100px;
+    /* Altura mínima para o textarea */
 }
 
-.repositorios{
-    background: white;
-    display: flex;
-    align-self:auto;
-    margin-top: 20rem;    
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 15;
-     
-}  
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.navbar{
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-nav{
-    flex: 1;
-    text-align: right;
-}
-nav ul{
-    display: inline-block;
-    list-style-type: none;
-}
-nav ul li{
-    display: inline-block;
-    margin-right: 20px;
-}
-.logo{
-    display: flex;
-    align-items: center;
-    max-width: 5rem;
-}
-.logo p{
-    margin-left: 0;
-}
-a{
-    text-decoration: none;
-    color: #555;
-}
-p{
-    color: #555;
-}
-.LogoName{
-    font-family: "Koulen", sans-serif;  
-    /* margin: 18px 75px 0 0; */
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #3A1D5D;
-    font-size: 1.2rem;
-    height: 100%;
-}
-.fullcontainer{
-    max-width: 100%;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    background:white;
-}
 
-.container{
-    display: flex;
-    z-index: 15;
-}
-.menu-icon{
-    width: 50px;
-    margin-left: 20px;
-    display: none;
-}
-
-.bio img{
-    padding-top: 2px;
-}
-.perfil h4{
-    margin-left: auto;
-    margin-right: auto
-    
-}
 
 figcaption {
     text-align: center;
@@ -147,59 +199,9 @@ figcaption {
 }
 
 
-div.perfil{
-    display: flex;
-    flex-wrap: wrap;
-    max-height: 100%;
-    background: linear-gradient(to top, rgb(173, 147, 205), rgb(207, 185, 235), rgb(217, 195, 244));
-    border-radius: 6rem;
-    left: 1;
-    width: 12rem;
-    margin-top: 4rem;
-    margin-left: 3rem;    
-    padding-left: 0.938rem;
-    padding-right: 0.625rem;
-    padding-bottom: 3.5rem;
-    max-width: 15rem; 
 
-    border: 5px outset violet;
 
-    box-shadow: 0px 0px 15px 10px var(--dark-purple);
-
-    z-index: 15;
-}
-
-.perfil div{
-    margin-left: auto;
-    margin-right: auto;
-}
-.header-perfil{
-    display: block;
-    text-align: center;
-}
-
-.header-perfil h3{
-    font-family: "Koulen";
-    font-size: 150%;
-    color: rgb(83, 43, 136);
-    text-shadow: 1px 1px 2px rgb(129, 87, 184);
-
-    margin-top: 1vh;
-}
-
-#output{
-    border: 3px rgb(129, 87, 184) solid;
-}
-#profileBio{
-    text-align:start;
-    font-family: "Lato";
-    font-weight: bolder;
-    font-size: 18px;
-    color: black;
-    text-shadow: 1px 1px 1px rgb(129, 87, 184);
-}
-
-.btnSocial i{
+.btnSocial i {
     margin-left: 10px;
     margin-top: 30px;
     text-shadow: 4px 4px 4px rgb(129, 87, 184);
@@ -221,6 +223,22 @@ input[type="file"] {
     display: none;
 }
 
+/*  Perfil fim  */
+
+
+
+
+/*  Banner início  */
+
+#the_banner {
+    position: absolute;
+
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    z-index: 1;
+}
+
 .custom-file-upload {
     position: absolute;
     display: inline-block;
@@ -235,17 +253,25 @@ input[type="file"] {
 
 }
 
-.portfolios{
-    margin: 0 auto;
-    width: 45vw;
-    max-width: 550px;
+/*  Banner fim  */
 
-    margin-top: 18.5vh;
+
+
+
+/*  Portfólio início  */
+
+.portfolios {
+    margin: 0 auto;
+    width: 30vw;
+    max-width: 500px;
+    min-width: 400px;
+
+    margin-top: 35vh;
 
     z-index: 20;
 }
 
-.card{
+.card {
     padding-bottom: 1.5vh;
     background-color: var(--light-purple);
 
@@ -258,36 +284,36 @@ input[type="file"] {
     border-style: ridge;
     border-radius: 20px;
 
-    font-size: 2vw;
+    font-size: 1.5vw;
 
     box-shadow: 6px 6px 15px var(--dark-purple);
 }
 
-.card h5{
+.card h5 {
     margin-left: 5px;
 }
 
-.card p{
+.card p {
     margin-left: 5px;
     margin-bottom: 1%;
 }
 
-.card a{
+.card a {
     margin-left: 10%;
     margin-top: 0.5vh;
     background-color: rgb(200, 177, 228);
     border-radius: 4px;
     padding: 0.25vw;
-    color:rgb(83, 43, 136);
+    color: rgb(83, 43, 136);
     font-size: 19px;
 }
 
-.card a:hover{
+.card a:hover {
     background-color: rgb(129, 87, 184);
     color: white;
 }
 
-.card img{
+.card img {
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -295,12 +321,14 @@ input[type="file"] {
     margin-bottom: 0.25vh;
 }
 
+/*  Portfólio fim  */
 
-@media only screen and (max-width: 800px){
+
+@media only screen and (max-width: 800px) {
     /*------menu-hamburguer--------*/
-    
 
-    nav ul{
+
+    nav ul {
         margin-top: 20px;
         position: absolute;
         top: 70px;
@@ -309,80 +337,89 @@ input[type="file"] {
         width: 100%;
         overflow: hidden;
         transition: max-height 0.5s;
-        z-index: 30;        
+        z-index: 30;
     }
-    nav ul li{
+
+    nav ul li {
         display: block;
         margin-right: 50px;
         margin-top: 10px;
-        margin-bottom: 10px; 
-        z-index: 30;       
+        margin-bottom: 10px;
+        z-index: 30;
     }
-    nav ul li a{
+
+    nav ul li a {
         color: white;
     }
-    .menu-icon{             
+
+    .menu-icon {
         display: block;
         cursor: pointer;
-        
+
     }
-    /*------fim-menu-hamburguer--------*/    
-    .logo p{
+
+    /*------fim-menu-hamburguer--------*/
+    .logo p {
         display: none;
-    }  
-    
-    div.perfil{
+    }
+
+    div.perfil {
         display: flex;
-        margin-top: 20rem;       
+        margin-top: 20rem;
         display: block;
         width: 98%;
         max-width: 100%;
-        margin-left: 1%;       
-        border-radius: 50px; 
+        margin-left: 1%;
+        border-radius: 50px;
         padding-left: auto;
-        padding-right: auto;       
-        background: #999; 
-    }    
-    .perfil h3{
+        padding-right: auto;
+        background: #999;
+    }
+
+    .header-perfil h3 {
         margin-left: auto;
         margin-right: auto;
-        font-size: 40px ;
-    } 
-      
-    .div-social{
+        font-size: 40px;
+    }
+
+    .div-social {
         display: flex;
-        flex-wrap: nowrap;        
+        flex-wrap: nowrap;
         max-width: 100px;
     }
+
     .linksSocial {
-        width: 50px;        
+        width: 50px;
     }
-    .linksSocial P{
+
+    .linksSocial P {
         display: none;
     }
 
 }
 
-@media only screen and (max-width: 450px){
-    .navbar{
+@media only screen and (max-width: 450px) {
+    .navbar {
         width: 100%;
-        max-width: 100%;          
+        max-width: 100%;
     }
-    *{
+
+    * {
         overflow-x: hidden;
     }
-    div.perfil{
-        margin-top: 13rem;       
+
+    div.perfil {
+        margin-top: 13rem;
         display: block;
-        width: 98%;        
-        max-width: 100%;              
-        border-radius: 50px; 
+        width: 98%;
+        max-width: 100%;
+        border-radius: 50px;
         padding-left: auto;
-        padding-right: auto;       
-        background: #999; 
-        z-index: 50;   
+        padding-right: auto;
+        background: #999;
+        z-index: 50;
     }
-    
-    
-    
+
+
+
 }
