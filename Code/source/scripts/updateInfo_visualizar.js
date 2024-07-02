@@ -1,4 +1,3 @@
-
 function read_explorar_data(callback) {
 
     let strDados = localStorage.getItem('ArtsyExplorar');
@@ -126,7 +125,6 @@ function read_page_ID() {
     });
 }
 
-
 function applyStoredChanges(frameContent) {
     
     const storedInputs = localStorage.getItem('formInputs');
@@ -175,8 +173,27 @@ function applyStoredChanges(frameContent) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => { // Felipe
+    read_explorar_data((Dados_Explore) => {
+        console.log("TEST: -> ", Dados_Explore)
+        let user = {};
+        const url = new URL(location);
+        const params = new URLSearchParams(url.search);
+        for(let element of Dados_Explore){
+            if(element.id == params.get('userId')){
+                user = element;
+                break;
+            }
+        }
+        document.querySelector("#user-name").innerHTML = user.username;
+        read_port_data((Dados_Port) => {
+            console.log(Dados_Port)
+        })
+    })
 
+});
 
+/*
 document.addEventListener('DOMContentLoaded', function () {
     // O resto do código dentro do else, se a pessoa estiver logada.
     let dataArray;
@@ -194,8 +211,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     };
-
-
-
 });
+*/
 

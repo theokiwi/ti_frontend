@@ -127,7 +127,8 @@ function valorInicial() {
         for (let x = 0; x < Dados_Explore.length; x = x + 1) {
 
             // Mudar link para sua versão no visualizar
-            $('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados_Explore[x].userId));
+            //$('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados_Explore[x].userId));
+            $('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados_Explore[x].id));
 
 
             // Mudar imagem para uma aleatória
@@ -168,7 +169,8 @@ function valorOrganizado(Dados) {
     for (let x = 0; x < Dados.length; x = x + 1) {
 
         // Mudar link para sua versão no visualizar
-        $('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados[x].userId));
+        //$('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados_Explore[x].userId));
+        $('.col-md-9 a').eq(x).attr('href', './visualizar.html?userId='.concat(Dados_Explore[x].id));
 
         // Mudar imagem para uma aleatória
         var number = 1 + Math.floor(Math.random() * 6);
