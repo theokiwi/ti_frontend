@@ -78,7 +78,9 @@ function save_question() {
                 "post": {
                     "usuario": "Usuario",
                     "forum_ID": ID,
-                    "respostas": 0, "views": 0, "likes": 0, "dislikes": 0,
+                    "respostas": 0, "views": 0,
+                    "likes": 0, "liked": false,
+                    "dislikes": 0, "disliked": false,
                     "tag": strTag, "titulo": strTitulo,
                     "pergunta": strPergunta,
                     "foto": foto, "status": false, "edit": true

@@ -77,12 +77,14 @@ function insert_forum() {
     <div class="post_rating"> \
         <div class="post_likes"> \
             <button><i class="post_likes_icon fa-solid fa-angle-up"></i></button> \
+            <input type="checkbox" class="post_likes_checkbox"> \
             <span class="post_likes_number">01</span> \
         </div> \
         <div class="post_dislikes"> \
             <button><i class="post_dislikes_icon fa-solid fa-angle-down"></i></button> \
-             <span class="post_dislikes_number">02</span> \
-         </div> \
+            <input type="checkbox" class="post_dislikes_checkbox"> \
+            <span class="post_dislikes_number">02</span> \
+        </div> \
     </div> ');
         }
         else {
@@ -146,10 +148,12 @@ function insert_forum() {
     <div class="post_rating"> \
         <div class="post_likes"> \
             <button><i class="post_likes_icon fa-solid fa-angle-up"></i></button> \
+            <input type="checkbox" class="post_likes_checkbox"> \
             <span class="post_likes_number">01</span> \
         </div> \
         <div class="post_dislikes"> \
             <button><i class="post_dislikes_icon fa-solid fa-angle-down"></i></button> \
+            <input type="checkbox" class="post_dislikes_checkbox"> \
             <span class="post_dislikes_number">02</span> \
         </div> \
     </div> ');
@@ -163,6 +167,7 @@ function insert_forum() {
         $(".post_replies_number").text(Dados[questionID - 1].post.respostas);
         $(".post_views_number").text(Dados[questionID - 1].post.views);
 
+        // Botão de like e dislike
         $(".post_likes_number").text(Dados[questionID - 1].post.likes);
         $(".post_dislikes_number").text(Dados[questionID - 1].post.dislikes);
 
@@ -201,10 +206,14 @@ function insert_forum() {
                 <div class="answer_rating" data-id="${x}"> \
                     <div class="answer_likes"> \
                         <button><i class="answer_likes_icon fa-solid fa-angle-up"> \
-                        </i></button> <span class="answer_likes_number">10</span> </div>\
+                        </i></button> <span class="answer_likes_number">10</span> \
+                        <input type="checkbox" class="answer_likes_checkbox"> \
+                    </div>\
                     <div class="answer_dislikes"> \
                         <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
-                        </i></button> <span class="answer_dislikes_number">0</span> </div>\
+                        </i></button> <span class="answer_dislikes_number">0</span>\
+                        <input type="checkbox" class="answer_dislikes_checkbox"> \
+                    </div>\
                 \ </div> `);
             }
             else {
@@ -233,10 +242,14 @@ function insert_forum() {
                 <div class="answer_rating" data-id="${x}"> \
                     <div class="answer_likes"> \
                         <button><i class="answer_likes_icon fa-solid fa-angle-up"> \
-                        </i></button> <span class="answer_likes_number">10</span> </div>\
+                        </i></button> <span class="answer_likes_number">10</span> \
+                        <input type="checkbox" class="answer_likes_checkbox"> \
+                    </div>\
                     <div class="answer_dislikes"> \
                         <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
-                        </i></button> <span class="answer_dislikes_number">0</span> </div>\
+                        </i></button> <span class="answer_dislikes_number">0</span>\
+                        <input type="checkbox" class="answer_dislikes_checkbox"> \
+                    </div>\
                 \ </div> `);
             }
             $('.answer .answer_data button').eq(x).attr("value", x);
@@ -245,8 +258,13 @@ function insert_forum() {
         }
 
         for (x = 0; x < Dados[questionID - 1].respostas.length; x++) {
+            // Botão de like e dislike
             $(".answer_likes_number").eq(x).text(Dados[questionID - 1].respostas[x].likes);
-            $(".answer_dislikes_number").eq(x).text(Dados[questionID - 1].respostas[x].dislikes);
+            $(".answer_dislikes_number").eq(x).text(Dados[questionID - 1].respostas[x].dislikes); ~
+                $(".answer_likes button").eq(x).attr('value', x);
+            $(".answer_dislikes button").eq(x).attr('value', x);
+
+
             $(".resposta").eq(x).text(Dados[questionID - 1].respostas[x].resposta);
 
             if (Dados[questionID - 1].respostas[x].foto == "perfil.png" || Dados[questionID - 1].respostas[x].foto == "pessoa_M.jpg" ||
@@ -290,18 +308,27 @@ function update_forum() {
         <div class="answer_rating" data-id="2"> \
             <div class="answer_likes"> \
                 <button><i class="answer_likes_icon fa-solid fa-angle-up"> \
-                </i></button> <span class="answer_likes_number">10</span> </div>\
+                </i></button> <span class="answer_likes_number">10</span> \
+                        <input type="checkbox" class="answer_likes_checkbox"> \
+                    </div>\
             <div class="answer_dislikes"> \
                 <button><i class="answer_dislikes_icon fa-solid fa-angle-down"> \
-                </i></button> <span class="answer_dislikes_number">0</span> </div>\
+                </i></button> <span class="answer_dislikes_number">0</span> \
+                        <input type="checkbox" class="answer_dislikes_checkbox"> \
+                    </div>\
         \ </div> ');
         $('.answer .answer_data button').eq(tamanho - 1).attr("value", tamanho - 1);
         $('.answer .answer_text .edit_answer_forms .submit button').eq(tamanho - 1).attr("value", tamanho - 1);
         $('.delete_answer').eq(tamanho - 1).attr("value", tamanho - 1);
         $('.edit_answer_forms').eq(tamanho - 1).css("display", "none");
 
+        // Botão de like e dislike
         $(".answer_likes_number").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].likes);
         $(".answer_dislikes_number").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].dislikes);
+        $(".answer_likes button").eq(tamanho - 1).attr('value', tamanho - 1);
+        $(".answer_dislikes button").eq(tamanho - 1).attr('value', tamanho - 1);
+
+
         $(".resposta").eq(tamanho - 1).text(Dados[questionID - 1].respostas[tamanho - 1].resposta);
 
         // Obter foto do perfil
@@ -363,7 +390,8 @@ function save_answer() {
             // Incluir informações novas
             let novaResposta = {
                 "usuario": strUser,
-                "likes": 0, "dislikes": 0,
+                "likes": 0, "liked": false,
+                "dislikes": 0, "disliked": false,
                 "resposta": strResposta,
                 "foto": strFoto, "edit": true
             };
@@ -549,134 +577,311 @@ function delete_answer(value) {
     });
 }
 
-// Funçao like e deslike
 
-function post_toggle_reaction(action) {
+
+
+// Funções like e deslike
+
+function insert_likes() {
     read_forumdata(function (Dados) {
-        let objData = Dados;
+        let questionID = read_page_ID();
 
-        let currentID  = read_page_ID() - 1;
-
-        console.log({objData});
-        let likes = objData[currentID].post.likes;
-        let dislikes = objData[currentID].post.dislikes;
-        let $likeElement = $('.post_likes_number');
-        let $dislikeElement = $('.post_dislikes_number');
-
-        let alreadyPerformedLike = localStorage.getItem('postLiked') === 'true';
-        let alreadyPerformedDislike = localStorage.getItem('postDisliked') === 'true';
-
-        if (action === 'like') {
-            if (alreadyPerformedLike) {
-                console.log('Você já deu like nesta postagem.');
-                return;
-            }
-            if (alreadyPerformedDislike) {
-                console.log('Removendo dislike.');
-                dislikes--;
-                objData[currentID].post.dislikes = dislikes;
-                localStorage.removeItem('postDisliked');
-                localStorage.removeItem('postDislikeNumbers');
-                $dislikeElement.text(dislikes);
-            }
-            console.log('Você deu um like.');
-            likes++;
-            objData[currentID].post.likes = likes;
-            localStorage.setItem('postLiked', 'true');
-            localStorage.setItem('postLikeNumbers', likes);
-            $likeElement.text(likes);
-        } else {
-            if (alreadyPerformedDislike) {
-                console.log('Você já deu dislike nesta postagem.');
-                return;
-            }
-            if (alreadyPerformedLike) {
-                console.log('Removendo like.');
-                likes--;
-                objData[currentID].post.likes = likes;
-                localStorage.removeItem('postLiked');
-                localStorage.removeItem('postLikeNumbers');
-                $likeElement.text(likes);
-            }
-            console.log('Você deu um dislike.');
-            dislikes++;
-            objData[currentID].post.dislikes = dislikes;
-            localStorage.setItem('postDisliked', 'true');
-            localStorage.setItem('postDislikeNumbers', dislikes);
-            $dislikeElement.text(dislikes);
+        if (Dados[questionID - 1].post.liked == true) {
+            toggle_like_post()
+        }
+        else if (Dados[questionID - 1].post.disliked == true) {
+            toggle_dislike_post()
         }
 
-        localStorage.setItem('ArtsyForum', JSON.stringify(objData));
-        console.log(`${action} adicionado.`);
-    })
-    
+        for (let x = 0; x < Dados[questionID - 1].respostas.length; x = x + 1) {
+            if (Dados[questionID - 1].respostas[x].liked == true) {
+                toggle_like_answer(x);
+            }
+            else if (Dados[questionID - 1].respostas[x].disliked == true) {
+                toggle_dislike_answer(x);
+            }
+        }
+
+    });
+}
+
+function toggle_like_post() {
+    $('.post_likes input').prop('checked', true);
+
+    $('.post_likes button').css("color", "var(--green-icon)");
+}
+
+function toggle_like_answer(n_answer) {
+    $('.answer_likes input').eq(n_answer).prop('checked', true);
+
+    $('.answer_likes button').eq(n_answer).css("color", "var(--green-icon)");
+}
+
+function untoggle_like_post() {
+    $('.post_likes input').prop('checked', false);
+
+    $('.post_likes button').css("color", "var(--dark-purple)");
+}
+
+function untoggle_like_answer(n_answer) {
+    $('.answer_likes input').eq(n_answer).prop('checked', false);
+
+    $('.answer_likes button').eq(n_answer).css("color", "var(--dark-purple)");
+}
+
+function toggle_dislike_post() {
+    $('.post_dislikes input').prop('checked', true);
+
+    $('.post_dislikes button').css("color", "var(--red-icon)");
+}
+
+function toggle_dislike_answer(n_answer) {
+    $('.answer_dislikes input').eq(n_answer).prop('checked', true);
+
+    $('.answer_dislikes button').eq(n_answer).css("color", "var(--red-icon)");
+}
+
+function untoggle_dislike_post() {
+    $('.post_dislikes input').prop('checked', false);
+
+    $('.post_dislikes button').css("color", "var(--dark-purple)");
+}
+
+function untoggle_dislike_answer(n_answer) {
+    $('.answer_dislikes input').eq(n_answer).prop('checked', false);
+
+    $('.answer_dislikes button').eq(n_answer).css("color", "var(--dark-purple)");
 }
 
 
-function updateRating(element, type) {
+
+function like_post_button() {
     read_forumdata(function (Dados) {
+        let questionID = read_page_ID ();
 
-        let currentID  = read_page_ID() - 1;
 
-        let user = {
-            "name": "Test user",
-            "likes": 0,
-            "dislikes": 0,
-        };
-        let parentElement = $(element).closest('.answer_rating');
-        let id = parentElement.data('id');
-        let $likeElement = parentElement.find('.answer_likes_number');
-        let $dislikeElement = parentElement.find('.answer_dislikes_number');
+        var current_like_value = Dados[questionID - 1].post.likes;
+        var current_dislike_value= Dados[questionID - 1].post.dislikes;
+
+        if ($('.post_likes input').is(":checked")) {
+
+            untoggle_like_post();
+
+            $('.post_likes_number').text(current_like_value - 1);
+            current_like_value--;
+
+            Dados[questionID - 1].post.liked = false;
+        }
+        else {
+            if ($('.post_dislikes input').is(":checked")) {
+
+                untoggle_dislike_post();
+
+                $('.post_dislikes_number').text(current_dislike_value - 1);
+                current_dislike_value--;
+
+                Dados[questionID - 1].post.disliked = false;
+
+
+                toggle_like_post();
+
+                $('.post_likes_number').text(current_like_value + 1);
+                current_like_value++;
+
+                Dados[questionID - 1].post.liked = true;
+
+            }
+            else {
+
+                toggle_like_post();
+
+                $('.post_likes_number').text(current_like_value + 1);
+                current_like_value++
+
+                Dados[questionID - 1].post.liked = true;
+            }
+        }
+
+        Dados[questionID - 1].post.likes = current_like_value;
+        Dados[questionID - 1].post.dislikes = current_dislike_value;
+
+        save_data(Dados);
+
+    })
+}
+
+function like_answer_button(n_answer) {
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID ();
+
+
+        var current_like_value = Dados[questionID - 1].respostas[n_answer].likes;
+        var current_dislike_value= Dados[questionID - 1].respostas[n_answer].dislikes;
+
+        if ($('.answer_likes input').eq(n_answer).is(":checked")) {
+
+            untoggle_like_answer(n_answer);
+
+            $('.answer_likes_number').eq(n_answer).text(current_like_value - 1);
+            current_like_value--;
+
+            Dados[questionID - 1].respostas[n_answer].liked = false;
+        }
+        else {
+            if ($('.answer_dislikes input').eq(n_answer).is(":checked")) {
+
+                untoggle_dislike_answer(n_answer);
+
+                $('.answer_dislikes_number').eq(n_answer).text(current_dislike_value - 1);
+                current_dislike_value--;
+
+                Dados[questionID - 1].respostas[n_answer].disliked = false;
+
+
+                toggle_like_answer(n_answer);
+
+                $('.answer_likes_number').eq(n_answer).text(current_like_value + 1);
+                current_like_value++;
+
+                Dados[questionID - 1].respostas[n_answer].liked = true;
+
+            }
+            else {
+
+                toggle_like_answer(n_answer);
+
+                $('.answer_likes_number').eq(n_answer).text(current_like_value + 1);
+                current_like_value++
+
+                Dados[questionID - 1].respostas[n_answer].liked = true;
+            }
+        }
+
+        Dados[questionID - 1].respostas[n_answer].likes = current_like_value;
+        Dados[questionID - 1].respostas[n_answer].dislikes = current_dislike_value;
+
         
-        let objData = Dados;
-        let likes = objData[currentID].respostas[id].likes;
-        let dislikes = objData[currentID].respostas[id].dislikes;
-    
-        let alreadyPerformedLike = localStorage.getItem(`postRatingLikeNumbers_${id}`) !== null;
-        let alreadyPerformedDislike = localStorage.getItem(`postRatingDislikeNumbers_${id}`) !== null;
-    
-        if (type === 'like') {
-            if (alreadyPerformedLike) {
-                console.log('Você já deu like');
-                return;
-            }
-            if (alreadyPerformedDislike) {
-                console.log('Removendo dislike');
-                dislikes--;
-                $dislikeElement.text(dislikes);
-                localStorage.removeItem(`postRatingDislikeNumbers_${id}`);
-            }
-            console.log('Você deu um like');
-            likes++;
-            $likeElement.text(likes);
-            localStorage.setItem(`postRatingLikeNumbers_${id}`, 1);
-            user["likes"] = 1;
-            user["dislikes"] = 0;
-        } else {
-            if (alreadyPerformedDislike) {
-                console.log('Você já deu dislike');
-                return;
-            }
-            if (alreadyPerformedLike) {
-                console.log('Removendo like');
-                likes--;
-                $likeElement.text(likes);
-                localStorage.removeItem(`postRatingLikeNumbers_${id}`);
-            }
-            console.log('Você deu um dislike');
-            dislikes++;
-            $dislikeElement.text(dislikes);
-            localStorage.setItem(`postRatingDislikeNumbers_${id}`, 1);
-            user["likes"] = 0;
-            user["dislikes"] = 1;
-        }
-    
-        objData[currentID].respostas[id].likes = likes;
-        objData[currentID].respostas[id].dislikes = dislikes;
-        localStorage.setItem('ArtsyForum', JSON.stringify(objData));
-        localStorage.setItem(`user_${id}`, JSON.stringify(user));
+        save_data(Dados);
+
     })
 }
+
+function dislike_post_button() {
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID ();
+
+
+        var current_like_value = Dados[questionID - 1].post.likes;
+        var current_dislike_value= Dados[questionID - 1].post.dislikes;
+
+        if ($('.post_dislikes input').is(":checked")) {
+
+            untoggle_dislike_post();
+
+            $('.post_dislikes_number').text(current_dislike_value - 1);
+            current_dislike_value--;
+
+            Dados[questionID - 1].post.disliked = false;
+        }
+        else {
+            if ($('.post_likes input').is(":checked")) {
+
+                untoggle_like_post();
+
+                $('.post_likes_number').text(current_like_value - 1);
+                current_like_value--;
+
+                Dados[questionID - 1].post.liked = false;
+
+
+                toggle_dislike_post();
+
+                $('.post_dislikes_number').text(current_dislike_value + 1);
+                current_dislike_value++;
+
+                Dados[questionID - 1].post.disliked = true;
+
+            }
+            else {
+
+                toggle_dislike_post();
+
+                $('.post_dislikes_number').text(current_dislike_value + 1);
+                current_dislike_value++
+
+                Dados[questionID - 1].post.disliked = true;
+            }
+        }
+
+        Dados[questionID - 1].post.likes = current_like_value;
+        Dados[questionID - 1].post.dislikes = current_dislike_value;
+
+        save_data(Dados);
+
+    })
+}
+
+function dislike_answer_button(n_answer) {
+    read_forumdata(function (Dados) {
+        let questionID = read_page_ID ();
+
+
+        var current_like_value = Dados[questionID - 1].respostas[n_answer].likes;
+        var current_dislike_value= Dados[questionID - 1].respostas[n_answer].dislikes;
+
+        if ($('.answer_dislikes input').eq(n_answer).is(":checked")) {
+
+            untoggle_dislike_answer(n_answer);
+
+            $('.answer_dislikes_number').eq(n_answer).text(current_dislike_value - 1);
+            current_dislike_value--;
+
+            Dados[questionID - 1].respostas[n_answer].disliked = false;
+        }
+        else {
+            if ($('.answer_likes input').eq(n_answer).is(":checked")) {
+
+                untoggle_like_answer(n_answer);
+
+                $('.answer_likes_number').eq(n_answer).text(current_like_value - 1);
+                current_like_value--;
+
+                Dados[questionID - 1].respostas[n_answer].liked = false;
+
+
+                toggle_dislike_answer(n_answer);
+
+                $('.answer_dislikes_number').eq(n_answer).text(current_dislike_value + 1);
+                current_dislike_value++;
+
+                Dados[questionID - 1].respostas[n_answer].disliked = true;
+
+            }
+            else {
+
+                toggle_dislike_answer(n_answer);
+
+                $('.answer_dislikes_number').eq(n_answer).text(current_dislike_value + 1);
+                current_dislike_value++
+
+                Dados[questionID - 1].respostas[n_answer].disliked = true;
+            }
+        }
+
+        Dados[questionID - 1].respostas[n_answer].likes = current_like_value;
+        Dados[questionID - 1].respostas[n_answer].dislikes = current_dislike_value;
+
+        save_data(Dados);
+
+    })
+}
+
+
+
+
+
+
+
 
 $(document).ready(function () {
 
@@ -685,21 +890,32 @@ $(document).ready(function () {
     insert_forum();
     update_views();
     hide_edit();
+    insert_likes()
 
-    $('.post_likes button').on('click', function() {
-        post_toggle_reaction('like');
+
+    // Botões de like e dislike
+    $('.post_answers').on('click', '.post .post_rating .post_likes button', function () {
+
+        like_post_button();
+
     });
-    
-    $('.post_dislikes button').on('click', function() {
-        post_toggle_reaction('dislike');
+    $('.post_answers').on('click', '.post .post_rating .post_dislikes button', function () {
+
+        dislike_post_button();
+
     });
 
-    $(document).on('click', '.answer_likes button', function() {
-        updateRating(this, 'like');
+    $('.post_answers').on('click', '.answer .answer_rating .answer_likes button', function () {
+
+        var button_clicked = $(this).attr("value");
+        like_answer_button(button_clicked);
+
     });
-    
-    $(document).on('click', '.answer_dislikes button', function() {
-        updateRating(this, 'dislike');
+    $('.post_answers').on('click', '.answer .answer_rating .answer_dislikes button', function () {
+
+        var button_clicked = $(this).attr("value");
+        dislike_answer_button(button_clicked);
+
     });
 
 

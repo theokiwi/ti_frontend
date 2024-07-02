@@ -5416,7 +5416,9 @@
         "respostas": 2,
         "views": 12,
         "likes": 7,
+        "liked": false,
         "dislikes": 5,
+        "disliked": false,
         "tag": "Serviços do Site",
         "titulo": "Oficialmente o primeiro post desse forum.",
         "pergunta": "Mas para que serve esse forum?",
@@ -5428,7 +5430,9 @@
         {
           "usuario": "Mauricio de Sousa",
           "likes": 1,
+          "liked": false,
           "dislikes": 0,
+          "disliked": false,
           "resposta": "Esse forum serve para poder recorrer a comunidade no caso de qualquer dúvida.",
           "foto": "pessoa_M.jpg",
           "edit": false
@@ -5436,7 +5440,9 @@
         {
           "usuario": "Pablo Picasso",
           "likes": 2,
+          "liked": false,
           "dislikes": 0,
+          "disliked": false,
           "resposta": "Se quiser, tambem pode pedir recomendações para fazer seus portfólios.",
           "foto": "pessoa_P.jpg",
           "edit": false
@@ -5451,7 +5457,9 @@
         "respostas": 1,
         "views": 4,
         "likes": 2,
+        "liked": false,
         "dislikes": 2,
+        "disliked": false,
         "tag": "Criação de Portfólio",
         "titulo": "O que devo colocar em um portfolio pop?",
         "pergunta": "Estou buscando fazer um portfolio no estilo pop, mas não tenho certeza do que deve ser minha prioridade ao fazer ele.",
@@ -5463,7 +5471,9 @@
         {
           "usuario": "Mauricio de Sousa",
           "likes": 1,
+          "liked": false,
           "dislikes": 0,
+          "disliked": false,
           "resposta": "Não é minha especialidade, mas talvez demonstrar com suas obras seu conhecimento histórico a respeito do estilo possa ser um bom começo.",
           "foto": "pessoa_M.jpg",
           "edit": false
@@ -5478,7 +5488,9 @@
         "respostas": 1,
         "views": 8,
         "likes": 5,
+        "liked": false,
         "dislikes": 1,
+        "disliked": false,
         "tag": "Customização do Perfil",
         "titulo": "Como altero o meu banner do perfil?",
         "pergunta": "Quero alterar meu banner, mas não vejo um botão para fazer isso. Como eu mudo ele?",
@@ -5490,7 +5502,9 @@
         {
           "usuario": "Mauricio de Sousa",
           "likes": 1,
+          "liked": false,
           "dislikes": 0,
+          "disliked": false,
           "resposta": "Para mudar seu banner, não há um botão. Basta clicar nele. Isso vai abrir uma aba para você escolher uma imagem do seu computador.",
           "foto": "pessoa_M.jpg",
           "edit": false
@@ -5505,7 +5519,9 @@
         "respostas": 1,
         "views": 7,
         "likes": 6,
+        "liked": false,
         "dislikes": 1,
+        "disliked": false,
         "tag": "Criação de Portfólio",
         "titulo": "Busco recomendações de portfólios.",
         "pergunta": "Estou precisando de uns portfólios para servir de inspiração para o meu. Qualquer recomendação que tiverem é bem aceita",
@@ -5517,7 +5533,9 @@
         {
           "usuario": "Mauricio de Sousa",
           "likes": 1,
+          "liked": false,
           "dislikes": 0,
+          "disliked": false,
           "resposta": "É complexo prover uma recomendação quando elas são muito variadas, então ajudaria se pudesse especificar qual tipo de portfólio precisa. Se precisar de portfólios no estilo cubista, posso recomendar os de Pablo Picasso",
           "foto": "pessoa_M.jpg",
           "edit": false
@@ -5532,7 +5550,9 @@
         "respostas": 1,
         "views": 5,
         "likes": 3,
+        "liked": false,
         "dislikes": 2,
+        "disliked": false,
         "tag": "Criação de Portfólio",
         "titulo": "Como funciona a edição de portfólios?",
         "pergunta": "Eu sei que tem um guia sobre isso, mas eu ainda continuei bem confuso. Se puderem ao menos explicar como funciona a edição de texto ficarei bastante grato.",
@@ -5544,7 +5564,9 @@
         {
           "usuario": "Mauricio de Sousa",
           "likes": 1,
+          "liked": false,
           "dislikes": 0,
+          "disliked": false,
           "resposta": "Na edição de portfólio, você primeiro determina as mudanças que quer na barra lateral e aí clica em aplicar. Assim, tudo que você clicar no seu portfólio é aplicado as mudanças que você escolheu (se forem possíveis, é claro). Se precisar fazer outras mudanças, é só fazer elas na barra lateral e apertar aplicar novamente.",
           "foto": "pessoa_M.jpg",
           "edit": false

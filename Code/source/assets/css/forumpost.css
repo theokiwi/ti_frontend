@@ -1,13 +1,10 @@
-
-
-
-#menuItems li a{
+#menuItems li a {
     text-decoration: none;
 }
 
 body {
     height: 100vh;
-    
+
     background-image: url(../img/background.png);
     background-size: 80vw;
     background-repeat: repeat;
@@ -28,23 +25,24 @@ body {
 
 /* Main inicio */
 
-main{
+main {
     width: 90vw;
     margin: 6vh auto 0;
-    
+
 }
 
 .post_title {
     max-width: 100%;
 
-    color: rgb(47,24,75);
+    color: rgb(47, 24, 75);
 
     font-family: "Concert One", sans-serif;
 
     background-color: rgba(255, 255, 255, 0.492);
 }
 
-.question_tag, .question_title{
+.question_tag,
+.question_title {
     display: inline;
 }
 
@@ -73,7 +71,7 @@ main{
     color: #000;
 
     background-color: rgb(183, 183, 183);
-    
+
     padding-top: 1.25vh;
     padding-right: 1vw;
     padding-left: 1vw;
@@ -90,10 +88,11 @@ main{
 }
 
 
-.post, .answer {
-    background-color: rgb(244,239,249);
+.post,
+.answer {
+    background-color: rgb(244, 239, 249);
 
-    border:rgb(56,34,82) solid;
+    border: rgb(56, 34, 82) solid;
 
     overflow: hidden;
 }
@@ -102,9 +101,9 @@ main{
     margin-top: 1vh;
 
     border-top: 6%;
-    
+
     border-left: 3%;
-    
+
     border-right: 3%;
 
     border-bottom: 6%;
@@ -116,12 +115,12 @@ main{
 .answer {
 
     border-top: 2%;
-    border-top-color: rgba(56,34,82,0.2);
-    
+    border-top-color: rgba(56, 34, 82, 0.2);
+
     border-left: 3%;
-    
+
     border-right: 3%;
-    
+
     border-bottom: 4%;
 }
 
@@ -132,18 +131,21 @@ div.answer:last-of-type {
     border-bottom-right-radius: 30px;
 }
 
-.post div, .answer div{
+.post div,
+.answer div {
     display: inline-block;
 }
 
-.post_data, .answer_data {
+.post_data,
+.answer_data {
     float: left;
 
     width: 30%;
 
 }
 
-.post_owner, .answer_owner {
+.post_owner,
+.answer_owner {
     display: block;
 
     margin: 5% auto;
@@ -153,7 +155,8 @@ div.answer:last-of-type {
     max-height: 40vh;
 }
 
-.post_replies, .post_views {
+.post_replies,
+.post_views {
     display: inline;
 
     width: 100%;
@@ -167,16 +170,17 @@ div.answer:last-of-type {
     font-family: "Koulen", sans-serif;
 }
 
-.post_replies span, .post_views span{
+.post_replies span,
+.post_views span {
     margin-left: 1.5vw;
 }
 
-.post_replies{
-    color: rgb(0,178,255);
+.post_replies {
+    color: rgb(0, 178, 255);
 }
 
-.post_views{
-    color: rgb(43,22,70);
+.post_views {
+    color: rgb(43, 22, 70);
 }
 
 
@@ -201,7 +205,7 @@ div.answer:last-of-type {
 .edit_button i {
     font-size: 4vw;
 
-    color:rgb(58, 29, 93);
+    color: rgb(58, 29, 93);
 }
 
 
@@ -213,19 +217,24 @@ div.answer:last-of-type {
     width: 100%;
 }
 
-.edit_title label, .edit_post label, .edit_tag_selection label, .edit_post_status label {
-    color: rgb(86,47,138);
+.edit_title label,
+.edit_post label,
+.edit_tag_selection label,
+.edit_post_status label {
+    color: rgb(86, 47, 138);
 
     font-weight: 600;
 }
 
-.edit_title label, .edit_post label {
+.edit_title label,
+.edit_post label {
     display: block;
 
     margin-left: 1vw;
 }
 
-.edit_title textarea, .edit_post textarea {
+.edit_title textarea,
+.edit_post textarea {
     margin-bottom: 2vh;
 
     border-radius: 5px;
@@ -233,7 +242,8 @@ div.answer:last-of-type {
     width: 100%;
 }
 
-.edit_tag_selection, .edit_post_status {
+.edit_tag_selection,
+.edit_post_status {
     display: inline;
 
     margin-left: 1vw;
@@ -254,7 +264,7 @@ div.answer:last-of-type {
     margin-left: 1vw;
     margin-bottom: 0.25vh;
 
-    color: rgb(86,47,138);
+    color: rgb(86, 47, 138);
 
     font-weight: 600;
 }
@@ -290,7 +300,8 @@ div.answer:last-of-type {
 }
 
 
-.delete_post, .delete_answer {
+.delete_post,
+.delete_answer {
     margin-left: 2vw;
 
     border-width: 5px;
@@ -312,7 +323,8 @@ div.answer:last-of-type {
     margin-top: 2.5vh;
 }
 
-.delete_post:hover, .delete_answer:hover {
+.delete_post:hover,
+.delete_answer:hover {
     color: white;
     background-color: purple;
     border-color: black;
@@ -323,28 +335,32 @@ div.answer:last-of-type {
 
 
 
-.post_text, .answer_text {
+.post_text,
+.answer_text {
     width: 45%;
-    margin-left: 2,25vw;
-    margin-right: 2,25vw;
+    margin-left: 2, 25vw;
+    margin-right: 2, 25vw;
     margin-top: 4vh;
     margin-bottom: 2vh;
 
 }
 
-.pergunta, .resposta {
-    color: rgb(86,47,138);
+.pergunta,
+.resposta {
+    color: rgb(86, 47, 138);
 
     font-weight: 600;
 }
 
-.post_rating, .answer_rating {
+.post_rating,
+.answer_rating {
     width: 20%;
 
     float: right;
 }
 
-.post_rating div span, .answer_rating div span {
+.post_rating div span,
+.answer_rating div span {
     font-family: "Koulen", sans-serif;
 
     font-size: 2.25vw;
@@ -353,23 +369,29 @@ div.answer:last-of-type {
     margin-left: 1.5vw;
 }
 
-.post_likes, .post_dislikes, .answer_likes, .answer_dislikes {
+.post_likes,
+.post_dislikes,
+.answer_likes,
+.answer_dislikes {
     overflow: hidden;
 
     width: 100%;
-    
+
     text-align: center;
-    
+
     line-height: 100%;
 
 }
 
-.post_likes button, .post_dislikes button, .answer_likes button, .answer_dislikes button {
+.post_likes button,
+.post_dislikes button,
+.answer_likes button,
+.answer_dislikes button {
     padding: 0 0;
 
     border: 0;
 
-    background:none;
+    background: none;
 
     font-size: 4.25vw;
     font-weight: 900;
@@ -377,18 +399,34 @@ div.answer:last-of-type {
     color: inherit;
 }
 
-.post_likes, .answer_likes {
+.post_likes,
+.answer_likes {
     margin-top: 30%;
-    
-    color: rgb(77,202,112);
 }
 
-.post_dislikes, .answer_dislikes {
+.post_likes_number,
+.answer_likes_number {
+    color: var(--green-icon);
+}
+
+.post_dislikes,
+.answer_dislikes {
     margin-top: 8%;
 
-    color: rgb(242,77,29);
 }
 
+.post_dislikes_number,
+.answer_dislikes_number {
+    color: var(--red-icon);
+}
+
+
+.post_likes_checkbox,
+.post_dislikes_checkbox,
+.answer_likes_checkbox,
+.answer_dislikes_checkbox {
+    display: none;
+}
 
 /* Create answer início */
 
@@ -426,38 +464,38 @@ div.create_answer label i:hover {
     border: 2px solid black;
 }
 
-#display_form:not(checked) ~ label i.button_create_answer_P {
+#display_form:not(checked)~label i.button_create_answer_P {
     display: block;
 }
 
-#display_form:not(checked) ~ label i.button_create_answer_M {
+#display_form:not(checked)~label i.button_create_answer_M {
     display: none;
 }
 
-#display_form:not(checked) ~ form.new_answer {
+#display_form:not(checked)~form.new_answer {
     display: none;
 }
 
-#display_form:checked ~ label i.button_create_answer_P {
+#display_form:checked~label i.button_create_answer_P {
     display: none;
 }
 
-#display_form:checked ~ label i.button_create_answer_M {
+#display_form:checked~label i.button_create_answer_M {
     display: block;
 }
 
-#display_form:checked ~ form.new_answer {
+#display_form:checked~form.new_answer {
     display: block;
 }
 
 form.new_answer {
     padding: 1vh 5vw 2vh;
 
-    background-color: rgb(244,239,249);
+    background-color: rgb(244, 239, 249);
 
     border: 3px solid rgb(83, 6, 113);
     border-radius: 35px;
-    
+
     transition: display 1.0s;
 }
 
@@ -503,6 +541,6 @@ form.new_answer textarea {
 
 
 
-footer{
+footer {
     height: 0.5vh;
 }
