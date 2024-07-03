@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //salva os dados
     function salvaDados(dados) {
         localStorage.setItem('ArtsyCurtida', JSON.stringify(dados));
+        localStorage.setItem('ArtsyExplorar', localStorage.getItem('ArtsyCurtida'));
     }
     
     //Muda o like e o dislike
