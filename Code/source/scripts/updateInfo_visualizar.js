@@ -1,5 +1,4 @@
 function read_explorar_data(callback) {
-
     let strDados = localStorage.getItem('ArtsyExplorar');
     let Dados = {};
 
@@ -109,10 +108,11 @@ function read_page_ID() {
         let userID = getuserID.get('userId');
         if (userID == 0 || userID == null) { userID = "00a5"; }
 
+        /*
         let getportID = new URLSearchParams(url.search);
         let portID = getportID.get('id');
         if (portID == 0 || portID == null) { portID = "89fe"; }
-
+        */
         let user_found = false; let id_found = false; let x = 0;
         while (!user_found || !id_found) {
             user_found = false; id_found = false;
@@ -126,7 +126,6 @@ function read_page_ID() {
 }
 
 function applyStoredChanges(frameContent) {
-    
     const storedInputs = localStorage.getItem('formInputs');
     if (storedInputs) {
         const storedData = JSON.parse(storedInputs);
@@ -141,20 +140,19 @@ function applyStoredChanges(frameContent) {
             { className: 'text-weight-change', style: 'fontWeight', value: storedData['textweightpicker'] },
             { className: 'text-content', value: storedData['textcontentpick'] },
             { className: 'border-change', style: 'border', value: storedData['borderPick'] },
-            { className: 'img-edit', style: 'src', value: dataArray['imageurlpick'] },
+            { className: 'img-edit', style: 'src', value: storedData['imageurlpick'] },
         ];
     }
     
 
     read_port_data(function (Dados_Port) {
-        
-
         // Achar qual portfolio é o atual
-        read_page_ID();
-        let currentPort = localStorage.getItem('ArtsyVisualizarID');
-        let things_to_apply = Dados_Port[currentPort].elementInfo;
+        //read_page_ID();
+        let currentPort = JSON.parse(localStorage.getItem('ArtsyPortVisualize'));
+        let things_to_apply = currentPort.elementInfo;
+        //let things_to_apply = Dados_Port[currentPort].elementInfo;
 
-        console.log(things_to_apply);
+        console.log("things",things_to_apply);
 
         // Aplicar edições
         const edits = frameContent.getElementsByClassName('edit');
@@ -186,9 +184,33 @@ document.addEventListener('DOMContentLoaded', () => { // Felipe
             }
         }
         document.querySelector("#user-name").innerHTML = user.username;
+
+
         read_port_data((Dados_Port) => {
-            console.log(Dados_Port)
+            let port = {};
+            const url = new URL(location);
+            const params = new URLSearchParams(url.search);
+            for(let element of Dados_Port){
+                if(element.id == params.get('userId')){
+                    port = element;
+                    break;
+                }
+            }
+            localStorage.setItem("ArtsyPortVisualize", JSON.stringify(port));
         })
+
+    
+        let frameObj = document.getElementById('output');
+        if (frameObj == null) {
+            alert('ERRO - Recarregue a página. Iframe nao encontrado.');
+            console.log('ERROR - Nao foi encontrado um iframe contendo um template editavel');
+            return;
+        }
+
+        frameObj.onload = function () {
+            let frameContent = frameObj.contentWindow.document;
+            applyStoredChanges(frameContent); // Aplicar mudanças ao carregar o iframe
+        };
     })
 
 });
@@ -208,8 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
     frameObj.onload = function () {
         var frameContent = frameObj.contentWindow.document;
         applyStoredChanges(frameContent); // Aplicar mudanças ao carregar o iframe
-
-
     };
 });
 */

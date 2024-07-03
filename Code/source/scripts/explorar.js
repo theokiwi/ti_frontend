@@ -299,8 +299,6 @@ function ordenar_por_like() {
     });
 }
 
-
-
 function desordenar_por_like() {
 
     //alert("Eu sou o Jujutsu Kaisen");
@@ -315,7 +313,6 @@ function desordenar_por_like() {
     valorInicial();
 
 }
-
 
 // Funcionalidades do botão de like
 function mark_like_button(button) {

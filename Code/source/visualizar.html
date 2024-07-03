@@ -63,10 +63,10 @@
             </div>
         </section>
 
-        <aside id="user-info">
+        <aside id="user-info" style="background-color: rgb(244, 239, 250);">
             <img id="user-profile-picture" src="./assets/img/pfp.png" alt="profile-picture">
             <h1 id="user-name"></h1>
-            <p id="user-bio"></p>
+            <p id="user-bio">Biografia de teste!</p>
 
             <div class="popup-overlay" id="popupOverlay">
                 <div class="popup-content">
@@ -80,45 +80,16 @@
 
             <div class="likes-dislikes" style="display: flex; gap: 15px;">
                 <div>
-                    <button id="like" class="botao"><i class="fa-solid fa-thumbs-up"></i></button>
+                    <i class="fa-solid fa-thumbs-up"></i>
                     <span id="contador">0</span>
                 </div>
                 <div>
-                    <button id="dislike" class="botao2"><i class="fa-solid fa-thumbs-down"></i></button>
+                    <i class="fa-solid fa-thumbs-down"></i>
                     <span id="contador2">0</span>
                 </div>
             </div>
         </aside>
     </main>
     <script src="scripts/visualizar.js"></script>
-
-    <script>
-        /*
-        window.onload = () => {
-            fetch("http://localhost:3000/explorar")
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    let user = {};
-                    const url = new URL(location);
-                    const params = new URLSearchParams(url.search);
-                    for(let element of data){
-                        if(element.userId == params.get('userId')){
-                            user = element;
-                            break;
-                        }
-                    }
-
-                    document.querySelector("#user-bio").innerText = ;
-                    
-                    console.log(data)
-                })
-                    */
-        }
-
-    </script>
-
-
 </body>
 </html>

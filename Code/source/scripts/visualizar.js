@@ -1,5 +1,43 @@
 
 document.addEventListener('DOMContentLoaded', function () {
+    function read_explorar_data(callback) {
+        let strDados = localStorage.getItem('ArtsyExplorar');
+        let Dados = {};
+    
+        var explorar_JSON_setup = null;
+    
+        if (strDados) {
+            Dados = JSON.parse(strDados);
+            console.log("1_E", Dados);
+            callback(Dados)
+        }
+        else {
+            explorar_JSON_setup = {
+                'async': false,
+                "dataType": "json",
+                "url": "/explorar",
+                "method": "GET",
+                "headers": {
+                    "Accept": "*/*"
+                }
+            };
+    
+            $.ajax(explorar_JSON_setup).done(function (explorar_JSON) {
+                Dados = explorar_JSON;
+                console.log("2_E", Dados);
+                callback(Dados)
+            });
+    
+            $.ajax(explorar_JSON_setup).fail(function () {
+                $.getJSON("../allJsAuth/db.json", function (explorar_JSON) {
+                    Dados = explorar_JSON.explorar;
+                    console.log("3_E", Dados);
+                    callback(Dados)
+                })
+            });
+        }
+    }
+
     //função le dados
     function read_portfoliodata() {
         let strDados = localStorage.getItem('ArtsyCurtida');
@@ -22,80 +60,112 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     function valorInicial(){
-        let Dados=read_portfoliodata();
-        //let valor = (Dados.portfolios[1].likes); 
-        $('#contador').text(Dados.portfolios[1].likes);
-        $('#contador2').text(Dados.portfolios[1].dislikes);
+        read_explorar_data((Dados_Explorar) => {
+            let user = {};
+            const url = new URL(location);
+            const params = new URLSearchParams(url.search);
+            for(let element of Dados_Explorar){
+                if(element.id == params.get('userId')){
+                    user = element;
+                    break;
+                }
+            }
+            $('#contador').text(user.likes);
+            $('#contador2').text(user.dislikes);
+        })
     }
     //salva os dados
     function salvaDados(dados) {
         localStorage.setItem('ArtsyCurtida', JSON.stringify(dados));
     }
-    function atualizaLike() {
-        //le dados
-        let Dados = read_portfoliodata();
-        //atualizar o numero de likes
-        let strAtualizador = $("#contador").text();
-        let dadosAtualizados = {
-            "likes": strAtualizador
-        };
-        
-        salvaDados(Dados);
-        alert("Like salvo");
-    }
-    
 
+    /*
+    function atualizaLike() {
+        let data = JSON.parse(localStorage.getItem("ArtsyCurtida"));
+        const url = new URL(location);
+        const params = new URLSearchParams(url.search);
+        for(let element of data){
+            if(element.id == params.get('userId')){
+                element.likes = $("#contador").text();
+                break;
+            }
+        }
+        salvaDados(data);
+    }
+    */
+    
     //Muda o like e o dislike
     function update_like() {
-        let Dados=read_portfoliodata();
-        let valor = Dados.portfolios[1].likes;  //parseInt($('#contador').text());
-         
-        //quando clicamos nele, a classe é ativada ou desativada
-        $("#like").toggleClass('liked');
-        //Se o usuario clicar no botão enquanto a classe tá ativada, o contador diminui em 1
-        if ($("#like").hasClass('liked')) {
-            $('#contador').text(valor +  1);
-            Dados.portfolios[1].likes=valor+1;
-        } else {
-            $('#contador').text(valor - 1);
-            Dados.portfolios[1].likes=valor-1; 
-        }
-        //impede que cliquemos em dislike enquanto o like estiver ativado;
+        read_explorar_data((Dados_Explorar) => {
+            let user = {};
+            const url = new URL(location);
+            const params = new URLSearchParams(url.search);
+            for(let element of Dados_Explorar){
+                if(element.id == params.get('userId')){
+                    user = element;
+                    break;
+                }
+            }
+            let valor = user.likes;
+            //quando clicamos nele, a classe é ativada ou desativada
+            $("#like").toggleClass('liked');
+            //Se o usuario clicar no botão enquanto a classe tá ativada, o contador diminui em 1
+            if ($("#like").hasClass('liked')) {
+                $('#contador').text(valor +  1);
+                user.likes = valor + 1;
+            } else {
+                $('#contador').text(valor - 1);
+                user.likes = valor - 1; 
+            }
+            //impede que cliquemos em dislike enquanto o like estiver ativado;
 
-        if ($("#like").hasClass('liked')) {
-            $('#dislike').prop('disabled', true);
-        } else {
-            $('#dislike').prop('disabled', false);
-        }
-        salvaDados(Dados);
+            if ($("#like").hasClass('liked')) {
+                $('#dislike').prop('disabled', true);
+            } else {
+                $('#dislike').prop('disabled', false);
+            }
+            salvaDados(Dados_Explorar);
+        })
     };
+
     function update_dislike () {
-        let Dados=read_portfoliodata();
-        let valor = Dados.portfolios[1].dislikes; 
-        //quando clicamos nele, a classe é ativada ou desativada
-        $("#dislike").toggleClass('disliked');
-        //Se o usuario clicar no botão enquanto a classe tá ativada, o contador diminui em 1
-        if ($("#dislike").hasClass('disliked')) {
-            $('#contador2').text(valor + 1);
-            Dados.portfolios[1].dislikes=valor+1;
-        } else {
-            $('#contador2').text(valor - 1);
-            Dados.portfolios[1].dislikes=valor-1; 
-        }
-        //impede que cliquemos em like enquanto o dislike estiver ativado;
-        if ($("#dislike").hasClass('disliked')) {
-            $('#like').prop('disabled', true);
-        } else {
-            $('#like').prop('disabled', false);
-        }
-        salvaDados(Dados)
+        read_explorar_data((Dados_Explorar) => {
+            let user = {};
+            const url = new URL(location);
+            const params = new URLSearchParams(url.search);
+            for(let element of Dados_Explorar){
+                if(element.id == params.get('userId')){
+                    user = element;
+                    break;
+                }
+            }
+            let valor = user.dislikes;
+            //quando clicamos nele, a classe é ativada ou desativada
+            $("#dislike").toggleClass('disliked');
+            //Se o usuario clicar no botão enquanto a classe tá ativada, o contador diminui em 1
+            if ($("#dislike").hasClass('disliked')) {
+                $('#contador2').text(valor +  1);
+                user.dislikes = valor + 1;
+            } else {
+                $('#contador2').text(valor - 1);
+                user.dislikes = valor - 1; 
+            }
+            //impede que cliquemos em like enquanto o dislike estiver ativado;
+            if ($("#dislike").hasClass('disliked')) {
+                $('#like').prop('disabled', true);
+            } else {
+                $('#like').prop('disabled', false);
+            }
+            salvaDados(Dados_Explorar)
+        })
     };
+
     $(document).ready(function(){
         //localStorage.clear();
         valorInicial();
-        $("#dislike").click( update_dislike ); 
-        $("#like").click(update_like ); 
-        $('#atualizaLike').click(atualizaLike);
+        $("#dislike").click(update_dislike); 
+        $("#like").click(update_like); 
+        //$('#atualizaLike').click(atualizaLike);
     });
 
  
