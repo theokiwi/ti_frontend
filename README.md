@@ -22,6 +22,8 @@
 
 -----
 
+-----
+
 <section class='description'>
   <h2>${\color{Plum}Problema}$</h2>
   <p class='problema'>
@@ -32,6 +34,8 @@
     Assim, o projeto Artsy Pages propõe a criação de uma plataforma a qual permita a artistas, mesmo que sem experiência, criarem seus portfólios mesmo que com uma curta disposição de tempo.
   </p>
 </section>
+
+-----
 
 -----
 
@@ -48,12 +52,25 @@
 
 -----
 
+-----
+
 <section class='demonstration'>
   <h2>${\color{RoyalPurple}Demonstração\space do\space Programa}$</h2>
 
 [<img src="https://img.youtube.com/vi/pYBqg7B4LV4/hqdefault.jpg" width="750" height="450"
 />](https://www.youtube.com/embed/pYBqg7B4LV4)
 
+</section>
+
+-----
+
+-----
+
+<section>
+  <img align='right' width='350px' heigth='350px' src='https://raw.githubusercontent.com/theokiwi/ti_frontend/main/Documentation/Logo/PUC_Logo.png'>
+  <div align='left' width='500px'>
+    <p>Esse projeto foi desenvolvido na disciplina Trabalho Interdisciplinar I: Front-End (TI1) do curso de Ciências da Computação da PUC Minas</p>
+  </div>
 </section>
 
 </div>
