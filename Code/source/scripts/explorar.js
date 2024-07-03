@@ -330,6 +330,7 @@ function unmark_like_button(button) {
 function like_button(button_clicked) {
     read_explorar_data(function (Dados_Explore) {
 
+
         var current_like_value = Dados_Explore[button_clicked].likes;
         var current_dislike_value = Dados_Explore[button_clicked].dislikes;
 
@@ -453,9 +454,14 @@ $(document).ready(function () {
 
     //localStorage.clear()
 
+
+
     insert_new_data();
     insert_port();
     valorInicial();
+
+
+
 
     // Like
     $('.portfolio_showcase').on('click', '.row .card .row .col-md-3 .card-body .port_rating .port_likes label button', function () {
@@ -472,6 +478,8 @@ $(document).ready(function () {
         dislike_button(button_clicked);
 
     });
+
+
 
 
     $('#btnordenar').click(function () {
