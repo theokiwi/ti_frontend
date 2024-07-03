@@ -60,86 +60,108 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     function valorInicial(){
-        read_explorar_data((Dados_Explorar) => {
+        read_explorar_data(data => {
+            console.log("LIKES:", data); // DEBUG
             let user = {};
             const url = new URL(location);
             const params = new URLSearchParams(url.search);
-            for(let element of Dados_Explorar){
-                if(element.id == params.get('userId')){
-                    user = element;
+            for(let i = 0; i < data.length; i++){
+                if(data[i].userId == params.get('userId')){
+                    user = data[i];
                     break;
                 }
             }
-            $('#contador').text(user.likes);
-            $('#contador2').text(user.dislikes);
+            console.log("USER LIKES:", user); // DEBUG
+            document.querySelector("#contador").innerText = user.likes;
+            document.querySelector("#contador2").innerText = user.dislikes;
+            salvaDados(data);
         })
     }
+
     //salva os dados
     function salvaDados(dados) {
         localStorage.setItem('ArtsyCurtida', JSON.stringify(dados));
     }
-
-    /*
-    function atualizaLike() {
-        let data = JSON.parse(localStorage.getItem("ArtsyCurtida"));
+    
+    //Muda o like e o dislike
+    function update_like() { // Felipe
+        let aux;
+        let user = {};
+        let qnt_likes;
         const url = new URL(location);
         const params = new URLSearchParams(url.search);
-        for(let element of data){
-            if(element.id == params.get('userId')){
-                element.likes = $("#contador").text();
+        let data = JSON.parse(localStorage.getItem('ArtsyCurtida'));
+
+        console.log("ArtsyCurtida: ", data) // DEBUG
+
+        for(let i = 0; i < data.length; i++){
+            if(data[i].userId == params.get('userId')){
+                aux = i;
+                user = data[i];
                 break;
             }
         }
-        salvaDados(data);
-    }
-    */
-    
-    //Muda o like e o dislike
-    function update_like() {
-        read_explorar_data((Dados_Explorar) => {
-            let user = {};
-            const url = new URL(location);
-            const params = new URLSearchParams(url.search);
-            for(let element of Dados_Explorar){
-                if(element.id == params.get('userId')){
-                    user = element;
-                    break;
-                }
-            }
-            let valor = user.likes;
-            //quando clicamos nele, a classe é ativada ou desativada
-            $("#like").toggleClass('liked');
-            //Se o usuario clicar no botão enquanto a classe tá ativada, o contador diminui em 1
-            if ($("#like").hasClass('liked')) {
-                $('#contador').text(valor +  1);
-                user.likes = valor + 1;
-            } else {
-                $('#contador').text(valor - 1);
-                user.likes = valor - 1; 
-            }
-            //impede que cliquemos em dislike enquanto o like estiver ativado;
+        
+        qnt_likes = user.likes;
 
-            if ($("#like").hasClass('liked')) {
-                $('#dislike').prop('disabled', true);
-            } else {
-                $('#dislike').prop('disabled', false);
-            }
-            salvaDados(Dados_Explorar);
-        })
+        $("#like").toggleClass('liked');
+        if ($("#like").hasClass('liked')) {
+            $('#contador').text(qnt_likes + 1);
+            data[aux].likes = qnt_likes + 1;
+        } else {
+            $('#contador').text(qnt_likes - 1);
+            data[aux].likes = qnt_likes - 1;
+        }
+
+        if ($("#like").hasClass('liked')) {
+            $('#dislike').prop('disabled', true);
+        } else {
+            $('#dislike').prop('disabled', false);
+        }
+
+        salvaDados(data);
     };
 
     function update_dislike () {
-        read_explorar_data((Dados_Explorar) => {
-            let user = {};
-            const url = new URL(location);
-            const params = new URLSearchParams(url.search);
-            for(let element of Dados_Explorar){
-                if(element.id == params.get('userId')){
-                    user = element;
-                    break;
-                }
+        let aux;
+        let user = {};
+        let qnt_dislikes;
+        const url = new URL(location);
+        const params = new URLSearchParams(url.search);
+        let data = JSON.parse(localStorage.getItem('ArtsyCurtida'));
+
+        for(let i = 0; i < data.length; i++){
+            if(data[i].userId == params.get('userId')){
+                aux = i;
+                user = data[i];
+                break;
             }
-            let valor = user.dislikes;
+        }
+        
+        qnt_dislikes = user.dislikes;
+
+        $("#dislike").toggleClass('disliked');
+        if ($("#dislike").hasClass('disliked')) {
+            $('#contador2').text(qnt_dislikes + 1);
+            data[aux].dislikes = qnt_dislikes + 1;
+        } else {
+            $('#contador2').text(qnt_dislikes - 1);
+            data[aux].dislikes = qnt_dislikes - 1;
+        }
+
+        if ($("#dislike").hasClass('disliked')) {
+            $('#like').prop('disabled', true);
+        } else {
+            $('#like').prop('disabled', false);
+        }
+        console.log("ArtsyCurtida: ", data) // DEBUG
+        salvaDados(data);
+
+
+
+
+        /*
+        read_explorar_data((Dados_Explorar) => {
             //quando clicamos nele, a classe é ativada ou desativada
             $("#dislike").toggleClass('disliked');
             //Se o usuario clicar no botão enquanto a classe tá ativada, o contador diminui em 1
@@ -158,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             salvaDados(Dados_Explorar)
         })
+        */
     };
 
     $(document).ready(function(){

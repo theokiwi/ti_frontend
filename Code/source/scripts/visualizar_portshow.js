@@ -148,7 +148,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-
+    fetch("http://localhost:3000/users") //FELIPE
+        .then(response => response.json())
+        .then(data => {
+            console.log("Users: ", data); //DEBUG
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+            let user = {};
+            for(let i = 0; i < data.length; i++){
+                if(data[i].id == params.get('userId')){
+                    user = data[i];
+                    break;
+                }
+            }
+            console.log("Current user: ", user); //DEBUG
+            document.querySelector("#user-name").innerText = user.username;
+            document.querySelector("#user-bio").innerText = user.bio;
+            document.querySelector("#user-profile-picture").src = `../source/assets/img/${user.foto}`;
+        })
 
 
 });
