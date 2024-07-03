@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
 header {
     margin-bottom: 0;
     padding: 0;
@@ -80,6 +83,8 @@ header div.container {
 
 #menuItems li a {
     color: var(--clr-da-purple);
+    font-family: rubik;
+    font-size: 1.2rem;
 }
 
 .username {
