@@ -72,7 +72,7 @@ body {
 }
 
 .container2 {
-    margin: 150px 0 0 150px;
+    margin: -10px 0 0 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,6 +91,7 @@ body {
 .wavy-section {
     position: relative;
     text-align: center;
+    margin-top: -150px;
 }
 
 .wave-container {
@@ -250,6 +251,7 @@ body {
     width: 90%;
     position: relative;
     margin: 0 auto 0 auto;
+    margin-top: -320px;
 }
 
 .slideshow {
@@ -389,6 +391,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: -15px;
 }
 
 .faq-content{
