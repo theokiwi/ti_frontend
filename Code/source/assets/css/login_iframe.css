@@ -2,24 +2,6 @@
 
 
 
-#buttonLogin_Iframe, #buttonCriar_Iframe {
-    color: var(--clr-da-purple);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 500;
-    font-size: 1.55vw;
-
-    background: none;
-    border: none;
-
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 800px) {
-    #buttonLogin_Iframe, #buttonCriar_Iframe {
-        color: var(--clr-li-purple);
-        font-size: 2.5vw;
-    }
-}
 
 #the_login_iframe {
     display: none;
