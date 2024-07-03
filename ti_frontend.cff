@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Penido Viglioni
+    given-names: Gabriel
+  - family-names: Diniz Viana
+    given-names: Theo
+  - family-names: Resende Ottoni
+    given-names: Mateus
+  - family-names: Maia 
+    given-names: Felipe
+  - family-names: Andrade
+    given-names: Alexandre
+  - family-names: Drummond 
+    given-names: Antônio
+  - family-names:  Sales de Deus
+     given-names: João Pedro
+  - name-suffix: 
+    affiliation: PUC Minas
+    family-names: Alberto Marques Pietrobon
+    given-names: Carlos
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Amy Saldanha Rivero
+    given-names: Ilo
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Mara Freitas Diniz
+    given-names: Luciana
+
+title: "ti_frontend"
+repository-code: "https://github.com/theokiwi/ti_frontend"
+license: MIT license
+version: 1.0.0
+doi: 10.5281/zenodo.1234 
+date-released: 2024-26-03
