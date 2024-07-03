@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     body: JSON.stringify({
                         username: usernameValue,
                         password: passwordValue,
-                        postedporfolioid: none,
+                        postedporfolioid: null,
                     }),
                     headers: {
                         "Content-type": "application/json; charset=UTF-8"
