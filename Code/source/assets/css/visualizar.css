@@ -97,12 +97,46 @@ aside{
     width: 40px;
     height: 40px;
 }
+
+/* Botão de like e dislike */
+
+.likes-dislikes div button {
+    border: none;
+    background: none;
+
+    font-size: 2.25vw;
+
+    cursor: pointer;
+    
+    text-shadow: 0px 0px 10px var(--dark-purple);
+}
+
+
+#dislike {
+    margin-left: 2vw;
+}
+
+#contador, #contador2 {
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+#contador {
+    color: var(--green-icon);
+}
+
+#contador2 {
+    color: var(--red-icon);
+}
+
 .liked{
-    color: blue;
+    color: var(--green-icon);
 }
 .disliked{
-    color: red;
+    color: var(--red-icon);
 }
+
+/* Botão de like e dislike fim */
 
 /* Estilo da lista de comentários */
 
