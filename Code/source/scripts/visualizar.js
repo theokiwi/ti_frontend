@@ -104,14 +104,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         qnt_likes = user.likes;
-
+        
         $("#like").toggleClass('liked');
         if ($("#like").hasClass('liked')) {
             $('#contador').text(qnt_likes + 1);
             data[aux].likes = qnt_likes + 1;
+            data[aux].liked = true;
+            data[aux].disliked = false;
         } else {
             $('#contador').text(qnt_likes - 1);
             data[aux].likes = qnt_likes - 1;
+            data[aux].liked = false;
+            data[aux].disliked = true;
         }
 
         if ($("#like").hasClass('liked')) {
@@ -157,34 +161,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         console.log("ArtsyCurtida: ", data) // DEBUG
         salvaDados(data);
-
-
-
-
-        /*
-        read_explorar_data((Dados_Explorar) => {
-            //quando clicamos nele, a classe é ativada ou desativada
-            $("#dislike").toggleClass('disliked');
-            //Se o usuario clicar no botão enquanto a classe tá ativada, o contador diminui em 1
-            if ($("#dislike").hasClass('disliked')) {
-                $('#contador2').text(valor +  1);
-                user.dislikes = valor + 1;
-            } else {
-                $('#contador2').text(valor - 1);
-                user.dislikes = valor - 1; 
-            }
-            //impede que cliquemos em like enquanto o dislike estiver ativado;
-            if ($("#dislike").hasClass('disliked')) {
-                $('#like').prop('disabled', true);
-            } else {
-                $('#like').prop('disabled', false);
-            }
-            salvaDados(Dados_Explorar)
-        })
-        */
     };
 
     $(document).ready(function(){
+        read_explorar_data(data => {
+            console.log("USER DATA PORT SPECIFY", data) // DEBUG
+            let aux;
+            let user = {};
+            const url = new URL(location);
+            const params = new URLSearchParams(url.search);
+
+            for(let i = 0; i < data.length; i++){
+                if(data[i].userId == params.get('userId')){
+                    aux = i;
+                    user = data[i];
+                    break;
+                }
+            }
+
+            let copy_data = data;
+            if(user.liked){
+                $("#like").toggleClass('liked');
+                $('#dislike').prop('disabled', true);
+                copy_data[aux].liked = true;
+                copy_data[aux].disliked = false;
+                console.log("COPY", copy_data[aux])
+            } else if(user.disliked){
+                $("#dislike").toggleClass('disliked');
+                $('#like').prop('disabled', true);
+                copy_data[aux].liked = false;
+                copy_data[aux].disliked = true;
+            }
+            salvaDados(copy_data);
+        })
+
         //localStorage.clear();
         valorInicial();
         $("#dislike").click(update_dislike); 
