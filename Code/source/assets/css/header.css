@@ -25,6 +25,8 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin-right: 20px;
+
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .logo a, .logo{
@@ -80,6 +82,9 @@ header div.container {
 
 #menuItems li a {
     color: var(--clr-da-purple);
+
+    font-weight: 500;
+    font-size: 1.2vw;
 }
 
 .username {
@@ -165,4 +170,26 @@ li.username:hover {
         z-index: 10;
     }
     
+}
+
+
+/*  Iframe buttons in header  */
+
+#buttonLogin_Iframe, #buttonCriar_Iframe {
+    color: var(--clr-da-purple);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 1.2vw;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    #buttonLogin_Iframe, #buttonCriar_Iframe {
+        color: var(--clr-li-purple);
+        font-size: 2.5vw;
+    }
 }
