@@ -10,13 +10,13 @@
 <section class='integrantes'>
 <p>${\color{RoyalBlue}Integrantes}$</p>
 <ul>
-  <li>Alessandro Andrade</li>
-  <li>Antônio Drumond Cota Sousa</li>
-  <li>Felipe Guerzoni Martins Flores Maia</li>
-  <li>Gabriel Penido</li>
-  <li>João Pedro Sales de Deus</li>
-  <li>Mateus Resende Ottoni</li>
-  <li>Theo Diniz Viana</li>
+  <li><a href='https://github.com/ale-andrade-o' target="_blank">Alessandro Andrade</a></li>
+  <li><a href='https://github.com/AntonioDrumond' target="_blank">Antônio Drumond Cota Sousa</a></li>
+  <li><a href='https://github.com/flp2113' target="_blank">Felipe Guerzoni Martins Flores Maia</a></li>
+  <li><a href='https://github.com/gabrielpenido0412' target="_blank">Gabriel Penido Viglioni</a></li>
+  <li><a href='https://github.com/JoaoPedroSalesdeDeus2002' target="_blank">João Pedro Sales de Deus</a></li>
+  <li><a href='https://github.com/Mateus-Resende-Ottoni' target="_blank">Mateus Resende Ottoni</a></li>
+  <li><a href='https://github.com/theokiwi' target="_blank">Theo Diniz Viana</a></li>
 </ul>
 </section>
 
